@@ -1,0 +1,144 @@
+======================================================================
+ MEDIZUVA ZERO-TRUST — NIST SP 800 COMPLIANCE AUDIT REPORT
+ Generated : 2026-04-06 19:56:59
+ Framework : NIST SP 800-207, 800-53 Rev5, 800-63B, 800-137
+ Status    : SUBSTANTIALLY COMPLIANT
+ Score     : 86.7%
+======================================================================
+
+[PASS] 800-207-T1             All resources require authentication
+       Standard: NIST SP 800-207 Section 3.1 Tenet 1
+       Finding : Microsoft Entra ID treats all applications as resources requiring authentication. No on-premises bypass paths exist in t...
+
+[PASS] 800-207-T2             All communications secured (TLS/OAuth2)
+       Standard: NIST SP 800-207 Section 3.1 Tenet 2
+       Finding : All Microsoft Graph API calls use TLS 1.2+. OAuth 2.0 client_credentials flow used for service-to-service auth. No HTTP ...
+
+[PASS] 800-207-T3             Per-session access with re-authentication
+       Standard: NIST SP 800-207 Section 3.1 Tenet 3
+       Finding : CA006 enforces 8-hour session limits with no persistent browser sessions. CA007 enforces 30-minute sessions for privileg...
+
+[PASS] 800-207-T4             Dynamic policy enforcement based on risk signals
+       Standard: NIST SP 800-207 Section 3.1 Tenet 4
+       Finding : CA004 blocks high sign-in risk. CA008 blocks high user risk. CA009 requires password change on medium/high user risk. To...
+
+[PASS] 800-207-T5             Continuous asset and user integrity monitoring
+       Standard: NIST SP 800-207 Section 3.1 Tenet 5
+       Finding : Automated monitoring pipeline runs every 15 minutes via GitHub Actions. OSINT scan covers all 500 personas across 4 sour...
+
+[PART] 800-207-T6             Strict authentication and authorisation before every access
+       Standard: NIST SP 800-207 Section 3.1 Tenet 6
+       Finding : CA001 requires MFA for all users. CA005 requires MFA + compliant device for admins. However, 56 users currently lack MFA...
+       ACTION  : Remediate 56 MFA gaps. Consider blocking access entirely until MFA is registered.
+
+[PASS] 800-207-T7             Continuous telemetry collection and posture improvement
+       Standard: NIST SP 800-207 Section 3.1 Tenet 7
+       Finding : Threat intelligence engine derives 7 prioritised recommendations per scan. Dashboard prediction model projects 6-month e...
+
+[PASS] 800-53-AC-2            Account Management
+       Standard: NIST SP 800-53 Rev5 AC-2
+       Finding : 500 accounts provisioned via automated scripts with full lifecycle management. Joiner/Mover/Leaver workflows implemented...
+
+[PART] 800-53-AC-3            Access Enforcement
+       Standard: NIST SP 800-53 Rev5 AC-3
+       Finding : 6 Conditional Access policies deployed. 0 enforced, 6 in Report-Only mode. Report-Only mode logs violations but does not...
+       ACTION  : Promote all CA policies from Report-Only to Enabled state to achieve full AC-3 compliance.
+
+[PASS] 800-53-AC-6            Least Privilege
+       Standard: NIST SP 800-53 Rev5 AC-6
+       Finding : Privileged Identity Management (PIM) implemented for all 45 eligible admin assignments. Zero permanently active privileg...
+
+[PASS] 800-53-AC-6(5)         Least Privilege — Privileged Accounts
+       Standard: NIST SP 800-53 Rev5 AC-6(5)
+       Finding : CA005 requires both MFA AND compliant device for IT department (AND operator). CA007 enforces 30-minute re-authenticatio...
+
+[PASS] 800-53-AC-11           Session Lock
+       Standard: NIST SP 800-53 Rev5 AC-11
+       Finding : CA006 enforces 8-hour sign-in frequency for all users with no persistent browser. CA007 enforces 30-minute re-authentica...
+
+[PASS] 800-53-AC-17           Remote Access
+       Standard: NIST SP 800-53 Rev5 AC-17
+       Finding : All remote access governed by Conditional Access — location is irrelevant to policy enforcement. MFA required regardless...
+
+[PART] 800-53-AU-2            Event Logging
+       Standard: NIST SP 800-53 Rev5 AU-2
+       Finding : OSINT scan events logged to data/osint_results/osint_run.log with timestamps. Threat audit outputs to threat_audit.json ...
+       ACTION  : Enable Entra ID diagnostic settings to export sign-in and audit logs to Log Analytics or storage.
+
+[PART] 800-53-AU-12           Audit Record Generation
+       Standard: NIST SP 800-53 Rev5 AU-12
+       Finding : Automated pipeline generates audit records every 15 minutes for threat signals and every 6 hours for OSINT. All records ...
+       ACTION  : Extend entra_sync.py to pull sign-in logs and store in data/signin_logs/.
+
+[PART] 800-53-IA-2            Identification and Authentication (Org Users)
+       Standard: NIST SP 800-53 Rev5 IA-2
+       Finding : MFA enforced via CA001 for all users. CA005 enforces MFA + compliant device for admins. 56 users have not yet registered...
+       ACTION  : Enforce MFA registration for 56 unregistered users. Block access until registered.
+
+[PASS] 800-53-IA-2(1)         MFA for Privileged Network Access
+       Standard: NIST SP 800-53 Rev5 IA-2(1)
+       Finding : CA005 requires BOTH MFA and compliant device (AND operator) for all IT department privileged accounts. This exceeds mini...
+
+[PART] 800-53-IA-5(1)         Authenticator Management — Breached Password Check
+       Standard: NIST SP 800-53 Rev5 IA-5(1)
+       Finding : 204 users found in breach databases. No automatic password change policy deployed....
+       ACTION  : Deploy CA009 to force password change on medium/high user risk.
+
+[PASS] 800-53-IA-11           Re-Authentication
+       Standard: NIST SP 800-53 Rev5 IA-11
+       Finding : CA006 enforces re-authentication every 8 hours for all users. CA007 enforces re-authentication every 30 minutes for priv...
+
+[PASS] 800-53-RA-3            Risk Assessment
+       Standard: NIST SP 800-53 Rev5 RA-3
+       Finding : Automated risk assessment runs every 15 minutes. All 500 users classified into 4 tiers (CRITICAL/HIGH/MEDIUM/LOW) using ...
+
+[PASS] 800-53-RA-5            Vulnerability Monitoring and Scanning
+       Standard: NIST SP 800-53 Rev5 RA-5
+       Finding : Four-tool OSINT pipeline scans all 500 users every 6 hours: HIBP (12B+ records), DeHashed (credential dumps), LeakCheck ...
+
+[PASS] 800-53-SI-4            Information System Monitoring
+       Standard: NIST SP 800-53 Rev5 SI-4
+       Finding : Entra ID Identity Protection provides real-time user and sign-in risk monitoring. GitHub Actions workflow polls Entra ev...
+
+[PASS] 800-53-CM-6            Configuration Settings
+       Standard: NIST SP 800-53 Rev5 CM-6
+       Finding : All security configurations defined as code in version-controlled PowerShell and Python scripts. CA policies, PIM assign...
+
+[N/A ] 800-63B-AAL1           Authentication Assurance Level 1
+       Standard: NIST SP 800-63B Section 4.1
+       Finding : AAL1 (password only) is not used for any MediZuva application. CA001 requires MFA (AAL2 minimum) for all users and all a...
+
+[PART] 800-63B-AAL2           Authentication Assurance Level 2 (MFA Required)
+       Standard: NIST SP 800-63B Section 4.2
+       Finding : AAL2 requires phishing-resistant or approved MFA. CA001 enforces MFA for all users. 56 of 500 users (11.2%) lack MFA reg...
+       ACTION  : Complete MFA registration for 56 unregistered users to achieve full AAL2.
+
+[PART] 800-63B-AAL3           Authentication Assurance Level 3 (Hardware MFA)
+       Standard: NIST SP 800-63B Section 4.3
+       Finding : AAL3 requires hardware-based phishing-resistant authenticators (FIDO2/WebAuthn). Current implementation uses Microsoft A...
+       ACTION  : Configure CA005 to require FIDO2/Windows Hello for Business for IT administrator accounts to achieve AAL3.
+
+[PASS] 800-63B-5.1.1          Memorised Secret (Password) Requirements
+       Standard: NIST SP 800-63B Section 5.1.1
+       Finding : NIST 800-63B requires: minimum 8 characters, check against breached lists, no mandatory complexity or rotation unless co...
+
+[PASS] 800-63B-7.2            Re-Authentication Requirements
+       Standard: NIST SP 800-63B Section 7.2
+       Finding : NIST 800-63B requires re-authentication after 30 minutes of inactivity for AAL2 and no more than 12 hours of continuous ...
+
+[PASS] 800-137-ISCM-1         Continuous Monitoring Strategy
+       Standard: NIST SP 800-137 Section 2.1
+       Finding : Monitoring strategy defined across two cadences: 15-minute automated Entra ID signal refresh (threat posture) and 6-hour...
+
+[PASS] 800-137-ISCM-2         Monitoring Frequency and Metrics
+       Standard: NIST SP 800-137 Section 2.3
+       Finding : Security metrics published to central dashboard on every refresh cycle: risk tier counts (CRITICAL/HIGH/MEDIUM/LOW), MFA...
+
+[PASS] 800-137-ISCM-3         Respond to Findings
+       Standard: NIST SP 800-137 Section 2.5
+       Finding : Threat intelligence engine generates prioritised recommendations (CRITICAL/HIGH/MEDIUM/LOW) on every OSINT scan, surface...
+
+======================================================================
+ PASS: 22  PARTIAL: 8  FAIL: 0  N/A: 1
+ COMPLIANCE SCORE: 86.7%  |  STATUS: SUBSTANTIALLY COMPLIANT
+======================================================================
