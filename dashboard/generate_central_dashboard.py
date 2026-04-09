@@ -796,7 +796,7 @@ tbody td{{padding:11px 16px;vertical-align:middle}}
       <div class="panel-header">
         <div>
           <div class="panel-title">Pillar 2 — Conditional Access</div>
-          <div class="panel-sub">6 CA policies · Tenant: micrlabs.onmicrosoft.com · Audited: {(p2 or {{}}).get('AuditDate','—')}</div>
+          <div class="panel-sub">6 CA policies · Tenant: micrlabs.onmicrosoft.com · Audited: {(p2 or dict()).get('AuditDate','—')}</div>
         </div>
         <span class="badge" style="background:{pcol(p2_posture)}20;color:{pcol(p2_posture)};border:1px solid {pcol(p2_posture)}40">{p2_posture}</span>
       </div>
@@ -822,7 +822,7 @@ tbody td{{padding:11px 16px;vertical-align:middle}}
           <div class="card-label">Coverage</div><div class="card-sub">Enforced policies</div><div class="card-glow"></div>
         </div>
         <div class="card" style="--accent-color:var(--blue)">
-          <div class="card-val counter" data-target="{(p2 or {{}}).get('TotalUsers',500)}">0</div>
+          <div class="card-val counter" data-target="{(p2 or dict()).get('TotalUsers',500)}">0</div>
           <div class="card-label">Users in Scope</div><div class="card-sub">Under CA policy</div><div class="card-glow"></div>
         </div>
       </div>
@@ -852,7 +852,7 @@ tbody td{{padding:11px 16px;vertical-align:middle}}
       <div class="panel-header">
         <div>
           <div class="panel-title">Pillar 3 — Privileged Identity Management</div>
-          <div class="panel-sub">Just-in-time access · Tenant: micrlabs.onmicrosoft.com · Audited: {(p3 or {{}}).get('AuditDate','—')}</div>
+          <div class="panel-sub">Just-in-time access · Tenant: micrlabs.onmicrosoft.com · Audited: {(p3 or dict()).get('AuditDate','—')}</div>
         </div>
         <span class="badge" style="background:{pcol(p3_posture)}20;color:{pcol(p3_posture)};border:1px solid {pcol(p3_posture)}40">{p3_posture}</span>
       </div>
@@ -900,7 +900,7 @@ tbody td{{padding:11px 16px;vertical-align:middle}}
       <div class="panel-header">
         <div>
           <div class="panel-title">Pillar 4 — Threat Detection</div>
-          <div class="panel-sub">Risk classification · Signal aggregation · Audited: {(p4 or {{}}).get('AuditDate','—')}</div>
+          <div class="panel-sub">Risk classification · Signal aggregation · Audited: {(p4 or dict()).get('AuditDate','—')}</div>
         </div>
         <span class="badge" style="background:{pcol(p4_posture)}20;color:{pcol(p4_posture)};border:1px solid {pcol(p4_posture)}40">{p4_posture}</span>
       </div>
@@ -961,11 +961,11 @@ tbody td{{padding:11px 16px;vertical-align:middle}}
           <div class="panel-title">OSINT Threat Intelligence</div>
           <div class="panel-sub">
             Multi-source credential exposure · HIBP · DeHashed · LeakCheck · Intelligence X ·
-            Scanned: {(osint or {{}}).get('ScanDate','—')}
+            Scanned: {(osint or dict()).get('ScanDate','—')}
           </div>
         </div>
         <span class="badge" style="background:#a855f720;color:#c084fc;border:1px solid #a855f740">
-          {(osint or {{}}).get('Mode','—').upper()}
+          {(osint or dict()).get('Mode','—').upper()}
         </span>
       </div>
 
