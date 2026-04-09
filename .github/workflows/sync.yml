@@ -67,4 +67,5 @@ jobs:
           git add docs/index.html
           git diff --staged --quiet || \
             git commit -m "chore: 15-min refresh $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git pull --rebase origin main
           git push
