@@ -76,7 +76,7 @@ def fetch_risky_users(headers: dict) -> list:
     print("[1/3] Querying Identity Protection risky users...")
     url = (
         f"{GRAPH_BASE}/identityProtection/riskyUsers"
-        f"?$filter=riskLevel eq 'high' or riskLevel eq 'medium'"
+        f"?$filter=riskLevel%20eq%20'high'%20or%20riskLevel%20eq%20'medium'"
         f"&$select=id,userDisplayName,userPrincipalName,riskLevel,riskState,riskLastUpdatedDateTime,isDeleted"
     )
     users = []
@@ -118,7 +118,7 @@ def fetch_device_gaps(headers: dict) -> list:
     print("[3/3] Querying non-compliant managed devices...")
     url  = (
         f"{GRAPH_BASE}/deviceManagement/managedDevices"
-        f"?$filter=complianceState ne 'compliant'"
+        f"?$filter=complianceState%20ne%20'compliant'"
         f"&$select=id,deviceName,userDisplayName,userPrincipalName,complianceState,operatingSystem,lastSyncDateTime"
     )
     gaps = []
