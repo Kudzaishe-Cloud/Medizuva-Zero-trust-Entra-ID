@@ -1,8 +1,12 @@
 name: OSINT Scan (6-hourly)
 
-# OSINT runs separately because scanning 500 users across 4 APIs
+# OSINT runs separately because scanning all users across 4 APIs
 # takes ~13 minutes due to rate limits — it cannot fit in a 15-min window.
-# Run every 6 hours instead so results are always reasonably fresh.
+# Runs every 6 hours so results are always reasonably fresh.
+#
+# Requires secrets: HIBP_API_KEY, DEHASHED_EMAIL, DEHASHED_API_KEY,
+#                   LEAKCHECK_API_KEY, INTELX_API_KEY
+# At least one OSINT key must be set or this job will fail.
 
 on:
   schedule:
@@ -31,8 +35,16 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      # Run all 4 OSINT tools against all 500 personas
-      # Falls back to RiskScore-derived mode if API keys are not set
+      # Fetch real user accounts from Entra ID (fresh list before OSINT scan)
+      - name: Fetch Entra ID users
+        env:
+          ENTRA_TENANT_ID:     ${{ secrets.ENTRA_TENANT_ID }}
+          ENTRA_CLIENT_ID:     ${{ secrets.ENTRA_CLIENT_ID }}
+          ENTRA_CLIENT_SECRET: ${{ secrets.ENTRA_CLIENT_SECRET }}
+        run: python pillar1_identity/generate_personas.py
+
+      # Run all configured OSINT tools against real user emails.
+      # Fails if no API keys are provided — simulation is not permitted.
       - name: OSINT exposure check
         env:
           HIBP_API_KEY:      ${{ secrets.HIBP_API_KEY }}
@@ -48,7 +60,7 @@ jobs:
             --leakcheck-key  "$LEAKCHECK_API_KEY" \
             --intelx-key     "$INTELX_API_KEY"
 
-      # Also pull fresh Entra signals before rebuilding
+      # Pull fresh Entra security signals after OSINT
       - name: Entra ID sync
         env:
           ENTRA_TENANT_ID:     ${{ secrets.ENTRA_TENANT_ID }}
@@ -67,16 +79,13 @@ jobs:
           mkdir -p docs
           cp data/central_dashboard.html docs/index.html
 
+      # Only commit docs/index.html — raw OSINT results stay off git
       - name: Commit & push
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add \
-            docs/index.html \
-            data/threat_audit.json \
-            data/risky_users.json \
-            data/osint_results/ \
-            data/central_dashboard.html
+          git add docs/index.html
           git diff --staged --quiet || \
             git commit -m "chore: 6h OSINT refresh $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git pull --rebase origin main
           git push

@@ -31,8 +31,18 @@ desktop.ini
 *.suo
 *.user
 
-# ── Large / generated data (keep source CSVs, ignore big exports) ─
+# ── Generated pipeline output (populated by live pipeline runs only) ─
+# These files must never be committed with simulated/placeholder data.
+# They are regenerated on every CI/CD run using real credentials.
+data/personas/*.csv
 data/osint_results/*.json
+data/osint_results/*.log
+data/risky_users.json
+data/threat_audit.json
+data/ca_audit.json
+data/ca_policy_status.json
+data/nist_compliance_report.json
+data/pim_audit.json
 data/pim_validation_issues.csv
 data/pim_validation_report.txt
 

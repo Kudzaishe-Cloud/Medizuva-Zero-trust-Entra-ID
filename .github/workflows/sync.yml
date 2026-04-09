@@ -1,11 +1,11 @@
 name: Sync Dashboard (15-min)
 
 on:
-  # Every 15 minutes — Entra ID signals + threat audit + dashboard rebuild
+  # Every 15 minutes — fetch real Entra ID data, rebuild dashboard
   schedule:
     - cron: "*/15 * * * *"
 
-  # Manual trigger from Actions tab
+  # Manual trigger from the Actions tab
   workflow_dispatch:
 
 permissions:
@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   refresh:
-    name: Entra Sync → Threat Audit → Dashboard
+    name: Entra Fetch → Sync → Threat Audit → Dashboard
     runs-on: ubuntu-latest
 
     steps:
@@ -29,7 +29,15 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      # Pull risky users, MFA gaps, device gaps from Entra ID (or CSV fallback)
+      # Fetch real user accounts from Entra ID via Microsoft Graph API
+      - name: Fetch Entra ID users
+        env:
+          ENTRA_TENANT_ID:     ${{ secrets.ENTRA_TENANT_ID }}
+          ENTRA_CLIENT_ID:     ${{ secrets.ENTRA_CLIENT_ID }}
+          ENTRA_CLIENT_SECRET: ${{ secrets.ENTRA_CLIENT_SECRET }}
+        run: python pillar1_identity/generate_personas.py
+
+      # Pull risky users, MFA gaps, and device compliance gaps from Entra ID
       - name: Entra ID sync
         env:
           ENTRA_TENANT_ID:     ${{ secrets.ENTRA_TENANT_ID }}
@@ -37,25 +45,27 @@ jobs:
           ENTRA_CLIENT_SECRET: ${{ secrets.ENTRA_CLIENT_SECRET }}
         run: python shared/entra_sync.py
 
-      # Classify all 500 users into risk tiers using real CSV + Entra signals
+      # Classify users into risk tiers using real Entra signals
       - name: Threat audit
         run: python pillar4_threat/threat_audit.py
 
-      # Rebuild dashboard HTML with latest data
+      # Rebuild dashboard HTML with latest data embedded inline
       - name: Generate dashboard
         run: python dashboard/generate_central_dashboard.py
 
-      # Publish to GitHub Pages
+      # Publish to GitHub Pages (docs/index.html is the Pages source)
       - name: Copy to docs/
         run: |
           mkdir -p docs
           cp data/central_dashboard.html docs/index.html
 
+      # Only commit docs/index.html — raw data files stay off git
       - name: Commit & push
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/index.html data/threat_audit.json data/risky_users.json data/central_dashboard.html
+          git add docs/index.html
           git diff --staged --quiet || \
             git commit -m "chore: 15-min refresh $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git pull --rebase origin main
           git push

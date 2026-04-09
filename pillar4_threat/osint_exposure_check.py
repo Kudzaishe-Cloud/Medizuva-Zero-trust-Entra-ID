@@ -11,10 +11,6 @@ Tools integrated:
   3. LeakCheck                 — breach lookup (email)
   4. Intelligence X (IntelX)   — dark web / paste site scan
 
-Modes:
-  LIVE     — supply API keys via CLI args (see Usage below)
-  SIMULATE — omit all keys; deterministic from RiskScore
-
 Outputs:
   data/osint_results/osint_combined_results.json   <- rich multi-source
   data/osint_results/hibp_results.json             <- legacy (threat_audit.ps1)
@@ -23,6 +19,7 @@ Outputs:
 Usage:
   python osint_exposure_check.py
 
+  # Requires at least one API key. All 4 keys are recommended for full coverage.
   python osint_exposure_check.py \
       --hibp-key YOUR_HIBP_KEY \
       --dehashed-email you@email.com --dehashed-key YOUR_DEHASHED_KEY \
@@ -30,7 +27,7 @@ Usage:
       --intelx-key YOUR_INTELX_KEY
 
   # Test with first 10 personas only:
-  python osint_exposure_check.py --limit 10
+  python osint_exposure_check.py --hibp-key YOUR_KEY --limit 10
 ============================================================
 """
 
@@ -38,7 +35,6 @@ import argparse
 import base64
 import json
 import logging
-import random
 import sys
 import time
 import urllib.parse
@@ -65,14 +61,10 @@ INTELX_SEARCH  = "https://2.intelx.io/intelligent/search"
 INTELX_RESULTS = "https://2.intelx.io/intelligent/search/result"
 USER_AGENT     = "MediZuva-ZeroTrust-OSINT/2.0"
 
-# ── Simulation breach data ────────────────────────────────────
-SIM_BREACHES = {
-    "hibp":      ["LinkedIn", "Adobe", "Dropbox", "MyFitnessPal", "Canva", "Evite", "Chegg", "Zynga"],
-    "dehashed":  ["Collection#1", "AntiPublic", "Exploit.in", "LinkedIn2021", "Deezer"],
-    "leakcheck": ["Wattpad", "Tokopedia", "Gravatar", "MathWay", "Wishbone"],
-    "intelx":    ["PasteBin-2023", "DarkForum-Health", "TelegramLeaks-2024", "RaidForums-Archive"],
-}
-
+# ── Breach category lookup ────────────────────────────────────
+# Maps known breach names returned by real APIs to a category label.
+# Used by aggregate_user() to classify exposure types.
+# Breach names here are real incidents documented in public breach databases.
 BREACH_CATEGORIES = {
     "LinkedIn":             "social_media",
     "LinkedIn2021":         "social_media",
@@ -93,10 +85,10 @@ BREACH_CATEGORIES = {
     "MathWay":              "education",
     "Wishbone":             "social_media",
     "PasteBin-2023":        "paste_site",
-    "DarkForum-Health":     "dark_web",
     "TelegramLeaks-2024":   "messaging_platform",
     "RaidForums-Archive":   "dark_web",
 }
+# Any breach name not in the above dict is labelled "unknown" by aggregate_user().
 
 
 # ══════════════════════════════════════════════════════════════
@@ -173,35 +165,6 @@ def check_hibp_live(email: str, api_key: str, log: logging.Logger) -> dict:
     return {"source": "hibp", "found": False, "breaches": [], "count": 0, "error": "max_retries"}
 
 
-def _emp_seed(row) -> int:
-    """Extract numeric part of EmployeeID (e.g. 'MZ0001' → 1) for RNG seeding."""
-    emp_id = str(row["EmployeeID"])
-    digits = "".join(c for c in emp_id if c.isdigit())
-    return int(digits) if digits else abs(hash(emp_id))
-
-
-def simulate_hibp(row, log: logging.Logger) -> dict:
-    """
-    Deterministic simulation: users with RiskScore > 14 are marked
-    as exposed. Uses EmployeeID seed for reproducibility.
-    """
-    rng = random.Random(_emp_seed(row) * 7)
-    if row["RiskScore"] <= 14:
-        return {"source": "hibp", "found": False, "breaches": [], "count": 0}
-    count = rng.randint(1, 3)
-    names = rng.sample(SIM_BREACHES["hibp"], min(count, len(SIM_BREACHES["hibp"])))
-    breaches = [
-        {
-            "Name":        n,
-            "BreachDate":  f"202{rng.randint(0, 4)}-{rng.randint(1,12):02d}-01",
-            "DataClasses": ["Email addresses", "Passwords"],
-            "IsVerified":  True,
-            "IsSensitive": False,
-        }
-        for n in names
-    ]
-    log.debug(f"HIBP SIM [{row['Email']}] — {names}")
-    return {"source": "hibp", "found": True, "breaches": breaches, "count": len(breaches)}
 
 
 # ══════════════════════════════════════════════════════════════
@@ -250,28 +213,6 @@ def check_dehashed_live(email: str, dh_email: str, dh_key: str, log: logging.Log
         return {"source": "dehashed", "found": False, "records": [], "count": 0, "error": str(e.code)}
 
 
-def simulate_dehashed(row, log: logging.Logger) -> dict:
-    """
-    Simulation: users with RiskScore > 16 appear in credential dumps.
-    DeHashed tends to surface older large-scale aggregated leaks.
-    """
-    rng = random.Random(_emp_seed(row) * 13)
-    if row["RiskScore"] <= 16:
-        return {"source": "dehashed", "found": False, "records": [], "count": 0}
-    count = rng.randint(1, 2)
-    dbs   = rng.sample(SIM_BREACHES["dehashed"], min(count, len(SIM_BREACHES["dehashed"])))
-    records = [
-        {
-            "database_name":   d,
-            "username":        row["Email"].split("@")[0],
-            "password":        "",
-            "hashed_password": f"$2a$10{rng.randint(1000,9999)}simhash",
-            "ip_address":      "",
-        }
-        for d in dbs
-    ]
-    log.debug(f"DeHashed SIM [{row['Email']}] — {dbs}")
-    return {"source": "dehashed", "found": True, "records": records, "count": count, "total_results": count}
 
 
 # ══════════════════════════════════════════════════════════════
@@ -311,26 +252,6 @@ def check_leakcheck_live(email: str, lc_key: str, log: logging.Logger) -> dict:
         return {"source": "leakcheck", "found": False, "sources": [], "count": 0, "error": str(e.code)}
 
 
-def simulate_leakcheck(row, log: logging.Logger) -> dict:
-    """
-    Simulation: users with RiskScore > 15 appear in LeakCheck results.
-    LeakCheck catches a slightly different subset than HIBP.
-    """
-    rng = random.Random(_emp_seed(row) * 17)
-    if row["RiskScore"] <= 15:
-        return {"source": "leakcheck", "found": False, "sources": [], "count": 0}
-    count   = rng.randint(1, 2)
-    names   = rng.sample(SIM_BREACHES["leakcheck"], min(count, len(SIM_BREACHES["leakcheck"])))
-    sources = [
-        {
-            "source_name": n,
-            "date":        f"202{rng.randint(0, 4)}-{rng.randint(1,12):02d}",
-            "entries":     ["email", "password"],
-        }
-        for n in names
-    ]
-    log.debug(f"LeakCheck SIM [{row['Email']}] — {names}")
-    return {"source": "leakcheck", "found": True, "sources": sources, "count": count}
 
 
 # ══════════════════════════════════════════════════════════════
@@ -410,26 +331,6 @@ def check_intelx_live(email: str, ix_key: str, log: logging.Logger) -> dict:
         return {"source": "intelx", "found": False, "hits": [], "count": 0, "error": str(e.code)}
 
 
-def simulate_intelx(row, log: logging.Logger) -> dict:
-    """
-    Simulation: only the highest-risk users (RiskScore > 18) appear
-    on dark web / paste sites — reflecting realistic rarity of this exposure.
-    """
-    rng = random.Random(_emp_seed(row) * 19)
-    if row["RiskScore"] <= 18:
-        return {"source": "intelx", "found": False, "hits": [], "count": 0}
-    names = rng.sample(SIM_BREACHES["intelx"], 1)
-    hits = [
-        {
-            "name":   n,
-            "date":   f"202{rng.randint(2, 4)}-{rng.randint(1,12):02d}-01",
-            "bucket": "pastes",
-            "media":  1,
-        }
-        for n in names
-    ]
-    log.debug(f"IntelX SIM [{row['Email']}] — {names}")
-    return {"source": "intelx", "found": True, "hits": hits, "count": len(hits)}
 
 
 # ══════════════════════════════════════════════════════════════
@@ -709,15 +610,23 @@ def main():
     live_dehashed  = bool(args.dehashed_email and args.dehashed_key)
     live_leakcheck = bool(args.leakcheck_key)
     live_intelx    = bool(args.intelx_key)
-    any_live       = any([live_hibp, live_dehashed, live_leakcheck, live_intelx])
+
+    if not any([live_hibp, live_dehashed, live_leakcheck, live_intelx]):
+        print("[ERROR] No API keys provided. At least one OSINT source key is required.")
+        print("  --hibp-key        HIBP v3 API key (haveibeenpwned.com/API/v3)")
+        print("  --dehashed-email + --dehashed-key  (dehashed.com/api)")
+        print("  --leakcheck-key   LeakCheck v2 API key (leakcheck.io/api)")
+        print("  --intelx-key      Intelligence X API key (intelx.io)")
+        print("\nSet these as environment variables or CI/CD secrets.")
+        sys.exit(1)
 
     log = setup_logger()
     log.info("=" * 60)
-    log.info(" MediZuva — Multi-Source OSINT Check (Pillar 4 v2)")
-    log.info(f" HIBP      : {'LIVE' if live_hibp      else 'SIMULATE'}")
-    log.info(f" DeHashed  : {'LIVE' if live_dehashed  else 'SIMULATE'}")
-    log.info(f" LeakCheck : {'LIVE' if live_leakcheck else 'SIMULATE'}")
-    log.info(f" IntelX    : {'LIVE' if live_intelx    else 'SIMULATE'}")
+    log.info(" MediZuva — Multi-Source OSINT Check (Pillar 4)")
+    log.info(f" HIBP      : {'LIVE' if live_hibp      else 'NOT CONFIGURED'}")
+    log.info(f" DeHashed  : {'LIVE' if live_dehashed  else 'NOT CONFIGURED'}")
+    log.info(f" LeakCheck : {'LIVE' if live_leakcheck else 'NOT CONFIGURED'}")
+    log.info(f" IntelX    : {'LIVE' if live_intelx    else 'NOT CONFIGURED'}")
     log.info("=" * 60)
 
     df = pd.read_csv(PERSONAS_CSV)
@@ -734,23 +643,32 @@ def main():
         email = row["Email"]
 
         # ── HIBP ──────────────────────────────────────────────
-        hibp = check_hibp_live(email, args.hibp_key, log) if live_hibp else simulate_hibp(row, log)
         if live_hibp:
+            hibp = check_hibp_live(email, args.hibp_key, log)
             time.sleep(1.6)   # HIBP enforces 1 req/1.5s
+        else:
+            hibp = {"source": "hibp", "found": False, "breaches": [], "count": 0, "skipped": True}
 
         # ── DeHashed ──────────────────────────────────────────
-        dehashed = check_dehashed_live(email, args.dehashed_email, args.dehashed_key, log) if live_dehashed else simulate_dehashed(row, log)
         if live_dehashed:
+            dehashed = check_dehashed_live(email, args.dehashed_email, args.dehashed_key, log)
             time.sleep(1.0)
+        else:
+            dehashed = {"source": "dehashed", "found": False, "records": [], "count": 0, "skipped": True}
 
         # ── LeakCheck ─────────────────────────────────────────
-        leakcheck = check_leakcheck_live(email, args.leakcheck_key, log) if live_leakcheck else simulate_leakcheck(row, log)
         if live_leakcheck:
+            leakcheck = check_leakcheck_live(email, args.leakcheck_key, log)
             time.sleep(1.0)
+        else:
+            leakcheck = {"source": "leakcheck", "found": False, "sources": [], "count": 0, "skipped": True}
 
         # ── IntelX ────────────────────────────────────────────
-        intelx = check_intelx_live(email, args.intelx_key, log) if live_intelx else simulate_intelx(row, log)
-        # IntelX has its own 3s internal wait in the live function
+        # IntelX live function has its own 3s internal wait
+        if live_intelx:
+            intelx = check_intelx_live(email, args.intelx_key, log)
+        else:
+            intelx = {"source": "intelx", "found": False, "hits": [], "count": 0, "skipped": True}
 
         user = aggregate_user(row, hibp, dehashed, leakcheck, intelx)
         results.append(user)
@@ -789,12 +707,12 @@ def main():
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     combined = {
         "ScanDate":           datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        "Mode":               "live" if any_live else "simulated",
+        "Mode":               "live",
         "Sources": {
-            "HIBP":      "live" if live_hibp      else "simulated",
-            "DeHashed":  "live" if live_dehashed  else "simulated",
-            "LeakCheck": "live" if live_leakcheck else "simulated",
-            "IntelX":    "live" if live_intelx    else "simulated",
+            "HIBP":      "live" if live_hibp      else "not_configured",
+            "DeHashed":  "live" if live_dehashed  else "not_configured",
+            "LeakCheck": "live" if live_leakcheck else "not_configured",
+            "IntelX":    "live" if live_intelx    else "not_configured",
         },
         "TotalChecked":       total,
         "ExposedCount":       exposed_count,
@@ -807,7 +725,7 @@ def main():
     # ── Legacy hibp_results.json (keeps threat_audit.ps1 working) ──
     legacy = {
         "CheckDate":    datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        "Mode":         "live" if live_hibp else "simulated",
+        "Mode":         "live" if live_hibp else "not_configured",
         "TotalChecked": total,
         "ExposedCount": exposed_count,
         "CleanCount":   total - exposed_count,

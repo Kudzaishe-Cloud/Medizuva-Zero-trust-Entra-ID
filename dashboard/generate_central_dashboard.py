@@ -965,7 +965,7 @@ tbody td{{padding:11px 16px;vertical-align:middle}}
           </div>
         </div>
         <span class="badge" style="background:#a855f720;color:#c084fc;border:1px solid #a855f740">
-          {(osint or {{}}).get('Mode','simulated').upper()}
+          {(osint or {{}}).get('Mode','—').upper()}
         </span>
       </div>
 
