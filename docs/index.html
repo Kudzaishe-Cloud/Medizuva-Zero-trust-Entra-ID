@@ -53,11 +53,11 @@ body{
 .overall-badge{
   display:inline-flex;align-items:center;gap:6px;margin-top:10px;
   padding:5px 12px;border-radius:6px;font-size:11px;font-weight:700;
-  background:#ef444418;color:#ef4444;border:1px solid #ef444444;
+  background:#3b82f618;color:#3b82f6;border:1px solid #3b82f644;
 }
 .overall-badge .pulse{
-  width:6px;height:6px;border-radius:50%;background:#ef4444;
-  animation:pulse 1.5s infinite;
+  width:6px;height:6px;border-radius:50%;background:#3b82f6;
+  
 }
 .main{flex:1;display:flex;flex-direction:column;height:100vh;overflow:hidden}
 .topbar{
@@ -217,14 +217,14 @@ tbody td{padding:11px 16px;vertical-align:middle}
         <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
       </svg>
       <span class="nav-label">P2 · Access</span>
-      <div class="nav-dot" style="color:#f59e0b"></div>
+      <div class="nav-dot" style="color:#6b7280"></div>
     </div>
     <div class="nav-item" onclick="show('p3')" id="nav-p3">
       <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
       </svg>
       <span class="nav-label">P3 · PIM</span>
-      <div class="nav-dot" style="color:#10b981"></div>
+      <div class="nav-dot" style="color:#6b7280"></div>
     </div>
     <div class="nav-item" onclick="show('p4')" id="nav-p4">
       <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -232,7 +232,7 @@ tbody td{padding:11px 16px;vertical-align:middle}
         <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
       </svg>
       <span class="nav-label">P4 · Threat</span>
-      <div class="nav-dot" style="color:#ef4444;animation:pulse 1.2s infinite;"></div>
+      <div class="nav-dot" style="color:#10b981;"></div>
     </div>
     <div class="nav-item" onclick="show('osint')" id="nav-osint">
       <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -247,7 +247,7 @@ tbody td{padding:11px 16px;vertical-align:middle}
         <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
       </svg>
       <span class="nav-label">NIST SP 800</span>
-      <div class="nav-dot" style="color:#10b981"></div>
+      <div class="nav-dot" style="color:#ef4444"></div>
     </div>
     <div class="nav-item" onclick="show('logs')" id="nav-logs">
       <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -266,7 +266,7 @@ tbody td{padding:11px 16px;vertical-align:middle}
     </div>
     <div class="overall-badge">
       <div class="pulse"></div>
-      AT RISK
+      IN PROGRESS
     </div>
   </div>
 </aside>
@@ -278,7 +278,7 @@ tbody td{padding:11px 16px;vertical-align:middle}
   <header class="topbar">
     <div>
       <div class="topbar-title">Security Operations Centre</div>
-      <div class="topbar-meta">Generated 2026-04-09 04:56:46</div>
+      <div class="topbar-meta">Generated 2026-04-09 05:27:44</div>
     </div>
     <div class="topbar-kpis">
       <div class="kpi">
@@ -316,10 +316,10 @@ tbody td{padding:11px 16px;vertical-align:middle}
           <div class="panel-title">Security Overview</div>
           <div class="panel-sub">All pillars · OSINT · Predictions at a glance</div>
         </div>
-        <span class="badge" style="background:#ef444420;color:#ef4444;border:1px solid #ef444440">AT RISK</span>
+        <span class="badge" style="background:#3b82f620;color:#3b82f6;border:1px solid #3b82f640">IN PROGRESS</span>
       </div>
 
-      <div class="alert-banner"><div class="alert-dot"></div><div class="alert-text"><strong>ACTIVE THREAT DETECTED</strong> — 19 CRITICAL · 222 HIGH risk users · 116 dark web credential exposures. Immediate action required.</div></div>
+      
 
       <!-- Pillar summary grid -->
       <div class="pillar-grid">
@@ -329,42 +329,42 @@ tbody td{padding:11px 16px;vertical-align:middle}
           <div class="pillar-card-num">Pillar 01</div>
           <div class="pillar-card-title">Identity &amp; Provisioning</div>
           <div class="pillar-card-stats">
-            <div class="pcs"><div class="pcs-val" style="color:var(--green)">500</div><div class="pcs-label">Provisioned</div></div>
-            <div class="pcs"><div class="pcs-val" style="color:var(--cyan)">88.8%</div><div class="pcs-label">MFA Ready</div></div>
-            <div class="pcs"><div class="pcs-val" style="color:var(--amber)">68.8%</div><div class="pcs-label">Compliant Dev.</div></div>
+            <div class="pcs"><div class="pcs-val" style="color:var(--green)">535</div><div class="pcs-label">Provisioned</div></div>
+            <div class="pcs"><div class="pcs-val" style="color:var(--cyan)">100.0%</div><div class="pcs-label">MFA Ready</div></div>
+            <div class="pcs"><div class="pcs-val" style="color:var(--amber)">100.0%</div><div class="pcs-label">Compliant Dev.</div></div>
           </div>
         </div>
         <div class="pillar-card" onclick="show('p2')">
-          <div class="pc-bg" style="background:#f59e0b"></div>
-          <div class="pillar-posture" style="background:#f59e0b20;color:#f59e0b;border:1px solid #f59e0b40">PARTIAL</div>
+          <div class="pc-bg" style="background:#6b7280"></div>
+          <div class="pillar-posture" style="background:#6b728020;color:#6b7280;border:1px solid #6b728040">NOT STARTED</div>
           <div class="pillar-card-num">Pillar 02</div>
           <div class="pillar-card-title">Conditional Access</div>
           <div class="pillar-card-stats">
             <div class="pcs"><div class="pcs-val" style="color:var(--green)">0</div><div class="pcs-label">Enforced</div></div>
-            <div class="pcs"><div class="pcs-val" style="color:var(--amber)">6</div><div class="pcs-label">Report-Only</div></div>
-            <div class="pcs"><div class="pcs-val" style="color:var(--cyan)">6</div><div class="pcs-label">Policies</div></div>
+            <div class="pcs"><div class="pcs-val" style="color:var(--amber)">0</div><div class="pcs-label">Report-Only</div></div>
+            <div class="pcs"><div class="pcs-val" style="color:var(--cyan)">0</div><div class="pcs-label">Policies</div></div>
           </div>
         </div>
         <div class="pillar-card" onclick="show('p3')">
-          <div class="pc-bg" style="background:#10b981"></div>
-          <div class="pillar-posture" style="background:#10b98120;color:#10b981;border:1px solid #10b98140">COMPLIANT</div>
+          <div class="pc-bg" style="background:#6b7280"></div>
+          <div class="pillar-posture" style="background:#6b728020;color:#6b7280;border:1px solid #6b728040">NOT STARTED</div>
           <div class="pillar-card-num">Pillar 03</div>
           <div class="pillar-card-title">Privileged Identity (PIM)</div>
           <div class="pillar-card-stats">
-            <div class="pcs"><div class="pcs-val" style="color:var(--blue)">45</div><div class="pcs-label">Eligible JIT</div></div>
+            <div class="pcs"><div class="pcs-val" style="color:var(--blue)">0</div><div class="pcs-label">Eligible JIT</div></div>
             <div class="pcs"><div class="pcs-val" style="color:var(--amber)">0</div><div class="pcs-label">Active Now</div></div>
             <div class="pcs"><div class="pcs-val" style="color:var(--green)">6</div><div class="pcs-label">Roles Covered</div></div>
           </div>
         </div>
         <div class="pillar-card" onclick="show('p4')">
-          <div class="pc-bg" style="background:#ef4444"></div>
-          <div class="pillar-posture" style="background:#ef444420;color:#ef4444;border:1px solid #ef444440">AT RISK</div>
+          <div class="pc-bg" style="background:#10b981"></div>
+          <div class="pillar-posture" style="background:#10b98120;color:#10b981;border:1px solid #10b98140">COMPLIANT</div>
           <div class="pillar-card-num">Pillar 04</div>
           <div class="pillar-card-title">Threat Detection</div>
           <div class="pillar-card-stats">
-            <div class="pcs"><div class="pcs-val" style="color:var(--red)">19</div><div class="pcs-label">Critical</div></div>
-            <div class="pcs"><div class="pcs-val" style="color:var(--amber)">222</div><div class="pcs-label">High</div></div>
-            <div class="pcs"><div class="pcs-val" style="color:var(--purple)">116</div><div class="pcs-label">Dark Web</div></div>
+            <div class="pcs"><div class="pcs-val" style="color:var(--red)">0</div><div class="pcs-label">Critical</div></div>
+            <div class="pcs"><div class="pcs-val" style="color:var(--amber)">0</div><div class="pcs-label">High</div></div>
+            <div class="pcs"><div class="pcs-val" style="color:var(--purple)">0</div><div class="pcs-label">Dark Web</div></div>
           </div>
         </div>
       </div>
@@ -407,23 +407,23 @@ tbody td{padding:11px 16px;vertical-align:middle}
       </div>
       <div class="cards">
         <div class="card" style="--accent-color:var(--green)">
-          <div class="card-val counter" data-target="500">0</div>
+          <div class="card-val counter" data-target="535">0</div>
           <div class="card-label">Total Users</div><div class="card-sub">Provisioned in Entra ID</div>
           <div class="card-glow"></div>
         </div>
         <div class="card" style="--accent-color:var(--green)">
-          <div class="card-val counter" data-target="500">0</div>
+          <div class="card-val counter" data-target="535">0</div>
           <div class="card-label">Provisioned OK</div><div class="card-sub">100% success rate</div>
           <div class="card-glow"></div>
         </div>
         <div class="card" style="--accent-color:var(--cyan)">
-          <div class="card-val">88.8%</div>
-          <div class="card-label">MFA Registered</div><div class="card-sub">444 of 500 users</div>
+          <div class="card-val">100.0%</div>
+          <div class="card-label">MFA Registered</div><div class="card-sub">535 of 535 users</div>
           <div class="card-glow"></div>
         </div>
         <div class="card" style="--accent-color:var(--amber)">
-          <div class="card-val">68.8%</div>
-          <div class="card-label">Device Compliant</div><div class="card-sub">344 of 500 devices</div>
+          <div class="card-val">100.0%</div>
+          <div class="card-label">Device Compliant</div><div class="card-sub">535 of 535 devices</div>
           <div class="card-glow"></div>
         </div>
         <div class="card" style="--accent-color:var(--purple)">
@@ -456,9 +456,9 @@ tbody td{padding:11px 16px;vertical-align:middle}
       <div class="panel-header">
         <div>
           <div class="panel-title">Pillar 2 — Conditional Access</div>
-          <div class="panel-sub">6 CA policies · Tenant: micrlabs.onmicrosoft.com · Audited: 2026-04-01 16:02:52</div>
+          <div class="panel-sub">6 CA policies · Tenant: micrlabs.onmicrosoft.com · Audited: —</div>
         </div>
-        <span class="badge" style="background:#f59e0b20;color:#f59e0b;border:1px solid #f59e0b40">PARTIAL</span>
+        <span class="badge" style="background:#6b728020;color:#6b7280;border:1px solid #6b728040">NOT STARTED</span>
       </div>
       <div class="cards">
         <div class="card" style="--accent-color:var(--green)">
@@ -466,7 +466,7 @@ tbody td{padding:11px 16px;vertical-align:middle}
           <div class="card-label">Enforced</div><div class="card-sub">Active policies</div><div class="card-glow"></div>
         </div>
         <div class="card" style="--accent-color:var(--amber)">
-          <div class="card-val counter" data-target="6">0</div>
+          <div class="card-val counter" data-target="0">0</div>
           <div class="card-label">Report-Only</div><div class="card-sub">Monitoring mode</div><div class="card-glow"></div>
         </div>
         <div class="card" style="--accent-color:var(--red)">
@@ -482,7 +482,7 @@ tbody td{padding:11px 16px;vertical-align:middle}
           <div class="card-label">Coverage</div><div class="card-sub">Enforced policies</div><div class="card-glow"></div>
         </div>
         <div class="card" style="--accent-color:var(--blue)">
-          <div class="card-val counter" data-target="537">0</div>
+          <div class="card-val counter" data-target="500">0</div>
           <div class="card-label">Users in Scope</div><div class="card-sub">Under CA policy</div><div class="card-glow"></div>
         </div>
       </div>
@@ -497,16 +497,10 @@ tbody td{padding:11px 16px;vertical-align:middle}
         </div>
       </div>
       <div class="tbl-box">
-        <div class="tbl-head"><span>All Conditional Access Policies</span><span>6 policies</span></div>
+        <div class="tbl-head"><span>All Conditional Access Policies</span><span>0 policies</span></div>
         <table>
           <thead><tr><th>Policy Name</th><th>State</th><th>Last Modified</th></tr></thead>
-          <tbody><tr><td class='mono'>MZV-CA001-RequireMFA-AllUsers</td><td><span class="badge b-amber">REPORT ONLY</span></td><td class='muted'>—</td></tr>
-<tr><td class='mono'>MZV-CA002-BlockLegacyAuth</td><td><span class="badge b-amber">REPORT ONLY</span></td><td class='muted'>2026-04-01T20:02:35.6780876Z</td></tr>
-<tr><td class='mono'>MZV-CA003-RequireCompliantDevice-Clinical</td><td><span class="badge b-amber">REPORT ONLY</span></td><td class='muted'>—</td></tr>
-<tr><td class='mono'>MZV-CA004-BlockHighRiskSignin</td><td><span class="badge b-amber">REPORT ONLY</span></td><td class='muted'>—</td></tr>
-<tr><td class='mono'>MZV-CA005-RequireMFAAndDevice-Admins</td><td><span class="badge b-amber">REPORT ONLY</span></td><td class='muted'>—</td></tr>
-<tr><td class='mono'>MZV-CA006-SessionControl-8h</td><td><span class="badge b-amber">REPORT ONLY</span></td><td class='muted'>—</td></tr>
-</tbody>
+          <tbody></tbody>
         </table>
       </div>
     </section>
@@ -518,13 +512,13 @@ tbody td{padding:11px 16px;vertical-align:middle}
       <div class="panel-header">
         <div>
           <div class="panel-title">Pillar 3 — Privileged Identity Management</div>
-          <div class="panel-sub">Just-in-time access · Tenant: micrlabs.onmicrosoft.com · Audited: 2026-04-01 23:30:00</div>
+          <div class="panel-sub">Just-in-time access · Tenant: micrlabs.onmicrosoft.com · Audited: —</div>
         </div>
-        <span class="badge" style="background:#10b98120;color:#10b981;border:1px solid #10b98140">COMPLIANT</span>
+        <span class="badge" style="background:#6b728020;color:#6b7280;border:1px solid #6b728040">NOT STARTED</span>
       </div>
       <div class="cards">
         <div class="card" style="--accent-color:var(--blue)">
-          <div class="card-val counter" data-target="45">0</div>
+          <div class="card-val counter" data-target="0">0</div>
           <div class="card-label">Eligible (JIT)</div><div class="card-sub">Awaiting activation</div><div class="card-glow"></div>
         </div>
         <div class="card" style="--accent-color:var(--amber)">
@@ -551,40 +545,10 @@ tbody td{padding:11px 16px;vertical-align:middle}
         </div>
       </div>
       <div class="tbl-box">
-        <div class="tbl-head"><span>Eligible PIM Assignments</span><span>45 assignments</span></div>
+        <div class="tbl-head"><span>Eligible PIM Assignments</span><span>0 assignments</span></div>
         <table>
           <thead><tr><th>User</th><th>Role</th><th>Expiry</th></tr></thead>
-          <tbody><tr><td class='mono'>Lungelo Tembo</td><td><span class='pill pill-purple'>Helpdesk Administrator</span></td><td class='muted'>No expiry</td></tr>
-<tr><td class='mono'>Farai Sithole</td><td><span class='pill pill-purple'>Helpdesk Administrator</span></td><td class='muted'>No expiry</td></tr>
-<tr><td class='mono'>Nkosi Gumbo</td><td><span class='pill pill-purple'>Helpdesk Administrator</span></td><td class='muted'>No expiry</td></tr>
-<tr><td class='mono'>Nomvula Mpofu</td><td><span class='pill pill-purple'>Reports Reader</span></td><td class='muted'>No expiry</td></tr>
-<tr><td class='mono'>Nompilo Sithole</td><td><span class='pill pill-purple'>Helpdesk Administrator</span></td><td class='muted'>No expiry</td></tr>
-<tr><td class='mono'>Tsitsi Ncube</td><td><span class='pill pill-purple'>Reports Reader</span></td><td class='muted'>No expiry</td></tr>
-<tr><td class='mono'>Zanele Zimba</td><td><span class='pill pill-purple'>User Administrator</span></td><td class='muted'>No expiry</td></tr>
-<tr><td class='mono'>Zanele Zimba</td><td><span class='pill pill-purple'>Privileged Role Administrator</span></td><td class='muted'>No expiry</td></tr>
-<tr><td class='mono'>Sibusiso Zimba</td><td><span class='pill pill-purple'>Reports Reader</span></td><td class='muted'>No expiry</td></tr>
-<tr><td class='mono'>Bongani Moyo</td><td><span class='pill pill-purple'>Reports Reader</span></td><td class='muted'>No expiry</td></tr>
-<tr><td class='mono'>Sifiso Mutasa</td><td><span class='pill pill-purple'>Helpdesk Administrator</span></td><td class='muted'>No expiry</td></tr>
-<tr><td class='mono'>Sifiso Nkomo</td><td><span class='pill pill-purple'>Security Administrator</span></td><td class='muted'>No expiry</td></tr>
-<tr><td class='mono'>Sifiso Nkomo</td><td><span class='pill pill-purple'>Security Reader</span></td><td class='muted'>No expiry</td></tr>
-<tr><td class='mono'>Lungelo Nkomo</td><td><span class='pill pill-purple'>Security Administrator</span></td><td class='muted'>No expiry</td></tr>
-<tr><td class='mono'>Lungelo Nkomo</td><td><span class='pill pill-purple'>Security Reader</span></td><td class='muted'>No expiry</td></tr>
-<tr><td class='mono'>Tinashe Phiri</td><td><span class='pill pill-purple'>Helpdesk Administrator</span></td><td class='muted'>No expiry</td></tr>
-<tr><td class='mono'>Farai Banda</td><td><span class='pill pill-purple'>User Administrator</span></td><td class='muted'>No expiry</td></tr>
-<tr><td class='mono'>Farai Banda</td><td><span class='pill pill-purple'>Privileged Role Administrator</span></td><td class='muted'>No expiry</td></tr>
-<tr><td class='mono'>Zanele Chikwanda</td><td><span class='pill pill-purple'>Reports Reader</span></td><td class='muted'>No expiry</td></tr>
-<tr><td class='mono'>Bongani Moyo</td><td><span class='pill pill-purple'>Helpdesk Administrator</span></td><td class='muted'>No expiry</td></tr>
-<tr><td class='mono'>Chiedza Chikwanda</td><td><span class='pill pill-purple'>User Administrator</span></td><td class='muted'>No expiry</td></tr>
-<tr><td class='mono'>Chiedza Chikwanda</td><td><span class='pill pill-purple'>Privileged Role Administrator</span></td><td class='muted'>No expiry</td></tr>
-<tr><td class='mono'>Simba Chikwanda</td><td><span class='pill pill-purple'>User Administrator</span></td><td class='muted'>No expiry</td></tr>
-<tr><td class='mono'>Simba Chikwanda</td><td><span class='pill pill-purple'>Privileged Role Administrator</span></td><td class='muted'>No expiry</td></tr>
-<tr><td class='mono'>Sifiso Sithole</td><td><span class='pill pill-purple'>Helpdesk Administrator</span></td><td class='muted'>No expiry</td></tr>
-<tr><td class='mono'>Zanele Mhlanga</td><td><span class='pill pill-purple'>User Administrator</span></td><td class='muted'>No expiry</td></tr>
-<tr><td class='mono'>Zanele Mhlanga</td><td><span class='pill pill-purple'>Privileged Role Administrator</span></td><td class='muted'>No expiry</td></tr>
-<tr><td class='mono'>Nompilo Gumbo</td><td><span class='pill pill-purple'>Security Administrator</span></td><td class='muted'>No expiry</td></tr>
-<tr><td class='mono'>Nompilo Gumbo</td><td><span class='pill pill-purple'>Security Reader</span></td><td class='muted'>No expiry</td></tr>
-<tr><td class='mono'>Takudzwa Zimba</td><td><span class='pill pill-purple'>Helpdesk Administrator</span></td><td class='muted'>No expiry</td></tr>
-</tbody>
+          <tbody></tbody>
         </table>
       </div>
     </section>
@@ -596,33 +560,33 @@ tbody td{padding:11px 16px;vertical-align:middle}
       <div class="panel-header">
         <div>
           <div class="panel-title">Pillar 4 — Threat Detection</div>
-          <div class="panel-sub">Risk classification · Signal aggregation · Audited: 2026-04-09 04:56:46</div>
+          <div class="panel-sub">Risk classification · Signal aggregation · Audited: 2026-04-09 05:27:44</div>
         </div>
-        <span class="badge" style="background:#ef444420;color:#ef4444;border:1px solid #ef444440">AT RISK</span>
+        <span class="badge" style="background:#10b98120;color:#10b981;border:1px solid #10b98140">COMPLIANT</span>
       </div>
       <div class="cards">
         <div class="card" style="--accent-color:var(--red)">
-          <div class="card-val counter" data-target="19">0</div>
+          <div class="card-val counter" data-target="0">0</div>
           <div class="card-label">Critical</div><div class="card-sub">Immediate action needed</div><div class="card-glow"></div>
         </div>
         <div class="card" style="--accent-color:var(--amber)">
-          <div class="card-val counter" data-target="222">0</div>
+          <div class="card-val counter" data-target="0">0</div>
           <div class="card-label">High</div><div class="card-sub">Priority remediation</div><div class="card-glow"></div>
         </div>
         <div class="card" style="--accent-color:var(--blue)">
-          <div class="card-val counter" data-target="71">0</div>
+          <div class="card-val counter" data-target="0">0</div>
           <div class="card-label">Medium</div><div class="card-sub">Monitor closely</div><div class="card-glow"></div>
         </div>
         <div class="card" style="--accent-color:var(--green)">
-          <div class="card-val counter" data-target="188">0</div>
+          <div class="card-val counter" data-target="535">0</div>
           <div class="card-label">Low</div><div class="card-sub">No active signals</div><div class="card-glow"></div>
         </div>
         <div class="card" style="--accent-color:var(--amber)">
-          <div class="card-val counter" data-target="56">0</div>
+          <div class="card-val counter" data-target="0">0</div>
           <div class="card-label">MFA Gaps</div><div class="card-sub">Unregistered users</div><div class="card-glow"></div>
         </div>
         <div class="card" style="--accent-color:var(--red)">
-          <div class="card-val counter" data-target="156">0</div>
+          <div class="card-val counter" data-target="0">0</div>
           <div class="card-label">Device Gaps</div><div class="card-sub">Non-compliant devices</div><div class="card-glow"></div>
         </div>
       </div>
@@ -639,51 +603,11 @@ tbody td{padding:11px 16px;vertical-align:middle}
       <div class="tbl-box">
         <div class="tbl-head">
           <span>Critical &amp; High Risk Users</span>
-          <span>241 users flagged</span>
+          <span>0 users flagged</span>
         </div>
         <table>
           <thead><tr><th>Name</th><th>Department</th><th>Job Title</th><th>Tier</th><th>Signals</th></tr></thead>
-          <tbody><tr><td class='mono'>Tinashe Phiri</td><td class='muted'>Clinical</td><td class='muted'>Doctor</td><td><span class="badge b-amber">HIGH</span></td><td class='muted sig'>OSINT-Exposed, HighRiskScore(18)</td></tr>
-<tr><td class='mono'>Kudzai Zimba</td><td class='muted'>Clinical</td><td class='muted'>Doctor</td><td><span class="badge b-amber">HIGH</span></td><td class='muted sig'>OSINT-Exposed</td></tr>
-<tr><td class='mono'>Thandi Nkomo</td><td class='muted'>Clinical</td><td class='muted'>Lab Technician</td><td><span class="badge b-amber">HIGH</span></td><td class='muted sig'>OSINT-Exposed, HighRiskScore(17)</td></tr>
-<tr><td class='mono'>Kudzai Ncube</td><td class='muted'>Clinical</td><td class='muted'>Lab Technician</td><td><span class="badge b-amber">HIGH</span></td><td class='muted sig'>No-MFA, Non-Compliant-Device</td></tr>
-<tr><td class='mono'>Tatenda Nkomo</td><td class='muted'>Clinical</td><td class='muted'>Doctor</td><td><span class="badge b-amber">HIGH</span></td><td class='muted sig'>OSINT-Exposed</td></tr>
-<tr><td class='mono'>Rudo Dube</td><td class='muted'>Clinical</td><td class='muted'>Radiologist</td><td><span class="badge b-amber">HIGH</span></td><td class='muted sig'>Non-Compliant-Device, OSINT-Exposed, HighRiskScore(18)</td></tr>
-<tr><td class='mono'>Tendai Banda</td><td class='muted'>Clinical</td><td class='muted'>Nurse</td><td><span class="badge b-red">CRITICAL</span></td><td class='muted sig'>No-MFA, Non-Compliant-Device, OSINT-Exposed, HighRiskScore(18)</td></tr>
-<tr><td class='mono'>Tsitsi Mpofu</td><td class='muted'>Clinical</td><td class='muted'>Doctor</td><td><span class="badge b-amber">HIGH</span></td><td class='muted sig'>No-MFA, Non-Compliant-Device</td></tr>
-<tr><td class='mono'>Rudo Chirwa</td><td class='muted'>Clinical</td><td class='muted'>Doctor</td><td><span class="badge b-amber">HIGH</span></td><td class='muted sig'>OSINT-Exposed, HighRiskScore(20)</td></tr>
-<tr><td class='mono'>Chiedza Ncube</td><td class='muted'>Clinical</td><td class='muted'>Radiologist</td><td><span class="badge b-amber">HIGH</span></td><td class='muted sig'>No-MFA</td></tr>
-<tr><td class='mono'>Nompilo Mpofu</td><td class='muted'>Clinical</td><td class='muted'>Nurse</td><td><span class="badge b-amber">HIGH</span></td><td class='muted sig'>No-MFA</td></tr>
-<tr><td class='mono'>Nompilo Chikwanda</td><td class='muted'>Clinical</td><td class='muted'>Radiologist</td><td><span class="badge b-amber">HIGH</span></td><td class='muted sig'>OSINT-Exposed, HighRiskScore(20)</td></tr>
-<tr><td class='mono'>Takudzwa Gumbo</td><td class='muted'>Clinical</td><td class='muted'>Lab Technician</td><td><span class="badge b-amber">HIGH</span></td><td class='muted sig'>Non-Compliant-Device, OSINT-Exposed, HighRiskScore(19)</td></tr>
-<tr><td class='mono'>Tatenda Mutasa</td><td class='muted'>Clinical</td><td class='muted'>Lab Technician</td><td><span class="badge b-amber">HIGH</span></td><td class='muted sig'>OSINT-Exposed, HighRiskScore(19)</td></tr>
-<tr><td class='mono'>Chiedza Gumbo</td><td class='muted'>Clinical</td><td class='muted'>Doctor</td><td><span class="badge b-amber">HIGH</span></td><td class='muted sig'>OSINT-Exposed, HighRiskScore(16)</td></tr>
-<tr><td class='mono'>Rudo Mutasa</td><td class='muted'>Clinical</td><td class='muted'>Nurse</td><td><span class="badge b-amber">HIGH</span></td><td class='muted sig'>OSINT-Exposed, HighRiskScore(16)</td></tr>
-<tr><td class='mono'>Zanele Gumbo</td><td class='muted'>Clinical</td><td class='muted'>Doctor</td><td><span class="badge b-amber">HIGH</span></td><td class='muted sig'>No-MFA, Non-Compliant-Device</td></tr>
-<tr><td class='mono'>Nkosi Mhlanga</td><td class='muted'>Clinical</td><td class='muted'>Doctor</td><td><span class="badge b-amber">HIGH</span></td><td class='muted sig'>OSINT-Exposed, HighRiskScore(16)</td></tr>
-<tr><td class='mono'>Takudzwa Zimba</td><td class='muted'>Clinical</td><td class='muted'>Doctor</td><td><span class="badge b-amber">HIGH</span></td><td class='muted sig'>OSINT-Exposed</td></tr>
-<tr><td class='mono'>Sifiso Mutasa</td><td class='muted'>Clinical</td><td class='muted'>Lab Technician</td><td><span class="badge b-amber">HIGH</span></td><td class='muted sig'>OSINT-Exposed, HighRiskScore(18)</td></tr>
-<tr><td class='mono'>Sifiso Phiri</td><td class='muted'>Clinical</td><td class='muted'>Nurse</td><td><span class="badge b-amber">HIGH</span></td><td class='muted sig'>OSINT-Exposed</td></tr>
-<tr><td class='mono'>Nomvula Chirwa</td><td class='muted'>Clinical</td><td class='muted'>Nurse</td><td><span class="badge b-red">CRITICAL</span></td><td class='muted sig'>No-MFA, OSINT-Exposed</td></tr>
-<tr><td class='mono'>Bongani Nkomo</td><td class='muted'>Clinical</td><td class='muted'>Nurse</td><td><span class="badge b-amber">HIGH</span></td><td class='muted sig'>OSINT-Exposed, HighRiskScore(20)</td></tr>
-<tr><td class='mono'>Bongani Tembo</td><td class='muted'>Clinical</td><td class='muted'>Radiologist</td><td><span class="badge b-amber">HIGH</span></td><td class='muted sig'>No-MFA, Non-Compliant-Device</td></tr>
-<tr><td class='mono'>Zanele Phiri</td><td class='muted'>Clinical</td><td class='muted'>Nurse</td><td><span class="badge b-amber">HIGH</span></td><td class='muted sig'>Non-Compliant-Device, OSINT-Exposed, HighRiskScore(18)</td></tr>
-<tr><td class='mono'>Nompilo Chikwanda</td><td class='muted'>Clinical</td><td class='muted'>Nurse</td><td><span class="badge b-amber">HIGH</span></td><td class='muted sig'>OSINT-Exposed, HighRiskScore(20)</td></tr>
-<tr><td class='mono'>Munyaradzi Zimba</td><td class='muted'>Clinical</td><td class='muted'>Nurse</td><td><span class="badge b-amber">HIGH</span></td><td class='muted sig'>OSINT-Exposed, HighRiskScore(18)</td></tr>
-<tr><td class='mono'>Nompilo Moyo</td><td class='muted'>Clinical</td><td class='muted'>Doctor</td><td><span class="badge b-amber">HIGH</span></td><td class='muted sig'>OSINT-Exposed, HighRiskScore(18)</td></tr>
-<tr><td class='mono'>Bongani Chikwanda</td><td class='muted'>Clinical</td><td class='muted'>Nurse</td><td><span class="badge b-amber">HIGH</span></td><td class='muted sig'>Non-Compliant-Device, OSINT-Exposed, HighRiskScore(17)</td></tr>
-<tr><td class='mono'>Tinashe Mpofu</td><td class='muted'>Clinical</td><td class='muted'>Doctor</td><td><span class="badge b-amber">HIGH</span></td><td class='muted sig'>OSINT-Exposed, HighRiskScore(20)</td></tr>
-<tr><td class='mono'>Tsitsi Moyo</td><td class='muted'>Clinical</td><td class='muted'>Lab Technician</td><td><span class="badge b-amber">HIGH</span></td><td class='muted sig'>OSINT-Exposed, HighRiskScore(17)</td></tr>
-<tr><td class='mono'>Lungelo Chirwa</td><td class='muted'>Clinical</td><td class='muted'>Doctor</td><td><span class="badge b-amber">HIGH</span></td><td class='muted sig'>No-MFA, Non-Compliant-Device</td></tr>
-<tr><td class='mono'>Nyasha Sithole</td><td class='muted'>Clinical</td><td class='muted'>Radiologist</td><td><span class="badge b-amber">HIGH</span></td><td class='muted sig'>OSINT-Exposed</td></tr>
-<tr><td class='mono'>Lungelo Banda</td><td class='muted'>Clinical</td><td class='muted'>Nurse</td><td><span class="badge b-amber">HIGH</span></td><td class='muted sig'>OSINT-Exposed</td></tr>
-<tr><td class='mono'>Simba Chikwanda</td><td class='muted'>Clinical</td><td class='muted'>Doctor</td><td><span class="badge b-amber">HIGH</span></td><td class='muted sig'>OSINT-Exposed, HighRiskScore(20)</td></tr>
-<tr><td class='mono'>Nompilo Banda</td><td class='muted'>Clinical</td><td class='muted'>Lab Technician</td><td><span class="badge b-amber">HIGH</span></td><td class='muted sig'>OSINT-Exposed, HighRiskScore(20)</td></tr>
-<tr><td class='mono'>Simba Zimba</td><td class='muted'>Clinical</td><td class='muted'>Radiologist</td><td><span class="badge b-amber">HIGH</span></td><td class='muted sig'>OSINT-Exposed, HighRiskScore(18)</td></tr>
-<tr><td class='mono'>Nkosi Mpofu</td><td class='muted'>Clinical</td><td class='muted'>Radiologist</td><td><span class="badge b-amber">HIGH</span></td><td class='muted sig'>No-MFA</td></tr>
-<tr><td class='mono'>Farai Banda</td><td class='muted'>Clinical</td><td class='muted'>Lab Technician</td><td><span class="badge b-amber">HIGH</span></td><td class='muted sig'>OSINT-Exposed, HighRiskScore(18)</td></tr>
-<tr><td class='mono'>Lungelo Zimba</td><td class='muted'>Clinical</td><td class='muted'>Doctor</td><td><span class="badge b-amber">HIGH</span></td><td class='muted sig'>OSINT-Exposed</td></tr>
-</tbody>
+          <tbody></tbody>
         </table>
       </div>
     </section>
@@ -697,48 +621,48 @@ tbody td{padding:11px 16px;vertical-align:middle}
           <div class="panel-title">OSINT Threat Intelligence</div>
           <div class="panel-sub">
             Multi-source credential exposure · HIBP · DeHashed · LeakCheck · Intelligence X ·
-            Scanned: 2026-04-09 01:17:18
+            Scanned: —
           </div>
         </div>
         <span class="badge" style="background:#a855f720;color:#c084fc;border:1px solid #a855f740">
-          SIMULATED
+          —
         </span>
       </div>
 
       <!-- OSINT KPI cards -->
       <div class="cards">
         <div class="card" style="--accent-color:var(--amber)">
-          <div class="card-val counter" data-target="204">0</div>
+          <div class="card-val counter" data-target="0">0</div>
           <div class="card-label">Total Exposed</div>
-          <div class="card-sub">40.8% of 500 users</div>
+          <div class="card-sub">0% of 500 users</div>
           <div class="card-glow"></div>
         </div>
         <div class="card" style="--accent-color:var(--red)">
-          <div class="card-val counter" data-target="116">0</div>
+          <div class="card-val counter" data-target="0">0</div>
           <div class="card-label">Dark Web Hits</div>
-          <div class="card-sub">23.2% dark web exposure</div>
+          <div class="card-sub">0% dark web exposure</div>
           <div class="card-glow"></div>
         </div>
         <div class="card" style="--accent-color:var(--cyan)">
-          <div class="card-val">56.6</div>
+          <div class="card-val">0</div>
           <div class="card-label">Avg Exposure Score</div>
           <div class="card-sub">Out of 100 (across exposed)</div>
           <div class="card-glow"></div>
         </div>
         <div class="card" style="--accent-color:var(--blue)">
-          <div class="card-val counter" data-target="204">0</div>
+          <div class="card-val counter" data-target="0">0</div>
           <div class="card-label">HIBP Hits</div>
           <div class="card-sub">haveibeenpwned.com</div>
           <div class="card-glow"></div>
         </div>
         <div class="card" style="--accent-color:var(--purple)">
-          <div class="card-val counter" data-target="146">0</div>
+          <div class="card-val counter" data-target="0">0</div>
           <div class="card-label">DeHashed Hits</div>
           <div class="card-sub">Credential records</div>
           <div class="card-glow"></div>
         </div>
         <div class="card" style="--accent-color:var(--green)">
-          <div class="card-val counter" data-target="70">0</div>
+          <div class="card-val counter" data-target="0">0</div>
           <div class="card-label">IntelX Hits</div>
           <div class="card-sub">Dark web / paste sites</div>
           <div class="card-glow"></div>
@@ -782,17 +706,7 @@ tbody td{padding:11px 16px;vertical-align:middle}
               <th>Dark Web</th><th>Exposure Score</th><th>Findings</th>
             </tr>
           </thead>
-          <tbody><tr><td class='mono'>Rudo Chirwa</td><td class='muted'>Clinical</td><td class='muted'>Doctor</td><td><span class="badge b-red">DARK WEB</span></td><td><div style='display:flex;align-items:center;gap:8px'><div style='flex:1;background:#1a3050;border-radius:999px;height:6px'><div style='width:100%;background:#ef4444;border-radius:999px;height:6px'></div></div><span style='color:#ef4444;font-weight:700;font-size:12px'>100</span></div></td><td class='muted'>8</td></tr>
-<tr><td class='mono'>Nompilo Chikwanda</td><td class='muted'>Clinical</td><td class='muted'>Radiologist</td><td><span class="badge b-red">DARK WEB</span></td><td><div style='display:flex;align-items:center;gap:8px'><div style='flex:1;background:#1a3050;border-radius:999px;height:6px'><div style='width:100%;background:#ef4444;border-radius:999px;height:6px'></div></div><span style='color:#ef4444;font-weight:700;font-size:12px'>100</span></div></td><td class='muted'>8</td></tr>
-<tr><td class='mono'>Nompilo Banda</td><td class='muted'>Clinical</td><td class='muted'>Lab Technician</td><td><span class="badge b-red">DARK WEB</span></td><td><div style='display:flex;align-items:center;gap:8px'><div style='flex:1;background:#1a3050;border-radius:999px;height:6px'><div style='width:100%;background:#ef4444;border-radius:999px;height:6px'></div></div><span style='color:#ef4444;font-weight:700;font-size:12px'>100</span></div></td><td class='muted'>8</td></tr>
-<tr><td class='mono'>Munyaradzi Phiri</td><td class='muted'>Billing</td><td class='muted'>Billing Clerk</td><td><span class="badge b-red">DARK WEB</span></td><td><div style='display:flex;align-items:center;gap:8px'><div style='flex:1;background:#1a3050;border-radius:999px;height:6px'><div style='width:100%;background:#ef4444;border-radius:999px;height:6px'></div></div><span style='color:#ef4444;font-weight:700;font-size:12px'>100</span></div></td><td class='muted'>8</td></tr>
-<tr><td class='mono'>Zanele Ncube</td><td class='muted'>Billing</td><td class='muted'>Medical Coder</td><td><span class="badge b-red">DARK WEB</span></td><td><div style='display:flex;align-items:center;gap:8px'><div style='flex:1;background:#1a3050;border-radius:999px;height:6px'><div style='width:100%;background:#ef4444;border-radius:999px;height:6px'></div></div><span style='color:#ef4444;font-weight:700;font-size:12px'>100</span></div></td><td class='muted'>8</td></tr>
-<tr><td class='mono'>Nyasha Gumbo</td><td class='muted'>Clinical</td><td class='muted'>Radiologist</td><td><span class="badge b-red">DARK WEB</span></td><td><div style='display:flex;align-items:center;gap:8px'><div style='flex:1;background:#1a3050;border-radius:999px;height:6px'><div style='width:95%;background:#ef4444;border-radius:999px;height:6px'></div></div><span style='color:#ef4444;font-weight:700;font-size:12px'>95</span></div></td><td class='muted'>7</td></tr>
-<tr><td class='mono'>Takudzwa Chikwanda</td><td class='muted'>Clinical</td><td class='muted'>Lab Technician</td><td><span class="badge b-red">DARK WEB</span></td><td><div style='display:flex;align-items:center;gap:8px'><div style='flex:1;background:#1a3050;border-radius:999px;height:6px'><div style='width:95%;background:#ef4444;border-radius:999px;height:6px'></div></div><span style='color:#ef4444;font-weight:700;font-size:12px'>95</span></div></td><td class='muted'>7</td></tr>
-<tr><td class='mono'>Thandi Banda</td><td class='muted'>Clinical</td><td class='muted'>Nurse</td><td><span class="badge b-red">DARK WEB</span></td><td><div style='display:flex;align-items:center;gap:8px'><div style='flex:1;background:#1a3050;border-radius:999px;height:6px'><div style='width:95%;background:#ef4444;border-radius:999px;height:6px'></div></div><span style='color:#ef4444;font-weight:700;font-size:12px'>95</span></div></td><td class='muted'>7</td></tr>
-<tr><td class='mono'>Simba Banda</td><td class='muted'>Clinical</td><td class='muted'>Radiologist</td><td><span class="badge b-red">DARK WEB</span></td><td><div style='display:flex;align-items:center;gap:8px'><div style='flex:1;background:#1a3050;border-radius:999px;height:6px'><div style='width:95%;background:#ef4444;border-radius:999px;height:6px'></div></div><span style='color:#ef4444;font-weight:700;font-size:12px'>95</span></div></td><td class='muted'>7</td></tr>
-<tr><td class='mono'>Sifiso Banda</td><td class='muted'>Billing</td><td class='muted'>Finance Officer</td><td><span class="badge b-red">DARK WEB</span></td><td><div style='display:flex;align-items:center;gap:8px'><div style='flex:1;background:#1a3050;border-radius:999px;height:6px'><div style='width:95%;background:#ef4444;border-radius:999px;height:6px'></div></div><span style='color:#ef4444;font-weight:700;font-size:12px'>95</span></div></td><td class='muted'>7</td></tr>
-</tbody>
+          <tbody></tbody>
         </table>
       </div>
 
@@ -800,59 +714,10 @@ tbody td{padding:11px 16px;vertical-align:middle}
       <div class="panel-header" style="margin-top:8px">
         <div>
           <div class="panel-title" style="font-size:14px">Threat Intelligence Recommendations</div>
-          <div class="panel-sub">Derived from OSINT scan — 7 action items</div>
+          <div class="panel-sub">Derived from OSINT scan — 0 action items</div>
         </div>
       </div>
       
-        <div class="rec-card rec-critical">
-          <div class="rec-header">
-            <span class="badge b-red">CRITICAL</span>
-            <span class="rec-action">Immediate forced password reset for all users with dark web / paste site exposure — <strong>116 users</strong></span>
-          </div>
-          <div class="rec-rationale">116 user(s) found on dark web forums or paste sites. This indicates credentials are actively circulating among threat actors.</div>
-        </div>
-        <div class="rec-card rec-high">
-          <div class="rec-header">
-            <span class="badge b-amber">HIGH</span>
-            <span class="rec-action">Priority MFA enforcement and CA policy tightening for Radiology — <strong>11 users</strong></span>
-          </div>
-          <div class="rec-rationale">Radiology has a 55.0% credential exposure rate — the highest of all departments.</div>
-        </div>
-        <div class="rec-card rec-high">
-          <div class="rec-header">
-            <span class="badge b-amber">HIGH</span>
-            <span class="rec-action">Enable Entra ID Password Protection with banned-password list — <strong>149 users</strong></span>
-          </div>
-          <div class="rec-rationale">Credential dump exposure means plaintext or crackable passwords are in the wild. Password Protection blocks reuse of known compromised passwords.</div>
-        </div>
-        <div class="rec-card rec-high">
-          <div class="rec-header">
-            <span class="badge b-amber">HIGH</span>
-            <span class="rec-action">Audit for username/password reuse across personal and work accounts — <strong>146 users</strong></span>
-          </div>
-          <div class="rec-rationale">DeHashed records include usernames and hashed passwords. If work usernames match personal accounts, attackers can attempt credential stuffing.</div>
-        </div>
-        <div class="rec-card rec-medium">
-          <div class="rec-header">
-            <span class="badge b-blue">MEDIUM</span>
-            <span class="rec-action">Enrol all exposed users in Identity Protection risky-user remediation workflow — <strong>204 users</strong></span>
-          </div>
-          <div class="rec-rationale">204 users are exposed across external breach databases. Systematic remediation via Entra ID risk-based policies is required.</div>
-        </div>
-        <div class="rec-card rec-medium">
-          <div class="rec-header">
-            <span class="badge b-blue">MEDIUM</span>
-            <span class="rec-action">Integrate OSINT checks into the joiner provisioning workflow</span>
-          </div>
-          <div class="rec-rationale">Proactive breach screening at onboarding prevents new hires from bringing compromised credentials into the MediZuva environment.</div>
-        </div>
-        <div class="rec-card rec-low">
-          <div class="rec-header">
-            <span class="badge b-gray">LOW</span>
-            <span class="rec-action">Schedule monthly OSINT re-scans and feed results into the threat dashboard</span>
-          </div>
-          <div class="rec-rationale">Breach exposure is dynamic — new leaks surface regularly and require continuous monitoring.</div>
-        </div>
     </section>
 
     <!-- ══════════════════════════════════════════════════════
@@ -864,15 +729,15 @@ tbody td{padding:11px 16px;vertical-align:middle}
           <div class="panel-title">NIST SP 800 Compliance</div>
           <div class="panel-sub">SP 800-207 Zero Trust · SP 800-53 Rev5 · SP 800-63B · SP 800-137</div>
         </div>
-        <span class="badge" style="background:#10b98120;color:#10b981;border:1px solid #10b98140;font-size:15px;padding:6px 14px">86.7% SUBSTANTIALLY COMPLIANT</span>
+        <span class="badge" style="background:#ef444420;color:#ef4444;border:1px solid #ef444440;font-size:15px;padding:6px 14px">0.0% NOT EVALUATED</span>
       </div>
       <div class="grid-4" style="margin-bottom:20px">
         <div class="stat-card">
-          <div class="stat-val" style="color:#10b981">22</div>
+          <div class="stat-val" style="color:#10b981">0</div>
           <div class="stat-lbl">PASS</div>
         </div>
         <div class="stat-card">
-          <div class="stat-val" style="color:#f59e0b">8</div>
+          <div class="stat-val" style="color:#f59e0b">0</div>
           <div class="stat-lbl">PARTIAL</div>
         </div>
         <div class="stat-card">
@@ -880,14 +745,14 @@ tbody td{padding:11px 16px;vertical-align:middle}
           <div class="stat-lbl">FAIL</div>
         </div>
         <div class="stat-card">
-          <div class="stat-val" style="color:#10b981">87%</div>
+          <div class="stat-val" style="color:#ef4444">0%</div>
           <div class="stat-lbl">Score</div>
         </div>
       </div>
-      <div style="margin-bottom:12px;padding:10px 14px;background:#0a1f35;border-radius:8px;border-left:3px solid #10b981">
-        <span style="color:#10b981;font-weight:700;font-size:13px">COMPLIANCE SCORE GAUGE</span>
+      <div style="margin-bottom:12px;padding:10px 14px;background:#0a1f35;border-radius:8px;border-left:3px solid #ef4444">
+        <span style="color:#ef4444;font-weight:700;font-size:13px">COMPLIANCE SCORE GAUGE</span>
         <div style="margin-top:8px;background:#1a3050;border-radius:999px;height:10px">
-          <div style="width:87%;background:#10b981;border-radius:999px;height:10px;transition:width 1s ease"></div>
+          <div style="width:0%;background:#ef4444;border-radius:999px;height:10px;transition:width 1s ease"></div>
         </div>
         <div style="display:flex;justify-content:space-between;margin-top:4px">
           <span style="color:#5a7a9a;font-size:11px">0%</span>
@@ -902,38 +767,7 @@ tbody td{padding:11px 16px;vertical-align:middle}
             <th>Control ID</th><th>Control Name</th><th>Framework</th>
             <th>Status</th><th>Details / Remediation</th>
           </tr></thead>
-          <tbody><tr><td class='mono' style='color:#00d4ff'>800-207-T1</td><td style='font-weight:500'>All resources require authentication</td><td><span style='color:#00d4ff;font-size:11px;font-weight:600'>NIST SP 800-207</span></td><td><span class="badge b-green">PASS</span></td><td class='muted' style='max-width:340px;font-size:12px'>Microsoft Entra ID treats all applications as resources requiring authentication. No on-premises bypass paths exist in the defined CA scope.</td></tr>
-<tr><td class='mono' style='color:#00d4ff'>800-207-T2</td><td style='font-weight:500'>All communications secured (TLS/OAuth2)</td><td><span style='color:#00d4ff;font-size:11px;font-weight:600'>NIST SP 800-207</span></td><td><span class="badge b-green">PASS</span></td><td class='muted' style='max-width:340px;font-size:12px'>All Microsoft Graph API calls use TLS 1.2+. OAuth 2.0 client_credentials flow used for service-to-service auth. No HTTP endpoints in use.</td></tr>
-<tr><td class='mono' style='color:#00d4ff'>800-207-T3</td><td style='font-weight:500'>Per-session access with re-authentication</td><td><span style='color:#00d4ff;font-size:11px;font-weight:600'>NIST SP 800-207</span></td><td><span class="badge b-green">PASS</span></td><td class='muted' style='max-width:340px;font-size:12px'>CA006 enforces 8-hour session limits with no persistent browser sessions. CA007 enforces 30-minute sessions for privileged IT accounts.</td></tr>
-<tr><td class='mono' style='color:#00d4ff'>800-207-T4</td><td style='font-weight:500'>Dynamic policy enforcement based on risk signals</td><td><span style='color:#00d4ff;font-size:11px;font-weight:600'>NIST SP 800-207</span></td><td><span class="badge b-green">PASS</span></td><td class='muted' style='max-width:340px;font-size:12px'>CA004 blocks high sign-in risk. CA008 blocks high user risk. CA009 requires password change on medium/high user risk. Together these implement dynamic, risk-adaptive access control.</td></tr>
-<tr><td class='mono' style='color:#00d4ff'>800-207-T5</td><td style='font-weight:500'>Continuous asset and user integrity monitoring</td><td><span style='color:#00d4ff;font-size:11px;font-weight:600'>NIST SP 800-207</span></td><td><span class="badge b-green">PASS</span></td><td class='muted' style='max-width:340px;font-size:12px'>Automated monitoring pipeline runs every 15 minutes via GitHub Actions. OSINT scan covers all 500 personas across 4 sources. 204 users currently flagged as credential-exposed. Device compliance tracked for 156 non-compliant devices.</td></tr>
-<tr><td class='mono' style='color:#00d4ff'>800-207-T6</td><td style='font-weight:500'>Strict authentication and authorisation before every access</td><td><span style='color:#00d4ff;font-size:11px;font-weight:600'>NIST SP 800-207</span></td><td><span class="badge b-amber">PARTIAL</span></td><td class='muted' style='max-width:340px;font-size:12px'>CA001 requires MFA for all users. CA005 requires MFA + compliant device for admins. However, 56 users currently lack MFA registration, meaning CA001 cannot fully enforce for those accounts until they register.<div class="nist-fix">Fix: Remediate 56 MFA gaps. Consider blocking access entirely until MFA is registered.</div></td></tr>
-<tr><td class='mono' style='color:#00d4ff'>800-207-T7</td><td style='font-weight:500'>Continuous telemetry collection and posture improvement</td><td><span style='color:#00d4ff;font-size:11px;font-weight:600'>NIST SP 800-207</span></td><td><span class="badge b-green">PASS</span></td><td class='muted' style='max-width:340px;font-size:12px'>Threat intelligence engine derives 7 prioritised recommendations per scan. Dashboard prediction model projects 6-month exposure trend. Audit logs retained in data/osint_results/osint_run.log. All scan results committed to version-controlled JSON for historical analysis.</td></tr>
-<tr><td class='mono' style='color:#a855f7'>800-53-AC-2</td><td style='font-weight:500'>Account Management</td><td><span style='color:#a855f7;font-size:11px;font-weight:600'>NIST SP 800-53</span></td><td><span class="badge b-green">PASS</span></td><td class='muted' style='max-width:340px;font-size:12px'>500 accounts provisioned via automated scripts with full lifecycle management. Joiner/Mover/Leaver workflows implemented. Leaver deprovisioning &lt; 3 seconds. All accounts tied to verified department and role.</td></tr>
-<tr><td class='mono' style='color:#a855f7'>800-53-AC-3</td><td style='font-weight:500'>Access Enforcement</td><td><span style='color:#a855f7;font-size:11px;font-weight:600'>NIST SP 800-53</span></td><td><span class="badge b-amber">PARTIAL</span></td><td class='muted' style='max-width:340px;font-size:12px'>6 Conditional Access policies deployed. 0 enforced, 6 in Report-Only mode. Report-Only mode logs violations but does not block access — full enforcement pending operational sign-off.<div class="nist-fix">Fix: Promote all CA policies from Report-Only to Enabled state to achieve full AC-3 compliance.</div></td></tr>
-<tr><td class='mono' style='color:#a855f7'>800-53-AC-6</td><td style='font-weight:500'>Least Privilege</td><td><span style='color:#a855f7;font-size:11px;font-weight:600'>NIST SP 800-53</span></td><td><span class="badge b-green">PASS</span></td><td class='muted' style='max-width:340px;font-size:12px'>Privileged Identity Management (PIM) implemented for all 45 eligible admin assignments. Zero permanently active privileged roles. Role mapping follows least-privilege per job function: Help Desk → Helpdesk Admin only; Network Engineer → Reports Reader only.</td></tr>
-<tr><td class='mono' style='color:#a855f7'>800-53-AC-6(5)</td><td style='font-weight:500'>Least Privilege — Privileged Accounts</td><td><span style='color:#a855f7;font-size:11px;font-weight:600'>NIST SP 800-53</span></td><td><span class="badge b-green">PASS</span></td><td class='muted' style='max-width:340px;font-size:12px'>CA005 requires both MFA AND compliant device for IT department (AND operator). CA007 enforces 30-minute re-authentication for privileged accounts. Global Administrator role restricted to break-glass accounts only.</td></tr>
-<tr><td class='mono' style='color:#a855f7'>800-53-AC-11</td><td style='font-weight:500'>Session Lock</td><td><span style='color:#a855f7;font-size:11px;font-weight:600'>NIST SP 800-53</span></td><td><span class="badge b-green">PASS</span></td><td class='muted' style='max-width:340px;font-size:12px'>CA006 enforces 8-hour sign-in frequency for all users with no persistent browser. CA007 enforces 30-minute re-authentication for IT/privileged accounts.</td></tr>
-<tr><td class='mono' style='color:#a855f7'>800-53-AC-17</td><td style='font-weight:500'>Remote Access</td><td><span style='color:#a855f7;font-size:11px;font-weight:600'>NIST SP 800-53</span></td><td><span class="badge b-green">PASS</span></td><td class='muted' style='max-width:340px;font-size:12px'>All remote access governed by Conditional Access — location is irrelevant to policy enforcement. MFA required regardless of network. CA003 additionally requires compliant device for clinical staff accessing from any location.</td></tr>
-<tr><td class='mono' style='color:#a855f7'>800-53-AU-2</td><td style='font-weight:500'>Event Logging</td><td><span style='color:#a855f7;font-size:11px;font-weight:600'>NIST SP 800-53</span></td><td><span class="badge b-amber">PARTIAL</span></td><td class='muted' style='max-width:340px;font-size:12px'>OSINT scan events logged to data/osint_results/osint_run.log with timestamps. Threat audit outputs to threat_audit.json with AuditDate. Entra ID sign-in logs available via Graph API but not currently exported to file. Recommend enabling Entra ID diagnostic settings to export sign-in logs.<div class="nist-fix">Fix: Enable Entra ID diagnostic settings to export sign-in and audit logs to Log Analytics or storage.</div></td></tr>
-<tr><td class='mono' style='color:#a855f7'>800-53-AU-12</td><td style='font-weight:500'>Audit Record Generation</td><td><span style='color:#a855f7;font-size:11px;font-weight:600'>NIST SP 800-53</span></td><td><span class="badge b-amber">PARTIAL</span></td><td class='muted' style='max-width:340px;font-size:12px'>Automated pipeline generates audit records every 15 minutes for threat signals and every 6 hours for OSINT. All records include timestamp, source, and findings. Sign-in audit records exist in Entra ID but are not pulled into the local audit store.<div class="nist-fix">Fix: Extend entra_sync.py to pull sign-in logs and store in data/signin_logs/.</div></td></tr>
-<tr><td class='mono' style='color:#a855f7'>800-53-IA-2</td><td style='font-weight:500'>Identification and Authentication (Org Users)</td><td><span style='color:#a855f7;font-size:11px;font-weight:600'>NIST SP 800-53</span></td><td><span class="badge b-amber">PARTIAL</span></td><td class='muted' style='max-width:340px;font-size:12px'>MFA enforced via CA001 for all users. CA005 enforces MFA + compliant device for admins. 56 users have not yet registered MFA — these accounts cannot fully satisfy IA-2 until registration is complete.<div class="nist-fix">Fix: Enforce MFA registration for 56 unregistered users. Block access until registered.</div></td></tr>
-<tr><td class='mono' style='color:#a855f7'>800-53-IA-2(1)</td><td style='font-weight:500'>MFA for Privileged Network Access</td><td><span style='color:#a855f7;font-size:11px;font-weight:600'>NIST SP 800-53</span></td><td><span class="badge b-green">PASS</span></td><td class='muted' style='max-width:340px;font-size:12px'>CA005 requires BOTH MFA and compliant device (AND operator) for all IT department privileged accounts. This exceeds minimum IA-2(1) which requires MFA alone.</td></tr>
-<tr><td class='mono' style='color:#a855f7'>800-53-IA-5(1)</td><td style='font-weight:500'>Authenticator Management — Breached Password Check</td><td><span style='color:#a855f7;font-size:11px;font-weight:600'>NIST SP 800-53</span></td><td><span class="badge b-amber">PARTIAL</span></td><td class='muted' style='max-width:340px;font-size:12px'>204 users found in breach databases. No automatic password change policy deployed.<div class="nist-fix">Fix: Deploy CA009 to force password change on medium/high user risk.</div></td></tr>
-<tr><td class='mono' style='color:#a855f7'>800-53-IA-11</td><td style='font-weight:500'>Re-Authentication</td><td><span style='color:#a855f7;font-size:11px;font-weight:600'>NIST SP 800-53</span></td><td><span class="badge b-green">PASS</span></td><td class='muted' style='max-width:340px;font-size:12px'>CA006 enforces re-authentication every 8 hours for all users. CA007 enforces re-authentication every 30 minutes for privileged IT accounts, meeting the NIST SP 800-63B AAL2 recommendation for privileged sessions. Persistent browser sessions disabled in both policies.</td></tr>
-<tr><td class='mono' style='color:#a855f7'>800-53-RA-3</td><td style='font-weight:500'>Risk Assessment</td><td><span style='color:#a855f7;font-size:11px;font-weight:600'>NIST SP 800-53</span></td><td><span class="badge b-green">PASS</span></td><td class='muted' style='max-width:340px;font-size:12px'>Automated risk assessment runs every 15 minutes. All 500 users classified into 4 tiers (CRITICAL/HIGH/MEDIUM/LOW) using multi-signal correlation: Entra IdP risk, MFA gaps, device compliance, OSINT exposure, and RiskScore. Current state: 19 CRITICAL, 222 HIGH.</td></tr>
-<tr><td class='mono' style='color:#a855f7'>800-53-RA-5</td><td style='font-weight:500'>Vulnerability Monitoring and Scanning</td><td><span style='color:#a855f7;font-size:11px;font-weight:600'>NIST SP 800-53</span></td><td><span class="badge b-green">PASS</span></td><td class='muted' style='max-width:340px;font-size:12px'>Four-tool OSINT pipeline scans all 500 users every 6 hours: HIBP (12B+ records), DeHashed (credential dumps), LeakCheck (7B+ records), Intelligence X (dark web/paste sites). Results fed into risk tier classification and dashboard recommendations.</td></tr>
-<tr><td class='mono' style='color:#a855f7'>800-53-SI-4</td><td style='font-weight:500'>Information System Monitoring</td><td><span style='color:#a855f7;font-size:11px;font-weight:600'>NIST SP 800-53</span></td><td><span class="badge b-green">PASS</span></td><td class='muted' style='max-width:340px;font-size:12px'>Entra ID Identity Protection provides real-time user and sign-in risk monitoring. GitHub Actions workflow polls Entra every 15 minutes for risky user signals. OSINT pipeline provides external credential exposure monitoring every 6 hours. All signals aggregated into central dashboard with alert banner for AT RISK posture.</td></tr>
-<tr><td class='mono' style='color:#a855f7'>800-53-CM-6</td><td style='font-weight:500'>Configuration Settings</td><td><span style='color:#a855f7;font-size:11px;font-weight:600'>NIST SP 800-53</span></td><td><span class="badge b-green">PASS</span></td><td class='muted' style='max-width:340px;font-size:12px'>All security configurations defined as code in version-controlled PowerShell and Python scripts. CA policies, PIM assignments, and user provisioning are reproducible and auditable. Configuration drift detected by audit scripts comparing expected vs actual state.</td></tr>
-<tr><td class='mono' style='color:#3b82f6'>800-63B-AAL1</td><td style='font-weight:500'>Authentication Assurance Level 1</td><td><span style='color:#3b82f6;font-size:11px;font-weight:600'>NIST SP 800-63B</span></td><td><span class="badge b-gray">N/A</span></td><td class='muted' style='max-width:340px;font-size:12px'>AAL1 (password only) is not used for any MediZuva application. CA001 requires MFA (AAL2 minimum) for all users and all applications.</td></tr>
-<tr><td class='mono' style='color:#3b82f6'>800-63B-AAL2</td><td style='font-weight:500'>Authentication Assurance Level 2 (MFA Required)</td><td><span style='color:#3b82f6;font-size:11px;font-weight:600'>NIST SP 800-63B</span></td><td><span class="badge b-amber">PARTIAL</span></td><td class='muted' style='max-width:340px;font-size:12px'>AAL2 requires phishing-resistant or approved MFA. CA001 enforces MFA for all users. 56 of 500 users (11.2%) lack MFA registration. Microsoft Authenticator (OATH TOTP / push notification) satisfies AAL2.<div class="nist-fix">Fix: Complete MFA registration for 56 unregistered users to achieve full AAL2.</div></td></tr>
-<tr><td class='mono' style='color:#3b82f6'>800-63B-AAL3</td><td style='font-weight:500'>Authentication Assurance Level 3 (Hardware MFA)</td><td><span style='color:#3b82f6;font-size:11px;font-weight:600'>NIST SP 800-63B</span></td><td><span class="badge b-amber">PARTIAL</span></td><td class='muted' style='max-width:340px;font-size:12px'>AAL3 requires hardware-based phishing-resistant authenticators (FIDO2/WebAuthn). Current implementation uses Microsoft Authenticator app (AAL2). CA005 enforces MFA + compliant device for admins, partially meeting AAL3 intent. FIDO2 security keys not yet mandated for privileged accounts.<div class="nist-fix">Fix: Configure CA005 to require FIDO2/Windows Hello for Business for IT administrator accounts to achieve AAL3.</div></td></tr>
-<tr><td class='mono' style='color:#3b82f6'>800-63B-5.1.1</td><td style='font-weight:500'>Memorised Secret (Password) Requirements</td><td><span style='color:#3b82f6;font-size:11px;font-weight:600'>NIST SP 800-63B</span></td><td><span class="badge b-green">PASS</span></td><td class='muted' style='max-width:340px;font-size:12px'>NIST 800-63B requires: minimum 8 characters, check against breached lists, no mandatory complexity or rotation unless compromised. CA009 forces password change when user risk is medium/high (breach-triggered rotation). Entra ID Password Protection configured with banned-password list. No arbitrary periodic rotation enforced (compliant with NIST guidance).</td></tr>
-<tr><td class='mono' style='color:#3b82f6'>800-63B-7.2</td><td style='font-weight:500'>Re-Authentication Requirements</td><td><span style='color:#3b82f6;font-size:11px;font-weight:600'>NIST SP 800-63B</span></td><td><span class="badge b-green">PASS</span></td><td class='muted' style='max-width:340px;font-size:12px'>NIST 800-63B requires re-authentication after 30 minutes of inactivity for AAL2 and no more than 12 hours of continuous use. CA007 enforces 30-minute re-authentication for privileged accounts (AAL2 compliant). CA006 enforces 8-hour limit for all users (within 12-hour maximum). Persistent browser sessions disabled on all policies.</td></tr>
-<tr><td class='mono' style='color:#10b981'>800-137-ISCM-1</td><td style='font-weight:500'>Continuous Monitoring Strategy</td><td><span style='color:#10b981;font-size:11px;font-weight:600'>NIST SP 800-137</span></td><td><span class="badge b-green">PASS</span></td><td class='muted' style='max-width:340px;font-size:12px'>Monitoring strategy defined across two cadences: 15-minute automated Entra ID signal refresh (threat posture) and 6-hour OSINT credential exposure scan (external intelligence). GitHub Actions implements both as automated, unattended workflows.</td></tr>
-<tr><td class='mono' style='color:#10b981'>800-137-ISCM-2</td><td style='font-weight:500'>Monitoring Frequency and Metrics</td><td><span style='color:#10b981;font-size:11px;font-weight:600'>NIST SP 800-137</span></td><td><span class="badge b-green">PASS</span></td><td class='muted' style='max-width:340px;font-size:12px'>Security metrics published to central dashboard on every refresh cycle: risk tier counts (CRITICAL/HIGH/MEDIUM/LOW), MFA gaps, device gaps, OSINT exposure rate, dark web exposure rate, and 6-month trend prediction. All metrics version-controlled in JSON for historical comparison.</td></tr>
-<tr><td class='mono' style='color:#10b981'>800-137-ISCM-3</td><td style='font-weight:500'>Respond to Findings</td><td><span style='color:#10b981;font-size:11px;font-weight:600'>NIST SP 800-137</span></td><td><span class="badge b-green">PASS</span></td><td class='muted' style='max-width:340px;font-size:12px'>Threat intelligence engine generates prioritised recommendations (CRITICAL/HIGH/MEDIUM/LOW) on every OSINT scan, surfaced directly in the dashboard OSINT panel. Risk tier classification automatically elevates users in real time. Alert banner activates on dashboard when posture is AT RISK.</td></tr>
-</tbody>
+          <tbody></tbody>
         </table>
       </div>
     </section>
@@ -1811,11 +1645,11 @@ tbody td{padding:11px 16px;vertical-align:middle}
 
 <script>
 // ── Data ─────────────────────────────────────────────────────
-const KPI_USERS    = 500;
-const KPI_CRITICAL = 19;
-const KPI_DARKWEB  = 116;
-const KPI_EXPOSED  = 204;
-const KPI_MFA      = 56;
+const KPI_USERS    = 535;
+const KPI_CRITICAL = 0;
+const KPI_DARKWEB  = 0;
+const KPI_EXPOSED  = 0;
+const KPI_MFA      = 0;
 
 // ── Navigation ───────────────────────────────────────────────
 const PANELS = ['overview','p1','p2','p3','p4','osint','nist','logs'];
@@ -1932,15 +1766,15 @@ function buildCharts(){
   // Overview — risk donut
   donut('ov-donut',
     ['Critical','High','Medium','Low'],
-    [19,222,71,188],
+    [0,0,0,535],
     [COLOURS.red,COLOURS.amber,COLOURS.blue,COLOURS.green]
   );
 
   // Overview — dept threats stacked
-  vbar('ov-dept',["Clinical", "Billing", "Operations", "IT", "Pharmacy", "Radiology"],[
-    {label:'Critical',data:[8, 5, 6, 0, 0, 0],backgroundColor:COLOURS.red,borderRadius:3},
-    {label:'High',    data:[89, 45, 52, 7, 16, 13],    backgroundColor:COLOURS.amber,borderRadius:3},
-    {label:'Medium',  data:[33, 11, 15, 5, 5, 2],  backgroundColor:COLOURS.blue,borderRadius:3},
+  vbar('ov-dept',["Unassigned", "Security", "Clinical", "Administration", "Operations", "IT", "Finance", "HR", "Marketing", "Sales", "Billing", "Pharmacy", "Radiology"],[
+    {label:'Critical',data:[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],backgroundColor:COLOURS.red,borderRadius:3},
+    {label:'High',    data:[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],    backgroundColor:COLOURS.amber,borderRadius:3},
+    {label:'Medium',  data:[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],  backgroundColor:COLOURS.blue,borderRadius:3},
   ]);
 
   // Overview — prediction line
@@ -1950,34 +1784,34 @@ function buildCharts(){
   ]);
 
   // Overview — tool coverage bar
-  hbar('ov-tools',["HIBP", "DeHashed", "LeakCheck", "IntelX"],[204, 146, 176, 70],
+  hbar('ov-tools',[],[],
     [COLOURS.cyan,COLOURS.blue,COLOURS.green,COLOURS.purple],'Users Found');
 
   // P1 — dept
   new Chart(document.getElementById('p1-dept'),{
     type:'bar',
-    data:{labels:["Clinical", "Operations", "Billing", "IT", "Pharmacy", "Radiology"],datasets:[{label:'Users',data:[200, 120, 100, 30, 30, 20],
+    data:{labels:["Clinical", "Operations", "Billing", "IT", "Pharmacy", "Radiology", "Administration", "Unassigned", "Finance", "Security", "HR", "Marketing", "Sales"],datasets:[{label:'Users',data:[210, 125, 101, 35, 30, 20, 6, 2, 2, 1, 1, 1, 1],
       backgroundColor:['#00d4ff','#a855f7','#10b981','#f59e0b','#3b82f6','#ef4444'],borderRadius:5}]},
     options:{plugins:{legend:{display:false}},scales:{x:{grid:{display:false}},y:{grid:{color:'#1a3050'}}}}
   });
 
   // P1 — location donut
-  donut('p1-loc',["Harare", "Bulawayo", "Mutare", "Masvingo", "Gweru"],[244, 95, 66, 53, 42],
+  donut('p1-loc',["Unknown", "United States"],[534, 1],
     [COLOURS.cyan,COLOURS.purple,COLOURS.green,COLOURS.amber,COLOURS.blue]);
 
   // P2 — state donut
   donut('p2-donut',
     ['Enforced','Report-Only','Disabled','Missing'],
-    [0,6,0,0],
+    [0,0,0,0],
     [COLOURS.green,COLOURS.amber,COLOURS.red,'#6b7280']
   );
 
   // P2 — per policy bar
-  const stateColors=[2, 2, 2, 2, 2, 2].map(v=>
+  const stateColors=[].map(v=>
     v===3?COLOURS.green:v===2?COLOURS.amber:v===1?COLOURS.red:'#6b7280');
   new Chart(document.getElementById('p2-bar'),{
     type:'bar',
-    data:{labels:["CA001-RequireMFA-AllUsers", "CA002-BlockLegacyAuth", "CA003-RequireCompliantDevice-Clinical", "CA004-BlockHighRiskSignin", "CA005-RequireMFAAndDevice-Admins", "CA006-SessionControl-8h"],datasets:[{data:[2, 2, 2, 2, 2, 2],backgroundColor:stateColors,borderRadius:4}]},
+    data:{labels:[],datasets:[{data:[],backgroundColor:stateColors,borderRadius:4}]},
     options:{
       indexAxis:'y',plugins:{legend:{display:false},
         tooltip:{callbacks:{label:c=>['Missing','Disabled','Report-Only','Enforced'][c.raw]||c.raw}}},
@@ -1986,40 +1820,40 @@ function buildCharts(){
   });
 
   // P3 — role bar
-  hbar('p3-bar',["User Admin", "Priv Role Admin", "Helpdesk", "Sec Admin", "Sec Reader", "Reports Reader"],[7, 7, 10, 8, 8, 5],COLOURS.purple,'Eligible Users');
+  hbar('p3-bar',["User Admin", "Priv Role Admin", "Helpdesk", "Sec Admin", "Sec Reader", "Reports Reader"],[0, 0, 0, 0, 0, 0],COLOURS.purple,'Eligible Users');
 
   // P3 — role donut
-  donut('p3-donut',["User Admin", "Priv Role Admin", "Helpdesk", "Sec Admin", "Sec Reader", "Reports Reader"],[7, 7, 10, 8, 8, 5],
+  donut('p3-donut',["User Admin", "Priv Role Admin", "Helpdesk", "Sec Admin", "Sec Reader", "Reports Reader"],[0, 0, 0, 0, 0, 0],
     [COLOURS.cyan,COLOURS.purple,COLOURS.blue,COLOURS.amber,COLOURS.green,COLOURS.red]);
 
   // P4 — tier donut
   donut('p4-donut',
     ['Critical','High','Medium','Low'],
-    [19,222,71,188],
+    [0,0,0,535],
     [COLOURS.red,COLOURS.amber,COLOURS.blue,COLOURS.green]
   );
 
   // P4 — dept stacked
-  vbar('p4-dept',["Clinical", "Billing", "Operations", "IT", "Pharmacy", "Radiology"],[
-    {label:'Critical',data:[8, 5, 6, 0, 0, 0],backgroundColor:COLOURS.red},
-    {label:'High',    data:[89, 45, 52, 7, 16, 13],    backgroundColor:COLOURS.amber},
-    {label:'Medium',  data:[33, 11, 15, 5, 5, 2],  backgroundColor:COLOURS.blue},
+  vbar('p4-dept',["Unassigned", "Security", "Clinical", "Administration", "Operations", "IT", "Finance", "HR", "Marketing", "Sales", "Billing", "Pharmacy", "Radiology"],[
+    {label:'Critical',data:[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],backgroundColor:COLOURS.red},
+    {label:'High',    data:[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],    backgroundColor:COLOURS.amber},
+    {label:'Medium',  data:[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],  backgroundColor:COLOURS.blue},
   ]);
 
   // OSINT — dept exposure rate
-  hbar('osint-dept',["Clinical", "Billing", "Operations", "IT", "Pharmacy", "Radiology"],[40.5, 43.0, 41.7, 13.3, 50.0, 55.0],
+  hbar('osint-dept',[],[],
     COLOURS.amber,'Exposure Rate (%)');
 
   // OSINT — top sources
-  hbar('osint-sources',["LinkedIn", "Wishbone", "Adobe", "Dropbox", "Gravatar", "MathWay", "Wattpad", "Chegg"],[63, 60, 59, 52, 51, 50, 49, 49],
+  hbar('osint-sources',[],[],
     COLOURS.purple,'Affected Users');
 
   // OSINT — categories donut
-  donut('osint-cats',["health_app", "credential_dump", "social_media", "education", "cloud_storage", "gaming", "design_tool", "identity_service", "ecommerce", "dark_web", "paste_site", "media_streaming", "software", "messaging_platform"],[43, 85, 156, 91, 52, 48, 47, 51, 47, 64, 17, 38, 59, 16],
+  donut('osint-cats',[],[],
     [COLOURS.red,COLOURS.amber,COLOURS.blue,COLOURS.purple,COLOURS.cyan,COLOURS.green,'#e879f9','#22d3ee']);
 
   // OSINT — dark web by dept
-  hbar('osint-dw',["Clinical", "Billing", "Operations", "IT", "Pharmacy", "Radiology"],[45, 27, 28, 3, 8, 5],
+  hbar('osint-dw',[],[],
     COLOURS.red,'Dark Web Users');
 }
 
