@@ -1,7 +1,6 @@
 """
 shared/entra_sync.py
 ============================================================
-Python replacement for check_risky_users.ps1.
 Queries three Entra ID (Microsoft Graph) threat signals:
   1. Identity Protection — risky users (high/medium)
   2. MFA registration gaps — users not MFA-registered
@@ -12,13 +11,15 @@ Reads credentials from environment variables (safe for CI/CD):
   ENTRA_CLIENT_ID
   ENTRA_CLIENT_SECRET
 
-Falls back to SIMULATE mode if no credentials are set.
+Required Microsoft Graph API permissions (application):
+  IdentityRiskyUser.Read.All
+  UserAuthenticationMethod.Read.All
+  DeviceManagementManagedDevices.Read.All
 
 Output: data/risky_users.json
 
 Usage:
   python shared/entra_sync.py
-  python shared/entra_sync.py --simulate
 ============================================================
 """
 
@@ -135,95 +136,43 @@ def fetch_device_gaps(headers: dict) -> list:
     return gaps
 
 
-# ── CSV-based mode (no Entra creds) ──────────────────────────
-
-PERSONAS_CSV = REPO_ROOT / "data" / "personas" / "medizuva_500_personas.csv"
-
-def simulate_data() -> tuple[list, list, list]:
-    """
-    Read MFA and device truth directly from the personas CSV.
-    This is NOT random — it reflects the actual values set during provisioning.
-    MFARegistered=False means the user genuinely has no MFA registered.
-    DeviceCompliant=False means their device is genuinely non-compliant.
-    """
-    try:
-        import pandas as pd
-        df = pd.read_csv(PERSONAS_CSV)
-    except Exception as e:
-        print(f"  [WARN] Could not read personas CSV: {e}")
-        return [], [], []
-
-    # MFA gaps — users where MFARegistered is False in the CSV (56 users)
-    mfa_gaps = []
-    for _, row in df[df["MFARegistered"] == False].iterrows():
-        mfa_gaps.append({
-            "UserId":        str(row["EmployeeID"]),
-            "DisplayName":   f"{row['FirstName']} {row['LastName']}",
-            "UPN":           row["Email"],
-            "MFARegistered": False,
-            "AuthMethods":   "",
-        })
-
-    # Device gaps — users where DeviceCompliant is False in the CSV (156 users)
-    device_gaps = []
-    for _, row in df[df["DeviceCompliant"] == False].iterrows():
-        device_gaps.append({
-            "DeviceId":        f"dev-{row['EmployeeID']}",
-            "DeviceName":      f"{row['FirstName'].lower()}-workstation",
-            "UserDisplayName": f"{row['FirstName']} {row['LastName']}",
-            "UPN":             row["Email"],
-            "ComplianceState": "noncompliant",
-            "OS":              "Windows",
-            "LastSync":        "",
-        })
-
-    print(f"  [CSV] MFA gaps from personas data   : {len(mfa_gaps)}")
-    print(f"  [CSV] Device gaps from personas data: {len(device_gaps)}")
-    print("        (These are real provisioning values, not random)")
-    return [], mfa_gaps, device_gaps
-
-
 # ── Main ──────────────────────────────────────────────────────
 
 def main():
     parser = argparse.ArgumentParser(description="MediZuva Entra ID sync")
-    parser.add_argument("--simulate", action="store_true",
-                        help="Force simulate mode even if credentials are set")
     args = parser.parse_args()
 
     tenant_id     = os.environ.get("ENTRA_TENANT_ID",     "")
     client_id     = os.environ.get("ENTRA_CLIENT_ID",     "")
     client_secret = os.environ.get("ENTRA_CLIENT_SECRET", "")
 
-    live_mode = bool(client_secret) and not args.simulate
+    if not all([tenant_id, client_id, client_secret]):
+        print("[ERROR] Missing required environment variables.")
+        if not tenant_id:     print("  ENTRA_TENANT_ID is not set")
+        if not client_id:     print("  ENTRA_CLIENT_ID is not set")
+        if not client_secret: print("  ENTRA_CLIENT_SECRET is not set")
+        print("\nSet these in your .env file or as repository secrets.")
+        sys.exit(1)
 
     print("\n================================================")
-    print(" MediZuva — Entra ID Sync")
-    print(f" Mode   : {'LIVE' if live_mode else 'SIMULATE'}")
+    print(" MediZuva — Entra ID Sync (LIVE)")
     print(f" Tenant : {tenant_id}")
     print(f" Date   : {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print("================================================\n")
 
-    if live_mode:
-        try:
-            print("Obtaining access token...")
-            token   = get_token(tenant_id, client_id, client_secret)
-            headers = {"Authorization": f"Bearer {token}"}
-            print("  [OK] Token obtained\n")
-            risky_users  = fetch_risky_users(headers)
-            mfa_gaps     = fetch_mfa_gaps(headers)
-            device_gaps  = fetch_device_gaps(headers)
-        except Exception as e:
-            print(f"  [ERROR] Live sync failed: {e}")
-            print("  Falling back to simulate mode...")
-            risky_users, mfa_gaps, device_gaps = simulate_data()
-    else:
-        risky_users, mfa_gaps, device_gaps = simulate_data()
+    print("Obtaining access token...")
+    token   = get_token(tenant_id, client_id, client_secret)
+    headers = {"Authorization": f"Bearer {token}"}
+    print("  [OK] Token obtained\n")
+
+    risky_users = fetch_risky_users(headers)
+    mfa_gaps    = fetch_mfa_gaps(headers)
+    device_gaps = fetch_device_gaps(headers)
 
     export = {
         "CheckDate":  datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        "Tenant":     "medizuva",
-        "Mode":       "live" if live_mode else "simulated",
+        "Tenant":     tenant_id,
+        "Mode":       "live",
         "RiskyUsers": risky_users,
         "MFAGaps":    mfa_gaps,
         "DeviceGaps": device_gaps,

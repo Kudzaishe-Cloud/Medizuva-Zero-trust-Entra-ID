@@ -1,13 +1,20 @@
 """
 refresh.py
 ============================================================
-Single command to run the full MediZuva pipeline locally
-and open the dashboard in your browser.
+Run the full MediZuva pipeline and open the dashboard.
+
+All steps require real credentials set as environment variables
+(or in a .env file loaded before this script):
+    ENTRA_TENANT_ID, ENTRA_CLIENT_ID, ENTRA_CLIENT_SECRET
+    HIBP_API_KEY (and others) for --osint
 
 Usage:
-    python refresh.py           # all data from CSV (no API keys needed)
-    python refresh.py --osint   # also run OSINT tools (needs API keys)
+    python refresh.py           # fetch Entra data, rebuild dashboard
+    python refresh.py --osint   # also run OSINT tools (API keys required)
     python refresh.py --serve   # serve on http://localhost:8080 after build
+
+To only rebuild the dashboard HTML from existing data files:
+    python dashboard/generate_central_dashboard.py
 ============================================================
 """
 
@@ -22,9 +29,10 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parent
 
 STEPS_BASE = [
-    ("Entra ID sync   (MFA/device gaps from CSV)",  ["python", "shared/entra_sync.py"]),
-    ("Threat audit    (risk tier classification)",   ["python", "pillar4_threat/threat_audit.py"]),
-    ("Central dashboard (rebuild HTML)",             ["python", "dashboard/generate_central_dashboard.py"]),
+    ("Entra ID user fetch (real accounts from Graph)", ["python", "pillar1_identity/generate_personas.py"]),
+    ("Entra ID sync   (risky users, MFA/device gaps)", ["python", "shared/entra_sync.py"]),
+    ("Threat audit    (risk tier classification)",      ["python", "pillar4_threat/threat_audit.py"]),
+    ("Central dashboard (rebuild HTML)",                ["python", "dashboard/generate_central_dashboard.py"]),
 ]
 
 STEPS_OSINT = [
@@ -102,8 +110,9 @@ def main():
     if args.serve:
         serve()
     else:
-        print("\n  To view:  python refresh.py --serve")
-        print("  To push:  git add -A && git commit -m 'refresh' && git push\n")
+        print("\n  To view in browser:  python refresh.py --serve")
+        print("  Or open directly:    data/central_dashboard.html")
+        print("  To push:             git add -A && git commit -m 'refresh' && git push\n")
 
 
 if __name__ == "__main__":
