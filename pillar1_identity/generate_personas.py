@@ -134,7 +134,7 @@ def main():
         f"{GRAPH_BASE}/users"
         f"?$select=id,givenName,surname,userPrincipalName,department,jobTitle"
         f",officeLocation,employeeHireDate,createdDateTime,accountEnabled"
-        f"&$filter=accountEnabled eq true"
+        f"&$filter=accountEnabled%20eq%20true"
         f"&$top=999"
     )
     raw_users = graph_get(url, headers)
