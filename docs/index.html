@@ -53,11 +53,11 @@ body{
 .overall-badge{
   display:inline-flex;align-items:center;gap:6px;margin-top:10px;
   padding:5px 12px;border-radius:6px;font-size:11px;font-weight:700;
-  background:#3b82f618;color:#3b82f6;border:1px solid #3b82f644;
+  background:#ef444418;color:#ef4444;border:1px solid #ef444444;
 }
 .overall-badge .pulse{
-  width:6px;height:6px;border-radius:50%;background:#3b82f6;
-  
+  width:6px;height:6px;border-radius:50%;background:#ef4444;
+  animation:pulse 1.5s infinite;
 }
 .main{flex:1;display:flex;flex-direction:column;height:100vh;overflow:hidden}
 .topbar{
@@ -232,7 +232,7 @@ tbody td{padding:11px 16px;vertical-align:middle}
         <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
       </svg>
       <span class="nav-label">P4 · Threat</span>
-      <div class="nav-dot" style="color:#10b981;"></div>
+      <div class="nav-dot" style="color:#ef4444;animation:pulse 1.2s infinite;"></div>
     </div>
     <div class="nav-item" onclick="show('osint')" id="nav-osint">
       <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -266,7 +266,7 @@ tbody td{padding:11px 16px;vertical-align:middle}
     </div>
     <div class="overall-badge">
       <div class="pulse"></div>
-      IN PROGRESS
+      AT RISK
     </div>
   </div>
 </aside>
@@ -278,7 +278,7 @@ tbody td{padding:11px 16px;vertical-align:middle}
   <header class="topbar">
     <div>
       <div class="topbar-title">Security Operations Centre</div>
-      <div class="topbar-meta">Generated 2026-04-09 05:40:48</div>
+      <div class="topbar-meta">Generated 2026-04-09 05:58:00</div>
     </div>
     <div class="topbar-kpis">
       <div class="kpi">
@@ -316,10 +316,10 @@ tbody td{padding:11px 16px;vertical-align:middle}
           <div class="panel-title">Security Overview</div>
           <div class="panel-sub">All pillars · OSINT · Predictions at a glance</div>
         </div>
-        <span class="badge" style="background:#3b82f620;color:#3b82f6;border:1px solid #3b82f640">IN PROGRESS</span>
+        <span class="badge" style="background:#ef444420;color:#ef4444;border:1px solid #ef444440">AT RISK</span>
       </div>
 
-      
+      <div class="alert-banner"><div class="alert-dot"></div><div class="alert-text"><strong>ACTIVE THREAT DETECTED</strong> — 1 CRITICAL · 0 HIGH risk users · 0 dark web credential exposures. Immediate action required.</div></div>
 
       <!-- Pillar summary grid -->
       <div class="pillar-grid">
@@ -357,12 +357,12 @@ tbody td{padding:11px 16px;vertical-align:middle}
           </div>
         </div>
         <div class="pillar-card" onclick="show('p4')">
-          <div class="pc-bg" style="background:#10b981"></div>
-          <div class="pillar-posture" style="background:#10b98120;color:#10b981;border:1px solid #10b98140">COMPLIANT</div>
+          <div class="pc-bg" style="background:#ef4444"></div>
+          <div class="pillar-posture" style="background:#ef444420;color:#ef4444;border:1px solid #ef444440">AT RISK</div>
           <div class="pillar-card-num">Pillar 04</div>
           <div class="pillar-card-title">Threat Detection</div>
           <div class="pillar-card-stats">
-            <div class="pcs"><div class="pcs-val" style="color:var(--red)">0</div><div class="pcs-label">Critical</div></div>
+            <div class="pcs"><div class="pcs-val" style="color:var(--red)">1</div><div class="pcs-label">Critical</div></div>
             <div class="pcs"><div class="pcs-val" style="color:var(--amber)">0</div><div class="pcs-label">High</div></div>
             <div class="pcs"><div class="pcs-val" style="color:var(--purple)">0</div><div class="pcs-label">Dark Web</div></div>
           </div>
@@ -560,13 +560,13 @@ tbody td{padding:11px 16px;vertical-align:middle}
       <div class="panel-header">
         <div>
           <div class="panel-title">Pillar 4 — Threat Detection</div>
-          <div class="panel-sub">Risk classification · Signal aggregation · Audited: 2026-04-09 05:40:48</div>
+          <div class="panel-sub">Risk classification · Signal aggregation · Audited: 2026-04-09 05:58:00</div>
         </div>
-        <span class="badge" style="background:#10b98120;color:#10b981;border:1px solid #10b98140">COMPLIANT</span>
+        <span class="badge" style="background:#ef444420;color:#ef4444;border:1px solid #ef444440">AT RISK</span>
       </div>
       <div class="cards">
         <div class="card" style="--accent-color:var(--red)">
-          <div class="card-val counter" data-target="0">0</div>
+          <div class="card-val counter" data-target="1">0</div>
           <div class="card-label">Critical</div><div class="card-sub">Immediate action needed</div><div class="card-glow"></div>
         </div>
         <div class="card" style="--accent-color:var(--amber)">
@@ -578,7 +578,7 @@ tbody td{padding:11px 16px;vertical-align:middle}
           <div class="card-label">Medium</div><div class="card-sub">Monitor closely</div><div class="card-glow"></div>
         </div>
         <div class="card" style="--accent-color:var(--green)">
-          <div class="card-val counter" data-target="535">0</div>
+          <div class="card-val counter" data-target="534">0</div>
           <div class="card-label">Low</div><div class="card-sub">No active signals</div><div class="card-glow"></div>
         </div>
         <div class="card" style="--accent-color:var(--amber)">
@@ -603,11 +603,12 @@ tbody td{padding:11px 16px;vertical-align:middle}
       <div class="tbl-box">
         <div class="tbl-head">
           <span>Critical &amp; High Risk Users</span>
-          <span>0 users flagged</span>
+          <span>1 users flagged</span>
         </div>
         <table>
           <thead><tr><th>Name</th><th>Department</th><th>Job Title</th><th>Tier</th><th>Signals</th></tr></thead>
-          <tbody></tbody>
+          <tbody><tr><td class='mono'>jane.doe nan</td><td class='muted'>Finance</td><td class='muted'>Financial Controller</td><td><span class="badge b-red">CRITICAL</span></td><td class='muted sig'>IdP-High</td></tr>
+</tbody>
         </table>
       </div>
     </section>
@@ -1646,7 +1647,7 @@ tbody td{padding:11px 16px;vertical-align:middle}
 <script>
 // ── Data ─────────────────────────────────────────────────────
 const KPI_USERS    = 535;
-const KPI_CRITICAL = 0;
+const KPI_CRITICAL = 1;
 const KPI_DARKWEB  = 0;
 const KPI_EXPOSED  = 0;
 const KPI_MFA      = 0;
@@ -1766,13 +1767,13 @@ function buildCharts(){
   // Overview — risk donut
   donut('ov-donut',
     ['Critical','High','Medium','Low'],
-    [0,0,0,535],
+    [1,0,0,534],
     [COLOURS.red,COLOURS.amber,COLOURS.blue,COLOURS.green]
   );
 
   // Overview — dept threats stacked
   vbar('ov-dept',["Unassigned", "Security", "Clinical", "Administration", "Operations", "IT", "Finance", "HR", "Marketing", "Sales", "Billing", "Pharmacy", "Radiology"],[
-    {label:'Critical',data:[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],backgroundColor:COLOURS.red,borderRadius:3},
+    {label:'Critical',data:[0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],backgroundColor:COLOURS.red,borderRadius:3},
     {label:'High',    data:[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],    backgroundColor:COLOURS.amber,borderRadius:3},
     {label:'Medium',  data:[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],  backgroundColor:COLOURS.blue,borderRadius:3},
   ]);
@@ -1829,13 +1830,13 @@ function buildCharts(){
   // P4 — tier donut
   donut('p4-donut',
     ['Critical','High','Medium','Low'],
-    [0,0,0,535],
+    [1,0,0,534],
     [COLOURS.red,COLOURS.amber,COLOURS.blue,COLOURS.green]
   );
 
   // P4 — dept stacked
   vbar('p4-dept',["Unassigned", "Security", "Clinical", "Administration", "Operations", "IT", "Finance", "HR", "Marketing", "Sales", "Billing", "Pharmacy", "Radiology"],[
-    {label:'Critical',data:[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],backgroundColor:COLOURS.red},
+    {label:'Critical',data:[0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],backgroundColor:COLOURS.red},
     {label:'High',    data:[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],    backgroundColor:COLOURS.amber},
     {label:'Medium',  data:[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],  backgroundColor:COLOURS.blue},
   ]);
