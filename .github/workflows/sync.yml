@@ -92,8 +92,8 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git pull --rebase --autostash origin main
+          git pull --rebase --autostash origin HEAD
           git add docs/index.html data/nist_compliance_report.json
           git diff --staged --quiet || \
             git commit -m "chore: 15-min refresh $(date -u +'%Y-%m-%d %H:%M UTC')"
-          git push
+          git push origin HEAD
