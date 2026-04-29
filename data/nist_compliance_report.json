@@ -1,5 +1,5 @@
 {
-  "AuditDate": "2026-04-29 07:23:58",
+  "AuditDate": "2026-04-29 08:11:28",
   "Framework": "NIST SP 800-207, 800-53 Rev5, 800-63B, 800-137",
   "Organisation": "MediZuva Healthcare",
   "Tenant": "micrlabs.onmicrosoft.com",
@@ -63,7 +63,7 @@
       "Title": "Continuous asset and user integrity monitoring",
       "Standard": "NIST SP 800-207 Section 3.1 Tenet 5",
       "Status": "PASS",
-      "Finding": "Automated monitoring pipeline runs every 15 minutes via GitHub Actions. OSINT scan covers all 500 personas across 4 sources. 0 users currently flagged as credential-exposed. Device compliance tracked for 0 non-compliant devices.",
+      "Finding": "Automated monitoring pipeline runs every 15 minutes via GitHub Actions. OSINT scan covers all 535 personas across 4 sources. 0 users currently flagged as credential-exposed. Device compliance tracked for 0 non-compliant devices.",
       "Recommendation": "",
       "Evidence": [
         "GitHub Actions sync.yml \u2014 15-min cron",
