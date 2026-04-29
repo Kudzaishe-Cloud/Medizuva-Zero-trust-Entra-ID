@@ -45,6 +45,30 @@ jobs:
           ENTRA_CLIENT_SECRET: ${{ secrets.ENTRA_CLIENT_SECRET }}
         run: python shared/entra_sync.py
 
+      # Pull sign-in logs, risky sign-ins, and directory audit logs
+      - name: Entra ID log retrieval
+        env:
+          ENTRA_TENANT_ID:     ${{ secrets.ENTRA_TENANT_ID }}
+          ENTRA_CLIENT_ID:     ${{ secrets.ENTRA_CLIENT_ID }}
+          ENTRA_CLIENT_SECRET: ${{ secrets.ENTRA_CLIENT_SECRET }}
+        run: python shared/entra_logs.py
+
+      # Audit Conditional Access policies — produces data/ca_audit.json (Pillar 2)
+      - name: CA policy audit
+        env:
+          ENTRA_TENANT_ID:     ${{ secrets.ENTRA_TENANT_ID }}
+          ENTRA_CLIENT_ID:     ${{ secrets.ENTRA_CLIENT_ID }}
+          ENTRA_CLIENT_SECRET: ${{ secrets.ENTRA_CLIENT_SECRET }}
+        run: python shared/entra_ca.py
+
+      # Audit PIM role assignments — produces data/pim_audit.json (Pillar 3)
+      - name: PIM audit
+        env:
+          ENTRA_TENANT_ID:     ${{ secrets.ENTRA_TENANT_ID }}
+          ENTRA_CLIENT_ID:     ${{ secrets.ENTRA_CLIENT_ID }}
+          ENTRA_CLIENT_SECRET: ${{ secrets.ENTRA_CLIENT_SECRET }}
+        run: python shared/entra_pim.py
+
       # Classify users into risk tiers using real Entra signals
       - name: Threat audit
         run: python pillar4_threat/threat_audit.py
