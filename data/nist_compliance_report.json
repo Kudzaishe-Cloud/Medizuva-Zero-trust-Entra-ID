@@ -1,5 +1,5 @@
 {
-  "AuditDate": "2026-04-29 13:07:46",
+  "AuditDate": "2026-04-29 13:34:22",
   "Framework": "NIST SP 800-207, 800-53 Rev5, 800-63B, 800-137",
   "Organisation": "MediZuva Healthcare",
   "Tenant": "micrlabs.onmicrosoft.com",
@@ -68,7 +68,7 @@
       "Title": "Continuous asset and user integrity monitoring",
       "Standard": "NIST SP 800-207 Section 3.1 Tenet 5",
       "Status": "PASS",
-      "Finding": "Automated monitoring pipeline runs every 15 minutes via GitHub Actions. OSINT scan covers all 500 personas across 4 sources. 322 users currently flagged as credential-exposed. Device compliance tracked for 0 non-compliant devices.",
+      "Finding": "Automated monitoring pipeline runs every 15 minutes via GitHub Actions. OSINT scan covers all 535 personas across 4 sources. 0 users currently flagged as credential-exposed. Device compliance tracked for 0 non-compliant devices.",
       "Recommendation": "",
       "Evidence": [
         "GitHub Actions sync.yml \u2014 15-min cron",
@@ -245,10 +245,10 @@
       "Title": "Authenticator Management \u2014 Breached Password Check",
       "Standard": "NIST SP 800-53 Rev5 IA-5(1)",
       "Status": "PASS",
-      "Finding": "CA009 requires mandatory password change when user risk is medium or high. OSINT pipeline identifies 322 users with credentials in breach databases and elevates their risk tier, triggering CA009 on next sign-in. NIST SP 800-63B Section 5.1.1.2 requires checking passwords against known compromised lists.",
+      "Finding": "CA009 requires mandatory password change when user risk is medium or high. OSINT pipeline identifies 0 users with credentials in breach databases and elevates their risk tier, triggering CA009 on next sign-in. NIST SP 800-63B Section 5.1.1.2 requires checking passwords against known compromised lists.",
       "Recommendation": "",
       "Evidence": [
-        "OSINT exposed: 322",
+        "OSINT exposed: 0",
         "CA009 \u2014 passwordChange grant control on medium/high user risk"
       ]
     },
@@ -270,11 +270,11 @@
       "Title": "Risk Assessment",
       "Standard": "NIST SP 800-53 Rev5 RA-3",
       "Status": "PASS",
-      "Finding": "Automated risk assessment runs every 15 minutes. All 500 users classified into 4 tiers (CRITICAL/HIGH/MEDIUM/LOW) using multi-signal correlation: Entra IdP risk, MFA gaps, device compliance, OSINT exposure, and RiskScore. Current state: 0 CRITICAL, 322 HIGH.",
+      "Finding": "Automated risk assessment runs every 15 minutes. All 500 users classified into 4 tiers (CRITICAL/HIGH/MEDIUM/LOW) using multi-signal correlation: Entra IdP risk, MFA gaps, device compliance, OSINT exposure, and RiskScore. Current state: 0 CRITICAL, 0 HIGH.",
       "Recommendation": "",
       "Evidence": [
         "pillar4_threat/threat_audit.py \u2014 risk classification engine",
-        "Critical: 0 | High: 322 | Medium: 0 | Low: 213"
+        "Critical: 0 | High: 0 | Medium: 0 | Low: 535"
       ]
     },
     {
