@@ -68,6 +68,14 @@ jobs:
           ENTRA_CLIENT_SECRET: ${{ secrets.ENTRA_CLIENT_SECRET }}
         run: python shared/entra_sync.py
 
+      # Pull sign-in logs, risky sign-ins, and directory audit logs
+      - name: Entra ID log retrieval
+        env:
+          ENTRA_TENANT_ID:     ${{ secrets.ENTRA_TENANT_ID }}
+          ENTRA_CLIENT_ID:     ${{ secrets.ENTRA_CLIENT_ID }}
+          ENTRA_CLIENT_SECRET: ${{ secrets.ENTRA_CLIENT_SECRET }}
+        run: python shared/entra_logs.py
+
       - name: Threat audit
         run: python pillar4_threat/threat_audit.py
 
