@@ -1,5 +1,5 @@
 {
-  "AuditDate": "2026-04-27 21:39:42",
+  "AuditDate": "2026-04-29 14:57:29",
   "Framework": "NIST SP 800-207, 800-53 Rev5, 800-63B, 800-137",
   "Organisation": "MediZuva Healthcare",
   "Tenant": "micrlabs.onmicrosoft.com",
@@ -63,7 +63,7 @@
       "Title": "Continuous asset and user integrity monitoring",
       "Standard": "NIST SP 800-207 Section 3.1 Tenet 5",
       "Status": "PASS",
-      "Finding": "Automated monitoring pipeline runs every 15 minutes via GitHub Actions. OSINT scan covers all 500 personas across 4 sources. 335 users currently flagged as credential-exposed. Device compliance tracked for 156 non-compliant devices.",
+      "Finding": "Automated monitoring pipeline runs every 15 minutes via GitHub Actions. OSINT scan covers all 500 personas across 4 sources. 322 users currently flagged as credential-exposed. Device compliance tracked for 156 non-compliant devices.",
       "Recommendation": "",
       "Evidence": [
         "GitHub Actions sync.yml \u2014 15-min cron",
@@ -231,10 +231,10 @@
       "Title": "Authenticator Management \u2014 Breached Password Check",
       "Standard": "NIST SP 800-53 Rev5 IA-5(1)",
       "Status": "PARTIAL",
-      "Finding": "335 users found in breach databases. No automatic password change policy deployed.",
+      "Finding": "322 users found in breach databases. No automatic password change policy deployed.",
       "Recommendation": "Deploy CA009 to force password change on medium/high user risk.",
       "Evidence": [
-        "OSINT exposed: 335",
+        "OSINT exposed: 322",
         "CA009 \u2014 passwordChange grant control on medium/high user risk"
       ]
     },
@@ -256,11 +256,11 @@
       "Title": "Risk Assessment",
       "Standard": "NIST SP 800-53 Rev5 RA-3",
       "Status": "PASS",
-      "Finding": "Automated risk assessment runs every 15 minutes. All 500 users classified into 4 tiers (CRITICAL/HIGH/MEDIUM/LOW) using multi-signal correlation: Entra IdP risk, MFA gaps, device compliance, OSINT exposure, and RiskScore. Current state: 45 CRITICAL, 301 HIGH.",
+      "Finding": "Automated risk assessment runs every 15 minutes. All 500 users classified into 4 tiers (CRITICAL/HIGH/MEDIUM/LOW) using multi-signal correlation: Entra IdP risk, MFA gaps, device compliance, OSINT exposure, and RiskScore. Current state: 36 CRITICAL, 306 HIGH.",
       "Recommendation": "",
       "Evidence": [
         "pillar4_threat/threat_audit.py \u2014 risk classification engine",
-        "Critical: 45 | High: 301 | Medium: 91 | Low: 63"
+        "Critical: 36 | High: 306 | Medium: 85 | Low: 73"
       ]
     },
     {

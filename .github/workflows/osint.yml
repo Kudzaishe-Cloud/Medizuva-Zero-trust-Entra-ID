@@ -121,10 +121,10 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git pull --rebase --autostash origin main
+          git pull --rebase --autostash origin HEAD
           git add docs/index.html \
                   data/osint_results/osint_combined_results.json \
                   data/nist_compliance_report.json
           git diff --staged --quiet || \
             git commit -m "chore: 6h OSINT refresh $(date -u +'%Y-%m-%d %H:%M UTC')"
-          git push
+          git push origin HEAD

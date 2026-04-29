@@ -28,7 +28,17 @@ import sys
 import urllib.request
 import urllib.parse
 import urllib.error
+from datetime import datetime
 from pathlib import Path
+
+import pandas as pd
+
+sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
+from shared.schemas import LOCATIONS
+
+
+class GraphAPIError(Exception):
+    pass
 
 
 def _load_dotenv():
@@ -40,12 +50,6 @@ def _load_dotenv():
         if line and not line.startswith("#") and "=" in line:
             k, _, v = line.partition("=")
             os.environ.setdefault(k.strip(), v.strip())
-import pandas as pd
-from datetime import datetime
-from pathlib import Path
-
-sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
-from shared.schemas import LOCATIONS
 
 REPO_ROOT  = Path(__file__).resolve().parents[1]
 OUT_PATH   = REPO_ROOT / "data" / "personas" / "medizuva_500_personas.csv"
@@ -82,9 +86,7 @@ def graph_get(url: str, headers: dict) -> list:
             items += data.get("value", [])
             url = data.get("@odata.nextLink")
         except urllib.error.HTTPError as e:
-            print(f"  [ERROR] Graph API call failed: HTTP {e.code} — {e.reason}")
-            print(f"  URL: {url}")
-            sys.exit(1)
+            raise GraphAPIError(f"HTTP {e.code} {e.reason} — {url}")
     return items
 
 
@@ -122,6 +124,9 @@ def main():
         if not client_id:     print("  ENTRA_CLIENT_ID is not set")
         if not client_secret: print("  ENTRA_CLIENT_SECRET is not set")
         print("\nSet these in your .env file or as repository secrets.")
+        if OUT_PATH.exists():
+            print(f"[WARN] Falling back to existing CSV: {OUT_PATH}")
+            return
         sys.exit(1)
 
     print("=" * 60)
@@ -133,9 +138,13 @@ def main():
     print("Obtaining access token...")
     try:
         token = get_token(tenant_id, client_id, client_secret)
-    except urllib.error.HTTPError as e:
-        print(f"  [ERROR] Token request failed: HTTP {e.code} — {e.reason}")
-        print("  Check ENTRA_CLIENT_ID and ENTRA_CLIENT_SECRET are correct.")
+    except (urllib.error.HTTPError, urllib.error.URLError) as e:
+        code = getattr(e, "code", "network error")
+        print(f"  [ERROR] Token request failed: {code}")
+        print("  Check ENTRA_TENANT_ID, ENTRA_CLIENT_ID and ENTRA_CLIENT_SECRET.")
+        if OUT_PATH.exists():
+            print(f"[WARN] Falling back to existing CSV: {OUT_PATH}")
+            return
         sys.exit(1)
     headers = {"Authorization": f"Bearer {token}"}
     print("  [OK] Token obtained\n")
@@ -150,7 +159,15 @@ def main():
         f"&$filter=accountEnabled%20eq%20true"
         f"&$top=999"
     )
-    raw_users = graph_get(url, headers)
+    try:
+        raw_users = graph_get(url, headers)
+    except GraphAPIError as e:
+        print(f"  [ERROR] Graph API call failed: {e}")
+        print("  Ensure the app has User.Read.All permission (admin-consented).")
+        if OUT_PATH.exists():
+            print(f"[WARN] Falling back to existing CSV: {OUT_PATH}")
+            return
+        sys.exit(1)
     print(f"  Retrieved {len(raw_users)} active accounts from Entra ID\n")
 
     rows = []
