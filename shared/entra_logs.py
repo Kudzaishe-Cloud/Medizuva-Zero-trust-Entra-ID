@@ -36,6 +36,7 @@ from pathlib import Path
 REPO_ROOT   = Path(__file__).resolve().parents[1]
 OUT_DIR     = REPO_ROOT / "data" / "signin_logs"
 GRAPH_BASE  = "https://graph.microsoft.com/v1.0"
+GRAPH_BETA  = "https://graph.microsoft.com/beta"
 
 
 def _load_dotenv():
@@ -63,6 +64,7 @@ def get_token(tenant_id: str, client_id: str, client_secret: str) -> str:
 
 
 def graph_get(url: str, headers: dict, max_pages: int = 10) -> list:
+    """Paginate through a Graph API endpoint, up to max_pages pages."""
     items = []
     pages = 0
     while url and pages < max_pages:
@@ -100,27 +102,27 @@ def fetch_signin_logs(headers: dict, days: int = 7) -> list:
         location = s.get("location", {})
         device   = s.get("deviceDetail", {})
         logs.append({
-            "Id":              s.get("id", ""),
-            "DateTime":        s.get("createdDateTime", ""),
-            "User":            s.get("userDisplayName", ""),
-            "UPN":             s.get("userPrincipalName", ""),
-            "App":             s.get("appDisplayName", ""),
-            "IPAddress":       s.get("ipAddress", ""),
-            "City":            location.get("city", ""),
-            "Country":         location.get("countryOrRegion", ""),
-            "Success":         status.get("errorCode", -1) == 0,
-            "FailureReason":   status.get("failureReason", ""),
-            "RiskLevel":       s.get("riskLevelDuringSignIn", "none"),
-            "RiskState":       s.get("riskState", "none"),
-            "CAStatus":        s.get("conditionalAccessStatus", ""),
-            "ClientApp":       s.get("clientAppUsed", ""),
-            "DeviceName":      device.get("displayName", ""),
-            "DeviceOS":        device.get("operatingSystem", ""),
-            "DeviceCompliant": device.get("isCompliant", None),
-            "MFADetail":       s.get("mfaDetail"),
+            "Id":               s.get("id", ""),
+            "DateTime":         s.get("createdDateTime", ""),
+            "User":             s.get("userDisplayName", ""),
+            "UPN":              s.get("userPrincipalName", ""),
+            "App":              s.get("appDisplayName", ""),
+            "IPAddress":        s.get("ipAddress", ""),
+            "City":             location.get("city", ""),
+            "Country":          location.get("countryOrRegion", ""),
+            "Success":          status.get("errorCode", -1) == 0,
+            "FailureReason":    status.get("failureReason", ""),
+            "RiskLevel":        s.get("riskLevelDuringSignIn", "none"),
+            "RiskState":        s.get("riskState", "none"),
+            "CAStatus":         s.get("conditionalAccessStatus", ""),
+            "ClientApp":        s.get("clientAppUsed", ""),
+            "DeviceName":       device.get("displayName", ""),
+            "DeviceOS":         device.get("operatingSystem", ""),
+            "DeviceCompliant":  device.get("isCompliant", None),
+            "MFADetail":        s.get("mfaDetail"),
         })
-    failed = sum(1 for l in logs if not l["Success"])
-    risky  = sum(1 for l in logs if l["RiskLevel"] not in ("none", ""))
+    failed  = sum(1 for l in logs if not l["Success"])
+    risky   = sum(1 for l in logs if l["RiskLevel"] not in ("none", ""))
     print(f"  Total sign-ins : {len(logs)}")
     print(f"  Failed         : {failed}")
     print(f"  Risky          : {risky}")
@@ -131,6 +133,7 @@ def fetch_signin_logs(headers: dict, days: int = 7) -> list:
 
 def fetch_risky_signins(headers: dict, days: int = 7) -> list:
     print(f"[2/3] Fetching risky sign-ins (last {days} days)...")
+    since = (datetime.now(timezone.utc) - timedelta(days=days)).strftime("%Y-%m-%dT%H:%M:%SZ")
     url = (
         f"{GRAPH_BASE}/identityProtection/riskyUsers"
         f"?$select=id,userDisplayName,userPrincipalName,riskLevel,"
@@ -170,15 +173,15 @@ def fetch_directory_audits(headers: dict, days: int = 7) -> list:
         actor     = (initiated.get("user") or initiated.get("app") or {})
         targets   = [t.get("userPrincipalName") or t.get("displayName", "") for t in a.get("targetResources", [])]
         audits.append({
-            "Id":        a.get("id", ""),
-            "DateTime":  a.get("activityDateTime", ""),
-            "Activity":  a.get("activityDisplayName", ""),
-            "Category":  a.get("category", ""),
-            "Operation": a.get("operationType", ""),
-            "Result":    a.get("result", ""),
-            "Actor":     actor.get("userPrincipalName") or actor.get("displayName", ""),
-            "Targets":   targets,
-            "Service":   a.get("loggedByService", ""),
+            "Id":           a.get("id", ""),
+            "DateTime":     a.get("activityDateTime", ""),
+            "Activity":     a.get("activityDisplayName", ""),
+            "Category":     a.get("category", ""),
+            "Operation":    a.get("operationType", ""),
+            "Result":       a.get("result", ""),
+            "Actor":        actor.get("userPrincipalName") or actor.get("displayName", ""),
+            "Targets":      targets,
+            "Service":      a.get("loggedByService", ""),
         })
     failed = sum(1 for a in audits if a["Result"] == "failure")
     print(f"  Total audit events : {len(audits)}")
@@ -189,9 +192,9 @@ def fetch_directory_audits(headers: dict, days: int = 7) -> list:
 # ── Summary stats ─────────────────────────────────────────────
 
 def build_summary(signin_logs: list, risky_signins: list, directory_audits: list) -> dict:
-    total    = len(signin_logs)
-    failed   = sum(1 for l in signin_logs if not l["Success"])
-    mfa_used = sum(1 for l in signin_logs if l.get("MFADetail"))
+    total     = len(signin_logs)
+    failed    = sum(1 for l in signin_logs if not l["Success"])
+    mfa_used  = sum(1 for l in signin_logs if l.get("MFADetail"))
     countries = list({l["Country"] for l in signin_logs if l["Country"]})
 
     top_apps: dict[str, int] = {}

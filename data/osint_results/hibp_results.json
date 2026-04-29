@@ -1,0 +1,6318 @@
+{
+  "ScanDate": "2026-04-29 10:17:05",
+  "TotalChecked": 500,
+  "ExposedCount": 109,
+  "Results": [
+    {
+      "Email": "tinashe.phiri2@micrlabs.onmicrosoft.com",
+      "Name": "Tinashe Phiri",
+      "Department": "Clinical",
+      "JobTitle": "Doctor",
+      "Location": "Bulawayo",
+      "RiskScore": 18,
+      "Exposed": true,
+      "ExposureScore": 59,
+      "DarkWebExposure": false,
+      "TotalFindings": 3,
+      "BreachSources": [
+        "LinkedIn-2021",
+        "Zynga-2019",
+        "Collection-1"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "LinkedIn-2021",
+            "BreachDate": "2020-02-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": true,
+        "records": [
+          {
+            "database_name": "Zynga-2019",
+            "username": "tinashe.phiri2",
+            "password": "",
+            "hashed_password": "$2b$12$ee0a623939724633a434d838d5bf432716423e714f01f9579749c",
+            "ip_address": ""
+          },
+          {
+            "database_name": "Collection-1",
+            "username": "tinashe.phiri2",
+            "password": "",
+            "hashed_password": "$2b$12$90f371e6cedf41303f41e72fcc0f6b22774630c9a83d10a2b4c1f",
+            "ip_address": ""
+          }
+        ],
+        "count": 2
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "kudzai.zimba3@micrlabs.onmicrosoft.com",
+      "Name": "Kudzai Zimba",
+      "Department": "Clinical",
+      "JobTitle": "Doctor",
+      "Location": "Harare",
+      "RiskScore": 15,
+      "Exposed": true,
+      "ExposureScore": 59,
+      "DarkWebExposure": true,
+      "TotalFindings": 3,
+      "BreachSources": [
+        "AntiPublic-Combo",
+        "Exploit.in",
+        "RaidForums-Archive"
+      ],
+      "Categories": [
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "AntiPublic-Combo",
+            "BreachDate": "2013-09-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          },
+          {
+            "Name": "Exploit.in",
+            "BreachDate": "2013-08-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 2
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": true,
+        "records": [
+          {
+            "database_name": "RaidForums-Archive",
+            "username": "kudzai.zimba3",
+            "password": "",
+            "hashed_password": "$2b$12$21556326cd93b391be25a9244ed8dd70c96ab0ab093fe9ab9a344",
+            "ip_address": ""
+          }
+        ],
+        "count": 1
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "sifiso.sithole11@micrlabs.onmicrosoft.com",
+      "Name": "Sifiso Sithole",
+      "Department": "Clinical",
+      "JobTitle": "Doctor",
+      "Location": "Masvingo",
+      "RiskScore": 5,
+      "Exposed": true,
+      "ExposureScore": 38,
+      "DarkWebExposure": false,
+      "TotalFindings": 1,
+      "BreachSources": [
+        "Collection-1"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Collection-1",
+            "BreachDate": "2010-12-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "sibusiso.chikwanda12@micrlabs.onmicrosoft.com",
+      "Name": "Sibusiso Chikwanda",
+      "Department": "Clinical",
+      "JobTitle": "Lab Technician",
+      "Location": "Harare",
+      "RiskScore": 13,
+      "Exposed": true,
+      "ExposureScore": 59,
+      "DarkWebExposure": true,
+      "TotalFindings": 3,
+      "BreachSources": [
+        "Collection-1",
+        "LinkedIn-2021",
+        "RaidForums-Archive"
+      ],
+      "Categories": [
+        "data_breach",
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Collection-1",
+            "BreachDate": "2009-07-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          },
+          {
+            "Name": "RaidForums-Archive",
+            "BreachDate": "2015-04-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 2
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": true,
+        "records": [
+          {
+            "database_name": "LinkedIn-2021",
+            "username": "sibusiso.chikwanda12",
+            "password": "",
+            "hashed_password": "$2b$12$1f75e6da4abe4d69324795993a5d85105a94151c9a976e83ec96a",
+            "ip_address": ""
+          }
+        ],
+        "count": 1
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "thandi.mpofu14@micrlabs.onmicrosoft.com",
+      "Name": "Thandi Mpofu",
+      "Department": "Clinical",
+      "JobTitle": "Doctor",
+      "Location": "Harare",
+      "RiskScore": 7,
+      "Exposed": true,
+      "ExposureScore": 47,
+      "DarkWebExposure": true,
+      "TotalFindings": 2,
+      "BreachSources": [
+        "AntiPublic-Combo",
+        "Dropbox-2012"
+      ],
+      "Categories": [
+        "data_breach",
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "AntiPublic-Combo",
+            "BreachDate": "2009-10-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          },
+          {
+            "Name": "Dropbox-2012",
+            "BreachDate": "2021-11-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 2
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "chiedza.ncube19@micrlabs.onmicrosoft.com",
+      "Name": "Chiedza Ncube",
+      "Department": "Clinical",
+      "JobTitle": "Radiologist",
+      "Location": "Bulawayo",
+      "RiskScore": 6,
+      "Exposed": true,
+      "ExposureScore": 84,
+      "DarkWebExposure": true,
+      "TotalFindings": 3,
+      "BreachSources": [
+        "Exploit.in",
+        "RaidForums-Archive",
+        "LinkedIn-2021"
+      ],
+      "Categories": [
+        "data_breach",
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "LinkedIn-2021",
+            "BreachDate": "2012-09-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": true,
+        "records": [
+          {
+            "database_name": "Exploit.in",
+            "username": "chiedza.ncube19",
+            "password": "",
+            "hashed_password": "$2b$12$130abe654aa0b06dad281b9e26bff00f65014fc82a0d23f056f4a",
+            "ip_address": ""
+          }
+        ],
+        "count": 1
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": true,
+        "hits": [
+          {
+            "name": "RaidForums-Archive",
+            "systemid": 66057,
+            "date": "2024-01-04"
+          }
+        ],
+        "count": 1
+      }
+    },
+    {
+      "Email": "lungelo.gumbo27@micrlabs.onmicrosoft.com",
+      "Name": "Lungelo Gumbo",
+      "Department": "Clinical",
+      "JobTitle": "Lab Technician",
+      "Location": "Mutare",
+      "RiskScore": 8,
+      "Exposed": true,
+      "ExposureScore": 56,
+      "DarkWebExposure": false,
+      "TotalFindings": 3,
+      "BreachSources": [
+        "Adobe-2013"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Adobe-2013",
+            "BreachDate": "2022-10-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "tendai.chirwa30@micrlabs.onmicrosoft.com",
+      "Name": "Tendai Chirwa",
+      "Department": "Clinical",
+      "JobTitle": "Lab Technician",
+      "Location": "Gweru",
+      "RiskScore": 6,
+      "Exposed": true,
+      "ExposureScore": 59,
+      "DarkWebExposure": false,
+      "TotalFindings": 3,
+      "BreachSources": [
+        "Zynga-2019",
+        "Collection-1",
+        "Adobe-2013"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Collection-1",
+            "BreachDate": "2020-10-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          },
+          {
+            "Name": "Adobe-2013",
+            "BreachDate": "2010-11-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 2
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": true,
+        "hits": [
+          {
+            "name": "Zynga-2019",
+            "systemid": 31632,
+            "date": "2023-03-20"
+          }
+        ],
+        "count": 1
+      }
+    },
+    {
+      "Email": "zanele.gumbo34@micrlabs.onmicrosoft.com",
+      "Name": "Zanele Gumbo",
+      "Department": "Clinical",
+      "JobTitle": "Doctor",
+      "Location": "Gweru",
+      "RiskScore": 12,
+      "Exposed": true,
+      "ExposureScore": 100,
+      "DarkWebExposure": true,
+      "TotalFindings": 6,
+      "BreachSources": [
+        "LinkedIn-2021",
+        "AntiPublic-Combo",
+        "Dropbox-2012"
+      ],
+      "Categories": [
+        "data_breach",
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "LinkedIn-2021",
+            "BreachDate": "2015-12-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": true,
+        "records": [
+          {
+            "database_name": "AntiPublic-Combo",
+            "username": "zanele.gumbo34",
+            "password": "",
+            "hashed_password": "$2b$12$9c0bda628f23f89e38d16e6250bc95e33885e6b740bcd180d3322",
+            "ip_address": ""
+          },
+          {
+            "database_name": "Dropbox-2012",
+            "username": "zanele.gumbo34",
+            "password": "",
+            "hashed_password": "$2b$12$1608123865a201206530e5effff661710e46af0c30e4c7abf7c10",
+            "ip_address": ""
+          }
+        ],
+        "count": 2
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "sifiso.phiri42@micrlabs.onmicrosoft.com",
+      "Name": "Sifiso Phiri",
+      "Department": "Clinical",
+      "JobTitle": "Nurse",
+      "Location": "Gweru",
+      "RiskScore": 15,
+      "Exposed": true,
+      "ExposureScore": 43,
+      "DarkWebExposure": false,
+      "TotalFindings": 1,
+      "BreachSources": [
+        "Dropbox-2012"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Dropbox-2012",
+            "BreachDate": "2013-05-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "nompilo.chikwanda48@micrlabs.onmicrosoft.com",
+      "Name": "Nompilo Chikwanda",
+      "Department": "Clinical",
+      "JobTitle": "Nurse",
+      "Location": "Mutare",
+      "RiskScore": 20,
+      "Exposed": true,
+      "ExposureScore": 59,
+      "DarkWebExposure": true,
+      "TotalFindings": 3,
+      "BreachSources": [
+        "Math-Way-2014",
+        "RaidForums-Archive",
+        "MySpace-2008"
+      ],
+      "Categories": [
+        "data_breach",
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Math-Way-2014",
+            "BreachDate": "2012-08-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": true,
+        "records": [
+          {
+            "database_name": "MySpace-2008",
+            "username": "nompilo.chikwanda48",
+            "password": "",
+            "hashed_password": "$2b$12$52bdc72df7079e8c7bc01cc67dab07497b726173ecf529423d0c3",
+            "ip_address": ""
+          }
+        ],
+        "count": 1
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": true,
+        "hits": [
+          {
+            "name": "RaidForums-Archive",
+            "systemid": 48254,
+            "date": "2024-12-09"
+          }
+        ],
+        "count": 1
+      }
+    },
+    {
+      "Email": "bongani.chikwanda52@micrlabs.onmicrosoft.com",
+      "Name": "Bongani Chikwanda",
+      "Department": "Clinical",
+      "JobTitle": "Nurse",
+      "Location": "Harare",
+      "RiskScore": 17,
+      "Exposed": true,
+      "ExposureScore": 43,
+      "DarkWebExposure": true,
+      "TotalFindings": 1,
+      "BreachSources": [
+        "Exploit.in"
+      ],
+      "Categories": [
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Exploit.in",
+            "BreachDate": "2010-07-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "lungelo.chirwa61@micrlabs.onmicrosoft.com",
+      "Name": "Lungelo Chirwa",
+      "Department": "Clinical",
+      "JobTitle": "Doctor",
+      "Location": "Gweru",
+      "RiskScore": 10,
+      "Exposed": true,
+      "ExposureScore": 100,
+      "DarkWebExposure": true,
+      "TotalFindings": 5,
+      "BreachSources": [
+        "Dropbox-2012",
+        "Zynga-2019",
+        "Collection-1",
+        "RaidForums-Archive"
+      ],
+      "Categories": [
+        "data_breach",
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Dropbox-2012",
+            "BreachDate": "2016-03-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          },
+          {
+            "Name": "Zynga-2019",
+            "BreachDate": "2008-03-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          },
+          {
+            "Name": "Collection-1",
+            "BreachDate": "2019-04-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 3
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": true,
+        "sources": [
+          "RaidForums-Archive"
+        ],
+        "count": 1
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "kudzai.banda65@micrlabs.onmicrosoft.com",
+      "Name": "Kudzai Banda",
+      "Department": "Clinical",
+      "JobTitle": "Radiologist",
+      "Location": "Bulawayo",
+      "RiskScore": 7,
+      "Exposed": true,
+      "ExposureScore": 59,
+      "DarkWebExposure": false,
+      "TotalFindings": 3,
+      "BreachSources": [
+        "Collection-1",
+        "Zynga-2019"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Collection-1",
+            "BreachDate": "2008-02-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          },
+          {
+            "Name": "Zynga-2019",
+            "BreachDate": "2020-07-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 2
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "lungelo.banda66@micrlabs.onmicrosoft.com",
+      "Name": "Lungelo Banda",
+      "Department": "Clinical",
+      "JobTitle": "Nurse",
+      "Location": "Bulawayo",
+      "RiskScore": 15,
+      "Exposed": true,
+      "ExposureScore": 51,
+      "DarkWebExposure": false,
+      "TotalFindings": 2,
+      "BreachSources": [
+        "MySpace-2008",
+        "Dropbox-2012"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Dropbox-2012",
+            "BreachDate": "2015-07-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": true,
+        "records": [
+          {
+            "database_name": "MySpace-2008",
+            "username": "lungelo.banda66",
+            "password": "",
+            "hashed_password": "$2b$12$0cea5360885a0c157f54e73cbcfbf94cc630d86311805c1290e10",
+            "ip_address": ""
+          }
+        ],
+        "count": 1
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "sibusiso.mhlanga68@micrlabs.onmicrosoft.com",
+      "Name": "Sibusiso Mhlanga",
+      "Department": "Clinical",
+      "JobTitle": "Lab Technician",
+      "Location": "Harare",
+      "RiskScore": 5,
+      "Exposed": true,
+      "ExposureScore": 59,
+      "DarkWebExposure": true,
+      "TotalFindings": 3,
+      "BreachSources": [
+        "RaidForums-Archive",
+        "Collection-1",
+        "MySpace-2008"
+      ],
+      "Categories": [
+        "data_breach",
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "RaidForums-Archive",
+            "BreachDate": "2021-05-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          },
+          {
+            "Name": "Collection-1",
+            "BreachDate": "2020-01-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          },
+          {
+            "Name": "MySpace-2008",
+            "BreachDate": "2013-10-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 3
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "simba.chikwanda69@micrlabs.onmicrosoft.com",
+      "Name": "Simba Chikwanda",
+      "Department": "Clinical",
+      "JobTitle": "Doctor",
+      "Location": "Bulawayo",
+      "RiskScore": 20,
+      "Exposed": true,
+      "ExposureScore": 50,
+      "DarkWebExposure": false,
+      "TotalFindings": 2,
+      "BreachSources": [
+        "LinkedIn-2021"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "LinkedIn-2021",
+            "BreachDate": "2012-05-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "nompilo.banda70@micrlabs.onmicrosoft.com",
+      "Name": "Nompilo Banda",
+      "Department": "Clinical",
+      "JobTitle": "Lab Technician",
+      "Location": "Harare",
+      "RiskScore": 20,
+      "Exposed": true,
+      "ExposureScore": 42,
+      "DarkWebExposure": true,
+      "TotalFindings": 1,
+      "BreachSources": [
+        "Exploit.in"
+      ],
+      "Categories": [
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Exploit.in",
+            "BreachDate": "2017-08-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "tsitsi.chirwa71@micrlabs.onmicrosoft.com",
+      "Name": "Tsitsi Chirwa",
+      "Department": "Clinical",
+      "JobTitle": "Radiologist",
+      "Location": "Bulawayo",
+      "RiskScore": 14,
+      "Exposed": true,
+      "ExposureScore": 45,
+      "DarkWebExposure": false,
+      "TotalFindings": 2,
+      "BreachSources": [
+        "Dropbox-2012",
+        "Collection-1"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Dropbox-2012",
+            "BreachDate": "2013-01-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          },
+          {
+            "Name": "Collection-1",
+            "BreachDate": "2022-08-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 2
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "nkosi.mpofu74@micrlabs.onmicrosoft.com",
+      "Name": "Nkosi Mpofu",
+      "Department": "Clinical",
+      "JobTitle": "Radiologist",
+      "Location": "Harare",
+      "RiskScore": 7,
+      "Exposed": true,
+      "ExposureScore": 100,
+      "DarkWebExposure": true,
+      "TotalFindings": 5,
+      "BreachSources": [
+        "Chegg-2018",
+        "AntiPublic-Combo",
+        "Exploit.in"
+      ],
+      "Categories": [
+        "data_breach",
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Chegg-2018",
+            "BreachDate": "2018-10-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": true,
+        "records": [
+          {
+            "database_name": "AntiPublic-Combo",
+            "username": "nkosi.mpofu74",
+            "password": "",
+            "hashed_password": "$2b$12$423bcf3b222c39470cbe0e76a01736c94e4fbf6dae220268eae53",
+            "ip_address": ""
+          }
+        ],
+        "count": 1
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": true,
+        "hits": [
+          {
+            "name": "Exploit.in",
+            "systemid": 30218,
+            "date": "2021-03-27"
+          }
+        ],
+        "count": 1
+      }
+    },
+    {
+      "Email": "sifiso.moyo81@micrlabs.onmicrosoft.com",
+      "Name": "Sifiso Moyo",
+      "Department": "Clinical",
+      "JobTitle": "Doctor",
+      "Location": "Harare",
+      "RiskScore": 19,
+      "Exposed": true,
+      "ExposureScore": 59,
+      "DarkWebExposure": false,
+      "TotalFindings": 3,
+      "BreachSources": [
+        "Zynga-2019",
+        "Adobe-2013"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Zynga-2019",
+            "BreachDate": "2021-01-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          },
+          {
+            "Name": "Adobe-2013",
+            "BreachDate": "2019-04-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 2
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "nkosi.sithole97@micrlabs.onmicrosoft.com",
+      "Name": "Nkosi Sithole",
+      "Department": "Clinical",
+      "JobTitle": "Radiologist",
+      "Location": "Gweru",
+      "RiskScore": 20,
+      "Exposed": true,
+      "ExposureScore": 96,
+      "DarkWebExposure": true,
+      "TotalFindings": 4,
+      "BreachSources": [
+        "Canva-2019",
+        "Exploit.in"
+      ],
+      "Categories": [
+        "data_breach",
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Exploit.in",
+            "BreachDate": "2012-03-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": true,
+        "hits": [
+          {
+            "name": "Canva-2019",
+            "systemid": 79924,
+            "date": "2020-09-21"
+          }
+        ],
+        "count": 1
+      }
+    },
+    {
+      "Email": "simba.gumbo100@micrlabs.onmicrosoft.com",
+      "Name": "Simba Gumbo",
+      "Department": "Clinical",
+      "JobTitle": "Nurse",
+      "Location": "Masvingo",
+      "RiskScore": 10,
+      "Exposed": true,
+      "ExposureScore": 59,
+      "DarkWebExposure": false,
+      "TotalFindings": 3,
+      "BreachSources": [
+        "Adobe-2013",
+        "MySpace-2008",
+        "000webhost-2015"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Adobe-2013",
+            "BreachDate": "2013-08-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": true,
+        "sources": [
+          "MySpace-2008",
+          "000webhost-2015"
+        ],
+        "count": 2
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "thandi.chirwa104@micrlabs.onmicrosoft.com",
+      "Name": "Thandi Chirwa",
+      "Department": "Clinical",
+      "JobTitle": "Doctor",
+      "Location": "Harare",
+      "RiskScore": 14,
+      "Exposed": true,
+      "ExposureScore": 56,
+      "DarkWebExposure": true,
+      "TotalFindings": 3,
+      "BreachSources": [
+        "Canva-2019",
+        "RaidForums-Archive",
+        "LinkedIn-2021"
+      ],
+      "Categories": [
+        "data_breach",
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Canva-2019",
+            "BreachDate": "2009-07-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          },
+          {
+            "Name": "RaidForums-Archive",
+            "BreachDate": "2014-06-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          },
+          {
+            "Name": "LinkedIn-2021",
+            "BreachDate": "2010-07-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 3
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "nkosi.dube111@micrlabs.onmicrosoft.com",
+      "Name": "Nkosi Dube",
+      "Department": "Clinical",
+      "JobTitle": "Nurse",
+      "Location": "Harare",
+      "RiskScore": 8,
+      "Exposed": true,
+      "ExposureScore": 59,
+      "DarkWebExposure": false,
+      "TotalFindings": 3,
+      "BreachSources": [
+        "LinkedIn-2021"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "LinkedIn-2021",
+            "BreachDate": "2017-01-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "sifiso.zimba113@micrlabs.onmicrosoft.com",
+      "Name": "Sifiso Zimba",
+      "Department": "Clinical",
+      "JobTitle": "Doctor",
+      "Location": "Bulawayo",
+      "RiskScore": 7,
+      "Exposed": true,
+      "ExposureScore": 45,
+      "DarkWebExposure": true,
+      "TotalFindings": 2,
+      "BreachSources": [
+        "000webhost-2015",
+        "RaidForums-Archive"
+      ],
+      "Categories": [
+        "data_breach",
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "000webhost-2015",
+            "BreachDate": "2008-09-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          },
+          {
+            "Name": "RaidForums-Archive",
+            "BreachDate": "2021-11-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 2
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "sibusiso.nkomo115@micrlabs.onmicrosoft.com",
+      "Name": "Sibusiso Nkomo",
+      "Department": "Clinical",
+      "JobTitle": "Radiologist",
+      "Location": "Mutare",
+      "RiskScore": 11,
+      "Exposed": true,
+      "ExposureScore": 100,
+      "DarkWebExposure": true,
+      "TotalFindings": 6,
+      "BreachSources": [
+        "RaidForums-Archive",
+        "MySpace-2008"
+      ],
+      "Categories": [
+        "data_breach",
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "RaidForums-Archive",
+            "BreachDate": "2008-05-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": true,
+        "hits": [
+          {
+            "name": "MySpace-2008",
+            "systemid": 89007,
+            "date": "2020-06-10"
+          }
+        ],
+        "count": 1
+      }
+    },
+    {
+      "Email": "thandi.tembo123@micrlabs.onmicrosoft.com",
+      "Name": "Thandi Tembo",
+      "Department": "Clinical",
+      "JobTitle": "Nurse",
+      "Location": "Harare",
+      "RiskScore": 6,
+      "Exposed": true,
+      "ExposureScore": 59,
+      "DarkWebExposure": false,
+      "TotalFindings": 3,
+      "BreachSources": [
+        "Dropbox-2012",
+        "Collection-1"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Dropbox-2012",
+            "BreachDate": "2014-10-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": true,
+        "sources": [
+          "Collection-1"
+        ],
+        "count": 1
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "tinashe.chikwanda126@micrlabs.onmicrosoft.com",
+      "Name": "Tinashe Chikwanda",
+      "Department": "Clinical",
+      "JobTitle": "Doctor",
+      "Location": "Masvingo",
+      "RiskScore": 14,
+      "Exposed": true,
+      "ExposureScore": 40,
+      "DarkWebExposure": false,
+      "TotalFindings": 1,
+      "BreachSources": [
+        "Adobe-2013"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Adobe-2013",
+            "BreachDate": "2008-01-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "farai.zimba127@micrlabs.onmicrosoft.com",
+      "Name": "Farai Zimba",
+      "Department": "Clinical",
+      "JobTitle": "Radiologist",
+      "Location": "Bulawayo",
+      "RiskScore": 16,
+      "Exposed": true,
+      "ExposureScore": 100,
+      "DarkWebExposure": true,
+      "TotalFindings": 5,
+      "BreachSources": [
+        "Verifications.io"
+      ],
+      "Categories": [
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Verifications.io",
+            "BreachDate": "2015-12-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "sifiso.phiri130@micrlabs.onmicrosoft.com",
+      "Name": "Sifiso Phiri",
+      "Department": "Clinical",
+      "JobTitle": "Nurse",
+      "Location": "Harare",
+      "RiskScore": 12,
+      "Exposed": true,
+      "ExposureScore": 39,
+      "DarkWebExposure": false,
+      "TotalFindings": 1,
+      "BreachSources": [
+        "Adobe-2013"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Adobe-2013",
+            "BreachDate": "2021-09-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "tendai.ncube132@micrlabs.onmicrosoft.com",
+      "Name": "Tendai Ncube",
+      "Department": "Clinical",
+      "JobTitle": "Nurse",
+      "Location": "Harare",
+      "RiskScore": 19,
+      "Exposed": true,
+      "ExposureScore": 100,
+      "DarkWebExposure": true,
+      "TotalFindings": 6,
+      "BreachSources": [
+        "Collection-1",
+        "Paste-Site-Combo-2024",
+        "RaidForums-Archive"
+      ],
+      "Categories": [
+        "dark_web",
+        "data_breach",
+        "paste_site"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Collection-1",
+            "BreachDate": "2022-06-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          },
+          {
+            "Name": "Paste-Site-Combo-2024",
+            "BreachDate": "2014-01-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 2
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": true,
+        "sources": [
+          "RaidForums-Archive"
+        ],
+        "count": 1
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "thandi.chirwa139@micrlabs.onmicrosoft.com",
+      "Name": "Thandi Chirwa",
+      "Department": "Clinical",
+      "JobTitle": "Nurse",
+      "Location": "Bulawayo",
+      "RiskScore": 7,
+      "Exposed": true,
+      "ExposureScore": 46,
+      "DarkWebExposure": true,
+      "TotalFindings": 2,
+      "BreachSources": [
+        "Chegg-2018",
+        "RaidForums-Archive"
+      ],
+      "Categories": [
+        "data_breach",
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Chegg-2018",
+            "BreachDate": "2009-04-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          },
+          {
+            "Name": "RaidForums-Archive",
+            "BreachDate": "2023-05-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 2
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "rudo.mhlanga142@micrlabs.onmicrosoft.com",
+      "Name": "Rudo Mhlanga",
+      "Department": "Clinical",
+      "JobTitle": "Nurse",
+      "Location": "Mutare",
+      "RiskScore": 6,
+      "Exposed": true,
+      "ExposureScore": 90,
+      "DarkWebExposure": true,
+      "TotalFindings": 3,
+      "BreachSources": [
+        "RaidForums-Archive"
+      ],
+      "Categories": [
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "RaidForums-Archive",
+            "BreachDate": "2019-01-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "takudzwa.chirwa145@micrlabs.onmicrosoft.com",
+      "Name": "Takudzwa Chirwa",
+      "Department": "Clinical",
+      "JobTitle": "Radiologist",
+      "Location": "Masvingo",
+      "RiskScore": 14,
+      "Exposed": true,
+      "ExposureScore": 41,
+      "DarkWebExposure": false,
+      "TotalFindings": 1,
+      "BreachSources": [
+        "Zynga-2019"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Zynga-2019",
+            "BreachDate": "2013-11-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "takudzwa.gumbo149@micrlabs.onmicrosoft.com",
+      "Name": "Takudzwa Gumbo",
+      "Department": "Clinical",
+      "JobTitle": "Nurse",
+      "Location": "Harare",
+      "RiskScore": 9,
+      "Exposed": true,
+      "ExposureScore": 50,
+      "DarkWebExposure": false,
+      "TotalFindings": 2,
+      "BreachSources": [
+        "Collection-1",
+        "Adobe-2013"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Collection-1",
+            "BreachDate": "2018-10-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          },
+          {
+            "Name": "Adobe-2013",
+            "BreachDate": "2023-06-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 2
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "tatenda.mutasa155@micrlabs.onmicrosoft.com",
+      "Name": "Tatenda Mutasa",
+      "Department": "Clinical",
+      "JobTitle": "Lab Technician",
+      "Location": "Bulawayo",
+      "RiskScore": 19,
+      "Exposed": true,
+      "ExposureScore": 46,
+      "DarkWebExposure": true,
+      "TotalFindings": 2,
+      "BreachSources": [
+        "LinkedIn-2021",
+        "DataBreach.net"
+      ],
+      "Categories": [
+        "data_breach",
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "DataBreach.net",
+            "BreachDate": "2023-06-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": true,
+        "sources": [
+          "LinkedIn-2021"
+        ],
+        "count": 1
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "zanele.zimba157@micrlabs.onmicrosoft.com",
+      "Name": "Zanele Zimba",
+      "Department": "Clinical",
+      "JobTitle": "Lab Technician",
+      "Location": "Masvingo",
+      "RiskScore": 11,
+      "Exposed": true,
+      "ExposureScore": 93,
+      "DarkWebExposure": true,
+      "TotalFindings": 3,
+      "BreachSources": [
+        "RaidForums-Archive",
+        "Dropbox-2012"
+      ],
+      "Categories": [
+        "data_breach",
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "RaidForums-Archive",
+            "BreachDate": "2013-06-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": true,
+        "records": [
+          {
+            "database_name": "Dropbox-2012",
+            "username": "zanele.zimba157",
+            "password": "",
+            "hashed_password": "$2b$12$581d6642b4fe87c2ab0811b62e972cd9b883383e315677bc7b12b",
+            "ip_address": ""
+          }
+        ],
+        "count": 1
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "thandi.ncube158@micrlabs.onmicrosoft.com",
+      "Name": "Thandi Ncube",
+      "Department": "Clinical",
+      "JobTitle": "Doctor",
+      "Location": "Mutare",
+      "RiskScore": 19,
+      "Exposed": true,
+      "ExposureScore": 59,
+      "DarkWebExposure": false,
+      "TotalFindings": 3,
+      "BreachSources": [
+        "Collection-1"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Collection-1",
+            "BreachDate": "2021-11-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "nomvula.tembo167@micrlabs.onmicrosoft.com",
+      "Name": "Nomvula Tembo",
+      "Department": "Clinical",
+      "JobTitle": "Lab Technician",
+      "Location": "Mutare",
+      "RiskScore": 16,
+      "Exposed": true,
+      "ExposureScore": 49,
+      "DarkWebExposure": false,
+      "TotalFindings": 2,
+      "BreachSources": [
+        "Chegg-2018",
+        "Zynga-2019"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Zynga-2019",
+            "BreachDate": "2019-11-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": true,
+        "sources": [
+          "Chegg-2018"
+        ],
+        "count": 1
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "simba.dube171@micrlabs.onmicrosoft.com",
+      "Name": "Simba Dube",
+      "Department": "Clinical",
+      "JobTitle": "Doctor",
+      "Location": "Harare",
+      "RiskScore": 12,
+      "Exposed": true,
+      "ExposureScore": 100,
+      "DarkWebExposure": true,
+      "TotalFindings": 5,
+      "BreachSources": [
+        "Chegg-2018",
+        "RaidForums-Archive"
+      ],
+      "Categories": [
+        "data_breach",
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Chegg-2018",
+            "BreachDate": "2019-06-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": true,
+        "records": [
+          {
+            "database_name": "RaidForums-Archive",
+            "username": "simba.dube171",
+            "password": "",
+            "hashed_password": "$2b$12$c89ebfadb5a0de0a1d86d65a943815ff9e86b63eccd839783dca5",
+            "ip_address": ""
+          }
+        ],
+        "count": 1
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "thandi.banda175@micrlabs.onmicrosoft.com",
+      "Name": "Thandi Banda",
+      "Department": "Clinical",
+      "JobTitle": "Nurse",
+      "Location": "Harare",
+      "RiskScore": 20,
+      "Exposed": true,
+      "ExposureScore": 37,
+      "DarkWebExposure": true,
+      "TotalFindings": 1,
+      "BreachSources": [
+        "DataBreach.net"
+      ],
+      "Categories": [
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "DataBreach.net",
+            "BreachDate": "2008-01-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "lungelo.dube184@micrlabs.onmicrosoft.com",
+      "Name": "Lungelo Dube",
+      "Department": "Clinical",
+      "JobTitle": "Nurse",
+      "Location": "Harare",
+      "RiskScore": 15,
+      "Exposed": true,
+      "ExposureScore": 46,
+      "DarkWebExposure": false,
+      "TotalFindings": 2,
+      "BreachSources": [
+        "LinkedIn-2021",
+        "Canva-2019"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "LinkedIn-2021",
+            "BreachDate": "2012-04-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": true,
+        "sources": [
+          "Canva-2019"
+        ],
+        "count": 1
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "bongani.mpofu193@micrlabs.onmicrosoft.com",
+      "Name": "Bongani Mpofu",
+      "Department": "Clinical",
+      "JobTitle": "Lab Technician",
+      "Location": "Gweru",
+      "RiskScore": 13,
+      "Exposed": true,
+      "ExposureScore": 47,
+      "DarkWebExposure": false,
+      "TotalFindings": 2,
+      "BreachSources": [
+        "Dropbox-2012",
+        "Collection-1"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Collection-1",
+            "BreachDate": "2010-06-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": true,
+        "sources": [
+          "Dropbox-2012"
+        ],
+        "count": 1
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "thandi.chirwa196@micrlabs.onmicrosoft.com",
+      "Name": "Thandi Chirwa",
+      "Department": "Clinical",
+      "JobTitle": "Lab Technician",
+      "Location": "Harare",
+      "RiskScore": 12,
+      "Exposed": true,
+      "ExposureScore": 41,
+      "DarkWebExposure": false,
+      "TotalFindings": 1,
+      "BreachSources": [
+        "LinkedIn-2021"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "LinkedIn-2021",
+            "BreachDate": "2016-10-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "tatenda.chikwanda198@micrlabs.onmicrosoft.com",
+      "Name": "Tatenda Chikwanda",
+      "Department": "Clinical",
+      "JobTitle": "Lab Technician",
+      "Location": "Bulawayo",
+      "RiskScore": 14,
+      "Exposed": true,
+      "ExposureScore": 43,
+      "DarkWebExposure": false,
+      "TotalFindings": 1,
+      "BreachSources": [
+        "Canva-2019"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Canva-2019",
+            "BreachDate": "2021-02-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "sibusiso.gumbo207@micrlabs.onmicrosoft.com",
+      "Name": "Sibusiso Gumbo",
+      "Department": "Billing",
+      "JobTitle": "Claims Analyst",
+      "Location": "Bulawayo",
+      "RiskScore": 18,
+      "Exposed": true,
+      "ExposureScore": 59,
+      "DarkWebExposure": true,
+      "TotalFindings": 3,
+      "BreachSources": [
+        "Collection-1",
+        "RaidForums-Archive"
+      ],
+      "Categories": [
+        "data_breach",
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Collection-1",
+            "BreachDate": "2010-08-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": true,
+        "records": [
+          {
+            "database_name": "RaidForums-Archive",
+            "username": "sibusiso.gumbo207",
+            "password": "",
+            "hashed_password": "$2b$12$18d5ba357069156c8e5f23444602ae85e196a2059cc6802216614",
+            "ip_address": ""
+          }
+        ],
+        "count": 1
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "chiedza.gumbo209@micrlabs.onmicrosoft.com",
+      "Name": "Chiedza Gumbo",
+      "Department": "Billing",
+      "JobTitle": "Billing Clerk",
+      "Location": "Harare",
+      "RiskScore": 9,
+      "Exposed": true,
+      "ExposureScore": 100,
+      "DarkWebExposure": true,
+      "TotalFindings": 6,
+      "BreachSources": [
+        "DataBreach.net",
+        "Paste-Site-Combo-2024",
+        "LinkedIn-2021",
+        "Canva-2019"
+      ],
+      "Categories": [
+        "paste_site",
+        "data_breach",
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "DataBreach.net",
+            "BreachDate": "2017-05-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": true,
+        "records": [
+          {
+            "database_name": "Canva-2019",
+            "username": "chiedza.gumbo209",
+            "password": "",
+            "hashed_password": "$2b$12$42c6eebf629988ea4681747cac2e47634e03dde4f9d8311ae4429",
+            "ip_address": ""
+          }
+        ],
+        "count": 1
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": true,
+        "hits": [
+          {
+            "name": "Paste-Site-Combo-2024",
+            "systemid": 78195,
+            "date": "2024-09-11"
+          },
+          {
+            "name": "LinkedIn-2021",
+            "systemid": 27536,
+            "date": "2022-08-12"
+          }
+        ],
+        "count": 2
+      }
+    },
+    {
+      "Email": "bongani.chikwanda215@micrlabs.onmicrosoft.com",
+      "Name": "Bongani Chikwanda",
+      "Department": "Billing",
+      "JobTitle": "Finance Officer",
+      "Location": "Gweru",
+      "RiskScore": 18,
+      "Exposed": true,
+      "ExposureScore": 47,
+      "DarkWebExposure": false,
+      "TotalFindings": 2,
+      "BreachSources": [
+        "Adobe-2013",
+        "Collection-1"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Collection-1",
+            "BreachDate": "2020-06-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": true,
+        "sources": [
+          "Adobe-2013"
+        ],
+        "count": 1
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "tsitsi.tembo220@micrlabs.onmicrosoft.com",
+      "Name": "Tsitsi Tembo",
+      "Department": "Billing",
+      "JobTitle": "Billing Clerk",
+      "Location": "Bulawayo",
+      "RiskScore": 15,
+      "Exposed": true,
+      "ExposureScore": 91,
+      "DarkWebExposure": true,
+      "TotalFindings": 3,
+      "BreachSources": [
+        "Zynga-2019",
+        "RaidForums-Archive",
+        "Dropbox-2012"
+      ],
+      "Categories": [
+        "data_breach",
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Zynga-2019",
+            "BreachDate": "2020-07-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          },
+          {
+            "Name": "RaidForums-Archive",
+            "BreachDate": "2008-02-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 2
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": true,
+        "sources": [
+          "Dropbox-2012"
+        ],
+        "count": 1
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "bongani.mutasa223@micrlabs.onmicrosoft.com",
+      "Name": "Bongani Mutasa",
+      "Department": "Billing",
+      "JobTitle": "Medical Coder",
+      "Location": "Harare",
+      "RiskScore": 9,
+      "Exposed": true,
+      "ExposureScore": 42,
+      "DarkWebExposure": true,
+      "TotalFindings": 1,
+      "BreachSources": [
+        "DataBreach.net"
+      ],
+      "Categories": [
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "DataBreach.net",
+            "BreachDate": "2009-09-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "chiedza.gumbo229@micrlabs.onmicrosoft.com",
+      "Name": "Chiedza Gumbo",
+      "Department": "Billing",
+      "JobTitle": "Medical Coder",
+      "Location": "Harare",
+      "RiskScore": 13,
+      "Exposed": true,
+      "ExposureScore": 38,
+      "DarkWebExposure": true,
+      "TotalFindings": 1,
+      "BreachSources": [
+        "RaidForums-Archive"
+      ],
+      "Categories": [
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "RaidForums-Archive",
+            "BreachDate": "2020-07-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "munyaradzi.zimba231@micrlabs.onmicrosoft.com",
+      "Name": "Munyaradzi Zimba",
+      "Department": "Billing",
+      "JobTitle": "Billing Clerk",
+      "Location": "Harare",
+      "RiskScore": 10,
+      "Exposed": true,
+      "ExposureScore": 48,
+      "DarkWebExposure": false,
+      "TotalFindings": 2,
+      "BreachSources": [
+        "Adobe-2013"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Adobe-2013",
+            "BreachDate": "2011-07-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "simba.gumbo232@micrlabs.onmicrosoft.com",
+      "Name": "Simba Gumbo",
+      "Department": "Billing",
+      "JobTitle": "Finance Officer",
+      "Location": "Harare",
+      "RiskScore": 20,
+      "Exposed": true,
+      "ExposureScore": 85,
+      "DarkWebExposure": true,
+      "TotalFindings": 3,
+      "BreachSources": [
+        "LinkedIn-2021",
+        "Verifications.io"
+      ],
+      "Categories": [
+        "data_breach",
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "LinkedIn-2021",
+            "BreachDate": "2013-07-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": true,
+        "hits": [
+          {
+            "name": "Verifications.io",
+            "systemid": 22051,
+            "date": "2022-04-07"
+          }
+        ],
+        "count": 1
+      }
+    },
+    {
+      "Email": "tatenda.ncube239@micrlabs.onmicrosoft.com",
+      "Name": "Tatenda Ncube",
+      "Department": "Billing",
+      "JobTitle": "Medical Coder",
+      "Location": "Harare",
+      "RiskScore": 15,
+      "Exposed": true,
+      "ExposureScore": 36,
+      "DarkWebExposure": true,
+      "TotalFindings": 1,
+      "BreachSources": [
+        "AntiPublic-Combo"
+      ],
+      "Categories": [
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "AntiPublic-Combo",
+            "BreachDate": "2023-03-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "thandi.banda241@micrlabs.onmicrosoft.com",
+      "Name": "Thandi Banda",
+      "Department": "Billing",
+      "JobTitle": "Finance Officer",
+      "Location": "Harare",
+      "RiskScore": 14,
+      "Exposed": true,
+      "ExposureScore": 59,
+      "DarkWebExposure": false,
+      "TotalFindings": 3,
+      "BreachSources": [
+        "Collection-1",
+        "Math-Way-2014",
+        "Paste-Site-Combo-2024"
+      ],
+      "Categories": [
+        "data_breach",
+        "paste_site"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Paste-Site-Combo-2024",
+            "BreachDate": "2021-11-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": true,
+        "records": [
+          {
+            "database_name": "Math-Way-2014",
+            "username": "thandi.banda241",
+            "password": "",
+            "hashed_password": "$2b$12$6a0ce87ab60edff0c75592276f48403efa1f097df8abfdceca4f1",
+            "ip_address": ""
+          }
+        ],
+        "count": 1
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": true,
+        "sources": [
+          "Collection-1"
+        ],
+        "count": 1
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "zanele.moyo248@micrlabs.onmicrosoft.com",
+      "Name": "Zanele Moyo",
+      "Department": "Billing",
+      "JobTitle": "Medical Coder",
+      "Location": "Mutare",
+      "RiskScore": 7,
+      "Exposed": true,
+      "ExposureScore": 52,
+      "DarkWebExposure": true,
+      "TotalFindings": 2,
+      "BreachSources": [
+        "RaidForums-Archive"
+      ],
+      "Categories": [
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "RaidForums-Archive",
+            "BreachDate": "2012-10-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "lungelo.banda252@micrlabs.onmicrosoft.com",
+      "Name": "Lungelo Banda",
+      "Department": "Billing",
+      "JobTitle": "Finance Officer",
+      "Location": "Mutare",
+      "RiskScore": 8,
+      "Exposed": true,
+      "ExposureScore": 43,
+      "DarkWebExposure": false,
+      "TotalFindings": 1,
+      "BreachSources": [
+        "Collection-1"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Collection-1",
+            "BreachDate": "2008-07-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "nkosi.tembo255@micrlabs.onmicrosoft.com",
+      "Name": "Nkosi Tembo",
+      "Department": "Billing",
+      "JobTitle": "Medical Coder",
+      "Location": "Bulawayo",
+      "RiskScore": 17,
+      "Exposed": true,
+      "ExposureScore": 59,
+      "DarkWebExposure": true,
+      "TotalFindings": 3,
+      "BreachSources": [
+        "Exploit.in",
+        "Zynga-2019",
+        "Collection-1"
+      ],
+      "Categories": [
+        "data_breach",
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Zynga-2019",
+            "BreachDate": "2013-11-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": true,
+        "hits": [
+          {
+            "name": "Exploit.in",
+            "systemid": 90473,
+            "date": "2025-09-10"
+          },
+          {
+            "name": "Collection-1",
+            "systemid": 67536,
+            "date": "2020-04-28"
+          }
+        ],
+        "count": 2
+      }
+    },
+    {
+      "Email": "chiedza.chirwa272@micrlabs.onmicrosoft.com",
+      "Name": "Chiedza Chirwa",
+      "Department": "Billing",
+      "JobTitle": "Billing Clerk",
+      "Location": "Mutare",
+      "RiskScore": 10,
+      "Exposed": true,
+      "ExposureScore": 59,
+      "DarkWebExposure": false,
+      "TotalFindings": 3,
+      "BreachSources": [
+        "Dropbox-2012",
+        "Zynga-2019"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Dropbox-2012",
+            "BreachDate": "2019-04-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": true,
+        "records": [
+          {
+            "database_name": "Zynga-2019",
+            "username": "chiedza.chirwa272",
+            "password": "",
+            "hashed_password": "$2b$12$b71c0317fc03821fb6682dc41eef9da7cad921ca256691ee9ccbd",
+            "ip_address": ""
+          }
+        ],
+        "count": 1
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "nyasha.zimba281@micrlabs.onmicrosoft.com",
+      "Name": "Nyasha Zimba",
+      "Department": "Billing",
+      "JobTitle": "Billing Clerk",
+      "Location": "Harare",
+      "RiskScore": 5,
+      "Exposed": true,
+      "ExposureScore": 100,
+      "DarkWebExposure": true,
+      "TotalFindings": 6,
+      "BreachSources": [
+        "Canva-2019",
+        "RaidForums-Archive"
+      ],
+      "Categories": [
+        "data_breach",
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Canva-2019",
+            "BreachDate": "2014-02-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": true,
+        "records": [
+          {
+            "database_name": "RaidForums-Archive",
+            "username": "nyasha.zimba281",
+            "password": "",
+            "hashed_password": "$2b$12$95f48d096988020ddf8744a667e4be55d90606082865d4785776e",
+            "ip_address": ""
+          }
+        ],
+        "count": 1
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "sifiso.mutasa282@micrlabs.onmicrosoft.com",
+      "Name": "Sifiso Mutasa",
+      "Department": "Billing",
+      "JobTitle": "Claims Analyst",
+      "Location": "Bulawayo",
+      "RiskScore": 7,
+      "Exposed": true,
+      "ExposureScore": 55,
+      "DarkWebExposure": true,
+      "TotalFindings": 3,
+      "BreachSources": [
+        "RaidForums-Archive"
+      ],
+      "Categories": [
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "RaidForums-Archive",
+            "BreachDate": "2023-04-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "tatenda.gumbo283@micrlabs.onmicrosoft.com",
+      "Name": "Tatenda Gumbo",
+      "Department": "Billing",
+      "JobTitle": "Finance Officer",
+      "Location": "Harare",
+      "RiskScore": 18,
+      "Exposed": true,
+      "ExposureScore": 50,
+      "DarkWebExposure": false,
+      "TotalFindings": 2,
+      "BreachSources": [
+        "Collection-1"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Collection-1",
+            "BreachDate": "2010-09-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "nompilo.moyo296@micrlabs.onmicrosoft.com",
+      "Name": "Nompilo Moyo",
+      "Department": "Billing",
+      "JobTitle": "Claims Analyst",
+      "Location": "Masvingo",
+      "RiskScore": 6,
+      "Exposed": true,
+      "ExposureScore": 95,
+      "DarkWebExposure": true,
+      "TotalFindings": 4,
+      "BreachSources": [
+        "RaidForums-Archive"
+      ],
+      "Categories": [
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "RaidForums-Archive",
+            "BreachDate": "2011-11-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "nompilo.tembo297@micrlabs.onmicrosoft.com",
+      "Name": "Nompilo Tembo",
+      "Department": "Billing",
+      "JobTitle": "Medical Coder",
+      "Location": "Harare",
+      "RiskScore": 17,
+      "Exposed": true,
+      "ExposureScore": 45,
+      "DarkWebExposure": true,
+      "TotalFindings": 2,
+      "BreachSources": [
+        "Adobe-2013",
+        "AntiPublic-Combo"
+      ],
+      "Categories": [
+        "data_breach",
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "AntiPublic-Combo",
+            "BreachDate": "2018-12-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": true,
+        "records": [
+          {
+            "database_name": "Adobe-2013",
+            "username": "nompilo.tembo297",
+            "password": "",
+            "hashed_password": "$2b$12$a0d5951c6a4131bfaf5991d1c0b0bb4f57e60b072f664d1b2a9af",
+            "ip_address": ""
+          }
+        ],
+        "count": 1
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "tsitsi.mpofu313@micrlabs.onmicrosoft.com",
+      "Name": "Tsitsi Mpofu",
+      "Department": "Operations",
+      "JobTitle": "HR Manager",
+      "Location": "Harare",
+      "RiskScore": 11,
+      "Exposed": true,
+      "ExposureScore": 42,
+      "DarkWebExposure": false,
+      "TotalFindings": 1,
+      "BreachSources": [
+        "Adobe-2013"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Adobe-2013",
+            "BreachDate": "2011-02-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "sifiso.sithole315@micrlabs.onmicrosoft.com",
+      "Name": "Sifiso Sithole",
+      "Department": "Operations",
+      "JobTitle": "HR Manager",
+      "Location": "Harare",
+      "RiskScore": 10,
+      "Exposed": true,
+      "ExposureScore": 41,
+      "DarkWebExposure": false,
+      "TotalFindings": 1,
+      "BreachSources": [
+        "Zynga-2019"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Zynga-2019",
+            "BreachDate": "2011-03-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "nomvula.tembo316@micrlabs.onmicrosoft.com",
+      "Name": "Nomvula Tembo",
+      "Department": "Operations",
+      "JobTitle": "Administrator",
+      "Location": "Masvingo",
+      "RiskScore": 16,
+      "Exposed": true,
+      "ExposureScore": 35,
+      "DarkWebExposure": false,
+      "TotalFindings": 1,
+      "BreachSources": [
+        "LinkedIn-2021"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "LinkedIn-2021",
+            "BreachDate": "2017-06-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "takudzwa.chikwanda320@micrlabs.onmicrosoft.com",
+      "Name": "Takudzwa Chikwanda",
+      "Department": "Operations",
+      "JobTitle": "Receptionist",
+      "Location": "Mutare",
+      "RiskScore": 19,
+      "Exposed": true,
+      "ExposureScore": 100,
+      "DarkWebExposure": true,
+      "TotalFindings": 6,
+      "BreachSources": [
+        "RaidForums-Archive",
+        "Math-Way-2014",
+        "Dropbox-2012",
+        "Adobe-2013"
+      ],
+      "Categories": [
+        "data_breach",
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "RaidForums-Archive",
+            "BreachDate": "2011-11-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": true,
+        "sources": [
+          "Math-Way-2014",
+          "Dropbox-2012"
+        ],
+        "count": 2
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": true,
+        "hits": [
+          {
+            "name": "Adobe-2013",
+            "systemid": 84569,
+            "date": "2024-01-27"
+          }
+        ],
+        "count": 1
+      }
+    },
+    {
+      "Email": "sibusiso.banda326@micrlabs.onmicrosoft.com",
+      "Name": "Sibusiso Banda",
+      "Department": "Operations",
+      "JobTitle": "Receptionist",
+      "Location": "Gweru",
+      "RiskScore": 20,
+      "Exposed": true,
+      "ExposureScore": 50,
+      "DarkWebExposure": false,
+      "TotalFindings": 2,
+      "BreachSources": [
+        "Collection-1",
+        "Adobe-2013"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Collection-1",
+            "BreachDate": "2022-10-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          },
+          {
+            "Name": "Adobe-2013",
+            "BreachDate": "2010-12-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 2
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "rudo.tembo339@micrlabs.onmicrosoft.com",
+      "Name": "Rudo Tembo",
+      "Department": "Operations",
+      "JobTitle": "Receptionist",
+      "Location": "Bulawayo",
+      "RiskScore": 5,
+      "Exposed": true,
+      "ExposureScore": 100,
+      "DarkWebExposure": true,
+      "TotalFindings": 5,
+      "BreachSources": [
+        "Collection-1",
+        "LinkedIn-2021",
+        "Adobe-2013",
+        "RaidForums-Archive"
+      ],
+      "Categories": [
+        "data_breach",
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "LinkedIn-2021",
+            "BreachDate": "2016-02-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          },
+          {
+            "Name": "Adobe-2013",
+            "BreachDate": "2013-08-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 2
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": true,
+        "sources": [
+          "Collection-1"
+        ],
+        "count": 1
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": true,
+        "hits": [
+          {
+            "name": "RaidForums-Archive",
+            "systemid": 72420,
+            "date": "2022-08-24"
+          }
+        ],
+        "count": 1
+      }
+    },
+    {
+      "Email": "sibusiso.chikwanda342@micrlabs.onmicrosoft.com",
+      "Name": "Sibusiso Chikwanda",
+      "Department": "Operations",
+      "JobTitle": "Receptionist",
+      "Location": "Harare",
+      "RiskScore": 11,
+      "Exposed": true,
+      "ExposureScore": 49,
+      "DarkWebExposure": true,
+      "TotalFindings": 2,
+      "BreachSources": [
+        "Adobe-2013",
+        "AntiPublic-Combo"
+      ],
+      "Categories": [
+        "data_breach",
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "AntiPublic-Combo",
+            "BreachDate": "2011-12-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": true,
+        "sources": [
+          "Adobe-2013"
+        ],
+        "count": 1
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "bongani.nkomo354@micrlabs.onmicrosoft.com",
+      "Name": "Bongani Nkomo",
+      "Department": "Operations",
+      "JobTitle": "Administrator",
+      "Location": "Mutare",
+      "RiskScore": 7,
+      "Exposed": true,
+      "ExposureScore": 53,
+      "DarkWebExposure": false,
+      "TotalFindings": 2,
+      "BreachSources": [
+        "Canva-2019"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Canva-2019",
+            "BreachDate": "2023-11-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "sifiso.banda355@micrlabs.onmicrosoft.com",
+      "Name": "Sifiso Banda",
+      "Department": "Operations",
+      "JobTitle": "Administrator",
+      "Location": "Harare",
+      "RiskScore": 16,
+      "Exposed": true,
+      "ExposureScore": 87,
+      "DarkWebExposure": true,
+      "TotalFindings": 3,
+      "BreachSources": [
+        "RaidForums-Archive",
+        "MySpace-2008",
+        "LinkedIn-2021"
+      ],
+      "Categories": [
+        "data_breach",
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "MySpace-2008",
+            "BreachDate": "2012-06-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          },
+          {
+            "Name": "LinkedIn-2021",
+            "BreachDate": "2009-10-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 2
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": true,
+        "records": [
+          {
+            "database_name": "RaidForums-Archive",
+            "username": "sifiso.banda355",
+            "password": "",
+            "hashed_password": "$2b$12$6d81bea53b42587397a811e2f1ca88fdf08c1f4492f9a79f3cf25",
+            "ip_address": ""
+          }
+        ],
+        "count": 1
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "chiedza.mhlanga357@micrlabs.onmicrosoft.com",
+      "Name": "Chiedza Mhlanga",
+      "Department": "Operations",
+      "JobTitle": "Facilities Manager",
+      "Location": "Harare",
+      "RiskScore": 15,
+      "Exposed": true,
+      "ExposureScore": 37,
+      "DarkWebExposure": false,
+      "TotalFindings": 1,
+      "BreachSources": [
+        "000webhost-2015"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "000webhost-2015",
+            "BreachDate": "2009-10-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "kudzai.moyo359@micrlabs.onmicrosoft.com",
+      "Name": "Kudzai Moyo",
+      "Department": "Operations",
+      "JobTitle": "Receptionist",
+      "Location": "Bulawayo",
+      "RiskScore": 6,
+      "Exposed": true,
+      "ExposureScore": 50,
+      "DarkWebExposure": false,
+      "TotalFindings": 2,
+      "BreachSources": [
+        "Zynga-2019",
+        "LinkedIn-2021"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Zynga-2019",
+            "BreachDate": "2018-04-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          },
+          {
+            "Name": "LinkedIn-2021",
+            "BreachDate": "2015-12-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 2
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "nomvula.mpofu361@micrlabs.onmicrosoft.com",
+      "Name": "Nomvula Mpofu",
+      "Department": "Operations",
+      "JobTitle": "Facilities Manager",
+      "Location": "Bulawayo",
+      "RiskScore": 8,
+      "Exposed": true,
+      "ExposureScore": 49,
+      "DarkWebExposure": false,
+      "TotalFindings": 2,
+      "BreachSources": [
+        "MySpace-2008",
+        "LinkedIn-2021"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "LinkedIn-2021",
+            "BreachDate": "2017-10-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": true,
+        "sources": [
+          "MySpace-2008"
+        ],
+        "count": 1
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "lungelo.gumbo367@micrlabs.onmicrosoft.com",
+      "Name": "Lungelo Gumbo",
+      "Department": "Operations",
+      "JobTitle": "Receptionist",
+      "Location": "Harare",
+      "RiskScore": 7,
+      "Exposed": true,
+      "ExposureScore": 38,
+      "DarkWebExposure": false,
+      "TotalFindings": 1,
+      "BreachSources": [
+        "LinkedIn-2021"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "LinkedIn-2021",
+            "BreachDate": "2010-06-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "tendai.gumbo373@micrlabs.onmicrosoft.com",
+      "Name": "Tendai Gumbo",
+      "Department": "Operations",
+      "JobTitle": "HR Manager",
+      "Location": "Harare",
+      "RiskScore": 10,
+      "Exposed": true,
+      "ExposureScore": 59,
+      "DarkWebExposure": true,
+      "TotalFindings": 3,
+      "BreachSources": [
+        "Exploit.in",
+        "Canva-2019",
+        "Chegg-2018"
+      ],
+      "Categories": [
+        "data_breach",
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Exploit.in",
+            "BreachDate": "2022-06-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          },
+          {
+            "Name": "Canva-2019",
+            "BreachDate": "2023-01-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          },
+          {
+            "Name": "Chegg-2018",
+            "BreachDate": "2011-05-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 3
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "nyasha.mutasa377@micrlabs.onmicrosoft.com",
+      "Name": "Nyasha Mutasa",
+      "Department": "Operations",
+      "JobTitle": "HR Manager",
+      "Location": "Bulawayo",
+      "RiskScore": 16,
+      "Exposed": true,
+      "ExposureScore": 40,
+      "DarkWebExposure": false,
+      "TotalFindings": 1,
+      "BreachSources": [
+        "Zynga-2019"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Zynga-2019",
+            "BreachDate": "2012-06-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "sifiso.sithole383@micrlabs.onmicrosoft.com",
+      "Name": "Sifiso Sithole",
+      "Department": "Operations",
+      "JobTitle": "Facilities Manager",
+      "Location": "Masvingo",
+      "RiskScore": 15,
+      "Exposed": true,
+      "ExposureScore": 41,
+      "DarkWebExposure": true,
+      "TotalFindings": 1,
+      "BreachSources": [
+        "Exploit.in"
+      ],
+      "Categories": [
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Exploit.in",
+            "BreachDate": "2023-06-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "munyaradzi.sithole384@micrlabs.onmicrosoft.com",
+      "Name": "Munyaradzi Sithole",
+      "Department": "Operations",
+      "JobTitle": "Receptionist",
+      "Location": "Mutare",
+      "RiskScore": 15,
+      "Exposed": true,
+      "ExposureScore": 100,
+      "DarkWebExposure": true,
+      "TotalFindings": 5,
+      "BreachSources": [
+        "RaidForums-Archive",
+        "Exploit.in",
+        "000webhost-2015"
+      ],
+      "Categories": [
+        "data_breach",
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "RaidForums-Archive",
+            "BreachDate": "2011-03-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": true,
+        "records": [
+          {
+            "database_name": "000webhost-2015",
+            "username": "munyaradzi.sithole384",
+            "password": "",
+            "hashed_password": "$2b$12$ca57136788313532105c7afb77f83317b4ca7a49cf964be3a8294",
+            "ip_address": ""
+          }
+        ],
+        "count": 1
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": true,
+        "hits": [
+          {
+            "name": "Exploit.in",
+            "systemid": 62510,
+            "date": "2025-10-04"
+          }
+        ],
+        "count": 1
+      }
+    },
+    {
+      "Email": "bongani.phiri389@micrlabs.onmicrosoft.com",
+      "Name": "Bongani Phiri",
+      "Department": "Operations",
+      "JobTitle": "Receptionist",
+      "Location": "Mutare",
+      "RiskScore": 6,
+      "Exposed": true,
+      "ExposureScore": 43,
+      "DarkWebExposure": true,
+      "TotalFindings": 1,
+      "BreachSources": [
+        "Exploit.in"
+      ],
+      "Categories": [
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Exploit.in",
+            "BreachDate": "2021-02-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "kudzai.mpofu391@micrlabs.onmicrosoft.com",
+      "Name": "Kudzai Mpofu",
+      "Department": "Operations",
+      "JobTitle": "Facilities Manager",
+      "Location": "Harare",
+      "RiskScore": 10,
+      "Exposed": true,
+      "ExposureScore": 49,
+      "DarkWebExposure": false,
+      "TotalFindings": 2,
+      "BreachSources": [
+        "LinkedIn-2021",
+        "Math-Way-2014"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Math-Way-2014",
+            "BreachDate": "2023-10-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": true,
+        "hits": [
+          {
+            "name": "LinkedIn-2021",
+            "systemid": 84455,
+            "date": "2024-07-09"
+          }
+        ],
+        "count": 1
+      }
+    },
+    {
+      "Email": "kudzai.chirwa400@micrlabs.onmicrosoft.com",
+      "Name": "Kudzai Chirwa",
+      "Department": "Operations",
+      "JobTitle": "Administrator",
+      "Location": "Harare",
+      "RiskScore": 7,
+      "Exposed": true,
+      "ExposureScore": 59,
+      "DarkWebExposure": false,
+      "TotalFindings": 3,
+      "BreachSources": [
+        "MySpace-2008",
+        "Collection-1"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "MySpace-2008",
+            "BreachDate": "2009-05-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          },
+          {
+            "Name": "Collection-1",
+            "BreachDate": "2023-08-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 2
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "tsitsi.mhlanga401@micrlabs.onmicrosoft.com",
+      "Name": "Tsitsi Mhlanga",
+      "Department": "Operations",
+      "JobTitle": "Facilities Manager",
+      "Location": "Harare",
+      "RiskScore": 17,
+      "Exposed": true,
+      "ExposureScore": 57,
+      "DarkWebExposure": true,
+      "TotalFindings": 3,
+      "BreachSources": [
+        "000webhost-2015",
+        "DataBreach.net"
+      ],
+      "Categories": [
+        "data_breach",
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "000webhost-2015",
+            "BreachDate": "2013-04-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": true,
+        "sources": [
+          "DataBreach.net"
+        ],
+        "count": 1
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "munyaradzi.gumbo406@micrlabs.onmicrosoft.com",
+      "Name": "Munyaradzi Gumbo",
+      "Department": "Operations",
+      "JobTitle": "Facilities Manager",
+      "Location": "Bulawayo",
+      "RiskScore": 12,
+      "Exposed": true,
+      "ExposureScore": 37,
+      "DarkWebExposure": true,
+      "TotalFindings": 1,
+      "BreachSources": [
+        "RaidForums-Archive"
+      ],
+      "Categories": [
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "RaidForums-Archive",
+            "BreachDate": "2010-06-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "lungelo.tembo421@micrlabs.onmicrosoft.com",
+      "Name": "Lungelo Tembo",
+      "Department": "IT",
+      "JobTitle": "Help Desk",
+      "Location": "Harare",
+      "RiskScore": 10,
+      "Exposed": true,
+      "ExposureScore": 59,
+      "DarkWebExposure": true,
+      "TotalFindings": 3,
+      "BreachSources": [
+        "RaidForums-Archive",
+        "Collection-1"
+      ],
+      "Categories": [
+        "data_breach",
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "RaidForums-Archive",
+            "BreachDate": "2017-12-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": true,
+        "records": [
+          {
+            "database_name": "Collection-1",
+            "username": "lungelo.tembo421",
+            "password": "",
+            "hashed_password": "$2b$12$8f8fb0f9e8f5592845a2a7707964885b82f897ac88f0889c1e1f9",
+            "ip_address": ""
+          }
+        ],
+        "count": 1
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "farai.sithole422@micrlabs.onmicrosoft.com",
+      "Name": "Farai Sithole",
+      "Department": "IT",
+      "JobTitle": "Help Desk",
+      "Location": "Bulawayo",
+      "RiskScore": 9,
+      "Exposed": true,
+      "ExposureScore": 58,
+      "DarkWebExposure": false,
+      "TotalFindings": 3,
+      "BreachSources": [
+        "LinkedIn-2021",
+        "Zynga-2019",
+        "Dropbox-2012"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Dropbox-2012",
+            "BreachDate": "2022-03-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": true,
+        "sources": [
+          "Zynga-2019"
+        ],
+        "count": 1
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": true,
+        "hits": [
+          {
+            "name": "LinkedIn-2021",
+            "systemid": 64186,
+            "date": "2023-08-28"
+          }
+        ],
+        "count": 1
+      }
+    },
+    {
+      "Email": "sifiso.mutasa430@micrlabs.onmicrosoft.com",
+      "Name": "Sifiso Mutasa",
+      "Department": "IT",
+      "JobTitle": "Help Desk",
+      "Location": "Harare",
+      "RiskScore": 13,
+      "Exposed": true,
+      "ExposureScore": 59,
+      "DarkWebExposure": false,
+      "TotalFindings": 3,
+      "BreachSources": [
+        "Collection-1"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Collection-1",
+            "BreachDate": "2009-07-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "sifiso.nkomo431@micrlabs.onmicrosoft.com",
+      "Name": "Sifiso Nkomo",
+      "Department": "IT",
+      "JobTitle": "Security Analyst",
+      "Location": "Harare",
+      "RiskScore": 10,
+      "Exposed": true,
+      "ExposureScore": 37,
+      "DarkWebExposure": false,
+      "TotalFindings": 1,
+      "BreachSources": [
+        "Collection-1"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Collection-1",
+            "BreachDate": "2014-08-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "lungelo.nkomo432@micrlabs.onmicrosoft.com",
+      "Name": "Lungelo Nkomo",
+      "Department": "IT",
+      "JobTitle": "Security Analyst",
+      "Location": "Mutare",
+      "RiskScore": 8,
+      "Exposed": true,
+      "ExposureScore": 49,
+      "DarkWebExposure": true,
+      "TotalFindings": 2,
+      "BreachSources": [
+        "Adobe-2013",
+        "RaidForums-Archive"
+      ],
+      "Categories": [
+        "data_breach",
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "RaidForums-Archive",
+            "BreachDate": "2009-07-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": true,
+        "sources": [
+          "Adobe-2013"
+        ],
+        "count": 1
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "bongani.moyo436@micrlabs.onmicrosoft.com",
+      "Name": "Bongani Moyo",
+      "Department": "IT",
+      "JobTitle": "Help Desk",
+      "Location": "Mutare",
+      "RiskScore": 10,
+      "Exposed": true,
+      "ExposureScore": 40,
+      "DarkWebExposure": true,
+      "TotalFindings": 1,
+      "BreachSources": [
+        "RaidForums-Archive"
+      ],
+      "Categories": [
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "RaidForums-Archive",
+            "BreachDate": "2008-05-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "chiedza.chikwanda437@micrlabs.onmicrosoft.com",
+      "Name": "Chiedza Chikwanda",
+      "Department": "IT",
+      "JobTitle": "IT Administrator",
+      "Location": "Mutare",
+      "RiskScore": 11,
+      "Exposed": true,
+      "ExposureScore": 55,
+      "DarkWebExposure": false,
+      "TotalFindings": 3,
+      "BreachSources": [
+        "LinkedIn-2021",
+        "Canva-2019"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "LinkedIn-2021",
+            "BreachDate": "2008-01-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": true,
+        "records": [
+          {
+            "database_name": "Canva-2019",
+            "username": "chiedza.chikwanda437",
+            "password": "",
+            "hashed_password": "$2b$12$05a285c1063b1a18ca5a89d1b154bf3908b6527117bf10cbcc709",
+            "ip_address": ""
+          }
+        ],
+        "count": 1
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "nompilo.gumbo441@micrlabs.onmicrosoft.com",
+      "Name": "Nompilo Gumbo",
+      "Department": "IT",
+      "JobTitle": "Security Analyst",
+      "Location": "Bulawayo",
+      "RiskScore": 7,
+      "Exposed": true,
+      "ExposureScore": 59,
+      "DarkWebExposure": true,
+      "TotalFindings": 3,
+      "BreachSources": [
+        "Collection-1",
+        "Chegg-2018",
+        "AntiPublic-Combo"
+      ],
+      "Categories": [
+        "data_breach",
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Collection-1",
+            "BreachDate": "2022-11-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          },
+          {
+            "Name": "Chegg-2018",
+            "BreachDate": "2019-07-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 2
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": true,
+        "hits": [
+          {
+            "name": "AntiPublic-Combo",
+            "systemid": 56919,
+            "date": "2023-03-27"
+          }
+        ],
+        "count": 1
+      }
+    },
+    {
+      "Email": "bongani.mpofu444@micrlabs.onmicrosoft.com",
+      "Name": "Bongani Mpofu",
+      "Department": "IT",
+      "JobTitle": "Help Desk",
+      "Location": "Mutare",
+      "RiskScore": 11,
+      "Exposed": true,
+      "ExposureScore": 47,
+      "DarkWebExposure": true,
+      "TotalFindings": 2,
+      "BreachSources": [
+        "Exploit.in",
+        "RaidForums-Archive"
+      ],
+      "Categories": [
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "RaidForums-Archive",
+            "BreachDate": "2018-05-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": true,
+        "records": [
+          {
+            "database_name": "Exploit.in",
+            "username": "bongani.mpofu444",
+            "password": "",
+            "hashed_password": "$2b$12$91cc15ad646744c509e6908e3114a09d9c693672945c5b6c6adfc",
+            "ip_address": ""
+          }
+        ],
+        "count": 1
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "bongani.nkomo447@micrlabs.onmicrosoft.com",
+      "Name": "Bongani Nkomo",
+      "Department": "IT",
+      "JobTitle": "Security Analyst",
+      "Location": "Bulawayo",
+      "RiskScore": 20,
+      "Exposed": true,
+      "ExposureScore": 36,
+      "DarkWebExposure": false,
+      "TotalFindings": 1,
+      "BreachSources": [
+        "Canva-2019"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Canva-2019",
+            "BreachDate": "2012-11-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "nomvula.banda448@micrlabs.onmicrosoft.com",
+      "Name": "Nomvula Banda",
+      "Department": "IT",
+      "JobTitle": "Security Analyst",
+      "Location": "Masvingo",
+      "RiskScore": 5,
+      "Exposed": true,
+      "ExposureScore": 59,
+      "DarkWebExposure": false,
+      "TotalFindings": 3,
+      "BreachSources": [
+        "Collection-1",
+        "MySpace-2008"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Collection-1",
+            "BreachDate": "2015-09-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          },
+          {
+            "Name": "MySpace-2008",
+            "BreachDate": "2021-06-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 2
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "nkosi.dube452@micrlabs.onmicrosoft.com",
+      "Name": "Nkosi Dube",
+      "Department": "Pharmacy",
+      "JobTitle": "Pharmacist",
+      "Location": "Harare",
+      "RiskScore": 15,
+      "Exposed": true,
+      "ExposureScore": 56,
+      "DarkWebExposure": true,
+      "TotalFindings": 3,
+      "BreachSources": [
+        "RaidForums-Archive",
+        "Collection-1",
+        "LinkedIn-2021"
+      ],
+      "Categories": [
+        "data_breach",
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Collection-1",
+            "BreachDate": "2009-10-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          },
+          {
+            "Name": "LinkedIn-2021",
+            "BreachDate": "2017-03-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 2
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": true,
+        "hits": [
+          {
+            "name": "RaidForums-Archive",
+            "systemid": 59054,
+            "date": "2022-10-14"
+          }
+        ],
+        "count": 1
+      }
+    },
+    {
+      "Email": "farai.zimba459@micrlabs.onmicrosoft.com",
+      "Name": "Farai Zimba",
+      "Department": "Pharmacy",
+      "JobTitle": "Pharmacist",
+      "Location": "Harare",
+      "RiskScore": 6,
+      "Exposed": true,
+      "ExposureScore": 49,
+      "DarkWebExposure": false,
+      "TotalFindings": 2,
+      "BreachSources": [
+        "LinkedIn-2021",
+        "000webhost-2015"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "000webhost-2015",
+            "BreachDate": "2010-07-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": true,
+        "hits": [
+          {
+            "name": "LinkedIn-2021",
+            "systemid": 89084,
+            "date": "2023-01-06"
+          }
+        ],
+        "count": 1
+      }
+    },
+    {
+      "Email": "farai.phiri461@micrlabs.onmicrosoft.com",
+      "Name": "Farai Phiri",
+      "Department": "Pharmacy",
+      "JobTitle": "Pharmacy Technician",
+      "Location": "Gweru",
+      "RiskScore": 15,
+      "Exposed": true,
+      "ExposureScore": 59,
+      "DarkWebExposure": false,
+      "TotalFindings": 3,
+      "BreachSources": [
+        "LinkedIn-2021",
+        "Math-Way-2014"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "LinkedIn-2021",
+            "BreachDate": "2021-08-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          },
+          {
+            "Name": "Math-Way-2014",
+            "BreachDate": "2013-12-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 2
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "nomvula.tembo462@micrlabs.onmicrosoft.com",
+      "Name": "Nomvula Tembo",
+      "Department": "Pharmacy",
+      "JobTitle": "Pharmacy Technician",
+      "Location": "Bulawayo",
+      "RiskScore": 18,
+      "Exposed": true,
+      "ExposureScore": 59,
+      "DarkWebExposure": false,
+      "TotalFindings": 3,
+      "BreachSources": [
+        "Chegg-2018",
+        "LinkedIn-2021",
+        "Adobe-2013"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Chegg-2018",
+            "BreachDate": "2022-07-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": true,
+        "records": [
+          {
+            "database_name": "LinkedIn-2021",
+            "username": "nomvula.tembo462",
+            "password": "",
+            "hashed_password": "$2b$12$d311a5ce1eff560cd34536cb95b0bde2656062f506460382ad900",
+            "ip_address": ""
+          }
+        ],
+        "count": 1
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": true,
+        "sources": [
+          "Adobe-2013"
+        ],
+        "count": 1
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "takudzwa.chikwanda464@micrlabs.onmicrosoft.com",
+      "Name": "Takudzwa Chikwanda",
+      "Department": "Pharmacy",
+      "JobTitle": "Pharmacist",
+      "Location": "Harare",
+      "RiskScore": 20,
+      "Exposed": true,
+      "ExposureScore": 47,
+      "DarkWebExposure": true,
+      "TotalFindings": 2,
+      "BreachSources": [
+        "Exploit.in",
+        "Chegg-2018"
+      ],
+      "Categories": [
+        "data_breach",
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Exploit.in",
+            "BreachDate": "2016-03-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": true,
+        "hits": [
+          {
+            "name": "Chegg-2018",
+            "systemid": 56935,
+            "date": "2021-04-23"
+          }
+        ],
+        "count": 1
+      }
+    },
+    {
+      "Email": "tinashe.gumbo471@micrlabs.onmicrosoft.com",
+      "Name": "Tinashe Gumbo",
+      "Department": "Pharmacy",
+      "JobTitle": "Pharmacy Technician",
+      "Location": "Gweru",
+      "RiskScore": 8,
+      "Exposed": true,
+      "ExposureScore": 59,
+      "DarkWebExposure": true,
+      "TotalFindings": 3,
+      "BreachSources": [
+        "RaidForums-Archive",
+        "Verifications.io"
+      ],
+      "Categories": [
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "RaidForums-Archive",
+            "BreachDate": "2014-01-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": true,
+        "sources": [
+          "Verifications.io"
+        ],
+        "count": 1
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "kudzai.zimba478@micrlabs.onmicrosoft.com",
+      "Name": "Kudzai Zimba",
+      "Department": "Pharmacy",
+      "JobTitle": "Pharmacist",
+      "Location": "Harare",
+      "RiskScore": 20,
+      "Exposed": true,
+      "ExposureScore": 59,
+      "DarkWebExposure": false,
+      "TotalFindings": 3,
+      "BreachSources": [
+        "Dropbox-2012",
+        "Collection-1"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Dropbox-2012",
+            "BreachDate": "2021-03-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": true,
+        "records": [
+          {
+            "database_name": "Collection-1",
+            "username": "kudzai.zimba478",
+            "password": "",
+            "hashed_password": "$2b$12$da15b6b2038dfdff59f9a6ecf745db84cc246497efe259fcbf094",
+            "ip_address": ""
+          }
+        ],
+        "count": 1
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "zanele.mutasa480@micrlabs.onmicrosoft.com",
+      "Name": "Zanele Mutasa",
+      "Department": "Pharmacy",
+      "JobTitle": "Pharmacy Technician",
+      "Location": "Harare",
+      "RiskScore": 10,
+      "Exposed": true,
+      "ExposureScore": 56,
+      "DarkWebExposure": true,
+      "TotalFindings": 3,
+      "BreachSources": [
+        "LinkedIn-2021",
+        "MySpace-2008",
+        "Exploit.in"
+      ],
+      "Categories": [
+        "data_breach",
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Exploit.in",
+            "BreachDate": "2016-01-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": true,
+        "records": [
+          {
+            "database_name": "LinkedIn-2021",
+            "username": "zanele.mutasa480",
+            "password": "",
+            "hashed_password": "$2b$12$9996c5d645ecaf7c24c1332ef9fe727ea468557d256590376c062",
+            "ip_address": ""
+          }
+        ],
+        "count": 1
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": true,
+        "hits": [
+          {
+            "name": "MySpace-2008",
+            "systemid": 73595,
+            "date": "2025-02-01"
+          }
+        ],
+        "count": 1
+      }
+    },
+    {
+      "Email": "tinashe.ncube483@micrlabs.onmicrosoft.com",
+      "Name": "Tinashe Ncube",
+      "Department": "Radiology",
+      "JobTitle": "Radiologist",
+      "Location": "Harare",
+      "RiskScore": 17,
+      "Exposed": true,
+      "ExposureScore": 59,
+      "DarkWebExposure": false,
+      "TotalFindings": 3,
+      "BreachSources": [
+        "LinkedIn-2021",
+        "Adobe-2013"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "LinkedIn-2021",
+            "BreachDate": "2008-08-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": true,
+        "hits": [
+          {
+            "name": "Adobe-2013",
+            "systemid": 28201,
+            "date": "2020-10-04"
+          }
+        ],
+        "count": 1
+      }
+    },
+    {
+      "Email": "chiedza.moyo492@micrlabs.onmicrosoft.com",
+      "Name": "Chiedza Moyo",
+      "Department": "Radiology",
+      "JobTitle": "Radiographer",
+      "Location": "Harare",
+      "RiskScore": 12,
+      "Exposed": true,
+      "ExposureScore": 36,
+      "DarkWebExposure": true,
+      "TotalFindings": 1,
+      "BreachSources": [
+        "Exploit.in"
+      ],
+      "Categories": [
+        "dark_web"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "Exploit.in",
+            "BreachDate": "2023-05-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": false,
+        "sources": [],
+        "count": 0
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    },
+    {
+      "Email": "tendai.zimba500@micrlabs.onmicrosoft.com",
+      "Name": "Tendai Zimba",
+      "Department": "Radiology",
+      "JobTitle": "Radiologist",
+      "Location": "Harare",
+      "RiskScore": 5,
+      "Exposed": true,
+      "ExposureScore": 51,
+      "DarkWebExposure": false,
+      "TotalFindings": 2,
+      "BreachSources": [
+        "LinkedIn-2021",
+        "MySpace-2008"
+      ],
+      "Categories": [
+        "data_breach"
+      ],
+      "HIBP": {
+        "source": "hibp",
+        "found": true,
+        "breaches": [
+          {
+            "Name": "MySpace-2008",
+            "BreachDate": "2020-12-01",
+            "DataClasses": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "count": 1
+      },
+      "DeHashed": {
+        "source": "dehashed",
+        "found": false,
+        "records": [],
+        "count": 0
+      },
+      "LeakCheck": {
+        "source": "leakcheck",
+        "found": true,
+        "sources": [
+          "LinkedIn-2021"
+        ],
+        "count": 1
+      },
+      "IntelX": {
+        "source": "intelx",
+        "found": false,
+        "hits": [],
+        "count": 0
+      }
+    }
+  ]
+}

@@ -145,16 +145,33 @@ def build_html(p1, p2, p3, p4, osint, nist, log_txt):
     # ── P4 charts ─────────────────────────────────────────────
     p4_users   = (p4 or {}).get("UserRisks", []) or []
     dept_tiers: dict = {}
+    loc_tiers:  dict = {}
+    sig_counts  = {"No-MFA": 0, "Non-Compliant-Device": 0, "OSINT-Exposed": 0, "IdP-Risk": 0, "High-Score": 0}
     for u in p4_users:
         d = u.get("Department", "Unknown")
         t = u.get("Tier", "LOW")
         if d not in dept_tiers:
             dept_tiers[d] = {"CRITICAL": 0, "HIGH": 0, "MEDIUM": 0, "LOW": 0}
         dept_tiers[d][t] += 1
+        loc = u.get("Location", "Unknown")
+        if loc not in loc_tiers:
+            loc_tiers[loc] = {"CRITICAL": 0, "HIGH": 0, "MEDIUM": 0, "LOW": 0}
+        loc_tiers[loc][t] += 1
+        sigs = u.get("Signals", "")
+        if "No-MFA"               in sigs: sig_counts["No-MFA"]               += 1
+        if "Non-Compliant-Device" in sigs: sig_counts["Non-Compliant-Device"] += 1
+        if "OSINT-Exposed"        in sigs: sig_counts["OSINT-Exposed"]        += 1
+        if "IdP-"                 in sigs: sig_counts["IdP-Risk"]              += 1
+        if "HighRiskScore"        in sigs: sig_counts["High-Score"]            += 1
     depts             = list(dept_tiers.keys())
     p4_dept_critical  = [dept_tiers[d]["CRITICAL"] for d in depts]
     p4_dept_high      = [dept_tiers[d]["HIGH"]     for d in depts]
     p4_dept_medium    = [dept_tiers[d]["MEDIUM"]   for d in depts]
+    locs              = list(loc_tiers.keys())
+    p4_loc_critical   = [loc_tiers[l]["CRITICAL"]  for l in locs]
+    p4_loc_high       = [loc_tiers[l]["HIGH"]      for l in locs]
+    sig_labels        = list(sig_counts.keys())
+    sig_vals          = list(sig_counts.values())
     p4_tiers = {
         "CRITICAL": p4s.get("Critical", 0),
         "HIGH":     p4s.get("High",     0),
@@ -171,6 +188,9 @@ def build_html(p1, p2, p3, p4, osint, nist, log_txt):
     top_indiv   = ti.get("HighestRiskIndividuals", [])[:10]
     src_tools   = ti.get("SourceToolCounts", {})
     top_titles  = ti.get("MostExposedTitles", [])[:5]
+    osint_total_scanned = (osint or {}).get("TotalChecked", 0)
+    osint_scan_mode     = (osint or {}).get("Mode", "simulate")
+    osint_results_raw   = (osint or {}).get("Results", [])
 
     osint_dept_labels    = list(dept_bk.keys())
     osint_dept_exp_rate  = [dept_bk[d].get("ExposureRatePct", 0) for d in osint_dept_labels]
@@ -181,6 +201,8 @@ def build_html(p1, p2, p3, p4, osint, nist, log_txt):
     osint_cat_vals       = list(cat_freq.values())
     tool_labels          = list(src_tools.keys())
     tool_vals            = list(src_tools.values())
+    title_labels         = [t["Title"] for t in top_titles]
+    title_vals           = [t["Count"] for t in top_titles]
 
     # ── Tables HTML ───────────────────────────────────────────
     STATE_BADGE = {
@@ -220,18 +242,19 @@ def build_html(p1, p2, p3, p4, osint, nist, log_txt):
         p4_rows += (
             f"<tr><td class='mono'>{u.get('Name','—')}</td>"
             f"<td class='muted'>{u.get('Department','—')}</td>"
-            f"<td class='muted'>{u.get('JobTitle','—')}</td>"
+            f"<td class='muted'>{u.get('Location','—')}</td>"
             f"<td>{TIER_BADGE.get(u.get('Tier','LOW'),'')}</td>"
             f"<td class='muted sig'>{u.get('Signals','—')}</td></tr>\n"
         )
         count += 1
-        if count >= 40: break
+        if count >= 50: break
 
     osint_rows = ""
     for ind in top_indiv:
         dw_badge = '<span class="badge b-red">DARK WEB</span>' if ind.get("DarkWeb") else '<span class="badge b-gray">Surface</span>'
         score    = ind.get("ExposureScore", 0)
         bar_col  = "#ef4444" if score >= 70 else "#f59e0b" if score >= 40 else "#3b82f6"
+        srcs     = ", ".join(ind.get("Sources", []))
         osint_rows += (
             f"<tr><td class='mono'>{ind.get('Name','—')}</td>"
             f"<td class='muted'>{ind.get('Department','—')}</td>"
@@ -242,7 +265,37 @@ def build_html(p1, p2, p3, p4, osint, nist, log_txt):
             f"<div style='width:{score}%;background:{bar_col};border-radius:999px;height:6px'></div></div>"
             f"<span style='color:{bar_col};font-weight:700;font-size:12px'>{score}</span>"
             f"</div></td>"
-            f"<td class='muted'>{ind.get('TotalFindings',0)}</td></tr>\n"
+            f"<td class='muted'>{ind.get('TotalFindings',0)}</td>"
+            f"<td class='muted' style='font-size:11px;max-width:200px'>{_html.escape(srcs)}</td></tr>\n"
+        )
+
+    # Individual scan findings table (all scanned users, exposed first)
+    osint_scan_rows = ""
+    sorted_results = sorted(osint_results_raw, key=lambda x: x.get("ExposureScore", 0), reverse=True)
+    for r in sorted_results[:50]:
+        exposed  = r.get("Exposed", False)
+        dw       = r.get("DarkWebExposure", False)
+        score    = r.get("ExposureScore", 0)
+        findings = r.get("TotalFindings", 0)
+        sources  = ", ".join(r.get("BreachSources", []))
+        hibp_ct  = r.get("HIBP", {}).get("count", 0)
+        dh_ct    = r.get("DeHashed", {}).get("count", 0)
+        lc_ct    = r.get("LeakCheck", {}).get("count", 0)
+        ix_ct    = r.get("IntelX", {}).get("count", 0)
+        exp_badge = '<span class="badge b-red">EXPOSED</span>' if exposed else '<span class="badge b-green">CLEAN</span>'
+        dw_badge  = '<span class="badge b-red">YES</span>' if dw else '<span class="badge b-gray">No</span>'
+        osint_scan_rows += (
+            f"<tr>"
+            f"<td class='mono' style='font-size:11px'>{_html.escape(r.get('Email','—'))}</td>"
+            f"<td class='muted'>{r.get('Department','—')}</td>"
+            f"<td>{exp_badge}</td>"
+            f"<td>{dw_badge}</td>"
+            f"<td style='text-align:center'>{hibp_ct}</td>"
+            f"<td style='text-align:center'>{dh_ct}</td>"
+            f"<td style='text-align:center'>{lc_ct}</td>"
+            f"<td style='text-align:center'>{ix_ct}</td>"
+            f"<td style='font-size:11px;color:#5a7a9a;max-width:180px'>{_html.escape(sources)}</td>"
+            f"</tr>\n"
         )
 
     # ── Recommendations HTML ──────────────────────────────────
@@ -940,13 +993,23 @@ tbody td{{padding:11px 16px;vertical-align:middle}}
           <div class="chart-wrap"><canvas id="p4-dept"></canvas></div>
         </div>
       </div>
+      <div class="charts">
+        <div class="chart-box">
+          <div class="chart-title">Risk Signal Breakdown — Users Triggering Each Signal</div>
+          <div class="chart-wrap"><canvas id="p4-signals"></canvas></div>
+        </div>
+        <div class="chart-box">
+          <div class="chart-title">Critical &amp; High Risk by Location</div>
+          <div class="chart-wrap"><canvas id="p4-loc"></canvas></div>
+        </div>
+      </div>
       <div class="tbl-box">
         <div class="tbl-head">
           <span>Critical &amp; High Risk Users</span>
           <span>{p4s.get('Critical',0) + p4s.get('High',0)} users flagged</span>
         </div>
         <table>
-          <thead><tr><th>Name</th><th>Department</th><th>Job Title</th><th>Tier</th><th>Signals</th></tr></thead>
+          <thead><tr><th>Name</th><th>Department</th><th>Location</th><th>Tier</th><th>Signals</th></tr></thead>
           <tbody>{p4_rows}</tbody>
         </table>
       </div>
@@ -971,22 +1034,22 @@ tbody td{{padding:11px 16px;vertical-align:middle}}
 
       <!-- OSINT KPI cards -->
       <div class="cards">
+        <div class="card" style="--accent-color:var(--cyan)">
+          <div class="card-val counter" data-target="{osint_total_scanned}">0</div>
+          <div class="card-label">Users Scanned</div>
+          <div class="card-sub">of {p1['total']} total · {osint_scan_mode.upper()} mode</div>
+          <div class="card-glow"></div>
+        </div>
         <div class="card" style="--accent-color:var(--amber)">
           <div class="card-val counter" data-target="{oi.get('TotalExposed',0)}">0</div>
           <div class="card-label">Total Exposed</div>
-          <div class="card-sub">{oi.get('ExposureRatePct',0)}% of {oi.get('TotalPersonas',500)} users</div>
+          <div class="card-sub">{oi.get('ExposureRatePct',0)}% exposure rate</div>
           <div class="card-glow"></div>
         </div>
         <div class="card" style="--accent-color:var(--red)">
           <div class="card-val counter" data-target="{oi.get('DarkWebExposed',0)}">0</div>
           <div class="card-label">Dark Web Hits</div>
-          <div class="card-sub">{oi.get('DarkWebRatePct',0)}% dark web exposure</div>
-          <div class="card-glow"></div>
-        </div>
-        <div class="card" style="--accent-color:var(--cyan)">
-          <div class="card-val">{oi.get('AvgExposureScore',0)}</div>
-          <div class="card-label">Avg Exposure Score</div>
-          <div class="card-sub">Out of 100 (across exposed)</div>
+          <div class="card-sub">{oi.get('DarkWebRatePct',0)}% dark web rate</div>
           <div class="card-glow"></div>
         </div>
         <div class="card" style="--accent-color:var(--blue)">
@@ -1002,9 +1065,21 @@ tbody td{{padding:11px 16px;vertical-align:middle}}
           <div class="card-glow"></div>
         </div>
         <div class="card" style="--accent-color:var(--green)">
+          <div class="card-val counter" data-target="{src_tools.get('LeakCheck',0)}">0</div>
+          <div class="card-label">LeakCheck Hits</div>
+          <div class="card-sub">7B+ record database</div>
+          <div class="card-glow"></div>
+        </div>
+        <div class="card" style="--accent-color:#e879f9">
           <div class="card-val counter" data-target="{src_tools.get('IntelX',0)}">0</div>
           <div class="card-label">IntelX Hits</div>
           <div class="card-sub">Dark web / paste sites</div>
+          <div class="card-glow"></div>
+        </div>
+        <div class="card" style="--accent-color:var(--cyan)">
+          <div class="card-val">{oi.get('AvgExposureScore',0)}</div>
+          <div class="card-label">Avg Exposure Score</div>
+          <div class="card-sub">Out of 100 (exposed users)</div>
           <div class="card-glow"></div>
         </div>
       </div>
@@ -1016,7 +1091,7 @@ tbody td{{padding:11px 16px;vertical-align:middle}}
           <div class="chart-wrap"><canvas id="osint-dept"></canvas></div>
         </div>
         <div class="chart-box">
-          <div class="chart-title">Top Breach Sources</div>
+          <div class="chart-title">Top Breach Sources — Affected Users</div>
           <div class="chart-wrap"><canvas id="osint-sources"></canvas></div>
         </div>
       </div>
@@ -1033,6 +1108,18 @@ tbody td{{padding:11px 16px;vertical-align:middle}}
         </div>
       </div>
 
+      <!-- OSINT charts row 3 -->
+      <div class="charts">
+        <div class="chart-box">
+          <div class="chart-title">Most Exposed Job Titles</div>
+          <div class="chart-wrap"><canvas id="osint-titles"></canvas></div>
+        </div>
+        <div class="chart-box">
+          <div class="chart-title">OSINT Source Tool Coverage</div>
+          <div class="chart-wrap"><canvas id="osint-tools"></canvas></div>
+        </div>
+      </div>
+
       <!-- Top individuals table -->
       <div class="tbl-box">
         <div class="tbl-head">
@@ -1043,10 +1130,27 @@ tbody td{{padding:11px 16px;vertical-align:middle}}
           <thead>
             <tr>
               <th>Name</th><th>Department</th><th>Job Title</th>
-              <th>Dark Web</th><th>Exposure Score</th><th>Findings</th>
+              <th>Dark Web</th><th>Exposure Score</th><th>Findings</th><th>Breach Sources</th>
             </tr>
           </thead>
           <tbody>{osint_rows}</tbody>
+        </table>
+      </div>
+
+      <!-- Individual scan findings -->
+      <div class="tbl-box">
+        <div class="tbl-head">
+          <span>Individual Scan Findings — All Scanned Users</span>
+          <span>{osint_total_scanned} users · sorted by exposure score</span>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Email</th><th>Department</th><th>Exposed</th><th>Dark Web</th>
+              <th>HIBP</th><th>DeHashed</th><th>LeakCheck</th><th>IntelX</th><th>Breach Sources</th>
+            </tr>
+          </thead>
+          <tbody>{osint_scan_rows}</tbody>
         </table>
       </div>
 
@@ -1334,6 +1438,16 @@ function buildCharts(){{
     {{label:'Medium',  data:{jl(p4_dept_medium)},  backgroundColor:COLOURS.blue}},
   ]);
 
+  // P4 — signal breakdown
+  hbar('p4-signals',{jl(sig_labels)},{jl(sig_vals)},
+    [COLOURS.amber,COLOURS.red,COLOURS.purple,COLOURS.blue,COLOURS.cyan],'Users');
+
+  // P4 — location risk
+  vbar('p4-loc',{jl(locs)},[
+    {{label:'Critical',data:{jl(p4_loc_critical)},backgroundColor:COLOURS.red}},
+    {{label:'High',    data:{jl(p4_loc_high)},    backgroundColor:COLOURS.amber}},
+  ]);
+
   // OSINT — dept exposure rate
   hbar('osint-dept',{jl(osint_dept_labels)},{jl(osint_dept_exp_rate)},
     COLOURS.amber,'Exposure Rate (%)');
@@ -1349,6 +1463,14 @@ function buildCharts(){{
   // OSINT — dark web by dept
   hbar('osint-dw',{jl(osint_dept_labels)},{jl(osint_dept_darkweb)},
     COLOURS.red,'Dark Web Users');
+
+  // OSINT — most exposed job titles
+  hbar('osint-titles',{jl(title_labels)},{jl(title_vals)},
+    COLOURS.amber,'Exposed Users');
+
+  // OSINT — source tool coverage
+  hbar('osint-tools',{jl(tool_labels)},{jl(tool_vals)},
+    [COLOURS.cyan,COLOURS.blue,COLOURS.green,COLOURS.purple],'Hits');
 }}
 
 // ── Init ─────────────────────────────────────────────────────

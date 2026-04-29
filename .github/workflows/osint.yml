@@ -53,6 +53,7 @@ jobs:
           LEAKCHECK_API_KEY: ${{ secrets.LEAKCHECK_API_KEY }}
           INTELX_API_KEY:    ${{ secrets.INTELX_API_KEY }}
         run: |
+          # Auto-add --simulate when no real API keys are configured
           SIMULATE_FLAG=""
           if [ -z "$HIBP_API_KEY" ] && [ -z "$LEAKCHECK_API_KEY" ] && \
              [ -z "$INTELX_API_KEY" ] && [ -z "$DEHASHED_API_KEY" ]; then

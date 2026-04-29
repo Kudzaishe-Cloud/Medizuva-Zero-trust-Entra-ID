@@ -24,7 +24,7 @@ import sys
 import urllib.request
 import urllib.parse
 import urllib.error
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 REPO_ROOT  = Path(__file__).resolve().parents[1]
@@ -38,6 +38,12 @@ EXPECTED_POLICIES = [
     "MZV-CA004-BlockHighRiskSignin",
     "MZV-CA005-RequireMFAAndDevice-Admins",
     "MZV-CA006-SessionControl-8h",
+    "MZV-CA007-SessionControl-Admins-30min",
+    "MZV-CA008-BlockHighUserRisk",
+    "MZV-CA009-PasswordChange-MediumUserRisk",
+    "MZV-CA010-RequireMFA-AdminRoles",
+    "MZV-CA011-RequireMFA-MediumSignInRisk",
+    "MZV-CA012-InsiderRisk-RequireMFA",
 ]
 
 STATE_MAP = {
