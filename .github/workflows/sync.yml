@@ -53,9 +53,29 @@ jobs:
           ENTRA_CLIENT_SECRET: ${{ secrets.ENTRA_CLIENT_SECRET }}
         run: python shared/entra_logs.py
 
+      # Audit Conditional Access policies — produces data/ca_audit.json (Pillar 2)
+      - name: CA policy audit
+        env:
+          ENTRA_TENANT_ID:     ${{ secrets.ENTRA_TENANT_ID }}
+          ENTRA_CLIENT_ID:     ${{ secrets.ENTRA_CLIENT_ID }}
+          ENTRA_CLIENT_SECRET: ${{ secrets.ENTRA_CLIENT_SECRET }}
+        run: python shared/entra_ca.py
+
+      # Audit PIM role assignments — produces data/pim_audit.json (Pillar 3)
+      - name: PIM audit
+        env:
+          ENTRA_TENANT_ID:     ${{ secrets.ENTRA_TENANT_ID }}
+          ENTRA_CLIENT_ID:     ${{ secrets.ENTRA_CLIENT_ID }}
+          ENTRA_CLIENT_SECRET: ${{ secrets.ENTRA_CLIENT_SECRET }}
+        run: python shared/entra_pim.py
+
       # Classify users into risk tiers using real Entra signals
       - name: Threat audit
         run: python pillar4_threat/threat_audit.py
+
+      # Audit all 4 NIST standards and produce nist_compliance_report.json
+      - name: NIST compliance audit
+        run: python shared/nist_compliance.py
 
       # Rebuild dashboard HTML with latest data embedded inline
       - name: Generate dashboard
@@ -67,13 +87,13 @@ jobs:
           mkdir -p docs
           cp data/central_dashboard.html docs/index.html
 
-      # Only commit docs/index.html — raw data files stay off git
+      # Commit dashboard + NIST report so both persist between runs
       - name: Commit & push
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git pull --rebase --autostash origin main
-          git add docs/index.html
+          git add docs/index.html data/nist_compliance_report.json
           git diff --staged --quiet || \
             git commit -m "chore: 15-min refresh $(date -u +'%Y-%m-%d %H:%M UTC')"
           git push
