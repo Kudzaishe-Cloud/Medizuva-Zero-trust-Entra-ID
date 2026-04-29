@@ -31,9 +31,7 @@ desktop.ini
 *.suo
 *.user
 
-# ── Generated pipeline output (populated by live pipeline runs only) ─
-# These files must never be committed with simulated/placeholder data.
-# They are regenerated on every CI/CD run using real credentials.
+# ── Generated pipeline output (regenerated on every CI/CD run) ───────
 data/personas/*.csv
 data/osint_results/*.json
 data/osint_results/*.log
@@ -41,10 +39,14 @@ data/risky_users.json
 data/threat_audit.json
 data/ca_audit.json
 data/ca_policy_status.json
-data/nist_compliance_report.json
 data/pim_audit.json
 data/pim_validation_issues.csv
 data/pim_validation_report.txt
+
+# These two are committed by the pipeline so they persist between runs
+# and are available to the dashboard builder in every workflow.
+!data/osint_results/osint_combined_results.json
+!data/nist_compliance_report.json
 
 # ── PowerShell temp ───────────────────────────────────────────
 *.ps1xml
