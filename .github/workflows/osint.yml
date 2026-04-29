@@ -37,6 +37,7 @@ jobs:
 
       # Fetch real user accounts from Entra ID (fresh list before OSINT scan)
       - name: Fetch Entra ID users
+        continue-on-error: true
         env:
           ENTRA_TENANT_ID:     ${{ secrets.ENTRA_TENANT_ID }}
           ENTRA_CLIENT_ID:     ${{ secrets.ENTRA_CLIENT_ID }}
@@ -70,6 +71,7 @@ jobs:
 
       # Pull fresh Entra security signals after OSINT
       - name: Entra ID sync
+        continue-on-error: true
         env:
           ENTRA_TENANT_ID:     ${{ secrets.ENTRA_TENANT_ID }}
           ENTRA_CLIENT_ID:     ${{ secrets.ENTRA_CLIENT_ID }}
@@ -78,6 +80,7 @@ jobs:
 
       # Pull sign-in logs, risky sign-ins, and directory audit logs
       - name: Entra ID log retrieval
+        continue-on-error: true
         env:
           ENTRA_TENANT_ID:     ${{ secrets.ENTRA_TENANT_ID }}
           ENTRA_CLIENT_ID:     ${{ secrets.ENTRA_CLIENT_ID }}
@@ -86,6 +89,7 @@ jobs:
 
       # Audit Conditional Access policies — produces data/ca_audit.json (Pillar 2)
       - name: CA policy audit
+        continue-on-error: true
         env:
           ENTRA_TENANT_ID:     ${{ secrets.ENTRA_TENANT_ID }}
           ENTRA_CLIENT_ID:     ${{ secrets.ENTRA_CLIENT_ID }}
@@ -94,6 +98,7 @@ jobs:
 
       # Audit PIM role assignments — produces data/pim_audit.json (Pillar 3)
       - name: PIM audit
+        continue-on-error: true
         env:
           ENTRA_TENANT_ID:     ${{ secrets.ENTRA_TENANT_ID }}
           ENTRA_CLIENT_ID:     ${{ secrets.ENTRA_CLIENT_ID }}
