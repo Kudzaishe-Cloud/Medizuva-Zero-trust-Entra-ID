@@ -34,6 +34,17 @@ from datetime import datetime
 from pathlib import Path
 
 REPO_ROOT  = Path(__file__).resolve().parents[1]
+
+
+def _load_dotenv():
+    env_file = REPO_ROOT / ".env"
+    if not env_file.exists():
+        return
+    for line in env_file.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if line and not line.startswith("#") and "=" in line:
+            k, _, v = line.partition("=")
+            os.environ.setdefault(k.strip(), v.strip())
 OUT_PATH   = REPO_ROOT / "data" / "risky_users.json"
 GRAPH_BASE = "https://graph.microsoft.com/v1.0"
 
@@ -139,6 +150,7 @@ def fetch_device_gaps(headers: dict) -> list:
 # ── Main ──────────────────────────────────────────────────────
 
 def main():
+    _load_dotenv()
     parser = argparse.ArgumentParser(description="MediZuva Entra ID sync")
     args = parser.parse_args()
 

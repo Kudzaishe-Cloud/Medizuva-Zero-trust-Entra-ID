@@ -28,6 +28,18 @@ import sys
 import urllib.request
 import urllib.parse
 import urllib.error
+from pathlib import Path
+
+
+def _load_dotenv():
+    env_file = Path(__file__).resolve().parents[1] / ".env"
+    if not env_file.exists():
+        return
+    for line in env_file.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if line and not line.startswith("#") and "=" in line:
+            k, _, v = line.partition("=")
+            os.environ.setdefault(k.strip(), v.strip())
 import pandas as pd
 from datetime import datetime
 from pathlib import Path
@@ -99,6 +111,7 @@ def is_service_account(upn: str) -> bool:
 
 
 def main():
+    _load_dotenv()
     tenant_id     = os.environ.get("ENTRA_TENANT_ID",     "")
     client_id     = os.environ.get("ENTRA_CLIENT_ID",     "")
     client_secret = os.environ.get("ENTRA_CLIENT_SECRET", "")
