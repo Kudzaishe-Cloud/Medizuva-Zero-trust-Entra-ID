@@ -723,12 +723,32 @@ def main():
     log.info(f" IntelX    : {'SIMULATE' if sim else ('LIVE' if live_intelx    else 'NOT CONFIGURED')}")
     log.info("=" * 60)
 
-    df = pd.read_csv(PERSONAS_CSV)
+    # Load personas; fall back to simulation if file doesn't exist
+    if not PERSONAS_CSV.exists():
+        log.warning(f"Personas CSV not found at {PERSONAS_CSV}")
+        log.warning("Using simulated OSINT mode (no real Entra ID users loaded)")
+        sim = True
+        df = pd.DataFrame([
+            {
+                "Email": f"user{i:03d}@medizuva.co.zw",
+                "FirstName": f"User{i}",
+                "LastName": "Synthetic",
+                "Department": "Operations",
+                "JobTitle": "Staff",
+                "Location": "Harare",
+                "RiskScore": 0,
+            }
+            for i in range(1, 501)
+        ])
+        log.info(f"Generated {len(df)} synthetic personas for fallback")
+    else:
+        df = pd.read_csv(PERSONAS_CSV)
+
     if args.limit:
         df = df.head(args.limit)
         log.info(f"Limiting to first {args.limit} personas (--limit flag)")
     total = len(df)
-    log.info(f"Loaded {total} personas from {PERSONAS_CSV.name}")
+    log.info(f"Loaded {total} personas from {PERSONAS_CSV.name if PERSONAS_CSV.exists() else 'synthetic data'}")
 
     results: list[dict] = []
     exposed_count = 0

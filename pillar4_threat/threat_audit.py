@@ -59,6 +59,10 @@ def main():
     if not hibp_data:
         print("  [WARN] hibp_results.json not found — run osint_exposure_check.py first")
 
+    if not PERSONAS_CSV.exists():
+        print(f"  [ERROR] personas CSV not found at {PERSONAS_CSV}")
+        sys.exit(1)
+
     df = pd.read_csv(PERSONAS_CSV)
     print(f"  Loaded {len(df)} personas")
 
