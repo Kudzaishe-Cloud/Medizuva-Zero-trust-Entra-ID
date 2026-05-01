@@ -379,10 +379,31 @@ def build_html(p1, p2, p3, p4, osint, nist, log_txt):
     pred_dw     = [round(min(100, dw_rate + i * 2.8), 1)  for i in range(1, 7)]
     pred_exp    = [round(min(100, exp_rate + i * 1.4), 1) for i in range(1, 7)]
 
+    # ── Data source information ──────────────────────────────
+    data_sources = (p4 or {}).get("DataSources", {})
+    personas_source = data_sources.get("PersonasSource", "Unknown")
+    is_real_entra = data_sources.get("IsRealEntraData", False)
+    entra_sync_avail = data_sources.get("EntraSyncAvailable", False)
+    osint_data_avail = data_sources.get("OSINTDataAvailable", False)
+
+    ca_is_real = (p2 or {}).get("IsRealData", False)
+    osint_is_real = (osint or {}).get("IsRealEntraData", False)
+
+    # ── Data source banner ─────────────────────────────────────
+    source_style = "#10b981" if is_real_entra else "#f59e0b"
+    source_text = "✓ Real Entra ID" if is_real_entra else "⚠ Synthetic Data"
+    source_banner = (
+        f'<div class="source-banner" style="background:{source_style}20;border-left:3px solid {source_style};padding:12px 16px;margin-bottom:16px;border-radius:4px;font-size:12px">'
+        f'<div style="color:{source_style};font-weight:600;margin-bottom:4px">Data Source</div>'
+        f'<div style="color:var(--muted)">Personas: {source_text} · Entra CA: {"✓ Real" if ca_is_real else "⚠ Simulated"} · '
+        f'OSINT: {"✓ Real" if osint_is_real else "⚠ Simulated"}</div>'
+        f'</div>'
+    )
+
     # ── Alert banner content ──────────────────────────────────
-    alert_html = ""
+    alert_html = source_banner
     if overall == "AT RISK":
-        alert_html = (
+        alert_html += (
             f'<div class="alert-banner">'
             f'<div class="alert-dot"></div>'
             f'<div class="alert-text"><strong>ACTIVE THREAT DETECTED</strong> — '

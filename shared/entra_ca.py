@@ -202,10 +202,14 @@ def main():
     else:
         posture = "PARTIAL"
 
+    data_source = "Entra ID (Real)" if token else "Entra ID (Simulated — Credentials Unavailable)"
+
     export = {
         "AuditDate":  datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "Tenant":     "micrlabs.onmicrosoft.com",
         "TotalUsers": total_users,
+        "DataSource": data_source,
+        "IsRealData": bool(token),
         "Policies":   policies,
         "Summary": {
             "Enforced":   enforced,

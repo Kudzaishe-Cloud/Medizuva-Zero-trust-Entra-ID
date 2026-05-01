@@ -724,10 +724,12 @@ def main():
     log.info("=" * 60)
 
     # Load personas; fall back to simulation if file doesn't exist
+    personas_are_real = True
     if not PERSONAS_CSV.exists():
         log.warning(f"Personas CSV not found at {PERSONAS_CSV}")
         log.warning("Using simulated OSINT mode (no real Entra ID users loaded)")
         sim = True
+        personas_are_real = False
         df = pd.DataFrame([
             {
                 "Email": f"user{i:03d}@medizuva.co.zw",
@@ -743,6 +745,7 @@ def main():
         log.info(f"Generated {len(df)} synthetic personas for fallback")
     else:
         df = pd.read_csv(PERSONAS_CSV)
+        personas_are_real = True
 
     if args.limit:
         df = df.head(args.limit)
@@ -826,9 +829,12 @@ def main():
 
     # ── Export combined results ────────────────────────────────
     OUT_DIR.mkdir(parents=True, exist_ok=True)
+    personas_source = "Entra ID (Real)" if personas_are_real else "Entra ID (Synthetic Fallback)"
     combined = {
         "ScanDate":           datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "Mode":               "live",
+        "PersonasSource":     personas_source,
+        "IsRealEntraData":    personas_are_real,
         "Sources": {
             "HIBP":      "simulate" if sim else ("live" if live_hibp      else "not_configured"),
             "DeHashed":  "simulate" if sim else ("live" if live_dehashed  else "not_configured"),
