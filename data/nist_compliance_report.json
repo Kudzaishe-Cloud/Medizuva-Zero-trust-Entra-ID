@@ -1,14 +1,14 @@
 {
-  "AuditDate": "2026-04-27 21:39:42",
+  "AuditDate": "2026-05-03 04:12:38",
   "Framework": "NIST SP 800-207, 800-53 Rev5, 800-63B, 800-137",
   "Organisation": "MediZuva Healthcare",
   "Tenant": "micrlabs.onmicrosoft.com",
-  "OverallStatus": "SUBSTANTIALLY COMPLIANT",
-  "ComplianceScore": 86.7,
+  "OverallStatus": "PARTIALLY COMPLIANT",
+  "ComplianceScore": 85.0,
   "Summary": {
     "PASS": 22,
-    "PARTIAL": 8,
-    "FAIL": 0,
+    "PARTIAL": 7,
+    "FAIL": 1,
     "NOT_APPLICABLE": 1
   },
   "Controls": [
@@ -40,30 +40,26 @@
       "ControlID": "800-207-T3",
       "Title": "Per-session access with re-authentication",
       "Standard": "NIST SP 800-207 Section 3.1 Tenet 3",
-      "Status": "PASS",
-      "Finding": "CA006 enforces 8-hour session limits with no persistent browser sessions. CA007 enforces 30-minute sessions for privileged IT accounts.",
-      "Recommendation": "",
-      "Evidence": [
-        "MZV-CA006-SessionControl-8h"
-      ]
+      "Status": "FAIL",
+      "Finding": "No session control policies found.",
+      "Recommendation": "Deploy CA006 and CA007 session control policies.",
+      "Evidence": []
     },
     {
       "ControlID": "800-207-T4",
       "Title": "Dynamic policy enforcement based on risk signals",
       "Standard": "NIST SP 800-207 Section 3.1 Tenet 4",
-      "Status": "PASS",
-      "Finding": "CA004 blocks high sign-in risk. CA008 blocks high user risk. CA009 requires password change on medium/high user risk. Together these implement dynamic, risk-adaptive access control.",
-      "Recommendation": "",
-      "Evidence": [
-        "MZV-CA004-BlockHighRiskSignin"
-      ]
+      "Status": "PARTIAL",
+      "Finding": "Only static policies present. No risk-adaptive enforcement.",
+      "Recommendation": "Add CA008 (block high user risk) and CA009 (password change on medium risk).",
+      "Evidence": []
     },
     {
       "ControlID": "800-207-T5",
       "Title": "Continuous asset and user integrity monitoring",
       "Standard": "NIST SP 800-207 Section 3.1 Tenet 5",
       "Status": "PASS",
-      "Finding": "Automated monitoring pipeline runs every 15 minutes via GitHub Actions. OSINT scan covers all 500 personas across 4 sources. 335 users currently flagged as credential-exposed. Device compliance tracked for 156 non-compliant devices.",
+      "Finding": "Automated monitoring pipeline runs every 15 minutes via GitHub Actions. OSINT scan covers all 500 personas across 4 sources. 337 users currently flagged as credential-exposed. Device compliance tracked for 0 non-compliant devices.",
       "Recommendation": "",
       "Evidence": [
         "GitHub Actions sync.yml \u2014 15-min cron",
@@ -75,14 +71,10 @@
       "ControlID": "800-207-T6",
       "Title": "Strict authentication and authorisation before every access",
       "Standard": "NIST SP 800-207 Section 3.1 Tenet 6",
-      "Status": "PARTIAL",
-      "Finding": "CA001 requires MFA for all users. CA005 requires MFA + compliant device for admins. However, 56 users currently lack MFA registration, meaning CA001 cannot fully enforce for those accounts until they register.",
-      "Recommendation": "Remediate 56 MFA gaps. Consider blocking access entirely until MFA is registered.",
-      "Evidence": [
-        "MZV-CA001-RequireMFA-AllUsers",
-        "MZV-CA003-RequireCompliantDevice-Clinical",
-        "MZV-CA005-RequireMFAAndDevice-Admins"
-      ]
+      "Status": "PASS",
+      "Finding": "MFA enforced for all users with no registration gaps.",
+      "Recommendation": "",
+      "Evidence": []
     },
     {
       "ControlID": "800-207-T7",
@@ -116,27 +108,20 @@
       "Title": "Access Enforcement",
       "Standard": "NIST SP 800-53 Rev5 AC-3",
       "Status": "PARTIAL",
-      "Finding": "6 Conditional Access policies deployed. 0 enforced, 6 in Report-Only mode. Report-Only mode logs violations but does not block access \u2014 full enforcement pending operational sign-off.",
+      "Finding": "0 Conditional Access policies deployed. 0 enforced, 0 in Report-Only mode. Report-Only mode logs violations but does not block access \u2014 full enforcement pending operational sign-off.",
       "Recommendation": "Promote all CA policies from Report-Only to Enabled state to achieve full AC-3 compliance.",
-      "Evidence": [
-        "MZV-CA001-RequireMFA-AllUsers \u2014 REPORT-ONLY",
-        "MZV-CA002-BlockLegacyAuth \u2014 REPORT-ONLY",
-        "MZV-CA003-RequireCompliantDevice-Clinical \u2014 REPORT-ONLY",
-        "MZV-CA004-BlockHighRiskSignin \u2014 REPORT-ONLY",
-        "MZV-CA005-RequireMFAAndDevice-Admins \u2014 REPORT-ONLY",
-        "MZV-CA006-SessionControl-8h \u2014 REPORT-ONLY"
-      ]
+      "Evidence": []
     },
     {
       "ControlID": "800-53-AC-6",
       "Title": "Least Privilege",
       "Standard": "NIST SP 800-53 Rev5 AC-6",
       "Status": "PASS",
-      "Finding": "Privileged Identity Management (PIM) implemented for all 45 eligible admin assignments. Zero permanently active privileged roles. Role mapping follows least-privilege per job function: Help Desk \u2192 Helpdesk Admin only; Network Engineer \u2192 Reports Reader only.",
+      "Finding": "Privileged Identity Management (PIM) implemented for all 0 eligible admin assignments. Zero permanently active privileged roles. Role mapping follows least-privilege per job function: Help Desk \u2192 Helpdesk Admin only; Network Engineer \u2192 Reports Reader only.",
       "Recommendation": "",
       "Evidence": [
         "pillar3_pim/assign_pim_roles.ps1",
-        "PIM eligible: 45",
+        "PIM eligible: 0",
         "Active now: 0 (JIT only)"
       ]
     },
@@ -157,9 +142,9 @@
       "ControlID": "800-53-AC-11",
       "Title": "Session Lock",
       "Standard": "NIST SP 800-53 Rev5 AC-11",
-      "Status": "PASS",
-      "Finding": "CA006 enforces 8-hour sign-in frequency for all users with no persistent browser. CA007 enforces 30-minute re-authentication for IT/privileged accounts.",
-      "Recommendation": "",
+      "Status": "PARTIAL",
+      "Finding": "General 8-hour session exists but no shorter timeout for privileged accounts.",
+      "Recommendation": "Deploy CA007 30-minute admin session policy.",
       "Evidence": [
         "CA006 \u2014 8h all users",
         "CA007 \u2014 30min IT/admins"
@@ -206,11 +191,11 @@
       "ControlID": "800-53-IA-2",
       "Title": "Identification and Authentication (Org Users)",
       "Standard": "NIST SP 800-53 Rev5 IA-2",
-      "Status": "PARTIAL",
-      "Finding": "MFA enforced via CA001 for all users. CA005 enforces MFA + compliant device for admins. 56 users have not yet registered MFA \u2014 these accounts cannot fully satisfy IA-2 until registration is complete.",
-      "Recommendation": "Enforce MFA registration for 56 unregistered users. Block access until registered.",
+      "Status": "PASS",
+      "Finding": "MFA enforced via CA001 for all users. CA005 enforces MFA + compliant device for admins. 0 users have not yet registered MFA \u2014 these accounts cannot fully satisfy IA-2 until registration is complete.",
+      "Recommendation": "",
       "Evidence": [
-        "MFA gaps: 56",
+        "MFA gaps: 0",
         "CA001 \u2014 MFA all users",
         "CA005 \u2014 MFA + device for admins"
       ]
@@ -231,10 +216,10 @@
       "Title": "Authenticator Management \u2014 Breached Password Check",
       "Standard": "NIST SP 800-53 Rev5 IA-5(1)",
       "Status": "PARTIAL",
-      "Finding": "335 users found in breach databases. No automatic password change policy deployed.",
+      "Finding": "337 users found in breach databases. No automatic password change policy deployed.",
       "Recommendation": "Deploy CA009 to force password change on medium/high user risk.",
       "Evidence": [
-        "OSINT exposed: 335",
+        "OSINT exposed: 337",
         "CA009 \u2014 passwordChange grant control on medium/high user risk"
       ]
     },
@@ -256,11 +241,11 @@
       "Title": "Risk Assessment",
       "Standard": "NIST SP 800-53 Rev5 RA-3",
       "Status": "PASS",
-      "Finding": "Automated risk assessment runs every 15 minutes. All 500 users classified into 4 tiers (CRITICAL/HIGH/MEDIUM/LOW) using multi-signal correlation: Entra IdP risk, MFA gaps, device compliance, OSINT exposure, and RiskScore. Current state: 45 CRITICAL, 301 HIGH.",
+      "Finding": "Automated risk assessment runs every 15 minutes. All 500 users classified into 4 tiers (CRITICAL/HIGH/MEDIUM/LOW) using multi-signal correlation: Entra IdP risk, MFA gaps, device compliance, OSINT exposure, and RiskScore. Current state: 0 CRITICAL, 337 HIGH.",
       "Recommendation": "",
       "Evidence": [
         "pillar4_threat/threat_audit.py \u2014 risk classification engine",
-        "Critical: 45 | High: 301 | Medium: 91 | Low: 63"
+        "Critical: 0 | High: 337 | Medium: 0 | Low: 163"
       ]
     },
     {
@@ -319,11 +304,11 @@
       "ControlID": "800-63B-AAL2",
       "Title": "Authentication Assurance Level 2 (MFA Required)",
       "Standard": "NIST SP 800-63B Section 4.2",
-      "Status": "PARTIAL",
-      "Finding": "AAL2 requires phishing-resistant or approved MFA. CA001 enforces MFA for all users. 56 of 500 users (11.2%) lack MFA registration. Microsoft Authenticator (OATH TOTP / push notification) satisfies AAL2.",
-      "Recommendation": "Complete MFA registration for 56 unregistered users to achieve full AAL2.",
+      "Status": "PASS",
+      "Finding": "AAL2 requires phishing-resistant or approved MFA. CA001 enforces MFA for all users. 0 of 500 users (0.0%) lack MFA registration. Microsoft Authenticator (OATH TOTP / push notification) satisfies AAL2.",
+      "Recommendation": "",
       "Evidence": [
-        "MFA gaps: 56/500",
+        "MFA gaps: 0/500",
         "CA001 \u2014 enforces MFA globally"
       ]
     },
