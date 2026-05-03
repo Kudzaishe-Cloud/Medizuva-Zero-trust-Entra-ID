@@ -36,6 +36,10 @@ THREAT_AUDIT  = REPO_ROOT / "data" / "threat_audit.json"
 OSINT_COMBINED= REPO_ROOT / "data" / "osint_results" / "osint_combined_results.json"
 OSINT_LOG     = REPO_ROOT / "data" / "osint_results" / "osint_run.log"
 NIST_REPORT   = REPO_ROOT / "data" / "nist_compliance_report.json"
+ENTRA_SIGNIN_LOGS = REPO_ROOT / "data" / "signin_logs" / "signin_logs.json"
+ENTRA_RISKY_USERS = REPO_ROOT / "data" / "signin_logs" / "risky_signins.json"
+ENTRA_DIR_AUDITS = REPO_ROOT / "data" / "signin_logs" / "directory_audits.json"
+ENTRA_SUMMARY = REPO_ROOT / "data" / "signin_logs" / "log_summary.json"
 OUT_HTML      = REPO_ROOT / "data" / "central_dashboard.html"
 
 
@@ -63,8 +67,14 @@ def load_all():
     p4    = load_json(THREAT_AUDIT)
     osint = load_json(OSINT_COMBINED)
     nist  = load_json(NIST_REPORT)
+    entra = {
+        "signin_logs": load_json(ENTRA_SIGNIN_LOGS),
+        "risky_users": load_json(ENTRA_RISKY_USERS),
+        "directory_audits": load_json(ENTRA_DIR_AUDITS),
+        "summary": load_json(ENTRA_SUMMARY),
+    }
     log_txt = OSINT_LOG.read_text(encoding="utf-8") if OSINT_LOG.exists() else "No log file found."
-    return p1, p2, p3, p4, osint, nist, log_txt
+    return p1, p2, p3, p4, osint, nist, entra, log_txt
 
 
 # ── Helpers ───────────────────────────────────────────────────
@@ -93,7 +103,7 @@ def overall_posture(p1_ok, p2, p3, p4):
 
 # ── HTML builder ──────────────────────────────────────────────
 
-def build_html(p1, p2, p3, p4, osint, nist, log_txt):
+def build_html(p1, p2, p3, p4, osint, nist, entra, log_txt):
     generated = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     # ── Pillar summaries ──────────────────────────────────────
@@ -198,6 +208,78 @@ def build_html(p1, p2, p3, p4, osint, nist, log_txt):
     osint_src_labels     = [s["Source"] for s in top_sources]
     osint_src_vals       = [s["AffectedUsers"] for s in top_sources]
     osint_cat_labels     = list(cat_freq.keys())
+
+    # ── Entra ID logs ─────────────────────────────────────────
+    entra_summary = (entra or {}).get("summary") or {}
+    entra_signin = (entra or {}).get("signin_logs") or {}
+    entra_risky = (entra or {}).get("risky_users") or {}
+    entra_audits = (entra or {}).get("directory_audits") or {}
+
+    signin_logs_list = entra_signin.get("Logs", [])
+    risky_users_list = entra_risky.get("RiskyUsers", [])
+    audit_logs_list = entra_audits.get("Audits", [])
+
+    entra_total_signins = entra_summary.get("SignInTotal", 0)
+    entra_failed_signins = entra_summary.get("SignInFailed", 0)
+    entra_success_rate = entra_summary.get("SignInSuccessRate", 0)
+    entra_mfa_used = entra_summary.get("MFAUsed", 0)
+    entra_mfa_rate = entra_summary.get("MFARatePct", 0)
+    entra_risky_users_count = entra_summary.get("RiskyUsers", 0)
+    entra_audit_total = entra_summary.get("AuditTotal", 0)
+    entra_audit_failures = entra_summary.get("AuditFailures", 0)
+
+    # Generate sign-in logs table rows
+    signin_rows = ""
+    RISK_BADGE_MAP = {
+        "high": '<span class="badge b-red">HIGH</span>',
+        "medium": '<span class="badge b-amber">MEDIUM</span>',
+        "low": '<span class="badge b-blue">LOW</span>',
+        "none": '<span class="badge b-gray">NONE</span>',
+        "": '<span class="badge b-gray">—</span>',
+    }
+    for log in signin_logs_list[:20]:
+        risk_level = log.get("RiskLevel", "none").lower()
+        risk_badge = RISK_BADGE_MAP.get(risk_level, RISK_BADGE_MAP["none"])
+        mfa_detail = "✓ Yes" if log.get("MFADetail") else "—"
+        ca_status = log.get("CAStatus", "—") or "—"
+        signin_rows += (
+            f"<tr>"
+            f"<td class='mono' style='font-size:11px'>{_html.escape(log.get('User','—')[:20])}</td>"
+            f"<td style='font-size:11px'>{_html.escape(log.get('App','—')[:25])}</td>"
+            f"<td class='mono' style='font-size:11px'>{log.get('IPAddress','—')}</td>"
+            f"<td style='font-size:11px;color:var(--muted)'>{log.get('City','—')}, {log.get('Country','—')}</td>"
+            f"<td style='text-align:center'>{risk_badge}</td>"
+            f"<td style='text-align:center;font-size:11px'>{mfa_detail}</td>"
+            f"<td style='font-size:11px;color:var(--muted)'>{ca_status}</td>"
+            f"<td class='muted' style='font-size:11px'>{log.get('DateTime','—')[:16]}</td>"
+            f"</tr>\n"
+        )
+
+    # Generate risky users table rows
+    risky_rows = ""
+    for user in risky_users_list[:10]:
+        risky_rows += (
+            f"<tr>"
+            f"<td class='mono'>{_html.escape(user.get('User','—'))}</td>"
+            f"<td><span class='badge b-red'>{user.get('RiskLevel','—').upper()}</span></td>"
+            f"<td style='color:var(--muted);font-size:11px'>{user.get('RiskState','—')}</td>"
+            f"<td class='muted' style='font-size:11px'>{user.get('LastUpdated','—')[:10]}</td>"
+            f"</tr>\n"
+        )
+
+    # Generate directory audits table rows
+    audit_rows = ""
+    for audit in audit_logs_list[:15]:
+        result_badge = '<span class="badge b-green">SUCCESS</span>' if audit.get('Result') == 'success' else '<span class="badge b-red">FAILED</span>'
+        audit_rows += (
+            f"<tr>"
+            f"<td style='font-size:11px'>{_html.escape(audit.get('Activity','—')[:30])}</td>"
+            f"<td style='color:var(--muted);font-size:11px'>{audit.get('Actor','—')}</td>"
+            f"<td style='font-size:11px'>{audit.get('Category','—')}</td>"
+            f"<td>{result_badge}</td>"
+            f"<td class='muted' style='font-size:11px'>{audit.get('DateTime','—')[:16]}</td>"
+            f"</tr>\n"
+        )
     osint_cat_vals       = list(cat_freq.values())
     tool_labels          = list(src_tools.keys())
     tool_vals            = list(src_tools.values())
@@ -662,6 +744,14 @@ tbody td{{padding:11px 16px;vertical-align:middle}}
       </svg>
       <span class="nav-label">NIST SP 800</span>
       <div class="nav-dot" style="color:{nist_score_col}"></div>
+    </div>
+    <div class="nav-item" onclick="show('entra')" id="nav-entra">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+        <path d="M16 11h6"/><path d="M16 15h6"/>
+      </svg>
+      <span class="nav-label">Entra ID Logs</span>
+      <div class="nav-dot" style="color:var(--cyan)"></div>
     </div>
     <div class="nav-item" onclick="show('logs')" id="nav-logs">
       <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1238,6 +1328,82 @@ tbody td{{padding:11px 16px;vertical-align:middle}}
     </section>
 
     <!-- ══════════════════════════════════════════════════════
+         ENTRA ID LOGS
+    ═══════════════════════════════════════════════════════ -->
+    <section class="panel" id="panel-entra">
+      <div class="panel-header">
+        <div>
+          <div class="panel-title">Entra ID — Sign-In & Audit Logs</div>
+          <div class="panel-sub">Live authentication events queried directly from Microsoft Graph API (7-day window)</div>
+        </div>
+      </div>
+
+      <div class="source-banner" style="background:#00d4ff20;border-left:3px solid var(--cyan);padding:12px 16px;margin-bottom:16px;border-radius:4px;font-size:12px">
+        <div style="color:var(--cyan);font-weight:600;margin-bottom:4px">✓ Real Entra ID Data</div>
+        <div style="color:var(--muted);font-size:11px">Data sourced directly from Microsoft Graph API · Authentication logs, Identity Protection, Directory audits · Last retrieved: {entra_summary.get('GeneratedAt', 'N/A')}</div>
+      </div>
+
+      <div class="cards" style="grid-template-columns:repeat(auto-fill,minmax(140px,1fr));margin-bottom:24px">
+        <div class="card" style="border-left:3px solid var(--cyan)">
+          <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em">Total Sign-Ins</div>
+          <div style="font-size:24px;font-weight:800;color:var(--cyan);margin-top:4px">{entra_total_signins}</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:6px">{entra_failed_signins} failed</div>
+        </div>
+        <div class="card" style="border-left:3px solid var(--green)">
+          <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em">Success Rate</div>
+          <div style="font-size:24px;font-weight:800;color:var(--green);margin-top:4px">{entra_success_rate}%</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:6px">Authentication success</div>
+        </div>
+        <div class="card" style="border-left:3px solid var(--purple)">
+          <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em">MFA Usage</div>
+          <div style="font-size:24px;font-weight:800;color:var(--purple);margin-top:4px">{entra_mfa_rate}%</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:6px">{entra_mfa_used} / {entra_total_signins}</div>
+        </div>
+        <div class="card" style="border-left:3px solid var(--red)">
+          <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em">Risky Users</div>
+          <div style="font-size:24px;font-weight:800;color:var(--red);margin-top:4px">{entra_risky_users_count}</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:6px">High/medium risk</div>
+        </div>
+        <div class="card" style="border-left:3px solid var(--amber)">
+          <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em">Audit Events</div>
+          <div style="font-size:24px;font-weight:800;color:var(--amber);margin-top:4px">{entra_audit_total}</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:6px">{entra_audit_failures} failures</div>
+        </div>
+      </div>
+
+      <h3 style="margin:24px 0 12px;font-size:13px;font-weight:700;color:var(--text)">Recent Sign-In Events (Last 20)</h3>
+      <div style="overflow-x:auto;margin-bottom:24px">
+        <table class="mini-table">
+          <thead><tr>
+            <th>User</th><th>Application</th><th>IP Address</th><th>Location</th>
+            <th style="text-align:center">Risk</th><th>MFA</th><th>CA Status</th><th>DateTime</th>
+          </tr></thead>
+          <tbody>{signin_rows}</tbody>
+        </table>
+      </div>
+
+      <h3 style="margin:24px 0 12px;font-size:13px;font-weight:700;color:var(--text)">High/Medium Risk Users (Last 10)</h3>
+      <div style="overflow-x:auto;margin-bottom:24px">
+        <table class="mini-table">
+          <thead><tr>
+            <th>User</th><th>Risk Level</th><th>Risk State</th><th>Last Updated</th>
+          </tr></thead>
+          <tbody>{risky_rows}</tbody>
+        </table>
+      </div>
+
+      <h3 style="margin:24px 0 12px;font-size:13px;font-weight:700;color:var(--text)">Directory Audit Trail (Last 15)</h3>
+      <div style="overflow-x:auto;margin-bottom:24px">
+        <table class="mini-table">
+          <thead><tr>
+            <th>Activity</th><th>Actor</th><th>Category</th><th>Result</th><th>DateTime</th>
+          </tr></thead>
+          <tbody>{audit_rows}</tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
          AUDIT LOGS
     ═══════════════════════════════════════════════════════ -->
     <section class="panel" id="panel-logs">
@@ -1517,21 +1683,24 @@ def main():
     print(" MediZuva — Central Dashboard Generator")
     print("=========================================")
 
-    p1, p2, p3, p4, osint, nist, log_txt = load_all()
+    p1, p2, p3, p4, osint, nist, entra, log_txt = load_all()
     print(f"  P1 personas   : {p1['total']}")
     p2_policies_n = len((p2 or {}).get('Policies', []))
     p3_eligible_n = (p3 or {}).get('Summary', {}).get('TotalEligible', 0)
     p4_critical_n = (p4 or {}).get('Summary', {}).get('Critical', 0)
     osint_exp_n   = (osint or {}).get('ExposedCount', 0)
     nist_score_n  = (nist or {}).get('ComplianceScore', 0)
+    entra_signins = ((entra or {}).get('summary') or {}).get('SignInTotal', 0)
+    entra_risky = ((entra or {}).get('summary') or {}).get('RiskyUsers', 0)
     print(f"  P2 CA policies: {p2_policies_n}")
     print(f"  P3 PIM roles  : {p3_eligible_n} eligible")
     print(f"  P4 threat     : {p4_critical_n} critical")
+    print(f"  Entra sign-ins: {entra_signins} total ({entra_risky} risky users)")
     print(f"  OSINT exposed : {osint_exp_n} users")
     print(f"  NIST score    : {nist_score_n:.1f}%")
     print(f"  Log lines     : {log_txt.count(chr(10))}")
 
-    html = build_html(p1, p2, p3, p4, osint, nist, log_txt)
+    html = build_html(p1, p2, p3, p4, osint, nist, entra, log_txt)
     OUT_HTML.write_text(html, encoding="utf-8")
     print(f"\n[OK] Dashboard written: {OUT_HTML}")
     print("     Open in browser or serve with: python -m http.server 8080 (in data/)\n")
