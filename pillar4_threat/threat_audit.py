@@ -59,6 +59,10 @@ def main():
     if not hibp_data:
         print("  [WARN] hibp_results.json not found — run osint_exposure_check.py first")
 
+    if not PERSONAS_CSV.exists():
+        print(f"  [ERROR] personas CSV not found at {PERSONAS_CSV}")
+        sys.exit(1)
+
     df = pd.read_csv(PERSONAS_CSV)
     print(f"  Loaded {len(df)} personas")
 
@@ -176,10 +180,22 @@ def main():
     print(f"  Posture      : {posture}")
     print(f"{'='*48}")
 
+    # ── Determine data sources ────────────────────────────────
+    entra_sync_available = bool(risky_data)
+    osint_data_available = bool(osint_data)
+    personas_source = osint_data.get("PersonasSource", "Unknown") if osint_data else "Unknown"
+    is_real_entra = osint_data.get("IsRealEntraData", False) if osint_data else False
+
     # ── Export ────────────────────────────────────────────────
     export = {
         "AuditDate": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "Tenant":    TENANT,
+        "DataSources": {
+            "PersonasSource": personas_source,
+            "IsRealEntraData": is_real_entra,
+            "EntraSyncAvailable": entra_sync_available,
+            "OSINTDataAvailable": osint_data_available,
+        },
         "UserRisks": user_risks,
         "Summary": {
             "TotalUsers":  total,
