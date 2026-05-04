@@ -1,9 +1,9 @@
 ======================================================================
  MEDIZUVA ZERO-TRUST — NIST SP 800 COMPLIANCE AUDIT REPORT
- Generated : 2026-04-27 21:39:42
+ Generated : 2026-05-04 02:17:58
  Framework : NIST SP 800-207, 800-53 Rev5, 800-63B, 800-137
  Status    : SUBSTANTIALLY COMPLIANT
- Score     : 86.7%
+ Score     : 91.7%
 ======================================================================
 
 [PASS] 800-207-T1             All resources require authentication
@@ -26,10 +26,9 @@
        Standard: NIST SP 800-207 Section 3.1 Tenet 5
        Finding : Automated monitoring pipeline runs every 15 minutes via GitHub Actions. OSINT scan covers all 500 personas across 4 sour...
 
-[PART] 800-207-T6             Strict authentication and authorisation before every access
+[PASS] 800-207-T6             Strict authentication and authorisation before every access
        Standard: NIST SP 800-207 Section 3.1 Tenet 6
-       Finding : CA001 requires MFA for all users. CA005 requires MFA + compliant device for admins. However, 56 users currently lack MFA...
-       ACTION  : Remediate 56 MFA gaps. Consider blocking access entirely until MFA is registered.
+       Finding : MFA enforced for all users with no registration gaps....
 
 [PASS] 800-207-T7             Continuous telemetry collection and posture improvement
        Standard: NIST SP 800-207 Section 3.1 Tenet 7
@@ -41,12 +40,12 @@
 
 [PART] 800-53-AC-3            Access Enforcement
        Standard: NIST SP 800-53 Rev5 AC-3
-       Finding : 6 Conditional Access policies deployed. 0 enforced, 6 in Report-Only mode. Report-Only mode logs violations but does not...
+       Finding : 6 Conditional Access policies deployed. 3 enforced, 2 in Report-Only mode. Report-Only mode logs violations but does not...
        ACTION  : Promote all CA policies from Report-Only to Enabled state to achieve full AC-3 compliance.
 
 [PASS] 800-53-AC-6            Least Privilege
        Standard: NIST SP 800-53 Rev5 AC-6
-       Finding : Privileged Identity Management (PIM) implemented for all 45 eligible admin assignments. Zero permanently active privileg...
+       Finding : Privileged Identity Management (PIM) implemented for all 0 eligible admin assignments. Zero permanently active privilege...
 
 [PASS] 800-53-AC-6(5)         Least Privilege — Privileged Accounts
        Standard: NIST SP 800-53 Rev5 AC-6(5)
@@ -70,10 +69,9 @@
        Finding : Automated pipeline generates audit records every 15 minutes for threat signals and every 6 hours for OSINT. All records ...
        ACTION  : Extend entra_sync.py to pull sign-in logs and store in data/signin_logs/.
 
-[PART] 800-53-IA-2            Identification and Authentication (Org Users)
+[PASS] 800-53-IA-2            Identification and Authentication (Org Users)
        Standard: NIST SP 800-53 Rev5 IA-2
-       Finding : MFA enforced via CA001 for all users. CA005 enforces MFA + compliant device for admins. 56 users have not yet registered...
-       ACTION  : Enforce MFA registration for 56 unregistered users. Block access until registered.
+       Finding : MFA enforced via CA001 for all users. CA005 enforces MFA + compliant device for admins. 0 users have not yet registered ...
 
 [PASS] 800-53-IA-2(1)         MFA for Privileged Network Access
        Standard: NIST SP 800-53 Rev5 IA-2(1)
@@ -81,7 +79,7 @@
 
 [PART] 800-53-IA-5(1)         Authenticator Management — Breached Password Check
        Standard: NIST SP 800-53 Rev5 IA-5(1)
-       Finding : 335 users found in breach databases. No automatic password change policy deployed....
+       Finding : 355 users found in breach databases. No automatic password change policy deployed....
        ACTION  : Deploy CA009 to force password change on medium/high user risk.
 
 [PASS] 800-53-IA-11           Re-Authentication
@@ -108,10 +106,9 @@
        Standard: NIST SP 800-63B Section 4.1
        Finding : AAL1 (password only) is not used for any MediZuva application. CA001 requires MFA (AAL2 minimum) for all users and all a...
 
-[PART] 800-63B-AAL2           Authentication Assurance Level 2 (MFA Required)
+[PASS] 800-63B-AAL2           Authentication Assurance Level 2 (MFA Required)
        Standard: NIST SP 800-63B Section 4.2
-       Finding : AAL2 requires phishing-resistant or approved MFA. CA001 enforces MFA for all users. 56 of 500 users (11.2%) lack MFA reg...
-       ACTION  : Complete MFA registration for 56 unregistered users to achieve full AAL2.
+       Finding : AAL2 requires phishing-resistant or approved MFA. CA001 enforces MFA for all users. 0 of 500 users (0.0%) lack MFA regis...
 
 [PART] 800-63B-AAL3           Authentication Assurance Level 3 (Hardware MFA)
        Standard: NIST SP 800-63B Section 4.3
@@ -139,6 +136,6 @@
        Finding : Threat intelligence engine generates prioritised recommendations (CRITICAL/HIGH/MEDIUM/LOW) on every OSINT scan, surface...
 
 ======================================================================
- PASS: 22  PARTIAL: 8  FAIL: 0  N/A: 1
- COMPLIANCE SCORE: 86.7%  |  STATUS: SUBSTANTIALLY COMPLIANT
+ PASS: 25  PARTIAL: 5  FAIL: 0  N/A: 1
+ COMPLIANCE SCORE: 91.7%  |  STATUS: SUBSTANTIALLY COMPLIANT
 ======================================================================
