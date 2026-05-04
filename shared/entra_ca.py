@@ -38,20 +38,13 @@ EXPECTED_POLICIES = [
     "MZV-CA004-BlockHighRiskSignin",
     "MZV-CA005-RequireMFAAndDevice-Admins",
     "MZV-CA006-SessionControl-8h",
+    "MZV-CA007-SessionControl-Admins-30min",
+    "MZV-CA008-BlockHighUserRisk",
+    "MZV-CA009-PasswordChange-MediumUserRisk",
+    "MZV-CA010-RequireMFA-AdminRoles",
+    "MZV-CA011-RequireMFA-MediumSignInRisk",
+    "MZV-CA012-InsiderRisk-RequireMFA",
 ]
-
-# Simulated realistic states shown when Entra credentials are unavailable.
-# Represents a typical mid-maturity healthcare Zero Trust posture:
-# core MFA/legacy-auth policies enforced, device compliance in report-only,
-# session controls disabled (still in planning).
-_SIMULATED_STATES = {
-    "MZV-CA001-RequireMFA-AllUsers":               "ENFORCED",
-    "MZV-CA002-BlockLegacyAuth":                   "ENFORCED",
-    "MZV-CA003-RequireCompliantDevice-Clinical":   "REPORT-ONLY",
-    "MZV-CA004-BlockHighRiskSignin":               "ENFORCED",
-    "MZV-CA005-RequireMFAAndDevice-Admins":        "REPORT-ONLY",
-    "MZV-CA006-SessionControl-8h":                 "DISABLED",
-}
 
 STATE_MAP = {
     "enabled":                           "ENFORCED",
@@ -107,85 +100,61 @@ def main():
     client_id     = os.environ.get("ENTRA_CLIENT_ID",     "")
     client_secret = os.environ.get("ENTRA_CLIENT_SECRET", "")
 
+    if not all([tenant_id, client_id, client_secret]):
+        print("[ERROR] Missing Entra ID credentials (ENTRA_TENANT_ID / ENTRA_CLIENT_ID / ENTRA_CLIENT_SECRET).")
+        sys.exit(1)
+
     print("\n================================================")
     print(" MediZuva — Conditional Access Audit (Pillar 2)")
+    print(f" Tenant : {tenant_id}")
     print(f" Date   : {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print("================================================\n")
 
-    headers = {}
-    token   = None
-
-    # Try to fetch from Entra ID; fall back to simulated states if credentials missing
-    if all([tenant_id, client_id, client_secret]):
-        print("Obtaining access token...")
-        try:
-            token   = get_token(tenant_id, client_id, client_secret)
-            headers = {"Authorization": f"Bearer {token}"}
-            print(f"  [OK] Token obtained")
-            print(f"  [OK] Tenant: {tenant_id}\n")
-        except Exception as e:
-            print(f"  [WARN] Failed to obtain token: {e}")
-            print("  [WARN] Falling back to simulated CA states\n")
-            token = None
-    else:
-        print("[WARN] Entra ID credentials not configured.")
-        print("[WARN] Using simulated Conditional Access states.\n")
+    print("Obtaining access token...")
+    token   = get_token(tenant_id, client_id, client_secret)
+    headers = {"Authorization": f"Bearer {token}"}
+    print("  [OK] Token obtained\n")
 
     # Total user count (best-effort)
-    total_users = 500
-    if token:
-        try:
-            req = urllib.request.Request(
-                f"{GRAPH_BASE}/users?$count=true&$top=1",
-                headers={**headers, "ConsistencyLevel": "eventual"},
-            )
-            with urllib.request.urlopen(req) as resp:
-                total_users = json.loads(resp.read()).get("@odata.count", 500)
-        except Exception:
-            total_users = 500
+    try:
+        req = urllib.request.Request(
+            f"{GRAPH_BASE}/users?$count=true&$top=1",
+            headers={**headers, "ConsistencyLevel": "eventual"},
+        )
+        with urllib.request.urlopen(req) as resp:
+            total_users = json.loads(resp.read()).get("@odata.count", 500)
+    except Exception:
+        total_users = 500
 
     # Fetch all CA policies
-    policies = []
-    if token:
-        print("Fetching Conditional Access policies from Entra ID...")
-        all_policies = graph_get(
-            f"{GRAPH_BASE}/identity/conditionalAccess/policies", headers
-        )
-        policy_map = {p["displayName"]: p for p in all_policies}
-        print(f"  Retrieved {len(all_policies)} policies from Entra ID\n")
+    print("Fetching Conditional Access policies...")
+    all_policies = graph_get(
+        f"{GRAPH_BASE}/identity/conditionalAccess/policies", headers
+    )
+    policy_map = {p["displayName"]: p for p in all_policies}
+    print(f"  Retrieved {len(all_policies)} policies from Entra ID\n")
 
-        for name in EXPECTED_POLICIES:
-            if name not in policy_map:
-                print(f"  [MISSING]     {name}")
-                policies.append({
-                    "PolicyName": name,
-                    "State":      "MISSING",
-                    "Id":         "",
-                    "CreatedAt":  "",
-                    "ModifiedAt": "",
-                })
-            else:
-                p     = policy_map[name]
-                state = STATE_MAP.get(p.get("state", ""), "DISABLED")
-                print(f"  [{state:<12}] {name}")
-                policies.append({
-                    "PolicyName": name,
-                    "State":      state,
-                    "Id":         p.get("id", ""),
-                    "CreatedAt":  p.get("createdDateTime", ""),
-                    "ModifiedAt": p.get("modifiedDateTime", ""),
-                })
-    else:
-        print("Using simulated Conditional Access states...\n")
-        for name in EXPECTED_POLICIES:
-            state = _SIMULATED_STATES.get(name, "DISABLED")
+    policies = []
+    for name in EXPECTED_POLICIES:
+        if name not in policy_map:
+            print(f"  [MISSING]     {name}")
+            policies.append({
+                "PolicyName": name,
+                "State":      "MISSING",
+                "Id":         "",
+                "CreatedAt":  "",
+                "ModifiedAt": "",
+            })
+        else:
+            p     = policy_map[name]
+            state = STATE_MAP.get(p.get("state", ""), "DISABLED")
             print(f"  [{state:<12}] {name}")
             policies.append({
                 "PolicyName": name,
                 "State":      state,
-                "Id":         "",
-                "CreatedAt":  "",
-                "ModifiedAt": "",
+                "Id":         p.get("id", ""),
+                "CreatedAt":  p.get("createdDateTime", ""),
+                "ModifiedAt": p.get("modifiedDateTime", ""),
             })
 
     enforced    = sum(1 for p in policies if p["State"] == "ENFORCED")
@@ -202,14 +171,10 @@ def main():
     else:
         posture = "PARTIAL"
 
-    data_source = "Entra ID (Real)" if token else "Entra ID (Simulated — Credentials Unavailable)"
-
     export = {
         "AuditDate":  datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "Tenant":     "micrlabs.onmicrosoft.com",
         "TotalUsers": total_users,
-        "DataSource": data_source,
-        "IsRealData": bool(token),
         "Policies":   policies,
         "Summary": {
             "Enforced":   enforced,

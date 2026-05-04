@@ -56,27 +56,14 @@ jobs:
           ENTRA_CLIENT_SECRET: ${{ secrets.ENTRA_CLIENT_SECRET }}
         run: python shared/entra_sync.py
 
-      # Pull sign-in logs, risky sign-ins, and directory audit logs (100% verified accuracy)
-      - name: Entra ID log retrieval (100% Verified Real-Time Data)
+      # Pull sign-in logs, risky sign-ins, and directory audit logs
+      - name: Entra ID log retrieval
         continue-on-error: true
         env:
           ENTRA_TENANT_ID:     ${{ secrets.ENTRA_TENANT_ID }}
           ENTRA_CLIENT_ID:     ${{ secrets.ENTRA_CLIENT_ID }}
           ENTRA_CLIENT_SECRET: ${{ secrets.ENTRA_CLIENT_SECRET }}
-        run: |
-          python shared/entra_logs.py
-          echo "✓ Data retrieval complete with integrity verification"
-
-      # Verify data integrity
-      - name: Verify Data Integrity
-        continue-on-error: true
-        run: |
-          if [ -f "data/signin_logs/data_integrity.json" ]; then
-            echo "✓ Data integrity file exists"
-            cat data/signin_logs/data_integrity.json | head -10
-          else
-            echo "⚠ Data integrity file not found (credentials may be missing)"
-          fi
+        run: python shared/entra_logs.py
 
       # Audit Conditional Access policies — produces data/ca_audit.json (Pillar 2)
       - name: CA policy audit

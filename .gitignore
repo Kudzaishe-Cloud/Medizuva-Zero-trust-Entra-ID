@@ -44,8 +44,8 @@ data/pim_validation_report.txt
 
 # These two are committed by the pipeline so they persist between runs
 # and are available to the dashboard builder in every workflow.
-# osint_combined_results.json  — kept so sync.yml can read OSINT data
-# nist_compliance_report.json  — kept so dashboard always shows NIST panel
+!data/osint_results/osint_combined_results.json
+!data/nist_compliance_report.json
 
 # ── PowerShell temp ───────────────────────────────────────────
 *.ps1xml

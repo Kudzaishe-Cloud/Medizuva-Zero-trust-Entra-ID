@@ -1,13 +1,13 @@
 {
-  "AuditDate": "2026-05-04 02:39:21",
+  "AuditDate": "2026-05-04 02:53:44",
   "Framework": "NIST SP 800-207, 800-53 Rev5, 800-63B, 800-137",
   "Organisation": "MediZuva Healthcare",
   "Tenant": "micrlabs.onmicrosoft.com",
   "OverallStatus": "SUBSTANTIALLY COMPLIANT",
-  "ComplianceScore": 91.7,
+  "ComplianceScore": 93.3,
   "Summary": {
-    "PASS": 25,
-    "PARTIAL": 5,
+    "PASS": 26,
+    "PARTIAL": 4,
     "FAIL": 0,
     "NOT_APPLICABLE": 1
   },
@@ -44,7 +44,8 @@
       "Finding": "CA006 enforces 8-hour session limits with no persistent browser sessions. CA007 enforces 30-minute sessions for privileged IT accounts.",
       "Recommendation": "",
       "Evidence": [
-        "MZV-CA006-SessionControl-8h"
+        "MZV-CA006-SessionControl-8h",
+        "MZV-CA007-SessionControl-Admins-30min"
       ]
     },
     {
@@ -55,7 +56,11 @@
       "Finding": "CA004 blocks high sign-in risk. CA008 blocks high user risk. CA009 requires password change on medium/high user risk. Together these implement dynamic, risk-adaptive access control.",
       "Recommendation": "",
       "Evidence": [
-        "MZV-CA004-BlockHighRiskSignin"
+        "MZV-CA004-BlockHighRiskSignin",
+        "MZV-CA008-BlockHighUserRisk",
+        "MZV-CA009-PasswordChange-MediumUserRisk",
+        "MZV-CA011-RequireMFA-MediumSignInRisk",
+        "MZV-CA012-InsiderRisk-RequireMFA"
       ]
     },
     {
@@ -63,7 +68,7 @@
       "Title": "Continuous asset and user integrity monitoring",
       "Standard": "NIST SP 800-207 Section 3.1 Tenet 5",
       "Status": "PASS",
-      "Finding": "Automated monitoring pipeline runs every 15 minutes via GitHub Actions. OSINT scan covers all 500 personas across 4 sources. 327 users currently flagged as credential-exposed. Device compliance tracked for 0 non-compliant devices.",
+      "Finding": "Automated monitoring pipeline runs every 15 minutes via GitHub Actions. OSINT scan covers all 535 personas across 4 sources. 0 users currently flagged as credential-exposed. Device compliance tracked for 0 non-compliant devices.",
       "Recommendation": "",
       "Evidence": [
         "GitHub Actions sync.yml \u2014 15-min cron",
@@ -81,7 +86,10 @@
       "Evidence": [
         "MZV-CA001-RequireMFA-AllUsers",
         "MZV-CA003-RequireCompliantDevice-Clinical",
-        "MZV-CA005-RequireMFAAndDevice-Admins"
+        "MZV-CA005-RequireMFAAndDevice-Admins",
+        "MZV-CA010-RequireMFA-AdminRoles",
+        "MZV-CA011-RequireMFA-MediumSignInRisk",
+        "MZV-CA012-InsiderRisk-RequireMFA"
       ]
     },
     {
@@ -116,7 +124,7 @@
       "Title": "Access Enforcement",
       "Standard": "NIST SP 800-53 Rev5 AC-3",
       "Status": "PARTIAL",
-      "Finding": "6 Conditional Access policies deployed. 6 enforced, 0 in Report-Only mode. Report-Only mode logs violations but does not block access \u2014 full enforcement pending operational sign-off.",
+      "Finding": "12 Conditional Access policies deployed. 6 enforced, 0 in Report-Only mode. Report-Only mode logs violations but does not block access \u2014 full enforcement pending operational sign-off.",
       "Recommendation": "Promote all CA policies from Report-Only to Enabled state to achieve full AC-3 compliance.",
       "Evidence": [
         "MZV-CA001-RequireMFA-AllUsers \u2014 ENFORCED",
@@ -124,7 +132,13 @@
         "MZV-CA003-RequireCompliantDevice-Clinical \u2014 ENFORCED",
         "MZV-CA004-BlockHighRiskSignin \u2014 ENFORCED",
         "MZV-CA005-RequireMFAAndDevice-Admins \u2014 ENFORCED",
-        "MZV-CA006-SessionControl-8h \u2014 ENFORCED"
+        "MZV-CA006-SessionControl-8h \u2014 ENFORCED",
+        "MZV-CA007-SessionControl-Admins-30min \u2014 MISSING",
+        "MZV-CA008-BlockHighUserRisk \u2014 MISSING",
+        "MZV-CA009-PasswordChange-MediumUserRisk \u2014 MISSING",
+        "MZV-CA010-RequireMFA-AdminRoles \u2014 MISSING",
+        "MZV-CA011-RequireMFA-MediumSignInRisk \u2014 MISSING",
+        "MZV-CA012-InsiderRisk-RequireMFA \u2014 MISSING"
       ]
     },
     {
@@ -230,11 +244,11 @@
       "ControlID": "800-53-IA-5(1)",
       "Title": "Authenticator Management \u2014 Breached Password Check",
       "Standard": "NIST SP 800-53 Rev5 IA-5(1)",
-      "Status": "PARTIAL",
-      "Finding": "327 users found in breach databases. No automatic password change policy deployed.",
-      "Recommendation": "Deploy CA009 to force password change on medium/high user risk.",
+      "Status": "PASS",
+      "Finding": "CA009 requires mandatory password change when user risk is medium or high. OSINT pipeline identifies 0 users with credentials in breach databases and elevates their risk tier, triggering CA009 on next sign-in. NIST SP 800-63B Section 5.1.1.2 requires checking passwords against known compromised lists.",
+      "Recommendation": "",
       "Evidence": [
-        "OSINT exposed: 327",
+        "OSINT exposed: 0",
         "CA009 \u2014 passwordChange grant control on medium/high user risk"
       ]
     },

@@ -32,13 +32,28 @@ import sys
 import urllib.request
 import urllib.parse
 import urllib.error
-from datetime import datetime, date, timedelta
+from datetime import datetime
 from pathlib import Path
 
 import pandas as pd
 
 sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 from shared.schemas import LOCATIONS
+
+
+class GraphAPIError(Exception):
+    pass
+
+
+def _load_dotenv():
+    env_file = Path(__file__).resolve().parents[1] / ".env"
+    if not env_file.exists():
+        return
+    for line in env_file.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if line and not line.startswith("#") and "=" in line:
+            k, _, v = line.partition("=")
+            os.environ.setdefault(k.strip(), v.strip())
 
 REPO_ROOT  = Path(__file__).resolve().parents[1]
 OUT_PATH   = REPO_ROOT / "data" / "personas" / "medizuva_500_personas.csv"
@@ -179,11 +194,15 @@ def main():
         print(f"[OK] {len(df)} synthetic personas saved to: {OUT_PATH}")
 
     if not all([tenant_id, client_id, client_secret]):
-        missing = [v for v, x in [("ENTRA_TENANT_ID", tenant_id),
-                                   ("ENTRA_CLIENT_ID", client_id),
-                                   ("ENTRA_CLIENT_SECRET", client_secret)] if not x]
-        use_synthetic(f"Missing env vars: {', '.join(missing)}")
-        return
+        print("[ERROR] Missing required environment variables.")
+        if not tenant_id:     print("  ENTRA_TENANT_ID is not set")
+        if not client_id:     print("  ENTRA_CLIENT_ID is not set")
+        if not client_secret: print("  ENTRA_CLIENT_SECRET is not set")
+        print("\nSet these in your .env file or as repository secrets.")
+        if OUT_PATH.exists():
+            print(f"[WARN] Falling back to existing CSV: {OUT_PATH}")
+            return
+        sys.exit(1)
 
     print("=" * 60)
     print(" MediZuva — Entra ID User Fetch")
@@ -195,11 +214,13 @@ def main():
     try:
         token = get_token(tenant_id, client_id, client_secret)
     except (urllib.error.HTTPError, urllib.error.URLError) as e:
-        code = getattr(e, "code", str(e))
+        code = getattr(e, "code", "network error")
         print(f"  [ERROR] Token request failed: {code}")
         print("  Check ENTRA_TENANT_ID, ENTRA_CLIENT_ID and ENTRA_CLIENT_SECRET.")
-        use_synthetic("Entra auth failed")
-        return
+        if OUT_PATH.exists():
+            print(f"[WARN] Falling back to existing CSV: {OUT_PATH}")
+            return
+        sys.exit(1)
     headers = {"Authorization": f"Bearer {token}"}
     print("  [OK] Token obtained\n")
 
@@ -215,8 +236,11 @@ def main():
         raw_users = graph_get(url, headers)
     except GraphAPIError as e:
         print(f"  [ERROR] Graph API call failed: {e}")
-        use_synthetic("Graph API error")
-        return
+        print("  Ensure the app has User.Read.All permission (admin-consented).")
+        if OUT_PATH.exists():
+            print(f"[WARN] Falling back to existing CSV: {OUT_PATH}")
+            return
+        sys.exit(1)
     print(f"  Retrieved {len(raw_users)} active accounts from Entra ID\n")
 
     rows = []
