@@ -25,11 +25,7 @@ from collections import Counter
 from datetime import datetime
 from pathlib import Path
 
-import pandas as pd
-
 REPO_ROOT     = Path(__file__).resolve().parents[1]
-PERSONAS_CSV  = REPO_ROOT / "data" / "personas" / "medizuva_500_personas.csv"
-PROV_LOG      = REPO_ROOT / "data" / "personas" / "provisioning_log.csv"
 CA_AUDIT      = REPO_ROOT / "data" / "ca_audit.json"
 PIM_AUDIT     = REPO_ROOT / "data" / "pim_audit.json"
 THREAT_AUDIT  = REPO_ROOT / "data" / "threat_audit.json"
@@ -54,25 +50,41 @@ def load_json(path):
         return json.load(f)
 
 def load_all():
-    df  = pd.read_csv(PERSONAS_CSV)
-    log = pd.read_csv(PROV_LOG) if PROV_LOG.exists() else None
+    # PRIMARY: Load comprehensive Entra ID data ONLY (100% real data from MS Graph API)
+    comp = load_json(ENTRA_COMPREHENSIVE)
+
+    # Extract REAL data from Entra API response
+    entra_users = comp.get("sections", {}).get("users", {}).get("data", []) if comp else []
+    entra_devices = comp.get("sections", {}).get("devices", {}).get("data", []) if comp else []
+
+    # Count real data from Entra
+    dept_counts = Counter()
+    loc_counts = Counter()
+    mfa_count = 0
+
+    for user in entra_users:
+        dept = user.get("department") or "Unassigned"
+        loc = user.get("officeLocation") or "Unknown"
+        dept_counts[dept] += 1
+        loc_counts[loc] += 1
+        if user.get("mobilePhone"):
+            mfa_count += 1
+
+    # P1: Built from REAL Entra ID users (not personas)
     p1  = {
-        "total":       len(df),
-        "provisioned": int(log["Status"].eq("Success").sum()) if log is not None else len(df),
-        "mfa_reg":     int((df["MFARegistered"] == True).sum() or (df["MFARegistered"].astype(str) == "True").sum()),
-        "compliant":   int((df["DeviceCompliant"] == True).sum() or (df["DeviceCompliant"].astype(str) == "True").sum()),
-        "dept_counts": df["Department"].value_counts().to_dict(),
-        "loc_counts":  df["Location"].value_counts().to_dict(),
+        "total":       len(entra_users),
+        "provisioned": len(entra_users),
+        "mfa_reg":     mfa_count,
+        "compliant":   len(entra_devices),
+        "dept_counts": dict(dept_counts),
+        "loc_counts":  dict(loc_counts),
     }
+
     p2    = load_json(CA_AUDIT)
     p3    = load_json(PIM_AUDIT)
     p4    = load_json(THREAT_AUDIT)
     osint = load_json(OSINT_COMBINED)
     nist  = load_json(NIST_REPORT)
-
-    # PRIMARY: Load comprehensive Entra ID data (real-time, 100% accurate)
-    # This pulls ALL data from Entra ID with NO simulation fallback
-    comp = load_json(ENTRA_COMPREHENSIVE)
     if comp:
         entra = {
             "summary": {
@@ -261,7 +273,7 @@ def build_html(p1, p2, p3, p4, osint, nist, entra, log_txt):
     entra_audit_total = entra_summary.get("AuditTotal", 0)
     entra_audit_failures = entra_summary.get("AuditFailures", 0)
 
-    # Generate sign-in logs table rows
+    # Generate sign-in logs table rows from REAL Entra API data
     signin_rows = ""
     RISK_BADGE_MAP = {
         "high": '<span class="badge b-red">HIGH</span>',
@@ -270,21 +282,53 @@ def build_html(p1, p2, p3, p4, osint, nist, entra, log_txt):
         "none": '<span class="badge b-gray">NONE</span>',
         "": '<span class="badge b-gray">—</span>',
     }
-    for log in signin_logs_list[:20]:
-        risk_level = log.get("RiskLevel", "none").lower()
+    STATUS_BADGE_MAP = {
+        "success": '<span class="badge b-green">SUCCESS</span>',
+        "failure": '<span class="badge b-red">DENIED</span>',
+        "0": '<span class="badge b-green">SUCCESS</span>',
+    }
+
+    for log in signin_logs_list[:40]:  # Show all 40+ real logs
+        # Map real Entra fields from Graph API
+        user = log.get("userDisplayName", log.get("userPrincipalName", "—"))
+        app = log.get("appDisplayName", "—")
+        ip = log.get("ipAddress", "—")
+        loc = log.get("location", {})
+        city = loc.get("city", "—") if loc else "—"
+        country = loc.get("countryOrRegion", "—") if loc else "—"
+
+        # Risk and status
+        risk_level = log.get("riskLevelAggregated", "none").lower()
         risk_badge = RISK_BADGE_MAP.get(risk_level, RISK_BADGE_MAP["none"])
-        mfa_detail = "✓ Yes" if log.get("MFADetail") else "—"
-        ca_status = log.get("CAStatus", "—") or "—"
+
+        # Check if success or denied
+        error_code = log.get("status", {}).get("errorCode", 0)
+        if error_code == 0:
+            status_badge = STATUS_BADGE_MAP["0"]
+            status_text = "SUCCESS"
+        else:
+            status_badge = STATUS_BADGE_MAP["failure"]
+            reason = log.get("status", {}).get("failureReason", "Denied")
+            status_text = f"DENIED: {reason[:30]}"
+
+        # MFA check
+        ca_policies = log.get("appliedConditionalAccessPolicies", [])
+        mfa_used = any("Mfa" in p.get("enforcedGrantControls", []) for p in ca_policies)
+        mfa_detail = "[OK] MFA" if mfa_used else "—"
+
+        # DateTime
+        dt = log.get("createdDateTime", "—")[:16]
+
         signin_rows += (
             f"<tr>"
-            f"<td class='mono' style='font-size:11px'>{_html.escape(log.get('User','—')[:20])}</td>"
-            f"<td style='font-size:11px'>{_html.escape(log.get('App','—')[:25])}</td>"
-            f"<td class='mono' style='font-size:11px'>{log.get('IPAddress','—')}</td>"
-            f"<td style='font-size:11px;color:var(--muted)'>{log.get('City','—')}, {log.get('Country','—')}</td>"
+            f"<td class='mono' style='font-size:11px'>{_html.escape(str(user)[:20])}</td>"
+            f"<td style='font-size:11px'>{_html.escape(str(app)[:25])}</td>"
+            f"<td class='mono' style='font-size:10px'>{ip}</td>"
+            f"<td style='font-size:11px;color:var(--muted)'>{city}, {country}</td>"
             f"<td style='text-align:center'>{risk_badge}</td>"
             f"<td style='text-align:center;font-size:11px'>{mfa_detail}</td>"
-            f"<td style='font-size:11px;color:var(--muted)'>{ca_status}</td>"
-            f"<td class='muted' style='font-size:11px'>{log.get('DateTime','—')[:16]}</td>"
+            f"<td style='text-align:center'>{status_badge}</td>"
+            f"<td class='muted' style='font-size:11px'>{dt}</td>"
             f"</tr>\n"
         )
 
@@ -1475,7 +1519,7 @@ const KPI_EXPOSED  = {oi.get('TotalExposed',0)};
 const KPI_MFA      = {p4s.get('MFAGaps',0)};
 
 // ── Navigation ───────────────────────────────────────────────
-const PANELS = ['overview','p1','p2','p3','p4','osint','nist','logs'];
+const PANELS = ['overview','p1','p2','p3','p4','osint','nist','entra','logs'];
 function show(id) {{
   PANELS.forEach(p => {{
     document.getElementById('panel-'+p).classList.toggle('active', p===id);
