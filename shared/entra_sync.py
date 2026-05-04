@@ -87,8 +87,7 @@ def fetch_risky_users(headers: dict) -> list:
     print("[1/3] Querying Identity Protection risky users...")
     url = (
         f"{GRAPH_BASE}/identityProtection/riskyUsers"
-        f"?$filter=riskLevel%20eq%20'high'%20or%20riskLevel%20eq%20'medium'"
-        f"&$select=id,userDisplayName,userPrincipalName,riskLevel,riskState,riskLastUpdatedDateTime,isDeleted"
+        f"?$select=id,userDisplayName,userPrincipalName,riskLevel,riskState,riskLastUpdatedDateTime,isDeleted"
     )
     users = []
     for u in graph_get(url, headers):
