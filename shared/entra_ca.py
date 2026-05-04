@@ -175,6 +175,7 @@ def main():
         "AuditDate":  datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "Tenant":     "micrlabs.onmicrosoft.com",
         "TotalUsers": total_users,
+        "IsRealData": bool(token),
         "Policies":   policies,
         "Summary": {
             "Enforced":   enforced,

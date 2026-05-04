@@ -86,7 +86,7 @@ def get_comprehensive_data(headers: dict):
         "data": users,
         "timestamp": datetime.now().isoformat()
     }
-    print(f"   ✓ Found {len(users)} users")
+    print(f"   [OK] Found {len(users)} users")
 
     # 2. RISKY USERS (NO FILTER - get all)
     print("[2/8] Fetching Risky Users...")
@@ -97,18 +97,18 @@ def get_comprehensive_data(headers: dict):
         "data": risky_users,
         "timestamp": datetime.now().isoformat()
     }
-    print(f"   ✓ Found {len(risky_users)} risky users")
+    print(f"   [OK] Found {len(risky_users)} risky users")
 
     # 3. SIGN-IN LOGS
     print("[3/8] Fetching Sign-In Logs...")
-    signin_url = f"{GRAPH_BASE}/auditLogs/signIns?$top=999&$orderby=createdDateTime desc"
+    signin_url = f"{GRAPH_BASE}/auditLogs/signIns?$top=999&$orderby=createdDateTime%20desc"
     signins = graph_get(signin_url, headers)
     data["sections"]["signInLogs"] = {
         "total": len(signins),
         "data": signins[:100],  # Keep last 100 for dashboard
         "timestamp": datetime.now().isoformat()
     }
-    print(f"   ✓ Found {len(signins)} sign-in records")
+    print(f"   [OK] Found {len(signins)} sign-in records")
 
     # 4. RISKY SIGN-INS
     print("[4/8] Fetching Risky Sign-Ins...")
@@ -119,7 +119,7 @@ def get_comprehensive_data(headers: dict):
         "data": risky_signins,
         "timestamp": datetime.now().isoformat()
     }
-    print(f"   ✓ Found {len(risky_signins)} risky sign-ins")
+    print(f"   [OK] Found {len(risky_signins)} risky sign-ins")
 
     # 5. CONDITIONAL ACCESS POLICIES
     print("[5/8] Fetching Conditional Access Policies...")
@@ -130,7 +130,7 @@ def get_comprehensive_data(headers: dict):
         "data": ca_policies,
         "timestamp": datetime.now().isoformat()
     }
-    print(f"   ✓ Found {len(ca_policies)} CA policies")
+    print(f"   [OK] Found {len(ca_policies)} CA policies")
 
     # 6. PIM ROLE ASSIGNMENTS
     print("[6/8] Fetching PIM Role Assignments...")
@@ -141,7 +141,7 @@ def get_comprehensive_data(headers: dict):
         "data": pim_roles,
         "timestamp": datetime.now().isoformat()
     }
-    print(f"   ✓ Found {len(pim_roles)} PIM role assignments")
+    print(f"   [OK] Found {len(pim_roles)} PIM role assignments")
 
     # 7. DEVICES
     print("[7/8] Fetching Devices...")
@@ -152,7 +152,7 @@ def get_comprehensive_data(headers: dict):
         "data": devices,
         "timestamp": datetime.now().isoformat()
     }
-    print(f"   ✓ Found {len(devices)} devices")
+    print(f"   [OK] Found {len(devices)} devices")
 
     # 8. DIRECTORY ROLES & ADMINS
     print("[8/8] Fetching Directory Roles...")
@@ -163,7 +163,7 @@ def get_comprehensive_data(headers: dict):
         "data": roles,
         "timestamp": datetime.now().isoformat()
     }
-    print(f"   ✓ Found {len(roles)} directory roles")
+    print(f"   [OK] Found {len(roles)} directory roles")
 
     return data
 
@@ -176,14 +176,14 @@ def main():
 
     if not all([tenant_id, client_id, client_secret]):
         print("[CRITICAL] Missing Entra ID credentials")
-        print("  ENTRA_TENANT_ID:", "✓" if tenant_id else "✗")
-        print("  ENTRA_CLIENT_ID:", "✓" if client_id else "✗")
-        print("  ENTRA_CLIENT_SECRET:", "✓" if client_secret else "✗")
+        print("  ENTRA_TENANT_ID:", "OK" if tenant_id else "MISSING")
+        print("  ENTRA_CLIENT_ID:", "OK" if client_id else "MISSING")
+        print("  ENTRA_CLIENT_SECRET:", "OK" if client_secret else "MISSING")
         sys.exit(1)
 
     # Get token - FAIL if invalid
     token = get_token(tenant_id, client_id, client_secret)
-    print(f"✓ Authenticated to tenant {tenant_id}")
+    print(f"[OK] Authenticated to tenant {tenant_id}")
 
     headers = {"Authorization": f"Bearer {token}"}
 
@@ -196,7 +196,7 @@ def main():
     out_path.write_text(json.dumps(data, indent=2, default=str), encoding="utf-8")
 
     print("\n" + "="*70)
-    print(f"✓ COMPREHENSIVE DATA SAVED TO: {out_path}")
+    print(f"[OK] COMPREHENSIVE DATA SAVED TO: {out_path}")
     print("="*70)
     print(f"Total Users: {data['sections']['users']['total']}")
     print(f"Risky Users: {data['sections']['riskyUsers']['total']}")
