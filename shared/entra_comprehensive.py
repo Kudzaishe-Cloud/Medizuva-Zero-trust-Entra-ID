@@ -99,13 +99,29 @@ def get_comprehensive_data(headers: dict):
     }
     print(f"   [OK] Found {len(risky_users)} risky users")
 
-    # 3. SIGN-IN LOGS
+    # 3. SIGN-IN LOGS - Try multiple strategies
     print("[3/8] Fetching Sign-In Logs...")
+    signins = []
+
+    # Strategy 1: Default query (last 30 days, sorted by date descending)
     signin_url = f"{GRAPH_BASE}/auditLogs/signIns?$top=999&$orderby=createdDateTime%20desc"
     signins = graph_get(signin_url, headers)
+
+    if len(signins) == 0:
+        print("   [WARN] No logs from standard query, trying alternative...")
+        # Strategy 2: Try without filter
+        signin_url = f"{GRAPH_BASE}/auditLogs/signIns?$top=999"
+        signins = graph_get(signin_url, headers)
+
+    if len(signins) == 0:
+        print("   [WARN] Still no logs, fetching without top limit...")
+        # Strategy 3: Get all available
+        signin_url = f"{GRAPH_BASE}/auditLogs/signIns"
+        signins = graph_get(signin_url, headers)
+
     data["sections"]["signInLogs"] = {
         "total": len(signins),
-        "data": signins[:100],  # Keep last 100 for dashboard
+        "data": signins,  # Keep ALL for dashboard (no truncation)
         "timestamp": datetime.now().isoformat()
     }
     print(f"   [OK] Found {len(signins)} sign-in records")

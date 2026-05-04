@@ -126,16 +126,21 @@ def main():
     except Exception:
         total_users = 500
 
-    # Fetch all CA policies
+    # Fetch all CA policies from Entra ID
     print("Fetching Conditional Access policies...")
     all_policies = graph_get(
         f"{GRAPH_BASE}/identity/conditionalAccess/policies", headers
     )
     policy_map = {p["displayName"]: p for p in all_policies}
-    print(f"  Retrieved {len(all_policies)} policies from Entra ID\n")
+    print(f"  Retrieved {len(all_policies)} TOTAL policies from Entra ID\n")
 
+    # Report on ALL policies (expected + any extras)
     policies = []
+    reported_names = set()
+
+    # First: Report on expected policies
     for name in EXPECTED_POLICIES:
+        reported_names.add(name)
         if name not in policy_map:
             print(f"  [MISSING]     {name}")
             policies.append({
@@ -157,11 +162,25 @@ def main():
                 "ModifiedAt": p.get("modifiedDateTime", ""),
             })
 
+    # Second: Report on any additional policies beyond expected
+    for p in all_policies:
+        name = p.get("displayName", "UNKNOWN")
+        if name not in reported_names:
+            state = STATE_MAP.get(p.get("state", ""), "DISABLED")
+            print(f"  [{state:<12}] {name} (ADDITIONAL)")
+            policies.append({
+                "PolicyName": name,
+                "State":      state,
+                "Id":         p.get("id", ""),
+                "CreatedAt":  p.get("createdDateTime", ""),
+                "ModifiedAt": p.get("modifiedDateTime", ""),
+            })
+
     enforced    = sum(1 for p in policies if p["State"] == "ENFORCED")
     report_only = sum(1 for p in policies if p["State"] == "REPORT-ONLY")
     disabled    = sum(1 for p in policies if p["State"] == "DISABLED")
     missing     = sum(1 for p in policies if p["State"] == "MISSING")
-    total       = len(EXPECTED_POLICIES)
+    total       = len(all_policies)
     coverage    = round(enforced / total * 100, 1) if total else 0
 
     if missing == 0 and disabled == 0 and enforced > 0:

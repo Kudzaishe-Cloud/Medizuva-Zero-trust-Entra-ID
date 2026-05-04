@@ -1,9 +1,9 @@
 ======================================================================
  MEDIZUVA ZERO-TRUST — NIST SP 800 COMPLIANCE AUDIT REPORT
- Generated : 2026-04-29 14:57:29
+ Generated : 2026-05-04 08:55:00
  Framework : NIST SP 800-207, 800-53 Rev5, 800-63B, 800-137
  Status    : SUBSTANTIALLY COMPLIANT
- Score     : 91.7%
+ Score     : 93.3%
 ======================================================================
 
 [PASS] 800-207-T1             All resources require authentication
@@ -24,7 +24,7 @@
 
 [PASS] 800-207-T5             Continuous asset and user integrity monitoring
        Standard: NIST SP 800-207 Section 3.1 Tenet 5
-       Finding : Automated monitoring pipeline runs every 15 minutes via GitHub Actions. OSINT scan covers all 500 personas across 4 sour...
+       Finding : Automated monitoring pipeline runs every 15 minutes via GitHub Actions. OSINT scan covers all 535 personas across 4 sour...
 
 [PASS] 800-207-T6             Strict authentication and authorisation before every access
        Standard: NIST SP 800-207 Section 3.1 Tenet 6
@@ -40,12 +40,12 @@
 
 [PART] 800-53-AC-3            Access Enforcement
        Standard: NIST SP 800-53 Rev5 AC-3
-       Finding : 6 Conditional Access policies deployed. 3 enforced, 2 in Report-Only mode. Report-Only mode logs violations but does not...
+       Finding : 12 Conditional Access policies deployed. 6 enforced, 0 in Report-Only mode. Report-Only mode logs violations but does no...
        ACTION  : Promote all CA policies from Report-Only to Enabled state to achieve full AC-3 compliance.
 
 [PASS] 800-53-AC-6            Least Privilege
        Standard: NIST SP 800-53 Rev5 AC-6
-       Finding : Privileged Identity Management (PIM) implemented for all 0 eligible admin assignments. Zero permanently active privilege...
+       Finding : Privileged Identity Management (PIM) implemented for all 45 eligible admin assignments. Zero permanently active privileg...
 
 [PASS] 800-53-AC-6(5)         Least Privilege — Privileged Accounts
        Standard: NIST SP 800-53 Rev5 AC-6(5)
@@ -77,10 +77,9 @@
        Standard: NIST SP 800-53 Rev5 IA-2(1)
        Finding : CA005 requires BOTH MFA and compliant device (AND operator) for all IT department privileged accounts. This exceeds mini...
 
-[PART] 800-53-IA-5(1)         Authenticator Management — Breached Password Check
+[PASS] 800-53-IA-5(1)         Authenticator Management — Breached Password Check
        Standard: NIST SP 800-53 Rev5 IA-5(1)
-       Finding : 322 users found in breach databases. No automatic password change policy deployed....
-       ACTION  : Deploy CA009 to force password change on medium/high user risk.
+       Finding : CA009 requires mandatory password change when user risk is medium or high. OSINT pipeline identifies 0 users with creden...
 
 [PASS] 800-53-IA-11           Re-Authentication
        Standard: NIST SP 800-53 Rev5 IA-11
@@ -108,7 +107,7 @@
 
 [PASS] 800-63B-AAL2           Authentication Assurance Level 2 (MFA Required)
        Standard: NIST SP 800-63B Section 4.2
-       Finding : AAL2 requires phishing-resistant or approved MFA. CA001 enforces MFA for all users. 0 of 500 users (0.0%) lack MFA regis...
+       Finding : AAL2 requires phishing-resistant or approved MFA. CA001 enforces MFA for all users. 0 of 535 users (0.0%) lack MFA regis...
 
 [PART] 800-63B-AAL3           Authentication Assurance Level 3 (Hardware MFA)
        Standard: NIST SP 800-63B Section 4.3
@@ -136,6 +135,6 @@
        Finding : Threat intelligence engine generates prioritised recommendations (CRITICAL/HIGH/MEDIUM/LOW) on every OSINT scan, surface...
 
 ======================================================================
- PASS: 25  PARTIAL: 5  FAIL: 0  N/A: 1
- COMPLIANCE SCORE: 91.7%  |  STATUS: SUBSTANTIALLY COMPLIANT
+ PASS: 26  PARTIAL: 4  FAIL: 0  N/A: 1
+ COMPLIANCE SCORE: 93.3%  |  STATUS: SUBSTANTIALLY COMPLIANT
 ======================================================================
