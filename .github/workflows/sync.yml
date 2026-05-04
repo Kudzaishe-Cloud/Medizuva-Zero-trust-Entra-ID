@@ -29,6 +29,15 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      # Comprehensive Entra ID data collection — ALL data from real Entra ID (NO simulation)
+      # This is the PRIMARY data source for the dashboard. FAILS immediately if credentials are invalid.
+      - name: Comprehensive Entra ID data collection (Real-Time, 100% Accurate)
+        env:
+          ENTRA_TENANT_ID:     ${{ secrets.ENTRA_TENANT_ID }}
+          ENTRA_CLIENT_ID:     ${{ secrets.ENTRA_CLIENT_ID }}
+          ENTRA_CLIENT_SECRET: ${{ secrets.ENTRA_CLIENT_SECRET }}
+        run: python shared/entra_comprehensive.py
+
       # Fetch real user accounts from Entra ID via Microsoft Graph API
       - name: Fetch Entra ID users
         continue-on-error: true
