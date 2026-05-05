@@ -290,23 +290,8 @@ This implementation follows industry best practices and compliance standards for
 
 <div align="center">
 
-### 🚀 Author & Maintainer
-
-#### **Mr. Kudzaishe Rutsinga**
-**Identity & Access Management Lead** | **Zero Trust Security Architect**
-
 ---
 
-<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; border-radius: 10px; margin: 20px 0;">
-
-📧 **Email:** kudzyruts11@gmail.com
-
-💼 **Specialization:** Enterprise Identity, Zero Trust Architecture, NIST Compliance
-
-🔐 **Framework:** Never Trust, Always Verify
-
-</div>
-
----
+### **Mr. Kudzaishe Rutsinga**
 
 </div>
