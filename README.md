@@ -269,6 +269,128 @@ python pillar2_access/dashboard/generate_dashboard.py
 
 ---
 
+## 🖼️ Implementation Gallery & Dashboard Screenshots
+
+### 📊 Security Operations Centre Dashboard
+![Security Operations Centre](./images/Screenshot%202026-04-29%20010403.png)
+**Overview:** Real-time Security Operations Centre displaying audit logs with color-coded event severity levels (CRITICAL, WARNING, ERROR). This dashboard provides centralized visibility into all security events across the framework with timestamp details and event descriptions.
+
+---
+
+### 🔐 Microsoft Entra Global Admin Dashboard
+![Microsoft Entra Dashboard](./images/Screenshot%202026-05-03%20214640.png)
+**Overview:** Microsoft Entra Identity platform showing:
+- **537 Licensed Users** - Total user base
+- **10 Admin Users** - Privileged accounts
+- **High-Risk Users** - Flagged accounts requiring attention
+- **Identity Secure Score** - 68.49% compliance rating
+- Deployment guides for implementing Zero Trust capabilities
+
+---
+
+### 🎯 MediZuva Security Operations Centre - 4 Pillars Dashboard
+![MediZuva SOC Dashboard](./images/Screenshot%202026-05-04%20083238.png)
+**Overview:** Comprehensive dashboard showing all 4 pillars in action:
+- **Pillar 1: Identity & Provisioning** - 535 users provisioned at 100% completion
+- **Pillar 2: Conditional Access** - 6 policies active, 0 blocked, 12 under review
+- **Pillar 3: Privileged Identity Management** - 0 eligible, 0 active, 6 administrators
+- **Pillar 4: Threat Detection** - 0 critical, 0 high, 0 medium risk detections
+- **Active Alert:** High-risk user credential exposures detected - Immediate action required
+
+---
+
+### 🔑 PIM (Privileged Identity Management) Audit Trail
+![PIM Audit Output](./images/Screenshot%202026-05-03%20211343.png)
+**Overview:** Detailed PIM audit showing privilege elevation requests with:
+- File paths accessed during elevation
+- Request timestamps and line numbers
+- HTTP response codes (200 = Success, 404 = Not Found, 500 = Error)
+- Error handling and call chain tracking
+- Process completion status
+
+---
+
+### 📋 Microsoft Entra PIM Assignments Table
+![PIM Assignments](./images/Screenshot%202026-05-05%20170530.png)
+**Overview:** User role assignments management showing:
+- **Name:** Assignment recipients (analysts, architects, developers, admins)
+- **Principal Name:** User email identifiers
+- **Type:** Direct role assignments
+- **Scope:** Directory-level access
+- **Membership:** Role eligibility status
+- **Start/End Time:** Activation windows for JIT access
+- **Action Column:** Remove, Update, Extend options
+
+---
+
+### 🚨 Device Compliance Enforcement
+![Device Compliance Block](./images/Screenshot%202026-05-04%20104323.png)
+**Overview:** Conditional Access policy enforcement message:
+- **Message:** "You can't get there from here"
+- **Reason:** Sensitive information access requires compliant devices
+- **Requirement:** Devices must meet Student Device Management compliance policy
+- **Workaround:** Sign in from Windows 10+ or use Microsoft Edge/Chrome extensions
+
+---
+
+### 🛡️ Conditional Access Policies Configuration
+![CA Policies](./images/Screenshot%202026-05-05%20170816.png)
+**Overview:** Complete Conditional Access policy inventory:
+- **Microsoft Managed Policies:** 4 pre-built policies
+  - Service principals protection
+  - User-created products protection
+  - And 2 additional Microsoft templates
+- **User-Created Policies:** 10 custom policies
+  - Policy names, creation dates, and modification history
+  - Individual policy status and enforcement settings
+  - Quick access to modify or disable policies
+
+---
+
+### 👥 Identity Protection Dashboard
+![Identity Protection](./images/Screenshot%202026-05-05%20171057.png)
+**Overview:** Threat detection and user protection metrics:
+- **Attacks Blocked:** 18 in the last 7 days
+- **Users Protected:** 3 users with compromised credentials detected
+- **Mean Time to Remediate:** 514 hours (enterprise average)
+- **Agents Flagged for Risk:** 0 agents (all clean)
+- **High-Risk Users:** 1 user flagged for review
+- **Detection Status:** All risky agents detected and isolated
+
+---
+
+### 🔐 Microsoft Entra Navigation & Settings
+![Entra Navigation](./images/Screenshot%202026-05-05%20170451.png)
+**Overview:** Complete Microsoft Entra platform navigation menu showing all available management sections:
+- **Security:** Conditional Access, Identity Protection, Risk detections
+- **Identity:** Users, Groups, Roles & admins, Applications
+- **Governance:** Access reviews, Entitlement management, Privileged Identity Management
+- **Monitoring:** Sign-in logs, Audit logs, Provisioning logs
+- **Advanced:** Custom security attributes, Compliance management
+
+---
+
+## 📚 Key Implementation Insights
+
+### From the Screenshots
+
+**1. Comprehensive Audit Trail** 
+The Security Operations Centre maintains detailed logs of every action, providing non-repudiation and forensic capabilities for compliance audits.
+
+**2. Real-Time Risk Assessment**
+The Identity Protection dashboard continuously monitors for compromised credentials and suspicious sign-in patterns, enabling proactive threat response.
+
+**3. Multi-Layer Policy Enforcement**
+Conditional Access policies work in tandem to enforce device compliance, geographic restrictions, MFA requirements, and risk-based controls simultaneously.
+
+**4. Privileged Access Control**
+PIM assignments show time-limited role activation with full audit trails, implementing Just-In-Time access without standing permissions.
+
+**5. User-Centric Dashboard**
+All dashboards provide at-a-glance status of the security posture with actionable alerts and direct links to remediation.
+
+---
+
 ## 🤝 Contributing
 
 **Contributions are welcome!** Please ensure:
