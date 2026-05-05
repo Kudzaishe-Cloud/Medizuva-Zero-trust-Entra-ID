@@ -1,0 +1,82 @@
+name: OSINT Scan (6-hourly)
+
+# OSINT runs separately because scanning 500 users across 4 APIs
+# takes ~13 minutes due to rate limits — it cannot fit in a 15-min window.
+# Run every 6 hours instead so results are always reasonably fresh.
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  osint:
+    name: OSINT Scan → Threat Audit → Dashboard
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      # Run all 4 OSINT tools against all 500 personas
+      # Falls back to RiskScore-derived mode if API keys are not set
+      - name: OSINT exposure check
+        env:
+          HIBP_API_KEY:      ${{ secrets.HIBP_API_KEY }}
+          DEHASHED_EMAIL:    ${{ secrets.DEHASHED_EMAIL }}
+          DEHASHED_API_KEY:  ${{ secrets.DEHASHED_API_KEY }}
+          LEAKCHECK_API_KEY: ${{ secrets.LEAKCHECK_API_KEY }}
+          INTELX_API_KEY:    ${{ secrets.INTELX_API_KEY }}
+        run: |
+          python pillar4_threat/osint_exposure_check.py \
+            --hibp-key       "$HIBP_API_KEY" \
+            --dehashed-email "$DEHASHED_EMAIL" \
+            --dehashed-key   "$DEHASHED_API_KEY" \
+            --leakcheck-key  "$LEAKCHECK_API_KEY" \
+            --intelx-key     "$INTELX_API_KEY"
+
+      # Also pull fresh Entra signals before rebuilding
+      - name: Entra ID sync
+        env:
+          ENTRA_TENANT_ID:     ${{ secrets.ENTRA_TENANT_ID }}
+          ENTRA_CLIENT_ID:     ${{ secrets.ENTRA_CLIENT_ID }}
+          ENTRA_CLIENT_SECRET: ${{ secrets.ENTRA_CLIENT_SECRET }}
+        run: python shared/entra_sync.py
+
+      - name: Threat audit
+        run: python pillar4_threat/threat_audit.py
+
+      - name: Generate dashboard
+        run: python dashboard/generate_central_dashboard.py
+
+      - name: Copy to docs/
+        run: |
+          mkdir -p docs
+          cp data/central_dashboard.html docs/index.html
+
+      - name: Commit & push
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add \
+            docs/index.html \
+            data/threat_audit.json \
+            data/risky_users.json \
+            data/osint_results/ \
+            data/central_dashboard.html
+          git diff --staged --quiet || \
+            git commit -m "chore: 6h OSINT refresh $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push

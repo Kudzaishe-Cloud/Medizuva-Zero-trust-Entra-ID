@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MediZuva — PIM Dashboard</title>
+<style>
+  :root {
+    --bg: #0f172a; --surface: #1e293b; --surface2: #263347;
+    --text: #f1f5f9; --muted: #94a3b8; --border: #334155;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif;
+         font-size: 14px; line-height: 1.5; }
+  header { background: var(--surface); border-bottom: 1px solid var(--border);
+            padding: 20px 32px; display: flex; align-items: center; gap: 20px; }
+  header h1 { font-size: 20px; font-weight: 700; }
+  header .sub { color: var(--muted); font-size: 13px; }
+  .posture-badge {
+    margin-left: auto; padding: 6px 18px; border-radius: 999px;
+    font-weight: 700; font-size: 13px;
+    background: #10b98122; color: #10b981; border: 1px solid #10b981;
+  }
+  main { padding: 28px 32px; max-width: 1300px; margin: 0 auto; }
+  h2 { font-size: 13px; font-weight: 600; letter-spacing: .08em;
+        text-transform: uppercase; color: var(--muted); margin: 0 0 16px; }
+  .section { margin-bottom: 36px; }
+  .stats { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 16px; }
+  .stat-card { background: var(--surface); border-radius: 10px; padding: 20px 18px; }
+  .stat-value { font-size: 32px; font-weight: 800; margin-bottom: 4px; }
+  .stat-label { font-size: 13px; font-weight: 600; }
+  .stat-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+  .table-wrap { background: var(--surface); border-radius: 10px; overflow: hidden; }
+  table { width: 100%; border-collapse: collapse; }
+  thead th { background: var(--surface2); padding: 12px 16px; text-align: left;
+              font-size: 12px; font-weight: 600; letter-spacing: .06em;
+              text-transform: uppercase; color: var(--muted); }
+  tbody tr { border-top: 1px solid var(--border); }
+  tbody tr:hover { background: var(--surface2); }
+  tbody td { padding: 13px 16px; vertical-align: top; }
+  .mono { font-family: 'Cascadia Code', 'Consolas', monospace; font-size: 12px; color: #93c5fd; }
+  .role { font-size: 13px; font-weight: 600; white-space: nowrap; color: #c4b5fd; }
+  .desc { color: var(--muted); font-size: 13px; max-width: 380px; }
+  .date { color: var(--muted); font-size: 12px; white-space: nowrap; }
+  .active-dot { display:inline-block; width:8px; height:8px; border-radius:50%;
+                 background:#f59e0b; margin-right:6px; animation: pulse 1.5s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+  footer { text-align: center; padding: 28px; color: var(--muted); font-size: 12px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>MediZuva — PIM Dashboard</h1>
+    <div class="sub">Pillar 3: Privileged Identity Management &nbsp;|&nbsp; Tenant: micrlabs.onmicrosoft.com &nbsp;|&nbsp; Audited: 2026-04-01 23:30:00</div>
+  </div>
+  <div class="posture-badge">Zero-Trust Posture: COMPLIANT</div>
+</header>
+
+<main>
+
+  <div class="section">
+    <h2>Coverage Metrics</h2>
+    <div class="stats">
+    <div class="stat-card" style="border-top: 4px solid #3b82f6;">
+        <div class="stat-value" style="color:#3b82f6;">45</div>
+        <div class="stat-label">Eligible</div>
+        <div class='stat-sub'>JIT role assignments</div>
+    </div>
+    <div class="stat-card" style="border-top: 4px solid #f59e0b;">
+        <div class="stat-value" style="color:#f59e0b;">0</div>
+        <div class="stat-label">Active Now</div>
+        <div class='stat-sub'>Currently elevated</div>
+    </div>
+    <div class="stat-card" style="border-top: 4px solid #8b5cf6;">
+        <div class="stat-value" style="color:#8b5cf6;">0</div>
+        <div class="stat-label">Activations (30d)</div>
+        <div class='stat-sub'>Last 30 days</div>
+    </div>
+    <div class="stat-card" style="border-top: 4px solid #10b981;">
+        <div class="stat-value" style="color:#10b981;">0</div>
+        <div class="stat-label">Unassigned Roles</div>
+        <div class='stat-sub'>Roles with no eligible users</div>
+    </div></div>
+  </div>
+
+  <div class="section">
+    <h2>Role Coverage</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Role</th><th>Purpose</th><th>Eligible Users</th></tr>
+        </thead>
+        <tbody>
+          
+        <tr>
+            <td class="role">User Administrator</td>
+            <td class="desc">Create/manage users and groups. Assigned to IT Administrators.</td>
+            <td>
+                <div style="display:flex;align-items:center;gap:10px;">
+                    <div style="background:var(--surface2);border-radius:4px;width:100px;height:8px;overflow:hidden;">
+                        <div style="background:#10b981;width:70%;height:100%;border-radius:4px;"></div>
+                    </div>
+                    <span style="color:#10b981;font-weight:700;">7</span>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="role">Privileged Role Administrator</td>
+            <td class="desc">Manage role assignments in Entra ID. Highest-risk role — IT Admins only.</td>
+            <td>
+                <div style="display:flex;align-items:center;gap:10px;">
+                    <div style="background:var(--surface2);border-radius:4px;width:100px;height:8px;overflow:hidden;">
+                        <div style="background:#10b981;width:70%;height:100%;border-radius:4px;"></div>
+                    </div>
+                    <span style="color:#10b981;font-weight:700;">7</span>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="role">Helpdesk Administrator</td>
+            <td class="desc">Reset passwords and manage service requests. Help Desk staff.</td>
+            <td>
+                <div style="display:flex;align-items:center;gap:10px;">
+                    <div style="background:var(--surface2);border-radius:4px;width:100px;height:8px;overflow:hidden;">
+                        <div style="background:#10b981;width:100%;height:100%;border-radius:4px;"></div>
+                    </div>
+                    <span style="color:#10b981;font-weight:700;">10</span>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="role">Security Administrator</td>
+            <td class="desc">Configure security policies and review alerts. Security Analysts.</td>
+            <td>
+                <div style="display:flex;align-items:center;gap:10px;">
+                    <div style="background:var(--surface2);border-radius:4px;width:100px;height:8px;overflow:hidden;">
+                        <div style="background:#10b981;width:80%;height:100%;border-radius:4px;"></div>
+                    </div>
+                    <span style="color:#10b981;font-weight:700;">8</span>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="role">Security Reader</td>
+            <td class="desc">Read-only access to security centre. Security Analysts.</td>
+            <td>
+                <div style="display:flex;align-items:center;gap:10px;">
+                    <div style="background:var(--surface2);border-radius:4px;width:100px;height:8px;overflow:hidden;">
+                        <div style="background:#10b981;width:80%;height:100%;border-radius:4px;"></div>
+                    </div>
+                    <span style="color:#10b981;font-weight:700;">8</span>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="role">Reports Reader</td>
+            <td class="desc">Read usage and audit reports. Network Engineers.</td>
+            <td>
+                <div style="display:flex;align-items:center;gap:10px;">
+                    <div style="background:var(--surface2);border-radius:4px;width:100px;height:8px;overflow:hidden;">
+                        <div style="background:#10b981;width:50%;height:100%;border-radius:4px;"></div>
+                    </div>
+                    <span style="color:#10b981;font-weight:700;">5</span>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Eligible Assignments (JIT — must activate to use)</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>User</th><th>Role</th><th>Justification</th><th>Expiry</th></tr>
+        </thead>
+        <tbody>
+          
+        <tr>
+            <td class="mono">Lungelo Tembo</td>
+            <td class="role">Helpdesk Administrator</td>
+            <td class="desc">Reset passwords and manage service requests. Help Desk staff.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Farai Sithole</td>
+            <td class="role">Helpdesk Administrator</td>
+            <td class="desc">Reset passwords and manage service requests. Help Desk staff.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Nkosi Gumbo</td>
+            <td class="role">Helpdesk Administrator</td>
+            <td class="desc">Reset passwords and manage service requests. Help Desk staff.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Nomvula Mpofu</td>
+            <td class="role">Reports Reader</td>
+            <td class="desc">Read usage and audit reports. Network Engineers.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Nompilo Sithole</td>
+            <td class="role">Helpdesk Administrator</td>
+            <td class="desc">Reset passwords and manage service requests. Help Desk staff.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Tsitsi Ncube</td>
+            <td class="role">Reports Reader</td>
+            <td class="desc">Read usage and audit reports. Network Engineers.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Zanele Zimba</td>
+            <td class="role">User Administrator</td>
+            <td class="desc">Create/manage users and groups. Assigned to IT Administrators.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Zanele Zimba</td>
+            <td class="role">Privileged Role Administrator</td>
+            <td class="desc">Manage role assignments in Entra ID. Highest-risk role — IT Admins only.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Sibusiso Zimba</td>
+            <td class="role">Reports Reader</td>
+            <td class="desc">Read usage and audit reports. Network Engineers.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Bongani Moyo</td>
+            <td class="role">Reports Reader</td>
+            <td class="desc">Read usage and audit reports. Network Engineers.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Sifiso Mutasa</td>
+            <td class="role">Helpdesk Administrator</td>
+            <td class="desc">Reset passwords and manage service requests. Help Desk staff.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Sifiso Nkomo</td>
+            <td class="role">Security Administrator</td>
+            <td class="desc">Configure security policies and review alerts. Security Analysts.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Sifiso Nkomo</td>
+            <td class="role">Security Reader</td>
+            <td class="desc">Read-only access to security centre. Security Analysts.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Lungelo Nkomo</td>
+            <td class="role">Security Administrator</td>
+            <td class="desc">Configure security policies and review alerts. Security Analysts.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Lungelo Nkomo</td>
+            <td class="role">Security Reader</td>
+            <td class="desc">Read-only access to security centre. Security Analysts.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Tinashe Phiri</td>
+            <td class="role">Helpdesk Administrator</td>
+            <td class="desc">Reset passwords and manage service requests. Help Desk staff.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Farai Banda</td>
+            <td class="role">User Administrator</td>
+            <td class="desc">Create/manage users and groups. Assigned to IT Administrators.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Farai Banda</td>
+            <td class="role">Privileged Role Administrator</td>
+            <td class="desc">Manage role assignments in Entra ID. Highest-risk role — IT Admins only.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Zanele Chikwanda</td>
+            <td class="role">Reports Reader</td>
+            <td class="desc">Read usage and audit reports. Network Engineers.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Bongani Moyo</td>
+            <td class="role">Helpdesk Administrator</td>
+            <td class="desc">Reset passwords and manage service requests. Help Desk staff.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Chiedza Chikwanda</td>
+            <td class="role">User Administrator</td>
+            <td class="desc">Create/manage users and groups. Assigned to IT Administrators.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Chiedza Chikwanda</td>
+            <td class="role">Privileged Role Administrator</td>
+            <td class="desc">Manage role assignments in Entra ID. Highest-risk role — IT Admins only.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Simba Chikwanda</td>
+            <td class="role">User Administrator</td>
+            <td class="desc">Create/manage users and groups. Assigned to IT Administrators.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Simba Chikwanda</td>
+            <td class="role">Privileged Role Administrator</td>
+            <td class="desc">Manage role assignments in Entra ID. Highest-risk role — IT Admins only.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Sifiso Sithole</td>
+            <td class="role">Helpdesk Administrator</td>
+            <td class="desc">Reset passwords and manage service requests. Help Desk staff.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Zanele Mhlanga</td>
+            <td class="role">User Administrator</td>
+            <td class="desc">Create/manage users and groups. Assigned to IT Administrators.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Zanele Mhlanga</td>
+            <td class="role">Privileged Role Administrator</td>
+            <td class="desc">Manage role assignments in Entra ID. Highest-risk role — IT Admins only.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Nompilo Gumbo</td>
+            <td class="role">Security Administrator</td>
+            <td class="desc">Configure security policies and review alerts. Security Analysts.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Nompilo Gumbo</td>
+            <td class="role">Security Reader</td>
+            <td class="desc">Read-only access to security centre. Security Analysts.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Takudzwa Zimba</td>
+            <td class="role">Helpdesk Administrator</td>
+            <td class="desc">Reset passwords and manage service requests. Help Desk staff.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Simba Gumbo</td>
+            <td class="role">Security Administrator</td>
+            <td class="desc">Configure security policies and review alerts. Security Analysts.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Simba Gumbo</td>
+            <td class="role">Security Reader</td>
+            <td class="desc">Read-only access to security centre. Security Analysts.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Bongani Mpofu</td>
+            <td class="role">Helpdesk Administrator</td>
+            <td class="desc">Reset passwords and manage service requests. Help Desk staff.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Chiedza Ncube</td>
+            <td class="role">Security Administrator</td>
+            <td class="desc">Configure security policies and review alerts. Security Analysts.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Chiedza Ncube</td>
+            <td class="role">Security Reader</td>
+            <td class="desc">Read-only access to security centre. Security Analysts.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Lungelo Sithole</td>
+            <td class="role">User Administrator</td>
+            <td class="desc">Create/manage users and groups. Assigned to IT Administrators.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Lungelo Sithole</td>
+            <td class="role">Privileged Role Administrator</td>
+            <td class="desc">Manage role assignments in Entra ID. Highest-risk role — IT Admins only.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Bongani Nkomo</td>
+            <td class="role">Security Administrator</td>
+            <td class="desc">Configure security policies and review alerts. Security Analysts.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Bongani Nkomo</td>
+            <td class="role">Security Reader</td>
+            <td class="desc">Read-only access to security centre. Security Analysts.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Nomvula Banda</td>
+            <td class="role">Security Administrator</td>
+            <td class="desc">Configure security policies and review alerts. Security Analysts.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Nomvula Banda</td>
+            <td class="role">Security Reader</td>
+            <td class="desc">Read-only access to security centre. Security Analysts.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Lungelo Sithole</td>
+            <td class="role">User Administrator</td>
+            <td class="desc">Create/manage users and groups. Assigned to IT Administrators.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Lungelo Sithole</td>
+            <td class="role">Privileged Role Administrator</td>
+            <td class="desc">Manage role assignments in Entra ID. Highest-risk role — IT Admins only.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Nyasha Zimba</td>
+            <td class="role">Security Administrator</td>
+            <td class="desc">Configure security policies and review alerts. Security Analysts.</td>
+            <td class="date">No expiry</td>
+        </tr>
+
+        <tr>
+            <td class="mono">Nyasha Zimba</td>
+            <td class="role">Security Reader</td>
+            <td class="desc">Read-only access to security centre. Security Analysts.</td>
+            <td class="date">No expiry</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2><span class="active-dot"></span>Active Elevations Right Now</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>User</th><th>Role</th><th>Expires</th></tr>
+        </thead>
+        <tbody>
+          <tr><td colspan="3" style="text-align:center;color:var(--muted);">No active elevations right now — good.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  MediZuva Zero-Trust Framework &mdash; Pillar 3: Privileged Identity Management &mdash; Generated 2026-04-01 23:24:30
+</footer>
+
+</body>
+</html>

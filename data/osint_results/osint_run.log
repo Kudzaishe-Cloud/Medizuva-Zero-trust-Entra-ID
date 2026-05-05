@@ -1,0 +1,846 @@
+2026-04-07 13:13:16 [INFO    ] ============================================================
+2026-04-07 13:13:16 [INFO    ]  MediZuva — Multi-Source OSINT Check (Pillar 4 v2)
+2026-04-07 13:13:16 [INFO    ]  HIBP      : SIMULATE
+2026-04-07 13:13:16 [INFO    ]  DeHashed  : SIMULATE
+2026-04-07 13:13:16 [INFO    ]  LeakCheck : SIMULATE
+2026-04-07 13:13:16 [INFO    ]  IntelX    : SIMULATE
+2026-04-07 13:13:16 [INFO    ] ============================================================
+2026-04-07 13:13:16 [INFO    ] Loaded 500 personas from medizuva_500_personas.csv
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [tinashe.phiri2@micrlabs.onmicrosoft.com] — ['MyFitnessPal']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [tinashe.phiri2@micrlabs.onmicrosoft.com] — ['AntiPublic']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [tinashe.phiri2@micrlabs.onmicrosoft.com] — ['Wishbone', 'Wattpad']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Tinashe Phiri                  | Doctor                    | score= 45 | findings=4 | sources=MyFitnessPal, Wattpad, Wishbone, AntiPublic
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [kudzai.zimba3@micrlabs.onmicrosoft.com] — ['Chegg']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Kudzai Zimba                   | Doctor                    | score= 10 | findings=1 | sources=Chegg
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [thandi.nkomo4@micrlabs.onmicrosoft.com] — ['Dropbox']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [thandi.nkomo4@micrlabs.onmicrosoft.com] — ['Collection#1', 'LinkedIn2021']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [thandi.nkomo4@micrlabs.onmicrosoft.com] — ['Wishbone', 'Wattpad']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Thandi Nkomo                   | Lab Technician            | score= 60 | findings=5 | sources=Dropbox, LinkedIn2021, Wattpad, Collection#1, Wishbone
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [tatenda.nkomo8@micrlabs.onmicrosoft.com] — ['LinkedIn', 'MyFitnessPal', 'Evite']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Tatenda Nkomo                  | Doctor                    | score= 30 | findings=3 | sources=Evite, MyFitnessPal, LinkedIn
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [rudo.dube9@micrlabs.onmicrosoft.com] — ['Zynga', 'Dropbox']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [rudo.dube9@micrlabs.onmicrosoft.com] — ['AntiPublic']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [rudo.dube9@micrlabs.onmicrosoft.com] — ['Wattpad', 'Wishbone']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Rudo Dube                      | Radiologist               | score= 55 | findings=5 | sources=Zynga, Dropbox, Wattpad, Wishbone, AntiPublic
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [tendai.banda15@micrlabs.onmicrosoft.com] — ['Evite', 'Canva', 'LinkedIn']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [tendai.banda15@micrlabs.onmicrosoft.com] — ['Collection#1', 'AntiPublic']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [tendai.banda15@micrlabs.onmicrosoft.com] — ['Gravatar']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Tendai Banda                   | Nurse                     | score= 70 | findings=6 | sources=Gravatar, LinkedIn, Evite, Canva, Collection#1, AntiPublic
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [rudo.chirwa18@micrlabs.onmicrosoft.com] — ['LinkedIn', 'Canva', 'Chegg']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [rudo.chirwa18@micrlabs.onmicrosoft.com] — ['Exploit.in', 'Collection#1']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [rudo.chirwa18@micrlabs.onmicrosoft.com] — ['Wishbone', 'Tokopedia']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [rudo.chirwa18@micrlabs.onmicrosoft.com] — ['PasteBin-2023']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Rudo Chirwa                    | Doctor                    | score=100 | findings=8 | sources=Chegg, PasteBin-2023, LinkedIn, Canva, Tokopedia, Collection#1, Wishbone, Exploit.in
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nompilo.chikwanda23@micrlabs.onmicrosoft.com] — ['MyFitnessPal', 'Canva', 'Adobe']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [nompilo.chikwanda23@micrlabs.onmicrosoft.com] — ['Deezer', 'AntiPublic']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nompilo.chikwanda23@micrlabs.onmicrosoft.com] — ['Tokopedia', 'Wishbone']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [nompilo.chikwanda23@micrlabs.onmicrosoft.com] — ['TelegramLeaks-2024']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Nompilo Chikwanda              | Radiologist               | score=100 | findings=8 | sources=Deezer, Adobe, Canva, Tokopedia, MyFitnessPal, Wishbone, TelegramLeaks-2024, AntiPublic
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [takudzwa.gumbo28@micrlabs.onmicrosoft.com] — ['LinkedIn', 'Chegg', 'Adobe']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [takudzwa.gumbo28@micrlabs.onmicrosoft.com] — ['Collection#1']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [takudzwa.gumbo28@micrlabs.onmicrosoft.com] — ['Wishbone', 'Gravatar']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [takudzwa.gumbo28@micrlabs.onmicrosoft.com] — ['DarkForum-Health']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Takudzwa Gumbo                 | Lab Technician            | score= 90 | findings=7 | sources=Chegg, Gravatar, LinkedIn, Adobe, Collection#1, Wishbone, DarkForum-Health
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [tatenda.mutasa31@micrlabs.onmicrosoft.com] — ['MyFitnessPal', 'Adobe']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [tatenda.mutasa31@micrlabs.onmicrosoft.com] — ['Deezer']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [tatenda.mutasa31@micrlabs.onmicrosoft.com] — ['Gravatar', 'Tokopedia']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [tatenda.mutasa31@micrlabs.onmicrosoft.com] — ['PasteBin-2023']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Tatenda Mutasa                 | Lab Technician            | score= 80 | findings=6 | sources=Gravatar, PasteBin-2023, Deezer, Adobe, Tokopedia, MyFitnessPal
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [chiedza.gumbo32@micrlabs.onmicrosoft.com] — ['MyFitnessPal']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [chiedza.gumbo32@micrlabs.onmicrosoft.com] — ['Wattpad', 'Gravatar']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Chiedza Gumbo                  | Doctor                    | score= 30 | findings=3 | sources=MyFitnessPal, Gravatar, Wattpad
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [rudo.mutasa33@micrlabs.onmicrosoft.com] — ['Dropbox']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [rudo.mutasa33@micrlabs.onmicrosoft.com] — ['Tokopedia']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Rudo Mutasa                    | Nurse                     | score= 20 | findings=2 | sources=Dropbox, Tokopedia
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nkosi.mhlanga36@micrlabs.onmicrosoft.com] — ['LinkedIn', 'Evite', 'Dropbox']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nkosi.mhlanga36@micrlabs.onmicrosoft.com] — ['Tokopedia']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Nkosi Mhlanga                  | Doctor                    | score= 40 | findings=4 | sources=Evite, Tokopedia, Dropbox, LinkedIn
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [takudzwa.zimba40@micrlabs.onmicrosoft.com] — ['Zynga', 'Evite']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Takudzwa Zimba                 | Doctor                    | score= 20 | findings=2 | sources=Zynga, Evite
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [sifiso.mutasa41@micrlabs.onmicrosoft.com] — ['LinkedIn', 'Dropbox', 'Chegg']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [sifiso.mutasa41@micrlabs.onmicrosoft.com] — ['AntiPublic', 'Exploit.in']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [sifiso.mutasa41@micrlabs.onmicrosoft.com] — ['Wishbone']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Sifiso Mutasa                  | Lab Technician            | score= 70 | findings=6 | sources=Dropbox, Chegg, LinkedIn, Wishbone, AntiPublic, Exploit.in
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [sifiso.phiri42@micrlabs.onmicrosoft.com] — ['LinkedIn']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Sifiso Phiri                   | Nurse                     | score= 10 | findings=1 | sources=LinkedIn
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nomvula.chirwa43@micrlabs.onmicrosoft.com] — ['Zynga', 'Canva']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Nomvula Chirwa                 | Nurse                     | score= 20 | findings=2 | sources=Zynga, Canva
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [bongani.nkomo44@micrlabs.onmicrosoft.com] — ['Dropbox']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [bongani.nkomo44@micrlabs.onmicrosoft.com] — ['LinkedIn2021']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [bongani.nkomo44@micrlabs.onmicrosoft.com] — ['Tokopedia']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [bongani.nkomo44@micrlabs.onmicrosoft.com] — ['RaidForums-Archive']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Bongani Nkomo                  | Nurse                     | score= 60 | findings=4 | sources=Dropbox, LinkedIn2021, Tokopedia, RaidForums-Archive
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [zanele.phiri47@micrlabs.onmicrosoft.com] — ['Canva', 'Zynga']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [zanele.phiri47@micrlabs.onmicrosoft.com] — ['AntiPublic', 'Exploit.in']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [zanele.phiri47@micrlabs.onmicrosoft.com] — ['MathWay']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Zanele Phiri                   | Nurse                     | score= 60 | findings=5 | sources=Zynga, MathWay, Canva, AntiPublic, Exploit.in
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nompilo.chikwanda48@micrlabs.onmicrosoft.com] — ['MyFitnessPal']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [nompilo.chikwanda48@micrlabs.onmicrosoft.com] — ['Collection#1']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nompilo.chikwanda48@micrlabs.onmicrosoft.com] — ['Wishbone']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [nompilo.chikwanda48@micrlabs.onmicrosoft.com] — ['TelegramLeaks-2024']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Nompilo Chikwanda              | Nurse                     | score= 60 | findings=4 | sources=MyFitnessPal, TelegramLeaks-2024, Collection#1, Wishbone
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [munyaradzi.zimba50@micrlabs.onmicrosoft.com] — ['Dropbox', 'MyFitnessPal']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [munyaradzi.zimba50@micrlabs.onmicrosoft.com] — ['AntiPublic', 'LinkedIn2021']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [munyaradzi.zimba50@micrlabs.onmicrosoft.com] — ['MathWay', 'Wattpad']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Munyaradzi Zimba               | Nurse                     | score= 70 | findings=6 | sources=Dropbox, MathWay, LinkedIn2021, MyFitnessPal, Wattpad, AntiPublic
+2026-04-07 13:13:16 [INFO    ] --- Progress: 50/500 checked | Exposed so far: 21 ---
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nompilo.moyo51@micrlabs.onmicrosoft.com] — ['Evite']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [nompilo.moyo51@micrlabs.onmicrosoft.com] — ['LinkedIn2021']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nompilo.moyo51@micrlabs.onmicrosoft.com] — ['MathWay']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Nompilo Moyo                   | Doctor                    | score= 35 | findings=3 | sources=Evite, LinkedIn2021, MathWay
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [bongani.chikwanda52@micrlabs.onmicrosoft.com] — ['Adobe']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [bongani.chikwanda52@micrlabs.onmicrosoft.com] — ['Deezer']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [bongani.chikwanda52@micrlabs.onmicrosoft.com] — ['MathWay']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Bongani Chikwanda              | Nurse                     | score= 35 | findings=3 | sources=Deezer, Adobe, MathWay
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [tinashe.mpofu56@micrlabs.onmicrosoft.com] — ['Zynga', 'MyFitnessPal', 'Canva']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [tinashe.mpofu56@micrlabs.onmicrosoft.com] — ['LinkedIn2021']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [tinashe.mpofu56@micrlabs.onmicrosoft.com] — ['Wattpad']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [tinashe.mpofu56@micrlabs.onmicrosoft.com] — ['DarkForum-Health']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Tinashe Mpofu                  | Doctor                    | score= 80 | findings=6 | sources=Zynga, LinkedIn2021, Canva, MyFitnessPal, Wattpad, DarkForum-Health
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [tsitsi.moyo58@micrlabs.onmicrosoft.com] — ['Chegg', 'Zynga']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [tsitsi.moyo58@micrlabs.onmicrosoft.com] — ['LinkedIn2021']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [tsitsi.moyo58@micrlabs.onmicrosoft.com] — ['Wattpad']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Tsitsi Moyo                    | Lab Technician            | score= 45 | findings=4 | sources=Zynga, Chegg, LinkedIn2021, Wattpad
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nyasha.sithole63@micrlabs.onmicrosoft.com] — ['Chegg']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Nyasha Sithole                 | Radiologist               | score= 10 | findings=1 | sources=Chegg
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [lungelo.banda66@micrlabs.onmicrosoft.com] — ['Adobe', 'Chegg', 'MyFitnessPal']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Lungelo Banda                  | Nurse                     | score= 30 | findings=3 | sources=Chegg, Adobe, MyFitnessPal
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [simba.chikwanda69@micrlabs.onmicrosoft.com] — ['Evite', 'Dropbox', 'LinkedIn']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [simba.chikwanda69@micrlabs.onmicrosoft.com] — ['Collection#1']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [simba.chikwanda69@micrlabs.onmicrosoft.com] — ['Tokopedia', 'MathWay']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [simba.chikwanda69@micrlabs.onmicrosoft.com] — ['DarkForum-Health']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Simba Chikwanda                | Doctor                    | score= 90 | findings=7 | sources=Dropbox, LinkedIn, Evite, MathWay, Tokopedia, Collection#1, DarkForum-Health
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nompilo.banda70@micrlabs.onmicrosoft.com] — ['Zynga', 'Canva', 'MyFitnessPal']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [nompilo.banda70@micrlabs.onmicrosoft.com] — ['Collection#1', 'Exploit.in']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nompilo.banda70@micrlabs.onmicrosoft.com] — ['Wishbone', 'Wattpad']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [nompilo.banda70@micrlabs.onmicrosoft.com] — ['TelegramLeaks-2024']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Nompilo Banda                  | Lab Technician            | score=100 | findings=8 | sources=Zynga, Canva, MyFitnessPal, Wattpad, Collection#1, Wishbone, TelegramLeaks-2024, Exploit.in
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [simba.zimba72@micrlabs.onmicrosoft.com] — ['Evite', 'Chegg']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [simba.zimba72@micrlabs.onmicrosoft.com] — ['LinkedIn2021']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [simba.zimba72@micrlabs.onmicrosoft.com] — ['Tokopedia']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Simba Zimba                    | Radiologist               | score= 45 | findings=4 | sources=Evite, Chegg, LinkedIn2021, Tokopedia
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [farai.banda78@micrlabs.onmicrosoft.com] — ['Canva']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [farai.banda78@micrlabs.onmicrosoft.com] — ['AntiPublic']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [farai.banda78@micrlabs.onmicrosoft.com] — ['Wattpad', 'Wishbone']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Farai Banda                    | Lab Technician            | score= 45 | findings=4 | sources=Wattpad, Canva, Wishbone, AntiPublic
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [lungelo.zimba79@micrlabs.onmicrosoft.com] — ['LinkedIn', 'MyFitnessPal']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Lungelo Zimba                  | Doctor                    | score= 20 | findings=2 | sources=MyFitnessPal, LinkedIn
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nyasha.ncube80@micrlabs.onmicrosoft.com] — ['LinkedIn', 'MyFitnessPal', 'Evite']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [nyasha.ncube80@micrlabs.onmicrosoft.com] — ['AntiPublic', 'Deezer']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nyasha.ncube80@micrlabs.onmicrosoft.com] — ['MathWay']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Nyasha Ncube                   | Radiologist               | score= 70 | findings=6 | sources=LinkedIn, Evite, Deezer, MathWay, MyFitnessPal, AntiPublic
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [sifiso.moyo81@micrlabs.onmicrosoft.com] — ['Evite']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [sifiso.moyo81@micrlabs.onmicrosoft.com] — ['Exploit.in', 'Deezer']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [sifiso.moyo81@micrlabs.onmicrosoft.com] — ['Wattpad']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [sifiso.moyo81@micrlabs.onmicrosoft.com] — ['PasteBin-2023']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Sifiso Moyo                    | Doctor                    | score= 75 | findings=5 | sources=PasteBin-2023, Evite, Deezer, Wattpad, Exploit.in
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nomvula.banda86@micrlabs.onmicrosoft.com] — ['Dropbox', 'Zynga']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [nomvula.banda86@micrlabs.onmicrosoft.com] — ['Deezer']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nomvula.banda86@micrlabs.onmicrosoft.com] — ['Wattpad', 'Tokopedia']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Nomvula Banda                  | Lab Technician            | score= 55 | findings=5 | sources=Dropbox, Zynga, Deezer, Tokopedia, Wattpad
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [tsitsi.zimba87@micrlabs.onmicrosoft.com] — ['Canva', 'LinkedIn', 'Adobe']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [tsitsi.zimba87@micrlabs.onmicrosoft.com] — ['Deezer']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [tsitsi.zimba87@micrlabs.onmicrosoft.com] — ['Gravatar']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [tsitsi.zimba87@micrlabs.onmicrosoft.com] — ['PasteBin-2023']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Tsitsi Zimba                   | Nurse                     | score= 80 | findings=6 | sources=Gravatar, PasteBin-2023, LinkedIn, Deezer, Adobe, Canva
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [kudzai.dube89@micrlabs.onmicrosoft.com] — ['Chegg']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [kudzai.dube89@micrlabs.onmicrosoft.com] — ['AntiPublic', 'Collection#1']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [kudzai.dube89@micrlabs.onmicrosoft.com] — ['Wattpad', 'Tokopedia']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [kudzai.dube89@micrlabs.onmicrosoft.com] — ['TelegramLeaks-2024']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Kudzai Dube                    | Radiologist               | score= 85 | findings=6 | sources=Chegg, Tokopedia, Wattpad, Collection#1, TelegramLeaks-2024, AntiPublic
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [takudzwa.mhlanga90@micrlabs.onmicrosoft.com] — ['Dropbox', 'Canva']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [takudzwa.mhlanga90@micrlabs.onmicrosoft.com] — ['AntiPublic']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [takudzwa.mhlanga90@micrlabs.onmicrosoft.com] — ['MathWay']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [takudzwa.mhlanga90@micrlabs.onmicrosoft.com] — ['RaidForums-Archive']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Takudzwa Mhlanga               | Radiologist               | score= 70 | findings=5 | sources=Dropbox, MathWay, Canva, RaidForums-Archive, AntiPublic
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [tendai.chirwa91@micrlabs.onmicrosoft.com] — ['MyFitnessPal', 'Dropbox']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [tendai.chirwa91@micrlabs.onmicrosoft.com] — ['Collection#1', 'LinkedIn2021']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [tendai.chirwa91@micrlabs.onmicrosoft.com] — ['Gravatar']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Tendai Chirwa                  | Doctor                    | score= 60 | findings=5 | sources=Dropbox, Gravatar, LinkedIn2021, MyFitnessPal, Collection#1
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [chiedza.banda95@micrlabs.onmicrosoft.com] — ['MyFitnessPal', 'Canva', 'Zynga']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [chiedza.banda95@micrlabs.onmicrosoft.com] — ['Deezer', 'LinkedIn2021']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [chiedza.banda95@micrlabs.onmicrosoft.com] — ['Gravatar', 'Wishbone']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Chiedza Banda                  | Lab Technician            | score= 80 | findings=7 | sources=Zynga, Gravatar, Deezer, LinkedIn2021, Canva, MyFitnessPal, Wishbone
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nkosi.sithole97@micrlabs.onmicrosoft.com] — ['Chegg', 'Zynga', 'Dropbox']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [nkosi.sithole97@micrlabs.onmicrosoft.com] — ['Exploit.in']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nkosi.sithole97@micrlabs.onmicrosoft.com] — ['Gravatar', 'Tokopedia']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [nkosi.sithole97@micrlabs.onmicrosoft.com] — ['RaidForums-Archive']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Nkosi Sithole                  | Radiologist               | score= 90 | findings=7 | sources=Zynga, Chegg, Gravatar, Dropbox, Tokopedia, RaidForums-Archive, Exploit.in
+2026-04-07 13:13:16 [INFO    ] --- Progress: 100/500 checked | Exposed so far: 41 ---
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [sibusiso.nkomo102@micrlabs.onmicrosoft.com] — ['Adobe']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [sibusiso.nkomo102@micrlabs.onmicrosoft.com] — ['MathWay']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Sibusiso Nkomo                 | Radiologist               | score= 20 | findings=2 | sources=Adobe, MathWay
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [sibusiso.chirwa103@micrlabs.onmicrosoft.com] — ['Chegg']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Sibusiso Chirwa                | Radiologist               | score= 10 | findings=1 | sources=Chegg
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [munyaradzi.banda105@micrlabs.onmicrosoft.com] — ['Dropbox', 'LinkedIn']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [munyaradzi.banda105@micrlabs.onmicrosoft.com] — ['Exploit.in', 'LinkedIn2021']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [munyaradzi.banda105@micrlabs.onmicrosoft.com] — ['Tokopedia']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Munyaradzi Banda               | Nurse                     | score= 60 | findings=5 | sources=Dropbox, LinkedIn, LinkedIn2021, Tokopedia, Exploit.in
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nyasha.sithole106@micrlabs.onmicrosoft.com] — ['Canva', 'Adobe']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nyasha.sithole106@micrlabs.onmicrosoft.com] — ['MathWay', 'Wishbone']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Nyasha Sithole                 | Radiologist               | score= 40 | findings=4 | sources=Adobe, Canva, Wishbone, MathWay
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [farai.chikwanda114@micrlabs.onmicrosoft.com] — ['Canva', 'MyFitnessPal']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [farai.chikwanda114@micrlabs.onmicrosoft.com] — ['LinkedIn2021']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [farai.chikwanda114@micrlabs.onmicrosoft.com] — ['Wishbone', 'Wattpad']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Farai Chikwanda                | Nurse                     | score= 55 | findings=5 | sources=LinkedIn2021, Canva, MyFitnessPal, Wattpad, Wishbone
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [chiedza.mhlanga117@micrlabs.onmicrosoft.com] — ['Dropbox', 'Adobe']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [chiedza.mhlanga117@micrlabs.onmicrosoft.com] — ['Gravatar']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Chiedza Mhlanga                | Radiologist               | score= 30 | findings=3 | sources=Dropbox, Adobe, Gravatar
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [farai.zimba127@micrlabs.onmicrosoft.com] — ['MyFitnessPal', 'Canva', 'LinkedIn']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [farai.zimba127@micrlabs.onmicrosoft.com] — ['Wattpad', 'Gravatar']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Farai Zimba                    | Radiologist               | score= 50 | findings=5 | sources=Gravatar, LinkedIn, Canva, MyFitnessPal, Wattpad
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nkosi.banda128@micrlabs.onmicrosoft.com] — ['Adobe']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [nkosi.banda128@micrlabs.onmicrosoft.com] — ['Exploit.in', 'Collection#1']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nkosi.banda128@micrlabs.onmicrosoft.com] — ['Wishbone']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Nkosi Banda                    | Doctor                    | score= 50 | findings=4 | sources=Adobe, Collection#1, Wishbone, Exploit.in
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nkosi.mutasa129@micrlabs.onmicrosoft.com] — ['Adobe']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nkosi.mutasa129@micrlabs.onmicrosoft.com] — ['MathWay']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Nkosi Mutasa                   | Doctor                    | score= 20 | findings=2 | sources=Adobe, MathWay
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [tendai.ncube132@micrlabs.onmicrosoft.com] — ['Evite', 'MyFitnessPal', 'LinkedIn']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [tendai.ncube132@micrlabs.onmicrosoft.com] — ['Collection#1']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [tendai.ncube132@micrlabs.onmicrosoft.com] — ['Tokopedia']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [tendai.ncube132@micrlabs.onmicrosoft.com] — ['DarkForum-Health']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Tendai Ncube                   | Nurse                     | score= 80 | findings=6 | sources=LinkedIn, Evite, Tokopedia, MyFitnessPal, Collection#1, DarkForum-Health
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nyasha.gumbo135@micrlabs.onmicrosoft.com] — ['Evite', 'Zynga']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [nyasha.gumbo135@micrlabs.onmicrosoft.com] — ['LinkedIn2021', 'Deezer']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nyasha.gumbo135@micrlabs.onmicrosoft.com] — ['Wishbone', 'MathWay']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [nyasha.gumbo135@micrlabs.onmicrosoft.com] — ['PasteBin-2023']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Nyasha Gumbo                   | Radiologist               | score= 95 | findings=7 | sources=Zynga, PasteBin-2023, MathWay, Evite, LinkedIn2021, Deezer, Wishbone
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [takudzwa.tembo136@micrlabs.onmicrosoft.com] — ['LinkedIn']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [takudzwa.tembo136@micrlabs.onmicrosoft.com] — ['LinkedIn2021']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [takudzwa.tembo136@micrlabs.onmicrosoft.com] — ['Wattpad', 'Gravatar']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [takudzwa.tembo136@micrlabs.onmicrosoft.com] — ['TelegramLeaks-2024']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Takudzwa Tembo                 | Radiologist               | score= 70 | findings=5 | sources=Gravatar, LinkedIn, LinkedIn2021, Wattpad, TelegramLeaks-2024
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [takudzwa.chikwanda141@micrlabs.onmicrosoft.com] — ['LinkedIn', 'Zynga', 'Chegg']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [takudzwa.chikwanda141@micrlabs.onmicrosoft.com] — ['Deezer', 'Exploit.in']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [takudzwa.chikwanda141@micrlabs.onmicrosoft.com] — ['MathWay']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [takudzwa.chikwanda141@micrlabs.onmicrosoft.com] — ['TelegramLeaks-2024']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Takudzwa Chikwanda             | Lab Technician            | score= 95 | findings=7 | sources=Zynga, Chegg, LinkedIn, Deezer, MathWay, TelegramLeaks-2024, Exploit.in
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [tinashe.nkomo146@micrlabs.onmicrosoft.com] — ['Chegg']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [tinashe.nkomo146@micrlabs.onmicrosoft.com] — ['LinkedIn2021', 'Exploit.in']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [tinashe.nkomo146@micrlabs.onmicrosoft.com] — ['MathWay']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [tinashe.nkomo146@micrlabs.onmicrosoft.com] — ['RaidForums-Archive']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Tinashe Nkomo                  | Radiologist               | score= 75 | findings=5 | sources=Chegg, MathWay, LinkedIn2021, RaidForums-Archive, Exploit.in
+2026-04-07 13:13:16 [INFO    ] --- Progress: 150/500 checked | Exposed so far: 55 ---
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [rudo.mpofu151@micrlabs.onmicrosoft.com] — ['Dropbox', 'MyFitnessPal', 'Zynga']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [rudo.mpofu151@micrlabs.onmicrosoft.com] — ['Exploit.in']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [rudo.mpofu151@micrlabs.onmicrosoft.com] — ['Gravatar', 'Wishbone']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [rudo.mpofu151@micrlabs.onmicrosoft.com] — ['RaidForums-Archive']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Rudo Mpofu                     | Radiologist               | score= 90 | findings=7 | sources=Dropbox, Zynga, Gravatar, MyFitnessPal, Wishbone, RaidForums-Archive, Exploit.in
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [tatenda.mutasa155@micrlabs.onmicrosoft.com] — ['Canva', 'Zynga', 'LinkedIn']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [tatenda.mutasa155@micrlabs.onmicrosoft.com] — ['Collection#1']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [tatenda.mutasa155@micrlabs.onmicrosoft.com] — ['MathWay']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [tatenda.mutasa155@micrlabs.onmicrosoft.com] — ['TelegramLeaks-2024']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Tatenda Mutasa                 | Lab Technician            | score= 80 | findings=6 | sources=Zynga, MathWay, LinkedIn, Canva, Collection#1, TelegramLeaks-2024
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [thandi.ncube158@micrlabs.onmicrosoft.com] — ['Chegg', 'Dropbox']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [thandi.ncube158@micrlabs.onmicrosoft.com] — ['Deezer']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [thandi.ncube158@micrlabs.onmicrosoft.com] — ['Wishbone']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [thandi.ncube158@micrlabs.onmicrosoft.com] — ['DarkForum-Health']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Thandi Ncube                   | Doctor                    | score= 70 | findings=5 | sources=Dropbox, Chegg, Deezer, Wishbone, DarkForum-Health
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nompilo.mutasa159@micrlabs.onmicrosoft.com] — ['LinkedIn']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [nompilo.mutasa159@micrlabs.onmicrosoft.com] — ['Deezer']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nompilo.mutasa159@micrlabs.onmicrosoft.com] — ['MathWay', 'Wishbone']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Nompilo Mutasa                 | Nurse                     | score= 45 | findings=4 | sources=Deezer, MathWay, Wishbone, LinkedIn
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [lungelo.ncube160@micrlabs.onmicrosoft.com] — ['Adobe', 'MyFitnessPal', 'LinkedIn']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [lungelo.ncube160@micrlabs.onmicrosoft.com] — ['LinkedIn2021']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [lungelo.ncube160@micrlabs.onmicrosoft.com] — ['Tokopedia']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Lungelo Ncube                  | Nurse                     | score= 55 | findings=5 | sources=LinkedIn, LinkedIn2021, Adobe, Tokopedia, MyFitnessPal
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [sifiso.sithole163@micrlabs.onmicrosoft.com] — ['Dropbox', 'LinkedIn']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [sifiso.sithole163@micrlabs.onmicrosoft.com] — ['Tokopedia']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Sifiso Sithole                 | Lab Technician            | score= 30 | findings=3 | sources=Dropbox, Tokopedia, LinkedIn
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [thandi.tembo165@micrlabs.onmicrosoft.com] — ['Canva']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [thandi.tembo165@micrlabs.onmicrosoft.com] — ['Deezer', 'Collection#1']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [thandi.tembo165@micrlabs.onmicrosoft.com] — ['Gravatar']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [thandi.tembo165@micrlabs.onmicrosoft.com] — ['RaidForums-Archive']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Thandi Tembo                   | Doctor                    | score= 75 | findings=5 | sources=Gravatar, Deezer, Canva, Collection#1, RaidForums-Archive
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nomvula.gumbo166@micrlabs.onmicrosoft.com] — ['LinkedIn', 'Zynga']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Nomvula Gumbo                  | Doctor                    | score= 20 | findings=2 | sources=Zynga, LinkedIn
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nomvula.tembo167@micrlabs.onmicrosoft.com] — ['Adobe']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nomvula.tembo167@micrlabs.onmicrosoft.com] — ['MathWay', 'Gravatar']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Nomvula Tembo                  | Lab Technician            | score= 30 | findings=3 | sources=Adobe, Gravatar, MathWay
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [tinashe.nkomo168@micrlabs.onmicrosoft.com] — ['MyFitnessPal', 'Adobe', 'Evite']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [tinashe.nkomo168@micrlabs.onmicrosoft.com] — ['AntiPublic']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [tinashe.nkomo168@micrlabs.onmicrosoft.com] — ['Wishbone']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [tinashe.nkomo168@micrlabs.onmicrosoft.com] — ['DarkForum-Health']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Tinashe Nkomo                  | Nurse                     | score= 80 | findings=6 | sources=Evite, Adobe, MyFitnessPal, Wishbone, DarkForum-Health, AntiPublic
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [rudo.zimba169@micrlabs.onmicrosoft.com] — ['LinkedIn', 'Evite']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [rudo.zimba169@micrlabs.onmicrosoft.com] — ['Collection#1']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [rudo.zimba169@micrlabs.onmicrosoft.com] — ['MathWay', 'Wattpad']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Rudo Zimba                     | Doctor                    | score= 55 | findings=5 | sources=MathWay, Evite, LinkedIn, Wattpad, Collection#1
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [thandi.banda175@micrlabs.onmicrosoft.com] — ['Evite', 'Zynga']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [thandi.banda175@micrlabs.onmicrosoft.com] — ['LinkedIn2021', 'Deezer']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [thandi.banda175@micrlabs.onmicrosoft.com] — ['Wishbone', 'Tokopedia']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [thandi.banda175@micrlabs.onmicrosoft.com] — ['PasteBin-2023']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Thandi Banda                   | Nurse                     | score= 95 | findings=7 | sources=Zynga, PasteBin-2023, Evite, LinkedIn2021, Deezer, Tokopedia, Wishbone
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [lungelo.tembo176@micrlabs.onmicrosoft.com] — ['Dropbox', 'Evite', 'Zynga']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [lungelo.tembo176@micrlabs.onmicrosoft.com] — ['Wishbone']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Lungelo Tembo                  | Nurse                     | score= 40 | findings=4 | sources=Dropbox, Zynga, Evite, Wishbone
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [sibusiso.chikwanda177@micrlabs.onmicrosoft.com] — ['Canva']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [sibusiso.chikwanda177@micrlabs.onmicrosoft.com] — ['AntiPublic', 'LinkedIn2021']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [sibusiso.chikwanda177@micrlabs.onmicrosoft.com] — ['Wishbone', 'Gravatar']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Sibusiso Chikwanda             | Nurse                     | score= 60 | findings=5 | sources=Gravatar, LinkedIn2021, Canva, Wishbone, AntiPublic
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [lungelo.mpofu178@micrlabs.onmicrosoft.com] — ['LinkedIn']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [lungelo.mpofu178@micrlabs.onmicrosoft.com] — ['Collection#1']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [lungelo.mpofu178@micrlabs.onmicrosoft.com] — ['MathWay']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [lungelo.mpofu178@micrlabs.onmicrosoft.com] — ['RaidForums-Archive']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Lungelo Mpofu                  | Nurse                     | score= 60 | findings=4 | sources=RaidForums-Archive, MathWay, Collection#1, LinkedIn
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [zanele.moyo180@micrlabs.onmicrosoft.com] — ['Dropbox']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [zanele.moyo180@micrlabs.onmicrosoft.com] — ['Tokopedia']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Zanele Moyo                    | Radiologist               | score= 20 | findings=2 | sources=Dropbox, Tokopedia
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [tsitsi.phiri181@micrlabs.onmicrosoft.com] — ['Canva']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [tsitsi.phiri181@micrlabs.onmicrosoft.com] — ['Collection#1']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [tsitsi.phiri181@micrlabs.onmicrosoft.com] — ['MathWay', 'Gravatar']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [tsitsi.phiri181@micrlabs.onmicrosoft.com] — ['TelegramLeaks-2024']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Tsitsi Phiri                   | Radiologist               | score= 70 | findings=5 | sources=Gravatar, MathWay, Canva, Collection#1, TelegramLeaks-2024
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [chiedza.zimba182@micrlabs.onmicrosoft.com] — ['Evite']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [chiedza.zimba182@micrlabs.onmicrosoft.com] — ['MathWay', 'Wishbone']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Chiedza Zimba                  | Doctor                    | score= 30 | findings=3 | sources=Evite, Wishbone, MathWay
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [tatenda.moyo183@micrlabs.onmicrosoft.com] — ['Dropbox']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [tatenda.moyo183@micrlabs.onmicrosoft.com] — ['AntiPublic']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [tatenda.moyo183@micrlabs.onmicrosoft.com] — ['Wattpad', 'MathWay']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [tatenda.moyo183@micrlabs.onmicrosoft.com] — ['TelegramLeaks-2024']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Tatenda Moyo                   | Radiologist               | score= 70 | findings=5 | sources=Dropbox, MathWay, Wattpad, TelegramLeaks-2024, AntiPublic
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [lungelo.dube184@micrlabs.onmicrosoft.com] — ['LinkedIn', 'Chegg', 'MyFitnessPal']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Lungelo Dube                   | Nurse                     | score= 30 | findings=3 | sources=Chegg, MyFitnessPal, LinkedIn
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nompilo.mhlanga185@micrlabs.onmicrosoft.com] — ['Zynga']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [nompilo.mhlanga185@micrlabs.onmicrosoft.com] — ['LinkedIn2021']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nompilo.mhlanga185@micrlabs.onmicrosoft.com] — ['Gravatar']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Nompilo Mhlanga                | Radiologist               | score= 35 | findings=3 | sources=Zynga, LinkedIn2021, Gravatar
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [zanele.zimba189@micrlabs.onmicrosoft.com] — ['Zynga', 'Dropbox']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Zanele Zimba                   | Lab Technician            | score= 20 | findings=2 | sources=Zynga, Dropbox
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [tatenda.phiri195@micrlabs.onmicrosoft.com] — ['Canva', 'MyFitnessPal']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [tatenda.phiri195@micrlabs.onmicrosoft.com] — ['AntiPublic']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [tatenda.phiri195@micrlabs.onmicrosoft.com] — ['MathWay']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [tatenda.phiri195@micrlabs.onmicrosoft.com] — ['PasteBin-2023']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Tatenda Phiri                  | Doctor                    | score= 70 | findings=5 | sources=PasteBin-2023, MathWay, Canva, MyFitnessPal, AntiPublic
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [munyaradzi.gumbo197@micrlabs.onmicrosoft.com] — ['Canva', 'Adobe', 'Evite']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [munyaradzi.gumbo197@micrlabs.onmicrosoft.com] — ['AntiPublic']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [munyaradzi.gumbo197@micrlabs.onmicrosoft.com] — ['Wishbone']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Munyaradzi Gumbo               | Doctor                    | score= 55 | findings=5 | sources=Evite, Adobe, Canva, Wishbone, AntiPublic
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [simba.banda199@micrlabs.onmicrosoft.com] — ['Evite', 'Dropbox']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [simba.banda199@micrlabs.onmicrosoft.com] — ['LinkedIn2021', 'AntiPublic']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [simba.banda199@micrlabs.onmicrosoft.com] — ['MathWay', 'Gravatar']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [simba.banda199@micrlabs.onmicrosoft.com] — ['TelegramLeaks-2024']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Simba Banda                    | Radiologist               | score= 95 | findings=7 | sources=Dropbox, Gravatar, MathWay, Evite, LinkedIn2021, TelegramLeaks-2024, AntiPublic
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [thandi.sithole200@micrlabs.onmicrosoft.com] — ['Evite']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [thandi.sithole200@micrlabs.onmicrosoft.com] — ['Collection#1', 'LinkedIn2021']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [thandi.sithole200@micrlabs.onmicrosoft.com] — ['MathWay', 'Tokopedia']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Thandi Sithole                 | Doctor                    | score= 60 | findings=5 | sources=MathWay, Evite, LinkedIn2021, Tokopedia, Collection#1
+2026-04-07 13:13:16 [INFO    ] --- Progress: 200/500 checked | Exposed so far: 81 ---
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [bongani.mpofu204@micrlabs.onmicrosoft.com] — ['Dropbox', 'Adobe', 'Zynga']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [bongani.mpofu204@micrlabs.onmicrosoft.com] — ['Wishbone']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Bongani Mpofu                  | Finance Officer           | score= 40 | findings=4 | sources=Dropbox, Zynga, Adobe, Wishbone
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [tinashe.chirwa205@micrlabs.onmicrosoft.com] — ['Evite', 'LinkedIn']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [tinashe.chirwa205@micrlabs.onmicrosoft.com] — ['AntiPublic', 'Collection#1']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [tinashe.chirwa205@micrlabs.onmicrosoft.com] — ['Wattpad']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [tinashe.chirwa205@micrlabs.onmicrosoft.com] — ['DarkForum-Health']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Tinashe Chirwa                 | Medical Coder             | score= 85 | findings=6 | sources=LinkedIn, Evite, Wattpad, Collection#1, DarkForum-Health, AntiPublic
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [simba.gumbo206@micrlabs.onmicrosoft.com] — ['LinkedIn', 'Canva', 'Evite']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Simba Gumbo                    | Billing Clerk             | score= 30 | findings=3 | sources=Evite, Canva, LinkedIn
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [sibusiso.gumbo207@micrlabs.onmicrosoft.com] — ['Adobe']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [sibusiso.gumbo207@micrlabs.onmicrosoft.com] — ['AntiPublic', 'Exploit.in']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [sibusiso.gumbo207@micrlabs.onmicrosoft.com] — ['MathWay', 'Wishbone']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Sibusiso Gumbo                 | Claims Analyst            | score= 60 | findings=5 | sources=MathWay, Adobe, Wishbone, AntiPublic, Exploit.in
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [bongani.chikwanda215@micrlabs.onmicrosoft.com] — ['Adobe']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [bongani.chikwanda215@micrlabs.onmicrosoft.com] — ['Deezer', 'LinkedIn2021']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [bongani.chikwanda215@micrlabs.onmicrosoft.com] — ['Gravatar', 'Wattpad']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Bongani Chikwanda              | Finance Officer           | score= 60 | findings=5 | sources=Gravatar, Deezer, LinkedIn2021, Adobe, Wattpad
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [zanele.banda216@micrlabs.onmicrosoft.com] — ['Dropbox', 'Adobe']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [zanele.banda216@micrlabs.onmicrosoft.com] — ['Collection#1']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [zanele.banda216@micrlabs.onmicrosoft.com] — ['Wattpad']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Zanele Banda                   | Claims Analyst            | score= 45 | findings=4 | sources=Dropbox, Wattpad, Adobe, Collection#1
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [lungelo.ncube219@micrlabs.onmicrosoft.com] — ['MyFitnessPal', 'Adobe', 'LinkedIn']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [lungelo.ncube219@micrlabs.onmicrosoft.com] — ['Deezer']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [lungelo.ncube219@micrlabs.onmicrosoft.com] — ['Wishbone']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Lungelo Ncube                  | Billing Clerk             | score= 55 | findings=5 | sources=LinkedIn, Deezer, Adobe, MyFitnessPal, Wishbone
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [tsitsi.tembo220@micrlabs.onmicrosoft.com] — ['Evite']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Tsitsi Tembo                   | Billing Clerk             | score= 10 | findings=1 | sources=Evite
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [sifiso.banda222@micrlabs.onmicrosoft.com] — ['Adobe', 'LinkedIn']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [sifiso.banda222@micrlabs.onmicrosoft.com] — ['LinkedIn2021', 'AntiPublic']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [sifiso.banda222@micrlabs.onmicrosoft.com] — ['Gravatar', 'Tokopedia']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [sifiso.banda222@micrlabs.onmicrosoft.com] — ['DarkForum-Health']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Sifiso Banda                   | Finance Officer           | score= 95 | findings=7 | sources=Gravatar, LinkedIn, LinkedIn2021, Adobe, Tokopedia, DarkForum-Health, AntiPublic
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nomvula.mpofu224@micrlabs.onmicrosoft.com] — ['Zynga', 'Evite']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [nomvula.mpofu224@micrlabs.onmicrosoft.com] — ['AntiPublic']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nomvula.mpofu224@micrlabs.onmicrosoft.com] — ['Tokopedia']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [nomvula.mpofu224@micrlabs.onmicrosoft.com] — ['RaidForums-Archive']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Nomvula Mpofu                  | Medical Coder             | score= 70 | findings=5 | sources=Zynga, Evite, Tokopedia, RaidForums-Archive, AntiPublic
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nompilo.tembo225@micrlabs.onmicrosoft.com] — ['Adobe']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nompilo.tembo225@micrlabs.onmicrosoft.com] — ['Wattpad']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Nompilo Tembo                  | Finance Officer           | score= 20 | findings=2 | sources=Wattpad, Adobe
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [simba.gumbo232@micrlabs.onmicrosoft.com] — ['LinkedIn']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [simba.gumbo232@micrlabs.onmicrosoft.com] — ['Collection#1', 'LinkedIn2021']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [simba.gumbo232@micrlabs.onmicrosoft.com] — ['Tokopedia']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [simba.gumbo232@micrlabs.onmicrosoft.com] — ['RaidForums-Archive']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Simba Gumbo                    | Finance Officer           | score= 75 | findings=5 | sources=LinkedIn, LinkedIn2021, Tokopedia, Collection#1, RaidForums-Archive
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [rudo.dube234@micrlabs.onmicrosoft.com] — ['Zynga', 'Chegg', 'Evite']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Rudo Dube                      | Medical Coder             | score= 30 | findings=3 | sources=Zynga, Chegg, Evite
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nkosi.ncube235@micrlabs.onmicrosoft.com] — ['Canva', 'Zynga', 'Dropbox']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [nkosi.ncube235@micrlabs.onmicrosoft.com] — ['AntiPublic']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nkosi.ncube235@micrlabs.onmicrosoft.com] — ['Gravatar']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Nkosi Ncube                    | Billing Clerk             | score= 55 | findings=5 | sources=Zynga, Dropbox, Gravatar, Canva, AntiPublic
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nompilo.mpofu236@micrlabs.onmicrosoft.com] — ['Chegg', 'Dropbox']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [nompilo.mpofu236@micrlabs.onmicrosoft.com] — ['LinkedIn2021', 'Collection#1']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nompilo.mpofu236@micrlabs.onmicrosoft.com] — ['Wishbone']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Nompilo Mpofu                  | Finance Officer           | score= 60 | findings=5 | sources=Dropbox, Chegg, LinkedIn2021, Collection#1, Wishbone
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [chiedza.chikwanda237@micrlabs.onmicrosoft.com] — ['Canva', 'Chegg']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [chiedza.chikwanda237@micrlabs.onmicrosoft.com] — ['Deezer']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [chiedza.chikwanda237@micrlabs.onmicrosoft.com] — ['Wishbone', 'Gravatar']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Chiedza Chikwanda              | Claims Analyst            | score= 55 | findings=5 | sources=Chegg, Gravatar, Deezer, Canva, Wishbone
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nompilo.mutasa238@micrlabs.onmicrosoft.com] — ['MyFitnessPal', 'LinkedIn', 'Canva']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [nompilo.mutasa238@micrlabs.onmicrosoft.com] — ['LinkedIn2021', 'Deezer']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nompilo.mutasa238@micrlabs.onmicrosoft.com] — ['Wishbone']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Nompilo Mutasa                 | Billing Clerk             | score= 70 | findings=6 | sources=LinkedIn, Deezer, LinkedIn2021, Canva, MyFitnessPal, Wishbone
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [tatenda.ncube239@micrlabs.onmicrosoft.com] — ['Adobe', 'Dropbox']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Tatenda Ncube                  | Medical Coder             | score= 20 | findings=2 | sources=Dropbox, Adobe
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [lungelo.dube244@micrlabs.onmicrosoft.com] — ['Adobe', 'MyFitnessPal']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [lungelo.dube244@micrlabs.onmicrosoft.com] — ['Collection#1', 'LinkedIn2021']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [lungelo.dube244@micrlabs.onmicrosoft.com] — ['Tokopedia']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [lungelo.dube244@micrlabs.onmicrosoft.com] — ['RaidForums-Archive']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Lungelo Dube                   | Claims Analyst            | score= 85 | findings=6 | sources=LinkedIn2021, Adobe, Tokopedia, MyFitnessPal, Collection#1, RaidForums-Archive
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [bongani.banda246@micrlabs.onmicrosoft.com] — ['Chegg', 'Canva']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [bongani.banda246@micrlabs.onmicrosoft.com] — ['Deezer']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [bongani.banda246@micrlabs.onmicrosoft.com] — ['Gravatar', 'MathWay']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Bongani Banda                  | Billing Clerk             | score= 55 | findings=5 | sources=Chegg, Gravatar, MathWay, Deezer, Canva
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [rudo.chirwa247@micrlabs.onmicrosoft.com] — ['LinkedIn', 'MyFitnessPal', 'Canva']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [rudo.chirwa247@micrlabs.onmicrosoft.com] — ['Collection#1']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [rudo.chirwa247@micrlabs.onmicrosoft.com] — ['MathWay']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [rudo.chirwa247@micrlabs.onmicrosoft.com] — ['PasteBin-2023']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Rudo Chirwa                    | Finance Officer           | score= 80 | findings=6 | sources=PasteBin-2023, MathWay, LinkedIn, Canva, MyFitnessPal, Collection#1
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [tendai.sithole249@micrlabs.onmicrosoft.com] — ['Dropbox', 'LinkedIn', 'Chegg']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [tendai.sithole249@micrlabs.onmicrosoft.com] — ['Exploit.in']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [tendai.sithole249@micrlabs.onmicrosoft.com] — ['Tokopedia']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Tendai Sithole                 | Finance Officer           | score= 55 | findings=5 | sources=Dropbox, Chegg, LinkedIn, Tokopedia, Exploit.in
+2026-04-07 13:13:16 [INFO    ] --- Progress: 250/500 checked | Exposed so far: 103 ---
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [simba.dube254@micrlabs.onmicrosoft.com] — ['Dropbox']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [simba.dube254@micrlabs.onmicrosoft.com] — ['Deezer']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [simba.dube254@micrlabs.onmicrosoft.com] — ['Wishbone', 'Gravatar']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Simba Dube                     | Claims Analyst            | score= 45 | findings=4 | sources=Dropbox, Deezer, Gravatar, Wishbone
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nkosi.tembo255@micrlabs.onmicrosoft.com] — ['Dropbox', 'Adobe', 'LinkedIn']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [nkosi.tembo255@micrlabs.onmicrosoft.com] — ['LinkedIn2021']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nkosi.tembo255@micrlabs.onmicrosoft.com] — ['Wishbone', 'Wattpad']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Nkosi Tembo                    | Medical Coder             | score= 65 | findings=6 | sources=Dropbox, LinkedIn, LinkedIn2021, Adobe, Wattpad, Wishbone
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [sifiso.sithole257@micrlabs.onmicrosoft.com] — ['Dropbox']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [sifiso.sithole257@micrlabs.onmicrosoft.com] — ['AntiPublic']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [sifiso.sithole257@micrlabs.onmicrosoft.com] — ['Tokopedia', 'MathWay']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [sifiso.sithole257@micrlabs.onmicrosoft.com] — ['RaidForums-Archive']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Sifiso Sithole                 | Medical Coder             | score= 70 | findings=5 | sources=Dropbox, MathWay, Tokopedia, RaidForums-Archive, AntiPublic
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [tendai.dube258@micrlabs.onmicrosoft.com] — ['Canva']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [tendai.dube258@micrlabs.onmicrosoft.com] — ['Wishbone', 'MathWay']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Tendai Dube                    | Finance Officer           | score= 30 | findings=3 | sources=Canva, Wishbone, MathWay
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nkosi.chikwanda262@micrlabs.onmicrosoft.com] — ['Canva', 'Dropbox']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [nkosi.chikwanda262@micrlabs.onmicrosoft.com] — ['AntiPublic', 'Collection#1']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nkosi.chikwanda262@micrlabs.onmicrosoft.com] — ['Tokopedia']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [nkosi.chikwanda262@micrlabs.onmicrosoft.com] — ['DarkForum-Health']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Nkosi Chikwanda                | Claims Analyst            | score= 85 | findings=6 | sources=Dropbox, Canva, Tokopedia, Collection#1, DarkForum-Health, AntiPublic
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [zanele.mhlanga263@micrlabs.onmicrosoft.com] — ['Dropbox', 'Adobe', 'Chegg']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [zanele.mhlanga263@micrlabs.onmicrosoft.com] — ['Exploit.in']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [zanele.mhlanga263@micrlabs.onmicrosoft.com] — ['Wattpad', 'Wishbone']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [zanele.mhlanga263@micrlabs.onmicrosoft.com] — ['DarkForum-Health']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Zanele Mhlanga                 | Billing Clerk             | score= 90 | findings=7 | sources=Dropbox, Chegg, Adobe, Wattpad, Wishbone, DarkForum-Health, Exploit.in
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [kudzai.sithole265@micrlabs.onmicrosoft.com] — ['Chegg', 'Canva']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [kudzai.sithole265@micrlabs.onmicrosoft.com] — ['AntiPublic']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [kudzai.sithole265@micrlabs.onmicrosoft.com] — ['Gravatar']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Kudzai Sithole                 | Claims Analyst            | score= 45 | findings=4 | sources=Chegg, Gravatar, Canva, AntiPublic
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [tatenda.sithole266@micrlabs.onmicrosoft.com] — ['Zynga', 'Canva']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Tatenda Sithole                | Claims Analyst            | score= 20 | findings=2 | sources=Zynga, Canva
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [munyaradzi.phiri269@micrlabs.onmicrosoft.com] — ['Chegg', 'Adobe', 'Canva']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [munyaradzi.phiri269@micrlabs.onmicrosoft.com] — ['Deezer', 'Exploit.in']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [munyaradzi.phiri269@micrlabs.onmicrosoft.com] — ['Tokopedia', 'Gravatar']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [munyaradzi.phiri269@micrlabs.onmicrosoft.com] — ['DarkForum-Health']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Munyaradzi Phiri               | Billing Clerk             | score=100 | findings=8 | sources=Chegg, Gravatar, Deezer, Adobe, Canva, Tokopedia, DarkForum-Health, Exploit.in
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [kudzai.banda270@micrlabs.onmicrosoft.com] — ['Dropbox', 'Zynga']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [kudzai.banda270@micrlabs.onmicrosoft.com] — ['Exploit.in', 'AntiPublic']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [kudzai.banda270@micrlabs.onmicrosoft.com] — ['Wattpad']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Kudzai Banda                   | Billing Clerk             | score= 60 | findings=5 | sources=Dropbox, Zynga, Wattpad, AntiPublic, Exploit.in
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [thandi.mutasa271@micrlabs.onmicrosoft.com] — ['Evite', 'Adobe']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [thandi.mutasa271@micrlabs.onmicrosoft.com] — ['Collection#1']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [thandi.mutasa271@micrlabs.onmicrosoft.com] — ['Tokopedia', 'MathWay']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [thandi.mutasa271@micrlabs.onmicrosoft.com] — ['RaidForums-Archive']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Thandi Mutasa                  | Claims Analyst            | score= 80 | findings=6 | sources=MathWay, Evite, Adobe, Tokopedia, Collection#1, RaidForums-Archive
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [tinashe.banda275@micrlabs.onmicrosoft.com] — ['Dropbox']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [tinashe.banda275@micrlabs.onmicrosoft.com] — ['Collection#1', 'Exploit.in']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [tinashe.banda275@micrlabs.onmicrosoft.com] — ['Wishbone', 'Wattpad']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [tinashe.banda275@micrlabs.onmicrosoft.com] — ['DarkForum-Health']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Tinashe Banda                  | Billing Clerk             | score= 85 | findings=6 | sources=Dropbox, Wattpad, Collection#1, Wishbone, DarkForum-Health, Exploit.in
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [lungelo.tembo278@micrlabs.onmicrosoft.com] — ['Adobe']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [lungelo.tembo278@micrlabs.onmicrosoft.com] — ['Collection#1', 'LinkedIn2021']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [lungelo.tembo278@micrlabs.onmicrosoft.com] — ['Wishbone', 'Wattpad']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [lungelo.tembo278@micrlabs.onmicrosoft.com] — ['PasteBin-2023']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Lungelo Tembo                  | Claims Analyst            | score= 85 | findings=6 | sources=PasteBin-2023, LinkedIn2021, Adobe, Wattpad, Collection#1, Wishbone
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [tatenda.gumbo283@micrlabs.onmicrosoft.com] — ['Adobe']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [tatenda.gumbo283@micrlabs.onmicrosoft.com] — ['Deezer', 'Exploit.in']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [tatenda.gumbo283@micrlabs.onmicrosoft.com] — ['MathWay', 'Gravatar']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Tatenda Gumbo                  | Finance Officer           | score= 60 | findings=5 | sources=Gravatar, MathWay, Deezer, Adobe, Exploit.in
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [sifiso.tembo285@micrlabs.onmicrosoft.com] — ['Zynga', 'Chegg', 'Adobe']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [sifiso.tembo285@micrlabs.onmicrosoft.com] — ['Collection#1']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [sifiso.tembo285@micrlabs.onmicrosoft.com] — ['Tokopedia', 'Wishbone']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Sifiso Tembo                   | Billing Clerk             | score= 65 | findings=6 | sources=Zynga, Chegg, Adobe, Tokopedia, Collection#1, Wishbone
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nomvula.ncube286@micrlabs.onmicrosoft.com] — ['LinkedIn', 'Canva', 'Dropbox']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [nomvula.ncube286@micrlabs.onmicrosoft.com] — ['Deezer']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nomvula.ncube286@micrlabs.onmicrosoft.com] — ['Wattpad']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [nomvula.ncube286@micrlabs.onmicrosoft.com] — ['PasteBin-2023']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Nomvula Ncube                  | Billing Clerk             | score= 80 | findings=6 | sources=Dropbox, PasteBin-2023, LinkedIn, Deezer, Canva, Wattpad
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [zanele.ncube288@micrlabs.onmicrosoft.com] — ['Zynga', 'Canva', 'Dropbox']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [zanele.ncube288@micrlabs.onmicrosoft.com] — ['AntiPublic', 'LinkedIn2021']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [zanele.ncube288@micrlabs.onmicrosoft.com] — ['Gravatar', 'Wattpad']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [zanele.ncube288@micrlabs.onmicrosoft.com] — ['DarkForum-Health']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Zanele Ncube                   | Medical Coder             | score=100 | findings=8 | sources=Zynga, Dropbox, Gravatar, LinkedIn2021, Canva, Wattpad, DarkForum-Health, AntiPublic
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [tinashe.nkomo292@micrlabs.onmicrosoft.com] — ['Evite']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [tinashe.nkomo292@micrlabs.onmicrosoft.com] — ['LinkedIn2021', 'Collection#1']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [tinashe.nkomo292@micrlabs.onmicrosoft.com] — ['Tokopedia']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [tinashe.nkomo292@micrlabs.onmicrosoft.com] — ['RaidForums-Archive']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Tinashe Nkomo                  | Billing Clerk             | score= 75 | findings=5 | sources=Evite, LinkedIn2021, Tokopedia, Collection#1, RaidForums-Archive
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nompilo.tembo297@micrlabs.onmicrosoft.com] — ['MyFitnessPal', 'Adobe']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [nompilo.tembo297@micrlabs.onmicrosoft.com] — ['AntiPublic']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nompilo.tembo297@micrlabs.onmicrosoft.com] — ['Gravatar']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Nompilo Tembo                  | Medical Coder             | score= 45 | findings=4 | sources=MyFitnessPal, Adobe, Gravatar, AntiPublic
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [tinashe.chikwanda298@micrlabs.onmicrosoft.com] — ['Canva', 'Zynga', 'Adobe']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Tinashe Chikwanda              | Medical Coder             | score= 30 | findings=3 | sources=Zynga, Adobe, Canva
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [farai.nkomo299@micrlabs.onmicrosoft.com] — ['Evite', 'LinkedIn']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [farai.nkomo299@micrlabs.onmicrosoft.com] — ['LinkedIn2021', 'AntiPublic']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [farai.nkomo299@micrlabs.onmicrosoft.com] — ['Tokopedia', 'Wattpad']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [farai.nkomo299@micrlabs.onmicrosoft.com] — ['TelegramLeaks-2024']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Farai Nkomo                    | Billing Clerk             | score= 95 | findings=7 | sources=LinkedIn, Evite, LinkedIn2021, Tokopedia, Wattpad, TelegramLeaks-2024, AntiPublic
+2026-04-07 13:13:16 [INFO    ] --- Progress: 300/500 checked | Exposed so far: 124 ---
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [munyaradzi.mhlanga302@micrlabs.onmicrosoft.com] — ['MyFitnessPal']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [munyaradzi.mhlanga302@micrlabs.onmicrosoft.com] — ['AntiPublic', 'Exploit.in']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [munyaradzi.mhlanga302@micrlabs.onmicrosoft.com] — ['Gravatar']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [munyaradzi.mhlanga302@micrlabs.onmicrosoft.com] — ['TelegramLeaks-2024']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Munyaradzi Mhlanga             | Receptionist              | score= 75 | findings=5 | sources=Gravatar, MyFitnessPal, TelegramLeaks-2024, AntiPublic, Exploit.in
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [tatenda.mhlanga303@micrlabs.onmicrosoft.com] — ['LinkedIn']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [tatenda.mhlanga303@micrlabs.onmicrosoft.com] — ['LinkedIn2021', 'Deezer']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [tatenda.mhlanga303@micrlabs.onmicrosoft.com] — ['MathWay', 'Tokopedia']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Tatenda Mhlanga                | HR Manager                | score= 60 | findings=5 | sources=MathWay, Deezer, LinkedIn2021, LinkedIn, Tokopedia
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [tatenda.banda305@micrlabs.onmicrosoft.com] — ['LinkedIn', 'Chegg', 'Adobe']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [tatenda.banda305@micrlabs.onmicrosoft.com] — ['Collection#1']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [tatenda.banda305@micrlabs.onmicrosoft.com] — ['Wishbone', 'Wattpad']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Tatenda Banda                  | Facilities Manager        | score= 65 | findings=6 | sources=Chegg, LinkedIn, Adobe, Wattpad, Collection#1, Wishbone
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nompilo.zimba307@micrlabs.onmicrosoft.com] — ['LinkedIn', 'Dropbox', 'Canva']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [nompilo.zimba307@micrlabs.onmicrosoft.com] — ['Collection#1', 'Exploit.in']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nompilo.zimba307@micrlabs.onmicrosoft.com] — ['Gravatar', 'Wishbone']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Nompilo Zimba                  | Receptionist              | score= 80 | findings=7 | sources=Dropbox, Gravatar, LinkedIn, Canva, Collection#1, Wishbone, Exploit.in
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [munyaradzi.nkomo308@micrlabs.onmicrosoft.com] — ['Chegg', 'Adobe', 'MyFitnessPal']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [munyaradzi.nkomo308@micrlabs.onmicrosoft.com] — ['Wishbone']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Munyaradzi Nkomo               | Receptionist              | score= 40 | findings=4 | sources=Chegg, Adobe, Wishbone, MyFitnessPal
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nomvula.dube311@micrlabs.onmicrosoft.com] — ['LinkedIn', 'Dropbox', 'MyFitnessPal']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nomvula.dube311@micrlabs.onmicrosoft.com] — ['MathWay']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Nomvula Dube                   | Administrator             | score= 40 | findings=4 | sources=Dropbox, MyFitnessPal, MathWay, LinkedIn
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nomvula.tembo316@micrlabs.onmicrosoft.com] — ['MyFitnessPal', 'Adobe', 'Zynga']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nomvula.tembo316@micrlabs.onmicrosoft.com] — ['MathWay']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Nomvula Tembo                  | Administrator             | score= 40 | findings=4 | sources=Zynga, MyFitnessPal, Adobe, MathWay
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [thandi.tembo317@micrlabs.onmicrosoft.com] — ['Adobe', 'Chegg', 'Zynga']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [thandi.tembo317@micrlabs.onmicrosoft.com] — ['Collection#1']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [thandi.tembo317@micrlabs.onmicrosoft.com] — ['MathWay', 'Wishbone']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Thandi Tembo                   | Receptionist              | score= 65 | findings=6 | sources=Zynga, Chegg, MathWay, Adobe, Collection#1, Wishbone
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [takudzwa.mutasa319@micrlabs.onmicrosoft.com] — ['Adobe', 'LinkedIn', 'Zynga']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Takudzwa Mutasa                | HR Manager                | score= 30 | findings=3 | sources=Zynga, Adobe, LinkedIn
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [takudzwa.chikwanda320@micrlabs.onmicrosoft.com] — ['Evite', 'Canva']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [takudzwa.chikwanda320@micrlabs.onmicrosoft.com] — ['LinkedIn2021', 'Deezer']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [takudzwa.chikwanda320@micrlabs.onmicrosoft.com] — ['Wattpad']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [takudzwa.chikwanda320@micrlabs.onmicrosoft.com] — ['TelegramLeaks-2024']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Takudzwa Chikwanda             | Receptionist              | score= 85 | findings=6 | sources=Evite, LinkedIn2021, Deezer, Canva, Wattpad, TelegramLeaks-2024
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nkosi.mutasa322@micrlabs.onmicrosoft.com] — ['LinkedIn']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [nkosi.mutasa322@micrlabs.onmicrosoft.com] — ['LinkedIn2021']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nkosi.mutasa322@micrlabs.onmicrosoft.com] — ['Gravatar', 'Wattpad']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Nkosi Mutasa                   | HR Manager                | score= 45 | findings=4 | sources=LinkedIn2021, Gravatar, Wattpad, LinkedIn
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nompilo.tembo323@micrlabs.onmicrosoft.com] — ['MyFitnessPal', 'LinkedIn']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [nompilo.tembo323@micrlabs.onmicrosoft.com] — ['LinkedIn2021']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nompilo.tembo323@micrlabs.onmicrosoft.com] — ['Gravatar']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Nompilo Tembo                  | HR Manager                | score= 45 | findings=4 | sources=LinkedIn2021, MyFitnessPal, Gravatar, LinkedIn
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nomvula.moyo325@micrlabs.onmicrosoft.com] — ['Evite', 'MyFitnessPal', 'Chegg']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [nomvula.moyo325@micrlabs.onmicrosoft.com] — ['Deezer']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nomvula.moyo325@micrlabs.onmicrosoft.com] — ['MathWay', 'Tokopedia']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [nomvula.moyo325@micrlabs.onmicrosoft.com] — ['DarkForum-Health']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Nomvula Moyo                   | Administrator             | score= 90 | findings=7 | sources=Chegg, MathWay, Evite, Deezer, Tokopedia, MyFitnessPal, DarkForum-Health
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [sibusiso.banda326@micrlabs.onmicrosoft.com] — ['LinkedIn']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [sibusiso.banda326@micrlabs.onmicrosoft.com] — ['Deezer', 'Exploit.in']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [sibusiso.banda326@micrlabs.onmicrosoft.com] — ['MathWay']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [sibusiso.banda326@micrlabs.onmicrosoft.com] — ['TelegramLeaks-2024']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Sibusiso Banda                 | Receptionist              | score= 75 | findings=5 | sources=MathWay, Deezer, LinkedIn, TelegramLeaks-2024, Exploit.in
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [takudzwa.gumbo327@micrlabs.onmicrosoft.com] — ['Chegg', 'Adobe', 'Evite']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [takudzwa.gumbo327@micrlabs.onmicrosoft.com] — ['AntiPublic']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [takudzwa.gumbo327@micrlabs.onmicrosoft.com] — ['MathWay']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [takudzwa.gumbo327@micrlabs.onmicrosoft.com] — ['DarkForum-Health']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Takudzwa Gumbo                 | Administrator             | score= 80 | findings=6 | sources=Chegg, MathWay, Evite, Adobe, DarkForum-Health, AntiPublic
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [farai.nkomo328@micrlabs.onmicrosoft.com] — ['LinkedIn', 'Adobe']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [farai.nkomo328@micrlabs.onmicrosoft.com] — ['Deezer', 'AntiPublic']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [farai.nkomo328@micrlabs.onmicrosoft.com] — ['Gravatar']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Farai Nkomo                    | Facilities Manager        | score= 60 | findings=5 | sources=Gravatar, LinkedIn, Deezer, Adobe, AntiPublic
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [munyaradzi.phiri332@micrlabs.onmicrosoft.com] — ['Chegg', 'Dropbox', 'LinkedIn']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [munyaradzi.phiri332@micrlabs.onmicrosoft.com] — ['AntiPublic']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [munyaradzi.phiri332@micrlabs.onmicrosoft.com] — ['Gravatar', 'Wattpad']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [munyaradzi.phiri332@micrlabs.onmicrosoft.com] — ['PasteBin-2023']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Munyaradzi Phiri               | HR Manager                | score= 90 | findings=7 | sources=Dropbox, Chegg, Gravatar, PasteBin-2023, LinkedIn, Wattpad, AntiPublic
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [zanele.gumbo334@micrlabs.onmicrosoft.com] — ['Chegg', 'Zynga', 'Canva']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [zanele.gumbo334@micrlabs.onmicrosoft.com] — ['Deezer']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [zanele.gumbo334@micrlabs.onmicrosoft.com] — ['Wattpad']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [zanele.gumbo334@micrlabs.onmicrosoft.com] — ['DarkForum-Health']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Zanele Gumbo                   | HR Manager                | score= 80 | findings=6 | sources=Zynga, Chegg, Deezer, Canva, Wattpad, DarkForum-Health
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [sifiso.dube335@micrlabs.onmicrosoft.com] — ['Zynga', 'Canva', 'Adobe']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [sifiso.dube335@micrlabs.onmicrosoft.com] — ['AntiPublic']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [sifiso.dube335@micrlabs.onmicrosoft.com] — ['MathWay']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Sifiso Dube                    | Receptionist              | score= 55 | findings=5 | sources=Zynga, MathWay, Adobe, Canva, AntiPublic
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nyasha.mpofu338@micrlabs.onmicrosoft.com] — ['Chegg', 'Zynga']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nyasha.mpofu338@micrlabs.onmicrosoft.com] — ['Wattpad']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Nyasha Mpofu                   | HR Manager                | score= 30 | findings=3 | sources=Zynga, Chegg, Wattpad
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [tendai.moyo341@micrlabs.onmicrosoft.com] — ['Adobe']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [tendai.moyo341@micrlabs.onmicrosoft.com] — ['Exploit.in', 'LinkedIn2021']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [tendai.moyo341@micrlabs.onmicrosoft.com] — ['Gravatar']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [tendai.moyo341@micrlabs.onmicrosoft.com] — ['PasteBin-2023']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Tendai Moyo                    | Administrator             | score= 75 | findings=5 | sources=Gravatar, PasteBin-2023, LinkedIn2021, Adobe, Exploit.in
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [thandi.mpofu345@micrlabs.onmicrosoft.com] — ['MyFitnessPal', 'Adobe', 'Chegg']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [thandi.mpofu345@micrlabs.onmicrosoft.com] — ['Exploit.in', 'Collection#1']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [thandi.mpofu345@micrlabs.onmicrosoft.com] — ['Wishbone']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Thandi Mpofu                   | Facilities Manager        | score= 70 | findings=6 | sources=Chegg, Adobe, MyFitnessPal, Collection#1, Wishbone, Exploit.in
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [thandi.chirwa346@micrlabs.onmicrosoft.com] — ['LinkedIn', 'Dropbox']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Thandi Chirwa                  | Facilities Manager        | score= 20 | findings=2 | sources=Dropbox, LinkedIn
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [farai.phiri347@micrlabs.onmicrosoft.com] — ['Adobe', 'Chegg']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [farai.phiri347@micrlabs.onmicrosoft.com] — ['AntiPublic']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [farai.phiri347@micrlabs.onmicrosoft.com] — ['Gravatar']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Farai Phiri                    | Facilities Manager        | score= 45 | findings=4 | sources=Chegg, Adobe, Gravatar, AntiPublic
+2026-04-07 13:13:16 [INFO    ] --- Progress: 350/500 checked | Exposed so far: 148 ---
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [sifiso.banda355@micrlabs.onmicrosoft.com] — ['Dropbox']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [sifiso.banda355@micrlabs.onmicrosoft.com] — ['MathWay']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Sifiso Banda                   | Administrator             | score= 20 | findings=2 | sources=Dropbox, MathWay
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [tendai.moyo356@micrlabs.onmicrosoft.com] — ['Adobe', 'Canva']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [tendai.moyo356@micrlabs.onmicrosoft.com] — ['Tokopedia', 'Gravatar']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Tendai Moyo                    | Receptionist              | score= 40 | findings=4 | sources=Adobe, Canva, Tokopedia, Gravatar
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [chiedza.mhlanga357@micrlabs.onmicrosoft.com] — ['Canva', 'Chegg', 'Evite']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Chiedza Mhlanga                | Facilities Manager        | score= 30 | findings=3 | sources=Evite, Chegg, Canva
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nompilo.mutasa358@micrlabs.onmicrosoft.com] — ['Evite', 'Adobe']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [nompilo.mutasa358@micrlabs.onmicrosoft.com] — ['Exploit.in', 'Deezer']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nompilo.mutasa358@micrlabs.onmicrosoft.com] — ['Tokopedia']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Nompilo Mutasa                 | Receptionist              | score= 60 | findings=5 | sources=Evite, Deezer, Adobe, Tokopedia, Exploit.in
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [tendai.ncube360@micrlabs.onmicrosoft.com] — ['Chegg', 'LinkedIn', 'Evite']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [tendai.ncube360@micrlabs.onmicrosoft.com] — ['Collection#1', 'AntiPublic']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [tendai.ncube360@micrlabs.onmicrosoft.com] — ['Wishbone']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Tendai Ncube                   | HR Manager                | score= 70 | findings=6 | sources=Chegg, LinkedIn, Evite, Collection#1, Wishbone, AntiPublic
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [tatenda.chirwa364@micrlabs.onmicrosoft.com] — ['Adobe', 'Evite']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [tatenda.chirwa364@micrlabs.onmicrosoft.com] — ['LinkedIn2021']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [tatenda.chirwa364@micrlabs.onmicrosoft.com] — ['MathWay', 'Tokopedia']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [tatenda.chirwa364@micrlabs.onmicrosoft.com] — ['RaidForums-Archive']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Tatenda Chirwa                 | Receptionist              | score= 80 | findings=6 | sources=MathWay, Evite, LinkedIn2021, Adobe, Tokopedia, RaidForums-Archive
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [rudo.chirwa365@micrlabs.onmicrosoft.com] — ['LinkedIn', 'MyFitnessPal']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [rudo.chirwa365@micrlabs.onmicrosoft.com] — ['Deezer', 'Exploit.in']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [rudo.chirwa365@micrlabs.onmicrosoft.com] — ['Tokopedia', 'Gravatar']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [rudo.chirwa365@micrlabs.onmicrosoft.com] — ['DarkForum-Health']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Rudo Chirwa                    | HR Manager                | score= 95 | findings=7 | sources=Gravatar, LinkedIn, Deezer, Tokopedia, MyFitnessPal, DarkForum-Health, Exploit.in
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [sifiso.banda368@micrlabs.onmicrosoft.com] — ['Chegg', 'Dropbox', 'LinkedIn']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [sifiso.banda368@micrlabs.onmicrosoft.com] — ['Deezer', 'LinkedIn2021']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [sifiso.banda368@micrlabs.onmicrosoft.com] — ['MathWay']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Sifiso Banda                   | HR Manager                | score= 70 | findings=6 | sources=Dropbox, Chegg, LinkedIn, Deezer, LinkedIn2021, MathWay
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [kudzai.tembo369@micrlabs.onmicrosoft.com] — ['Zynga', 'Dropbox']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [kudzai.tembo369@micrlabs.onmicrosoft.com] — ['AntiPublic']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [kudzai.tembo369@micrlabs.onmicrosoft.com] — ['Tokopedia', 'Gravatar']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Kudzai Tembo                   | HR Manager                | score= 55 | findings=5 | sources=Zynga, Dropbox, Gravatar, Tokopedia, AntiPublic
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [munyaradzi.chirwa372@micrlabs.onmicrosoft.com] — ['Canva']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [munyaradzi.chirwa372@micrlabs.onmicrosoft.com] — ['AntiPublic', 'Exploit.in']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [munyaradzi.chirwa372@micrlabs.onmicrosoft.com] — ['Tokopedia', 'Wishbone']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Munyaradzi Chirwa              | Facilities Manager        | score= 60 | findings=5 | sources=Canva, Tokopedia, Wishbone, AntiPublic, Exploit.in
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [tsitsi.sithole376@micrlabs.onmicrosoft.com] — ['LinkedIn']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [tsitsi.sithole376@micrlabs.onmicrosoft.com] — ['Exploit.in', 'Collection#1']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [tsitsi.sithole376@micrlabs.onmicrosoft.com] — ['MathWay']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [tsitsi.sithole376@micrlabs.onmicrosoft.com] — ['PasteBin-2023']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Tsitsi Sithole                 | HR Manager                | score= 75 | findings=5 | sources=PasteBin-2023, MathWay, LinkedIn, Collection#1, Exploit.in
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nyasha.mutasa377@micrlabs.onmicrosoft.com] — ['Canva', 'Dropbox', 'Evite']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nyasha.mutasa377@micrlabs.onmicrosoft.com] — ['Wishbone']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Nyasha Mutasa                  | HR Manager                | score= 40 | findings=4 | sources=Dropbox, Canva, Evite, Wishbone
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [takudzwa.mutasa378@micrlabs.onmicrosoft.com] — ['Adobe']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [takudzwa.mutasa378@micrlabs.onmicrosoft.com] — ['Wishbone', 'Tokopedia']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Takudzwa Mutasa                | Receptionist              | score= 30 | findings=3 | sources=Adobe, Tokopedia, Wishbone
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nyasha.mhlanga380@micrlabs.onmicrosoft.com] — ['Adobe']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [nyasha.mhlanga380@micrlabs.onmicrosoft.com] — ['Collection#1', 'Exploit.in']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nyasha.mhlanga380@micrlabs.onmicrosoft.com] — ['Wishbone']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Nyasha Mhlanga                 | Administrator             | score= 50 | findings=4 | sources=Adobe, Collection#1, Wishbone, Exploit.in
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [sifiso.sithole383@micrlabs.onmicrosoft.com] — ['Adobe']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Sifiso Sithole                 | Facilities Manager        | score= 10 | findings=1 | sources=Adobe
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [munyaradzi.sithole384@micrlabs.onmicrosoft.com] — ['Dropbox', 'Adobe', 'Canva']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Munyaradzi Sithole             | Receptionist              | score= 30 | findings=3 | sources=Dropbox, Adobe, Canva
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [sibusiso.nkomo386@micrlabs.onmicrosoft.com] — ['Chegg']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [sibusiso.nkomo386@micrlabs.onmicrosoft.com] — ['AntiPublic']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [sibusiso.nkomo386@micrlabs.onmicrosoft.com] — ['Wattpad', 'Wishbone']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Sibusiso Nkomo                 | Receptionist              | score= 45 | findings=4 | sources=Chegg, Wishbone, Wattpad, AntiPublic
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [tatenda.tembo390@micrlabs.onmicrosoft.com] — ['Chegg']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [tatenda.tembo390@micrlabs.onmicrosoft.com] — ['Exploit.in', 'Collection#1']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [tatenda.tembo390@micrlabs.onmicrosoft.com] — ['Gravatar', 'Tokopedia']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [tatenda.tembo390@micrlabs.onmicrosoft.com] — ['RaidForums-Archive']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Tatenda Tembo                  | Facilities Manager        | score= 85 | findings=6 | sources=Chegg, Gravatar, Tokopedia, Collection#1, RaidForums-Archive, Exploit.in
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [sibusiso.zimba397@micrlabs.onmicrosoft.com] — ['MyFitnessPal', 'Zynga', 'Chegg']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [sibusiso.zimba397@micrlabs.onmicrosoft.com] — ['Gravatar']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Sibusiso Zimba                 | Facilities Manager        | score= 40 | findings=4 | sources=Zynga, MyFitnessPal, Gravatar, Chegg
+2026-04-07 13:13:16 [INFO    ] --- Progress: 400/500 checked | Exposed so far: 167 ---
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [tsitsi.mhlanga401@micrlabs.onmicrosoft.com] — ['LinkedIn', 'Evite', 'Chegg']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [tsitsi.mhlanga401@micrlabs.onmicrosoft.com] — ['Exploit.in']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [tsitsi.mhlanga401@micrlabs.onmicrosoft.com] — ['Tokopedia']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Tsitsi Mhlanga                 | Facilities Manager        | score= 55 | findings=5 | sources=Chegg, LinkedIn, Evite, Tokopedia, Exploit.in
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [zanele.chikwanda404@micrlabs.onmicrosoft.com] — ['Zynga', 'LinkedIn']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [zanele.chikwanda404@micrlabs.onmicrosoft.com] — ['Wattpad', 'Wishbone']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Zanele Chikwanda               | Receptionist              | score= 40 | findings=4 | sources=Zynga, Wattpad, Wishbone, LinkedIn
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [tendai.nkomo407@micrlabs.onmicrosoft.com] — ['Zynga', 'LinkedIn']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [tendai.nkomo407@micrlabs.onmicrosoft.com] — ['AntiPublic', 'LinkedIn2021']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [tendai.nkomo407@micrlabs.onmicrosoft.com] — ['Wattpad']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [tendai.nkomo407@micrlabs.onmicrosoft.com] — ['PasteBin-2023']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Tendai Nkomo                   | HR Manager                | score= 85 | findings=6 | sources=Zynga, PasteBin-2023, LinkedIn, LinkedIn2021, Wattpad, AntiPublic
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nomvula.moyo410@micrlabs.onmicrosoft.com] — ['MyFitnessPal', 'Zynga']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [nomvula.moyo410@micrlabs.onmicrosoft.com] — ['AntiPublic']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nomvula.moyo410@micrlabs.onmicrosoft.com] — ['Wishbone', 'Wattpad']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Nomvula Moyo                   | Facilities Manager        | score= 55 | findings=5 | sources=Zynga, MyFitnessPal, Wattpad, Wishbone, AntiPublic
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [bongani.gumbo413@micrlabs.onmicrosoft.com] — ['LinkedIn', 'MyFitnessPal']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [bongani.gumbo413@micrlabs.onmicrosoft.com] — ['Collection#1', 'Deezer']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [bongani.gumbo413@micrlabs.onmicrosoft.com] — ['Gravatar', 'Wattpad']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [bongani.gumbo413@micrlabs.onmicrosoft.com] — ['PasteBin-2023']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Bongani Gumbo                  | HR Manager                | score= 95 | findings=7 | sources=Gravatar, PasteBin-2023, LinkedIn, Deezer, MyFitnessPal, Wattpad, Collection#1
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nompilo.gumbo417@micrlabs.onmicrosoft.com] — ['Adobe']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Nompilo Gumbo                  | Facilities Manager        | score= 10 | findings=1 | sources=Adobe
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [chiedza.phiri420@micrlabs.onmicrosoft.com] — ['Chegg', 'LinkedIn', 'Evite']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [chiedza.phiri420@micrlabs.onmicrosoft.com] — ['Wattpad', 'Gravatar']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Chiedza Phiri                  | Receptionist              | score= 50 | findings=5 | sources=Chegg, Gravatar, LinkedIn, Evite, Wattpad
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [simba.chikwanda438@micrlabs.onmicrosoft.com] — ['Chegg']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [simba.chikwanda438@micrlabs.onmicrosoft.com] — ['MathWay']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Simba Chikwanda                | IT Administrator          | score= 20 | findings=2 | sources=Chegg, MathWay
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [zanele.mhlanga440@micrlabs.onmicrosoft.com] — ['Adobe', 'Dropbox']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [zanele.mhlanga440@micrlabs.onmicrosoft.com] — ['LinkedIn2021', 'Collection#1']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [zanele.mhlanga440@micrlabs.onmicrosoft.com] — ['MathWay']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Zanele Mhlanga                 | IT Administrator          | score= 60 | findings=5 | sources=Dropbox, MathWay, LinkedIn2021, Adobe, Collection#1
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [bongani.nkomo447@micrlabs.onmicrosoft.com] — ['LinkedIn']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [bongani.nkomo447@micrlabs.onmicrosoft.com] — ['AntiPublic', 'Collection#1']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [bongani.nkomo447@micrlabs.onmicrosoft.com] — ['Tokopedia', 'Wattpad']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [bongani.nkomo447@micrlabs.onmicrosoft.com] — ['TelegramLeaks-2024']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Bongani Nkomo                  | Security Analyst          | score= 85 | findings=6 | sources=LinkedIn, Tokopedia, Wattpad, Collection#1, TelegramLeaks-2024, AntiPublic
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nyasha.zimba450@micrlabs.onmicrosoft.com] — ['MyFitnessPal', 'Chegg', 'Zynga']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [nyasha.zimba450@micrlabs.onmicrosoft.com] — ['Exploit.in']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nyasha.zimba450@micrlabs.onmicrosoft.com] — ['Wishbone', 'Wattpad']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Nyasha Zimba                   | Security Analyst          | score= 65 | findings=6 | sources=Zynga, Chegg, MyFitnessPal, Wattpad, Wishbone, Exploit.in
+2026-04-07 13:13:16 [INFO    ] --- Progress: 450/500 checked | Exposed so far: 178 ---
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [chiedza.tembo451@micrlabs.onmicrosoft.com] — ['Canva', 'Zynga', 'Evite']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [chiedza.tembo451@micrlabs.onmicrosoft.com] — ['LinkedIn2021']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [chiedza.tembo451@micrlabs.onmicrosoft.com] — ['Wattpad']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Chiedza Tembo                  | Pharmacist                | score= 55 | findings=5 | sources=Zynga, Evite, LinkedIn2021, Canva, Wattpad
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nkosi.dube452@micrlabs.onmicrosoft.com] — ['LinkedIn', 'Zynga']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Nkosi Dube                     | Pharmacist                | score= 20 | findings=2 | sources=Zynga, LinkedIn
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [rudo.mutasa455@micrlabs.onmicrosoft.com] — ['Zynga']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [rudo.mutasa455@micrlabs.onmicrosoft.com] — ['Exploit.in', 'AntiPublic']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [rudo.mutasa455@micrlabs.onmicrosoft.com] — ['MathWay', 'Gravatar']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [rudo.mutasa455@micrlabs.onmicrosoft.com] — ['RaidForums-Archive']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Rudo Mutasa                    | Pharmacist                | score= 85 | findings=6 | sources=Zynga, Gravatar, MathWay, RaidForums-Archive, AntiPublic, Exploit.in
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nomvula.mhlanga456@micrlabs.onmicrosoft.com] — ['Canva']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [nomvula.mhlanga456@micrlabs.onmicrosoft.com] — ['Exploit.in']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nomvula.mhlanga456@micrlabs.onmicrosoft.com] — ['Wattpad']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Nomvula Mhlanga                | Pharmacy Technician       | score= 35 | findings=3 | sources=Wattpad, Canva, Exploit.in
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [bongani.mutasa457@micrlabs.onmicrosoft.com] — ['Chegg']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [bongani.mutasa457@micrlabs.onmicrosoft.com] — ['Deezer']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [bongani.mutasa457@micrlabs.onmicrosoft.com] — ['Wishbone']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Bongani Mutasa                 | Pharmacist                | score= 35 | findings=3 | sources=Deezer, Chegg, Wishbone
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [farai.phiri461@micrlabs.onmicrosoft.com] — ['Evite', 'Dropbox', 'LinkedIn']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Farai Phiri                    | Pharmacy Technician       | score= 30 | findings=3 | sources=Evite, Dropbox, LinkedIn
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nomvula.tembo462@micrlabs.onmicrosoft.com] — ['MyFitnessPal', 'Zynga', 'Evite']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [nomvula.tembo462@micrlabs.onmicrosoft.com] — ['Collection#1']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nomvula.tembo462@micrlabs.onmicrosoft.com] — ['Gravatar', 'Wishbone']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Nomvula Tembo                  | Pharmacy Technician       | score= 65 | findings=6 | sources=Zynga, Gravatar, Evite, MyFitnessPal, Collection#1, Wishbone
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nompilo.phiri463@micrlabs.onmicrosoft.com] — ['Evite', 'Chegg']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [nompilo.phiri463@micrlabs.onmicrosoft.com] — ['Deezer']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nompilo.phiri463@micrlabs.onmicrosoft.com] — ['Wishbone']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Nompilo Phiri                  | Pharmacy Technician       | score= 45 | findings=4 | sources=Evite, Chegg, Deezer, Wishbone
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [takudzwa.chikwanda464@micrlabs.onmicrosoft.com] — ['Adobe', 'Dropbox']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [takudzwa.chikwanda464@micrlabs.onmicrosoft.com] — ['Exploit.in', 'Collection#1']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [takudzwa.chikwanda464@micrlabs.onmicrosoft.com] — ['MathWay']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [takudzwa.chikwanda464@micrlabs.onmicrosoft.com] — ['PasteBin-2023']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Takudzwa Chikwanda             | Pharmacist                | score= 85 | findings=6 | sources=Dropbox, PasteBin-2023, MathWay, Adobe, Collection#1, Exploit.in
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [tatenda.phiri465@micrlabs.onmicrosoft.com] — ['Adobe']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [tatenda.phiri465@micrlabs.onmicrosoft.com] — ['Exploit.in', 'AntiPublic']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [tatenda.phiri465@micrlabs.onmicrosoft.com] — ['Tokopedia']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Tatenda Phiri                  | Pharmacy Technician       | score= 50 | findings=4 | sources=Adobe, Tokopedia, AntiPublic, Exploit.in
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [bongani.mhlanga467@micrlabs.onmicrosoft.com] — ['LinkedIn', 'Chegg']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [bongani.mhlanga467@micrlabs.onmicrosoft.com] — ['AntiPublic']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [bongani.mhlanga467@micrlabs.onmicrosoft.com] — ['Wishbone']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [bongani.mhlanga467@micrlabs.onmicrosoft.com] — ['DarkForum-Health']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Bongani Mhlanga                | Pharmacy Technician       | score= 70 | findings=5 | sources=Chegg, LinkedIn, Wishbone, DarkForum-Health, AntiPublic
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nkosi.mhlanga474@micrlabs.onmicrosoft.com] — ['Canva', 'Dropbox']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [nkosi.mhlanga474@micrlabs.onmicrosoft.com] — ['Deezer']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nkosi.mhlanga474@micrlabs.onmicrosoft.com] — ['Wattpad', 'Gravatar']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Nkosi Mhlanga                  | Pharmacist                | score= 55 | findings=5 | sources=Dropbox, Gravatar, Deezer, Canva, Wattpad
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [munyaradzi.nkomo475@micrlabs.onmicrosoft.com] — ['LinkedIn', 'Adobe', 'Zynga']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [munyaradzi.nkomo475@micrlabs.onmicrosoft.com] — ['LinkedIn2021']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [munyaradzi.nkomo475@micrlabs.onmicrosoft.com] — ['Gravatar', 'Tokopedia']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [munyaradzi.nkomo475@micrlabs.onmicrosoft.com] — ['DarkForum-Health']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Munyaradzi Nkomo               | Pharmacy Technician       | score= 90 | findings=7 | sources=Zynga, Gravatar, LinkedIn, LinkedIn2021, Adobe, Tokopedia, DarkForum-Health
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nyasha.mpofu477@micrlabs.onmicrosoft.com] — ['Dropbox', 'Zynga']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nyasha.mpofu477@micrlabs.onmicrosoft.com] — ['Wattpad']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Nyasha Mpofu                   | Pharmacist                | score= 30 | findings=3 | sources=Dropbox, Wattpad, Zynga
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [kudzai.zimba478@micrlabs.onmicrosoft.com] — ['Adobe', 'LinkedIn']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [kudzai.zimba478@micrlabs.onmicrosoft.com] — ['AntiPublic', 'LinkedIn2021']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [kudzai.zimba478@micrlabs.onmicrosoft.com] — ['MathWay', 'Gravatar']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [kudzai.zimba478@micrlabs.onmicrosoft.com] — ['DarkForum-Health']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Kudzai Zimba                   | Pharmacist                | score= 95 | findings=7 | sources=Gravatar, MathWay, LinkedIn, LinkedIn2021, Adobe, DarkForum-Health, AntiPublic
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [tinashe.ncube483@micrlabs.onmicrosoft.com] — ['Evite']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [tinashe.ncube483@micrlabs.onmicrosoft.com] — ['Exploit.in', 'Collection#1']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [tinashe.ncube483@micrlabs.onmicrosoft.com] — ['Gravatar']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Tinashe Ncube                  | Radiologist               | score= 50 | findings=4 | sources=Evite, Gravatar, Collection#1, Exploit.in
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nkosi.mutasa485@micrlabs.onmicrosoft.com] — ['Adobe']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [nkosi.mutasa485@micrlabs.onmicrosoft.com] — ['Tokopedia', 'Wishbone']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Nkosi Mutasa                   | Radiologist               | score= 30 | findings=3 | sources=Adobe, Tokopedia, Wishbone
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [tinashe.phiri487@micrlabs.onmicrosoft.com] — ['Chegg']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [tinashe.phiri487@micrlabs.onmicrosoft.com] — ['Deezer']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [tinashe.phiri487@micrlabs.onmicrosoft.com] — ['Tokopedia']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Tinashe Phiri                  | Radiographer              | score= 35 | findings=3 | sources=Deezer, Chegg, Tokopedia
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [sifiso.gumbo488@micrlabs.onmicrosoft.com] — ['LinkedIn', 'Evite', 'MyFitnessPal']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Sifiso Gumbo                   | Radiographer              | score= 30 | findings=3 | sources=Evite, MyFitnessPal, LinkedIn
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [lungelo.phiri489@micrlabs.onmicrosoft.com] — ['MyFitnessPal', 'Evite', 'Canva']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [lungelo.phiri489@micrlabs.onmicrosoft.com] — ['LinkedIn2021']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [lungelo.phiri489@micrlabs.onmicrosoft.com] — ['Wishbone']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Lungelo Phiri                  | Radiographer              | score= 55 | findings=5 | sources=Evite, LinkedIn2021, Canva, MyFitnessPal, Wishbone
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [munyaradzi.nkomo490@micrlabs.onmicrosoft.com] — ['Dropbox']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [munyaradzi.nkomo490@micrlabs.onmicrosoft.com] — ['LinkedIn2021']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [munyaradzi.nkomo490@micrlabs.onmicrosoft.com] — ['MathWay', 'Wishbone']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [munyaradzi.nkomo490@micrlabs.onmicrosoft.com] — ['PasteBin-2023']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Munyaradzi Nkomo               | Radiologist               | score= 70 | findings=5 | sources=Dropbox, PasteBin-2023, MathWay, LinkedIn2021, Wishbone
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [bongani.tembo493@micrlabs.onmicrosoft.com] — ['LinkedIn']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [bongani.tembo493@micrlabs.onmicrosoft.com] — ['Deezer']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [bongani.tembo493@micrlabs.onmicrosoft.com] — ['Gravatar', 'MathWay']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [bongani.tembo493@micrlabs.onmicrosoft.com] — ['RaidForums-Archive']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Bongani Tembo                  | Radiologist               | score= 70 | findings=5 | sources=Gravatar, MathWay, Deezer, LinkedIn, RaidForums-Archive
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [nkosi.tembo494@micrlabs.onmicrosoft.com] — ['Chegg', 'MyFitnessPal', 'Evite']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Nkosi Tembo                    | Radiologist               | score= 30 | findings=3 | sources=Evite, Chegg, MyFitnessPal
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [tinashe.tembo495@micrlabs.onmicrosoft.com] — ['Zynga']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [tinashe.tembo495@micrlabs.onmicrosoft.com] — ['LinkedIn2021', 'AntiPublic']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [tinashe.tembo495@micrlabs.onmicrosoft.com] — ['Wattpad', 'Wishbone']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Tinashe Tembo                  | Radiographer              | score= 60 | findings=5 | sources=Zynga, LinkedIn2021, Wattpad, Wishbone, AntiPublic
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [takudzwa.phiri496@micrlabs.onmicrosoft.com] — ['Zynga']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [takudzwa.phiri496@micrlabs.onmicrosoft.com] — ['AntiPublic', 'LinkedIn2021']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [takudzwa.phiri496@micrlabs.onmicrosoft.com] — ['Tokopedia']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED [DARK WEB]] Takudzwa Phiri                 | Radiographer              | score= 50 | findings=4 | sources=Zynga, LinkedIn2021, Tokopedia, AntiPublic
+2026-04-07 13:13:16 [DEBUG   ] HIBP SIM [munyaradzi.chikwanda497@micrlabs.onmicrosoft.com] — ['Adobe']
+2026-04-07 13:13:16 [DEBUG   ] DeHashed SIM [munyaradzi.chikwanda497@micrlabs.onmicrosoft.com] — ['LinkedIn2021']
+2026-04-07 13:13:16 [DEBUG   ] LeakCheck SIM [munyaradzi.chikwanda497@micrlabs.onmicrosoft.com] — ['Wattpad', 'Wishbone']
+2026-04-07 13:13:16 [DEBUG   ] IntelX SIM [munyaradzi.chikwanda497@micrlabs.onmicrosoft.com] — ['TelegramLeaks-2024']
+2026-04-07 13:13:16 [INFO    ] [EXPOSED] Munyaradzi Chikwanda           | Radiologist               | score= 70 | findings=5 | sources=LinkedIn2021, Adobe, Wattpad, Wishbone, TelegramLeaks-2024
+2026-04-07 13:13:16 [INFO    ] --- Progress: 500/500 checked | Exposed so far: 204 ---
+2026-04-07 13:13:16 [INFO    ] 
+2026-04-07 13:13:16 [INFO    ] ============================================================
+2026-04-07 13:13:16 [INFO    ] THREAT INTELLIGENCE ANALYSIS
+2026-04-07 13:13:16 [INFO    ] ============================================================
+2026-04-07 13:13:16 [INFO    ] Deriving threat intelligence...
+2026-04-07 13:13:16 [INFO    ]   Exposure rate : 40.8% (204/500)
+2026-04-07 13:13:16 [INFO    ]   Dark web hits : 116
+2026-04-07 13:13:16 [INFO    ]   Top dept      : Radiology (55.0%)
+2026-04-07 13:13:16 [INFO    ]   Tool hits — HIBP:204 DeHashed:146 LeakCheck:176 IntelX:70
+2026-04-07 13:13:16 [INFO    ]   [CRITICAL] Immediate forced password reset for all users with dark web / paste site exposure
+2026-04-07 13:13:16 [INFO    ]   [HIGH] Priority MFA enforcement and CA policy tightening for Radiology
+2026-04-07 13:13:16 [INFO    ]   [HIGH] Enable Entra ID Password Protection with banned-password list
+2026-04-07 13:13:16 [INFO    ]   [HIGH] Audit for username/password reuse across personal and work accounts
+2026-04-07 13:13:16 [INFO    ]   [MEDIUM] Enrol all exposed users in Identity Protection risky-user remediation workflow
+2026-04-07 13:13:16 [INFO    ]   [MEDIUM] Integrate OSINT checks into the joiner provisioning workflow
+2026-04-07 13:13:16 [INFO    ]   [LOW] Schedule monthly OSINT re-scans and feed results into the threat dashboard
+2026-04-07 13:13:16 [INFO    ] 
+2026-04-07 13:13:16 [INFO    ] ============================================================
+2026-04-07 13:13:16 [INFO    ] SCAN COMPLETE
+2026-04-07 13:13:16 [INFO    ]   Total personas   : 500
+2026-04-07 13:13:16 [INFO    ]   Exposed          : 204 (40.8%)
+2026-04-07 13:13:16 [INFO    ]   Dark web hits    : 116 (23.2%)
+2026-04-07 13:13:16 [INFO    ]   Avg exp score    : 56.6/100
+2026-04-07 13:13:16 [INFO    ] ============================================================
+2026-04-07 13:13:16 [INFO    ] Combined results  -> /home/runner/work/medizuva-zt-framework/medizuva-zt-framework/data/osint_results/osint_combined_results.json
+2026-04-07 13:13:16 [INFO    ] Legacy HIBP file  -> /home/runner/work/medizuva-zt-framework/medizuva-zt-framework/data/osint_results/hibp_results.json
+2026-04-07 13:13:16 [INFO    ] Run log           -> /home/runner/work/medizuva-zt-framework/medizuva-zt-framework/data/osint_results/osint_run.log
+2026-04-07 13:13:16 [INFO    ] Next: run pillar4_threat/threat_audit.ps1
