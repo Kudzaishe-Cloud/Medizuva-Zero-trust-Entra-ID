@@ -93,7 +93,7 @@ def overall_posture(p1_ok, p2, p3, p4):
 
 # ── HTML builder ──────────────────────────────────────────────
 
-def build_html(p1, p2, p3, p4, osint, nist, log_txt):
+def build_html(p1, p2, p3, p4, osint, log_txt):
     generated = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     # ── Pillar summaries ──────────────────────────────────────
@@ -269,43 +269,6 @@ def build_html(p1, p2, p3, p4, osint, nist, log_txt):
     # ── Log content (escaped) ────────────────────────────────
     log_escaped = _html.escape(log_txt)
 
-    # ── NIST compliance data ──────────────────────────────────
-    nist_score    = (nist or {}).get("ComplianceScore", 0)
-    nist_status   = (nist or {}).get("OverallStatus", "NOT EVALUATED")
-    nist_pass     = (nist or {}).get("Summary", {}).get("PASS",    0)
-    nist_partial  = (nist or {}).get("Summary", {}).get("PARTIAL", 0)
-    nist_fail     = (nist or {}).get("Summary", {}).get("FAIL",    0)
-    nist_controls = (nist or {}).get("Controls", [])
-    nist_score_col= "#10b981" if nist_score >= 80 else "#f59e0b" if nist_score >= 60 else "#ef4444"
-
-    NIST_STATUS_BADGE = {
-        "PASS":           '<span class="badge b-green">PASS</span>',
-        "PARTIAL":        '<span class="badge b-amber">PARTIAL</span>',
-        "FAIL":           '<span class="badge b-red">FAIL</span>',
-        "NOT_APPLICABLE": '<span class="badge b-gray">N/A</span>',
-    }
-    NIST_FRAMEWORK_COLOUR = {
-        "NIST SP 800-207": "#00d4ff",
-        "NIST SP 800-53":  "#a855f7",
-        "NIST SP 800-63B": "#3b82f6",
-        "NIST SP 800-137": "#10b981",
-    }
-    nist_rows = ""
-    for ctrl in nist_controls:
-        badge   = NIST_STATUS_BADGE.get(ctrl.get("Status", "FAIL"), NIST_STATUS_BADGE["FAIL"])
-        fw      = ctrl.get("Framework", "")
-        fw_col  = NIST_FRAMEWORK_COLOUR.get(fw, "#6b7280")
-        fix     = _html.escape(ctrl.get("Remediation", "")) if ctrl.get("Status") in ("PARTIAL", "FAIL") else ""
-        fix_html= f'<div class="nist-fix">{fix}</div>' if fix else ""
-        nist_rows += (
-            f"<tr>"
-            f"<td class='mono' style='color:{fw_col}'>{_html.escape(ctrl.get('ControlId',''))}</td>"
-            f"<td class='muted'>{_html.escape(ctrl.get('Name',''))}</td>"
-            f"<td><span style='color:{fw_col};font-size:11px;font-weight:600'>{_html.escape(fw)}</span></td>"
-            f"<td>{badge}</td>"
-            f"<td class='muted' style='max-width:320px'>{_html.escape(ctrl.get('Details',''))}{fix_html}</td>"
-            f"</tr>\n"
-        )
 
     # ── Prediction data (derived from existing signals) ───────
     # Simple linear projection: if 40.8% exposed now, and dark web = 23.2%,
@@ -571,13 +534,6 @@ tbody td{{padding:11px 16px;vertical-align:middle}}
       </svg>
       <span class="nav-label">OSINT · Intel</span>
       <div class="nav-dot" style="color:var(--purple);animation:pulse 2s infinite"></div>
-    </div>
-    <div class="nav-item" onclick="show('nist')" id="nav-nist">
-      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
-      </svg>
-      <span class="nav-label">NIST SP 800</span>
-      <div class="nav-dot" style="color:{nist_score_col}"></div>
     </div>
     <div class="nav-item" onclick="show('logs')" id="nav-logs">
       <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1051,58 +1007,6 @@ tbody td{{padding:11px 16px;vertical-align:middle}}
     </section>
 
     <!-- ══════════════════════════════════════════════════════
-         NIST SP 800 COMPLIANCE
-    ═══════════════════════════════════════════════════════ -->
-    <section class="panel" id="panel-nist">
-      <div class="panel-header">
-        <div>
-          <div class="panel-title">NIST SP 800 Compliance</div>
-          <div class="panel-sub">SP 800-207 Zero Trust · SP 800-53 Rev5 · SP 800-63B · SP 800-137</div>
-        </div>
-        <span class="badge" style="background:{nist_score_col}20;color:{nist_score_col};border:1px solid {nist_score_col}40;font-size:15px;padding:6px 14px">{nist_score:.1f}% {nist_status}</span>
-      </div>
-      <div class="grid-4" style="margin-bottom:20px">
-        <div class="stat-card">
-          <div class="stat-val" style="color:#10b981">{nist_pass}</div>
-          <div class="stat-lbl">PASS</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-val" style="color:#f59e0b">{nist_partial}</div>
-          <div class="stat-lbl">PARTIAL</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-val" style="color:#ef4444">{nist_fail}</div>
-          <div class="stat-lbl">FAIL</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-val" style="color:{nist_score_col}">{nist_score:.0f}%</div>
-          <div class="stat-lbl">Score</div>
-        </div>
-      </div>
-      <div style="margin-bottom:12px;padding:10px 14px;background:#0a1f35;border-radius:8px;border-left:3px solid {nist_score_col}">
-        <span style="color:{nist_score_col};font-weight:700;font-size:13px">COMPLIANCE SCORE GAUGE</span>
-        <div style="margin-top:8px;background:#1a3050;border-radius:999px;height:10px">
-          <div style="width:{min(100,nist_score):.0f}%;background:{nist_score_col};border-radius:999px;height:10px;transition:width 1s ease"></div>
-        </div>
-        <div style="display:flex;justify-content:space-between;margin-top:4px">
-          <span style="color:#5a7a9a;font-size:11px">0%</span>
-          <span style="color:#5a7a9a;font-size:11px">60% Acceptable</span>
-          <span style="color:#5a7a9a;font-size:11px">80% Substantially Compliant</span>
-          <span style="color:#5a7a9a;font-size:11px">100%</span>
-        </div>
-      </div>
-      <div class="table-wrap">
-        <table>
-          <thead><tr>
-            <th>Control ID</th><th>Control Name</th><th>Framework</th>
-            <th>Status</th><th>Details / Remediation</th>
-          </tr></thead>
-          <tbody>{nist_rows}</tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════════════════════
          AUDIT LOGS
     ═══════════════════════════════════════════════════════ -->
     <section class="panel" id="panel-logs">
@@ -1136,7 +1040,7 @@ const KPI_EXPOSED  = {oi.get('TotalExposed',0)};
 const KPI_MFA      = {p4s.get('MFAGaps',0)};
 
 // ── Navigation ───────────────────────────────────────────────
-const PANELS = ['overview','p1','p2','p3','p4','osint','nist','logs'];
+const PANELS = ['overview','p1','p2','p3','p4','osint','logs'];
 function show(id) {{
   PANELS.forEach(p => {{
     document.getElementById('panel-'+p).classList.toggle('active', p===id);
@@ -1364,21 +1268,19 @@ def main():
     print(" MediZuva — Central Dashboard Generator")
     print("=========================================")
 
-    p1, p2, p3, p4, osint, nist, log_txt = load_all()
+    p1, p2, p3, p4, osint, _, log_txt = load_all()
     print(f"  P1 personas   : {p1['total']}")
     p2_policies_n = len((p2 or {}).get('Policies', []))
     p3_eligible_n = (p3 or {}).get('Summary', {}).get('TotalEligible', 0)
     p4_critical_n = (p4 or {}).get('Summary', {}).get('Critical', 0)
     osint_exp_n   = (osint or {}).get('ExposedCount', 0)
-    nist_score_n  = (nist or {}).get('ComplianceScore', 0)
     print(f"  P2 CA policies: {p2_policies_n}")
     print(f"  P3 PIM roles  : {p3_eligible_n} eligible")
     print(f"  P4 threat     : {p4_critical_n} critical")
     print(f"  OSINT exposed : {osint_exp_n} users")
-    print(f"  NIST score    : {nist_score_n:.1f}%")
     print(f"  Log lines     : {log_txt.count(chr(10))}")
 
-    html = build_html(p1, p2, p3, p4, osint, nist, log_txt)
+    html = build_html(p1, p2, p3, p4, osint, log_txt)
     OUT_HTML.write_text(html, encoding="utf-8")
     print(f"\n[OK] Dashboard written: {OUT_HTML}")
     print("     Open in browser or serve with: python -m http.server 8080 (in data/)\n")
