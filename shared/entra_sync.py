@@ -77,8 +77,8 @@ def fetch_risky_users(headers: dict) -> list:
     select_param = "id,userDisplayName,userPrincipalName,riskLevel,riskState,riskLastUpdatedDateTime,isDeleted"
     url = (
         f"{GRAPH_BASE}/identityProtection/riskyUsers"
-        f"?$filter={urllib.parse.quote(filter_param)}"
-        f"&$select={urllib.parse.quote(select_param)}"
+        f"?$filter={urllib.parse.quote(filter_param, safe='')}"
+        f"&$select={urllib.parse.quote(select_param, safe='')}"
     )
     users = []
     for u in graph_get(url, headers):
@@ -117,10 +117,12 @@ def fetch_mfa_gaps(headers: dict) -> list:
 
 def fetch_device_gaps(headers: dict) -> list:
     print("[3/3] Querying non-compliant managed devices...")
+    filter_param = "complianceState ne 'compliant'"
+    select_param = "id,deviceName,userDisplayName,userPrincipalName,complianceState,operatingSystem,lastSyncDateTime"
     url  = (
         f"{GRAPH_BASE}/deviceManagement/managedDevices"
-        f"?$filter=complianceState ne 'compliant'"
-        f"&$select=id,deviceName,userDisplayName,userPrincipalName,complianceState,operatingSystem,lastSyncDateTime"
+        f"?$filter={urllib.parse.quote(filter_param, safe='')}"
+        f"&$select={urllib.parse.quote(select_param, safe='')}"
     )
     gaps = []
     for d in graph_get(url, headers):
