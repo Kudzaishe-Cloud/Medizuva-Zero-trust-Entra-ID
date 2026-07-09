@@ -1,5 +1,5 @@
 {
-  "ScanDate": "2026-07-09 02:09:39",
+  "ScanDate": "2026-07-09 09:36:01",
   "Mode": "live",
   "Sources": {
     "HIBP": "simulated",
@@ -10,7 +10,7 @@
   "TotalChecked": 500,
   "ExposedCount": 204,
   "ThreatIntelligence": {
-    "GeneratedAt": "2026-07-09 02:09:39",
+    "GeneratedAt": "2026-07-09 09:36:01",
     "Overview": {
       "TotalPersonas": 500,
       "TotalExposed": 204,
@@ -112,8 +112,8 @@
       }
     ],
     "BreachCategories": {
-      "credential_dump": 85,
       "health_app": 43,
+      "credential_dump": 85,
       "education": 49,
       "social_media": 115,
       "cloud_storage": 52,
@@ -121,9 +121,9 @@
       "design_tool": 47,
       "paste_site": 17,
       "dark_web": 64,
-      "media_streaming": 38,
       "messaging_platform": 16,
-      "software": 59
+      "software": 59,
+      "media_streaming": 38
     },
     "MostExposedTitles": [
       {
@@ -157,12 +157,12 @@
         "DarkWeb": true,
         "TotalFindings": 6,
         "Sources": [
-          "Exploit.in",
-          "LinkedIn",
+          "Chegg",
           "Canva",
+          "LinkedIn",
           "Collection#1",
-          "PasteBin-2023",
-          "Chegg"
+          "Exploit.in",
+          "PasteBin-2023"
         ]
       },
       {
@@ -174,12 +174,12 @@
         "DarkWeb": true,
         "TotalFindings": 6,
         "Sources": [
+          "Canva",
+          "Deezer",
           "MyFitnessPal",
           "Adobe",
           "AntiPublic",
-          "Deezer",
-          "TelegramLeaks-2024",
-          "Canva"
+          "TelegramLeaks-2024"
         ]
       },
       {
@@ -191,12 +191,12 @@
         "DarkWeb": true,
         "TotalFindings": 6,
         "Sources": [
-          "MyFitnessPal",
-          "Zynga",
-          "Exploit.in",
-          "TelegramLeaks-2024",
           "Canva",
-          "Collection#1"
+          "MyFitnessPal",
+          "TelegramLeaks-2024",
+          "Zynga",
+          "Collection#1",
+          "Exploit.in"
         ]
       },
       {
@@ -208,12 +208,12 @@
         "DarkWeb": true,
         "TotalFindings": 6,
         "Sources": [
-          "Zynga",
-          "Exploit.in",
+          "Chegg",
           "Deezer",
-          "LinkedIn",
           "TelegramLeaks-2024",
-          "Chegg"
+          "Zynga",
+          "LinkedIn",
+          "Exploit.in"
         ]
       },
       {
@@ -225,12 +225,12 @@
         "DarkWeb": true,
         "TotalFindings": 6,
         "Sources": [
+          "Chegg",
+          "Canva",
+          "Deezer",
           "Adobe",
           "Exploit.in",
-          "Deezer",
-          "Canva",
-          "DarkForum-Health",
-          "Chegg"
+          "DarkForum-Health"
         ]
       },
       {
@@ -242,12 +242,12 @@
         "DarkWeb": true,
         "TotalFindings": 6,
         "Sources": [
-          "Zynga",
+          "Canva",
           "AntiPublic",
           "LinkedIn2021",
-          "Canva",
-          "DarkForum-Health",
-          "Dropbox"
+          "Dropbox",
+          "Zynga",
+          "DarkForum-Health"
         ]
       },
       {
@@ -259,10 +259,10 @@
         "DarkWeb": true,
         "TotalFindings": 5,
         "Sources": [
-          "Zynga",
+          "Deezer",
           "Evite",
           "LinkedIn2021",
-          "Deezer",
+          "Zynga",
           "PasteBin-2023"
         ]
       },
@@ -275,10 +275,10 @@
         "DarkWeb": true,
         "TotalFindings": 5,
         "Sources": [
-          "Zynga",
+          "Deezer",
           "Evite",
           "LinkedIn2021",
-          "Deezer",
+          "Zynga",
           "PasteBin-2023"
         ]
       },
@@ -294,8 +294,8 @@
           "AntiPublic",
           "Evite",
           "LinkedIn2021",
-          "TelegramLeaks-2024",
-          "Dropbox"
+          "Dropbox",
+          "TelegramLeaks-2024"
         ]
       },
       {
@@ -310,8 +310,8 @@
           "AntiPublic",
           "Evite",
           "LinkedIn",
-          "DarkForum-Health",
-          "Collection#1"
+          "Collection#1",
+          "DarkForum-Health"
         ]
       }
     ],
@@ -416,8 +416,8 @@
         "AntiPublic"
       ],
       "Categories": [
-        "credential_dump",
-        "health_app"
+        "health_app",
+        "credential_dump"
       ],
       "HIBP": {
         "source": "hibp",
@@ -722,13 +722,13 @@
       "DarkWebExposure": false,
       "TotalFindings": 3,
       "BreachSources": [
-        "MyFitnessPal",
         "Evite",
+        "MyFitnessPal",
         "LinkedIn"
       ],
       "Categories": [
-        "social_media",
-        "health_app"
+        "health_app",
+        "social_media"
       ],
       "HIBP": {
         "source": "hibp",
@@ -799,14 +799,14 @@
       "DarkWebExposure": true,
       "TotalFindings": 3,
       "BreachSources": [
-        "Zynga",
         "Dropbox",
+        "Zynga",
         "AntiPublic"
       ],
       "Categories": [
-        "gaming",
+        "cloud_storage",
         "credential_dump",
-        "cloud_storage"
+        "gaming"
       ],
       "HIBP": {
         "source": "hibp",
@@ -1071,16 +1071,16 @@
       "DarkWebExposure": true,
       "TotalFindings": 5,
       "BreachSources": [
+        "Canva",
         "AntiPublic",
         "Evite",
         "LinkedIn",
-        "Canva",
         "Collection#1"
       ],
       "Categories": [
         "credential_dump",
-        "design_tool",
-        "social_media"
+        "social_media",
+        "design_tool"
       ],
       "HIBP": {
         "source": "hibp",
@@ -1245,20 +1245,20 @@
       "DarkWebExposure": true,
       "TotalFindings": 6,
       "BreachSources": [
-        "Exploit.in",
-        "LinkedIn",
+        "Chegg",
         "Canva",
+        "LinkedIn",
         "Collection#1",
-        "PasteBin-2023",
-        "Chegg"
+        "Exploit.in",
+        "PasteBin-2023"
       ],
       "Categories": [
-        "credential_dump",
-        "paste_site",
+        "social_media",
         "design_tool",
+        "paste_site",
         "dark_web",
         "education",
-        "social_media"
+        "credential_dump"
       ],
       "HIBP": {
         "source": "hibp",
@@ -1508,20 +1508,20 @@
       "DarkWebExposure": true,
       "TotalFindings": 6,
       "BreachSources": [
+        "Canva",
+        "Deezer",
         "MyFitnessPal",
         "Adobe",
         "AntiPublic",
-        "Deezer",
-        "TelegramLeaks-2024",
-        "Canva"
+        "TelegramLeaks-2024"
       ],
       "Categories": [
-        "credential_dump",
-        "health_app",
+        "messaging_platform",
+        "software",
         "media_streaming",
         "design_tool",
-        "messaging_platform",
-        "software"
+        "credential_dump",
+        "health_app"
       ],
       "HIBP": {
         "source": "hibp",
@@ -1771,18 +1771,18 @@
       "DarkWebExposure": true,
       "TotalFindings": 5,
       "BreachSources": [
+        "Chegg",
         "Adobe",
         "LinkedIn",
-        "DarkForum-Health",
         "Collection#1",
-        "Chegg"
+        "DarkForum-Health"
       ],
       "Categories": [
-        "credential_dump",
+        "software",
+        "social_media",
         "dark_web",
         "education",
-        "social_media",
-        "software"
+        "credential_dump"
       ],
       "HIBP": {
         "source": "hibp",
@@ -1947,15 +1947,15 @@
       "DarkWebExposure": true,
       "TotalFindings": 4,
       "BreachSources": [
-        "MyFitnessPal",
         "Deezer",
+        "MyFitnessPal",
         "Adobe",
         "PasteBin-2023"
       ],
       "Categories": [
-        "paste_site",
         "health_app",
         "media_streaming",
+        "paste_site",
         "software"
       ],
       "HIBP": {
@@ -2219,8 +2219,8 @@
       "DarkWebExposure": false,
       "TotalFindings": 3,
       "BreachSources": [
-        "Dropbox",
         "Evite",
+        "Dropbox",
         "LinkedIn"
       ],
       "Categories": [
@@ -2413,12 +2413,12 @@
       "DarkWebExposure": false,
       "TotalFindings": 2,
       "BreachSources": [
-        "Zynga",
-        "Evite"
+        "Evite",
+        "Zynga"
       ],
       "Categories": [
-        "gaming",
-        "social_media"
+        "social_media",
+        "gaming"
       ],
       "HIBP": {
         "source": "hibp",
@@ -2479,18 +2479,18 @@
       "DarkWebExposure": true,
       "TotalFindings": 5,
       "BreachSources": [
+        "Chegg",
         "AntiPublic",
-        "Exploit.in",
-        "LinkedIn",
         "Dropbox",
-        "Chegg"
+        "LinkedIn",
+        "Exploit.in"
       ],
       "Categories": [
-        "credential_dump",
+        "social_media",
         "dark_web",
         "education",
-        "cloud_storage",
-        "social_media"
+        "credential_dump",
+        "cloud_storage"
       ],
       "HIBP": {
         "source": "hibp",
@@ -2635,8 +2635,8 @@
         "Zynga"
       ],
       "Categories": [
-        "gaming",
-        "design_tool"
+        "design_tool",
+        "gaming"
       ],
       "HIBP": {
         "source": "hibp",
@@ -2698,13 +2698,13 @@
       "TotalFindings": 3,
       "BreachSources": [
         "LinkedIn2021",
-        "RaidForums-Archive",
-        "Dropbox"
+        "Dropbox",
+        "RaidForums-Archive"
       ],
       "Categories": [
         "social_media",
-        "dark_web",
-        "cloud_storage"
+        "cloud_storage",
+        "dark_web"
       ],
       "HIBP": {
         "source": "hibp",
@@ -2850,15 +2850,15 @@
       "TotalFindings": 4,
       "BreachSources": [
         "Canva",
-        "Zynga",
         "Exploit.in",
+        "Zynga",
         "AntiPublic"
       ],
       "Categories": [
-        "gaming",
+        "credential_dump",
         "design_tool",
-        "dark_web",
-        "credential_dump"
+        "gaming",
+        "dark_web"
       ],
       "HIBP": {
         "source": "hibp",
@@ -2935,13 +2935,13 @@
       "DarkWebExposure": true,
       "TotalFindings": 3,
       "BreachSources": [
+        "Collection#1",
         "TelegramLeaks-2024",
-        "MyFitnessPal",
-        "Collection#1"
+        "MyFitnessPal"
       ],
       "Categories": [
-        "credential_dump",
         "health_app",
+        "credential_dump",
         "messaging_platform"
       ],
       "HIBP": {
@@ -3049,13 +3049,13 @@
       "TotalFindings": 4,
       "BreachSources": [
         "LinkedIn2021",
+        "Dropbox",
         "MyFitnessPal",
-        "AntiPublic",
-        "Dropbox"
+        "AntiPublic"
       ],
       "Categories": [
-        "social_media",
         "health_app",
+        "social_media",
         "credential_dump",
         "cloud_storage"
       ],
@@ -3134,8 +3134,8 @@
       "DarkWebExposure": false,
       "TotalFindings": 2,
       "BreachSources": [
-        "LinkedIn2021",
-        "Evite"
+        "Evite",
+        "LinkedIn2021"
       ],
       "Categories": [
         "social_media"
@@ -3202,8 +3202,8 @@
         "Adobe"
       ],
       "Categories": [
-        "media_streaming",
-        "software"
+        "software",
+        "media_streaming"
       ],
       "HIBP": {
         "source": "hibp",
@@ -3380,18 +3380,18 @@
       "DarkWebExposure": true,
       "TotalFindings": 5,
       "BreachSources": [
-        "MyFitnessPal",
-        "Zynga",
-        "LinkedIn2021",
         "Canva",
+        "MyFitnessPal",
+        "LinkedIn2021",
+        "Zynga",
         "DarkForum-Health"
       ],
       "Categories": [
-        "health_app",
         "social_media",
         "design_tool",
         "dark_web",
-        "gaming"
+        "gaming",
+        "health_app"
       ],
       "HIBP": {
         "source": "hibp",
@@ -3517,9 +3517,9 @@
       "DarkWebExposure": false,
       "TotalFindings": 3,
       "BreachSources": [
+        "Chegg",
         "LinkedIn2021",
-        "Zynga",
-        "Chegg"
+        "Zynga"
       ],
       "Categories": [
         "social_media",
@@ -3882,14 +3882,14 @@
       "DarkWebExposure": false,
       "TotalFindings": 3,
       "BreachSources": [
+        "Chegg",
         "MyFitnessPal",
-        "Adobe",
-        "Chegg"
+        "Adobe"
       ],
       "Categories": [
         "health_app",
-        "software",
-        "education"
+        "education",
+        "software"
       ],
       "HIBP": {
         "source": "hibp",
@@ -4039,16 +4039,16 @@
       "TotalFindings": 5,
       "BreachSources": [
         "Evite",
+        "Dropbox",
         "LinkedIn",
-        "DarkForum-Health",
         "Collection#1",
-        "Dropbox"
+        "DarkForum-Health"
       ],
       "Categories": [
         "social_media",
         "credential_dump",
-        "dark_web",
-        "cloud_storage"
+        "cloud_storage",
+        "dark_web"
       ],
       "HIBP": {
         "source": "hibp",
@@ -4135,20 +4135,20 @@
       "DarkWebExposure": true,
       "TotalFindings": 6,
       "BreachSources": [
-        "MyFitnessPal",
-        "Zynga",
-        "Exploit.in",
-        "TelegramLeaks-2024",
         "Canva",
-        "Collection#1"
+        "MyFitnessPal",
+        "TelegramLeaks-2024",
+        "Zynga",
+        "Collection#1",
+        "Exploit.in"
       ],
       "Categories": [
-        "credential_dump",
-        "health_app",
+        "messaging_platform",
         "design_tool",
         "dark_web",
-        "messaging_platform",
-        "gaming"
+        "credential_dump",
+        "gaming",
+        "health_app"
       ],
       "HIBP": {
         "source": "hibp",
@@ -4281,9 +4281,9 @@
       "DarkWebExposure": false,
       "TotalFindings": 3,
       "BreachSources": [
+        "Evite",
         "LinkedIn2021",
-        "Chegg",
-        "Evite"
+        "Chegg"
       ],
       "Categories": [
         "social_media",
@@ -4621,8 +4621,8 @@
         "LinkedIn"
       ],
       "Categories": [
-        "social_media",
-        "health_app"
+        "health_app",
+        "social_media"
       ],
       "HIBP": {
         "source": "hibp",
@@ -4683,17 +4683,17 @@
       "DarkWebExposure": true,
       "TotalFindings": 5,
       "BreachSources": [
+        "Deezer",
         "MyFitnessPal",
         "AntiPublic",
         "Evite",
-        "Deezer",
         "LinkedIn"
       ],
       "Categories": [
-        "credential_dump",
         "health_app",
-        "social_media",
-        "media_streaming"
+        "media_streaming",
+        "credential_dump",
+        "social_media"
       ],
       "HIBP": {
         "source": "hibp",
@@ -4780,16 +4780,16 @@
       "DarkWebExposure": true,
       "TotalFindings": 4,
       "BreachSources": [
+        "Evite",
         "Exploit.in",
         "Deezer",
-        "PasteBin-2023",
-        "Evite"
+        "PasteBin-2023"
       ],
       "Categories": [
+        "social_media",
         "paste_site",
         "media_streaming",
-        "dark_web",
-        "social_media"
+        "dark_web"
       ],
       "HIBP": {
         "source": "hibp",
@@ -5019,14 +5019,14 @@
       "DarkWebExposure": false,
       "TotalFindings": 3,
       "BreachSources": [
+        "Dropbox",
         "Deezer",
-        "Zynga",
-        "Dropbox"
+        "Zynga"
       ],
       "Categories": [
+        "cloud_storage",
         "gaming",
-        "media_streaming",
-        "cloud_storage"
+        "media_streaming"
       ],
       "HIBP": {
         "source": "hibp",
@@ -5096,18 +5096,18 @@
       "DarkWebExposure": true,
       "TotalFindings": 5,
       "BreachSources": [
-        "Adobe",
-        "Deezer",
-        "LinkedIn",
         "Canva",
+        "Deezer",
+        "Adobe",
+        "LinkedIn",
         "PasteBin-2023"
       ],
       "Categories": [
-        "paste_site",
+        "software",
         "media_streaming",
         "design_tool",
         "social_media",
-        "software"
+        "paste_site"
       ],
       "HIBP": {
         "source": "hibp",
@@ -5233,14 +5233,14 @@
       "DarkWebExposure": true,
       "TotalFindings": 4,
       "BreachSources": [
-        "TelegramLeaks-2024",
-        "AntiPublic",
+        "Chegg",
         "Collection#1",
-        "Chegg"
+        "TelegramLeaks-2024",
+        "AntiPublic"
       ],
       "Categories": [
-        "credential_dump",
         "education",
+        "credential_dump",
         "messaging_platform"
       ],
       "HIBP": {
@@ -5316,15 +5316,15 @@
       "TotalFindings": 4,
       "BreachSources": [
         "Canva",
-        "RaidForums-Archive",
+        "Dropbox",
         "AntiPublic",
-        "Dropbox"
+        "RaidForums-Archive"
       ],
       "Categories": [
         "credential_dump",
+        "cloud_storage",
         "design_tool",
-        "dark_web",
-        "cloud_storage"
+        "dark_web"
       ],
       "HIBP": {
         "source": "hibp",
@@ -5402,13 +5402,13 @@
       "TotalFindings": 4,
       "BreachSources": [
         "LinkedIn2021",
-        "MyFitnessPal",
         "Collection#1",
-        "Dropbox"
+        "Dropbox",
+        "MyFitnessPal"
       ],
       "Categories": [
-        "social_media",
         "health_app",
+        "social_media",
         "credential_dump",
         "cloud_storage"
       ],
@@ -5604,18 +5604,18 @@
       "DarkWebExposure": false,
       "TotalFindings": 5,
       "BreachSources": [
-        "MyFitnessPal",
-        "Zynga",
-        "LinkedIn2021",
+        "Canva",
         "Deezer",
-        "Canva"
+        "MyFitnessPal",
+        "LinkedIn2021",
+        "Zynga"
       ],
       "Categories": [
-        "health_app",
-        "social_media",
+        "media_streaming",
         "design_tool",
+        "social_media",
         "gaming",
-        "media_streaming"
+        "health_app"
       ],
       "HIBP": {
         "source": "hibp",
@@ -5741,17 +5741,17 @@
       "DarkWebExposure": true,
       "TotalFindings": 5,
       "BreachSources": [
-        "RaidForums-Archive",
+        "Chegg",
+        "Dropbox",
         "Zynga",
         "Exploit.in",
-        "Dropbox",
-        "Chegg"
+        "RaidForums-Archive"
       ],
       "Categories": [
-        "gaming",
-        "dark_web",
         "education",
-        "cloud_storage"
+        "cloud_storage",
+        "gaming",
+        "dark_web"
       ],
       "HIBP": {
         "source": "hibp",
@@ -6142,14 +6142,14 @@
       "TotalFindings": 4,
       "BreachSources": [
         "LinkedIn2021",
-        "Exploit.in",
         "Dropbox",
+        "Exploit.in",
         "LinkedIn"
       ],
       "Categories": [
         "social_media",
-        "dark_web",
-        "cloud_storage"
+        "cloud_storage",
+        "dark_web"
       ],
       "HIBP": {
         "source": "hibp",
@@ -6230,8 +6230,8 @@
         "Adobe"
       ],
       "Categories": [
-        "design_tool",
-        "software"
+        "software",
+        "design_tool"
       ],
       "HIBP": {
         "source": "hibp",
@@ -6570,9 +6570,9 @@
         "MyFitnessPal"
       ],
       "Categories": [
+        "health_app",
         "social_media",
-        "design_tool",
-        "health_app"
+        "design_tool"
       ],
       "HIBP": {
         "source": "hibp",
@@ -6720,8 +6720,8 @@
       "DarkWebExposure": false,
       "TotalFindings": 2,
       "BreachSources": [
-        "Adobe",
-        "Dropbox"
+        "Dropbox",
+        "Adobe"
       ],
       "Categories": [
         "software",
@@ -7137,14 +7137,14 @@
       "DarkWebExposure": false,
       "TotalFindings": 3,
       "BreachSources": [
-        "MyFitnessPal",
         "Canva",
+        "MyFitnessPal",
         "LinkedIn"
       ],
       "Categories": [
-        "design_tool",
         "health_app",
-        "social_media"
+        "social_media",
+        "design_tool"
       ],
       "HIBP": {
         "source": "hibp",
@@ -7215,13 +7215,13 @@
       "DarkWebExposure": true,
       "TotalFindings": 3,
       "BreachSources": [
+        "Collection#1",
         "Exploit.in",
-        "Adobe",
-        "Collection#1"
+        "Adobe"
       ],
       "Categories": [
-        "credential_dump",
         "software",
+        "credential_dump",
         "dark_web"
       ],
       "HIBP": {
@@ -7424,14 +7424,14 @@
         "MyFitnessPal",
         "Evite",
         "LinkedIn",
-        "DarkForum-Health",
-        "Collection#1"
+        "Collection#1",
+        "DarkForum-Health"
       ],
       "Categories": [
-        "social_media",
         "health_app",
-        "dark_web",
-        "credential_dump"
+        "social_media",
+        "credential_dump",
+        "dark_web"
       ],
       "HIBP": {
         "source": "hibp",
@@ -7596,17 +7596,17 @@
       "DarkWebExposure": true,
       "TotalFindings": 5,
       "BreachSources": [
-        "Zynga",
+        "Deezer",
         "Evite",
         "LinkedIn2021",
-        "Deezer",
+        "Zynga",
         "PasteBin-2023"
       ],
       "Categories": [
-        "gaming",
-        "paste_site",
         "social_media",
-        "media_streaming"
+        "media_streaming",
+        "gaming",
+        "paste_site"
       ],
       "HIBP": {
         "source": "hibp",
@@ -7919,20 +7919,20 @@
       "DarkWebExposure": true,
       "TotalFindings": 6,
       "BreachSources": [
-        "Zynga",
-        "Exploit.in",
+        "Chegg",
         "Deezer",
-        "LinkedIn",
         "TelegramLeaks-2024",
-        "Chegg"
+        "Zynga",
+        "LinkedIn",
+        "Exploit.in"
       ],
       "Categories": [
-        "social_media",
-        "dark_web",
         "messaging_platform",
+        "social_media",
+        "media_streaming",
+        "dark_web",
         "education",
-        "gaming",
-        "media_streaming"
+        "gaming"
       ],
       "HIBP": {
         "source": "hibp",
@@ -8182,15 +8182,15 @@
       "DarkWebExposure": true,
       "TotalFindings": 4,
       "BreachSources": [
+        "Chegg",
         "LinkedIn2021",
         "Exploit.in",
-        "RaidForums-Archive",
-        "Chegg"
+        "RaidForums-Archive"
       ],
       "Categories": [
         "social_media",
-        "dark_web",
-        "education"
+        "education",
+        "dark_web"
       ],
       "HIBP": {
         "source": "hibp",
@@ -8421,16 +8421,16 @@
       "TotalFindings": 5,
       "BreachSources": [
         "MyFitnessPal",
-        "RaidForums-Archive",
+        "Dropbox",
         "Zynga",
         "Exploit.in",
-        "Dropbox"
+        "RaidForums-Archive"
       ],
       "Categories": [
-        "gaming",
         "health_app",
-        "dark_web",
-        "cloud_storage"
+        "cloud_storage",
+        "gaming",
+        "dark_web"
       ],
       "HIBP": {
         "source": "hibp",
@@ -8634,17 +8634,17 @@
       "DarkWebExposure": true,
       "TotalFindings": 5,
       "BreachSources": [
+        "Canva",
+        "TelegramLeaks-2024",
         "Zynga",
         "LinkedIn",
-        "TelegramLeaks-2024",
-        "Canva",
         "Collection#1"
       ],
       "Categories": [
-        "credential_dump",
+        "messaging_platform",
         "social_media",
         "design_tool",
-        "messaging_platform",
+        "credential_dump",
         "gaming"
       ],
       "HIBP": {
@@ -8810,16 +8810,16 @@
       "DarkWebExposure": true,
       "TotalFindings": 4,
       "BreachSources": [
-        "Deezer",
-        "DarkForum-Health",
+        "Chegg",
         "Dropbox",
-        "Chegg"
+        "Deezer",
+        "DarkForum-Health"
       ],
       "Categories": [
-        "media_streaming",
-        "dark_web",
         "education",
-        "cloud_storage"
+        "cloud_storage",
+        "media_streaming",
+        "dark_web"
       ],
       "HIBP": {
         "source": "hibp",
@@ -8967,8 +8967,8 @@
         "LinkedIn"
       ],
       "Categories": [
-        "social_media",
         "health_app",
+        "social_media",
         "software"
       ],
       "HIBP": {
@@ -9239,8 +9239,8 @@
       ],
       "Categories": [
         "credential_dump",
-        "design_tool",
         "media_streaming",
+        "design_tool",
         "dark_web"
       ],
       "HIBP": {
@@ -9319,8 +9319,8 @@
         "LinkedIn"
       ],
       "Categories": [
-        "gaming",
-        "social_media"
+        "social_media",
+        "gaming"
       ],
       "HIBP": {
         "source": "hibp",
@@ -9442,11 +9442,11 @@
         "DarkForum-Health"
       ],
       "Categories": [
-        "credential_dump",
-        "health_app",
-        "dark_web",
+        "software",
         "social_media",
-        "software"
+        "dark_web",
+        "credential_dump",
+        "health_app"
       ],
       "HIBP": {
         "source": "hibp",
@@ -9533,13 +9533,13 @@
       "DarkWebExposure": true,
       "TotalFindings": 3,
       "BreachSources": [
-        "Collection#1",
         "Evite",
+        "Collection#1",
         "LinkedIn"
       ],
       "Categories": [
-        "credential_dump",
-        "social_media"
+        "social_media",
+        "credential_dump"
       ],
       "HIBP": {
         "source": "hibp",
@@ -9804,17 +9804,17 @@
       "DarkWebExposure": true,
       "TotalFindings": 5,
       "BreachSources": [
-        "Zynga",
+        "Deezer",
         "Evite",
         "LinkedIn2021",
-        "Deezer",
+        "Zynga",
         "PasteBin-2023"
       ],
       "Categories": [
-        "gaming",
-        "paste_site",
         "social_media",
-        "media_streaming"
+        "media_streaming",
+        "gaming",
+        "paste_site"
       ],
       "HIBP": {
         "source": "hibp",
@@ -9898,14 +9898,14 @@
       "DarkWebExposure": false,
       "TotalFindings": 3,
       "BreachSources": [
-        "Zynga",
+        "Evite",
         "Dropbox",
-        "Evite"
+        "Zynga"
       ],
       "Categories": [
-        "gaming",
         "social_media",
-        "cloud_storage"
+        "cloud_storage",
+        "gaming"
       ],
       "HIBP": {
         "source": "hibp",
@@ -9981,9 +9981,9 @@
         "AntiPublic"
       ],
       "Categories": [
+        "credential_dump",
         "social_media",
-        "design_tool",
-        "credential_dump"
+        "design_tool"
       ],
       "HIBP": {
         "source": "hibp",
@@ -10050,13 +10050,13 @@
       "DarkWebExposure": true,
       "TotalFindings": 3,
       "BreachSources": [
-        "RaidForums-Archive",
         "Collection#1",
+        "RaidForums-Archive",
         "LinkedIn"
       ],
       "Categories": [
-        "credential_dump",
         "social_media",
+        "credential_dump",
         "dark_web"
       ],
       "HIBP": {
@@ -10217,8 +10217,8 @@
       "DarkWebExposure": true,
       "TotalFindings": 3,
       "BreachSources": [
-        "TelegramLeaks-2024",
         "Canva",
+        "TelegramLeaks-2024",
         "Collection#1"
       ],
       "Categories": [
@@ -10346,13 +10346,13 @@
       "TotalFindings": 3,
       "BreachSources": [
         "TelegramLeaks-2024",
-        "AntiPublic",
-        "Dropbox"
+        "Dropbox",
+        "AntiPublic"
       ],
       "Categories": [
+        "cloud_storage",
         "credential_dump",
-        "messaging_platform",
-        "cloud_storage"
+        "messaging_platform"
       ],
       "HIBP": {
         "source": "hibp",
@@ -10419,14 +10419,14 @@
       "DarkWebExposure": false,
       "TotalFindings": 3,
       "BreachSources": [
-        "MyFitnessPal",
         "Chegg",
+        "MyFitnessPal",
         "LinkedIn"
       ],
       "Categories": [
-        "social_media",
         "health_app",
-        "education"
+        "education",
+        "social_media"
       ],
       "HIBP": {
         "source": "hibp",
@@ -10679,12 +10679,12 @@
       "DarkWebExposure": false,
       "TotalFindings": 2,
       "BreachSources": [
-        "Zynga",
-        "Dropbox"
+        "Dropbox",
+        "Zynga"
       ],
       "Categories": [
-        "gaming",
-        "cloud_storage"
+        "cloud_storage",
+        "gaming"
       ],
       "HIBP": {
         "source": "hibp",
@@ -10941,15 +10941,15 @@
       "TotalFindings": 4,
       "BreachSources": [
         "Canva",
-        "AntiPublic",
         "PasteBin-2023",
-        "MyFitnessPal"
+        "MyFitnessPal",
+        "AntiPublic"
       ],
       "Categories": [
-        "credential_dump",
-        "design_tool",
         "health_app",
-        "paste_site"
+        "design_tool",
+        "paste_site",
+        "credential_dump"
       ],
       "HIBP": {
         "source": "hibp",
@@ -11065,15 +11065,15 @@
       "DarkWebExposure": true,
       "TotalFindings": 4,
       "BreachSources": [
+        "Evite",
         "Canva",
         "Adobe",
-        "Evite",
         "AntiPublic"
       ],
       "Categories": [
+        "software",
         "social_media",
         "design_tool",
-        "software",
         "credential_dump"
       ],
       "HIBP": {
@@ -11196,12 +11196,12 @@
         "AntiPublic",
         "Evite",
         "LinkedIn2021",
-        "TelegramLeaks-2024",
-        "Dropbox"
+        "Dropbox",
+        "TelegramLeaks-2024"
       ],
       "Categories": [
-        "credential_dump",
         "social_media",
+        "credential_dump",
         "messaging_platform",
         "cloud_storage"
       ],
@@ -11287,9 +11287,9 @@
       "DarkWebExposure": true,
       "TotalFindings": 3,
       "BreachSources": [
-        "LinkedIn2021",
+        "Evite",
         "Collection#1",
-        "Evite"
+        "LinkedIn2021"
       ],
       "Categories": [
         "social_media",
@@ -11477,14 +11477,14 @@
       "DarkWebExposure": false,
       "TotalFindings": 3,
       "BreachSources": [
-        "Zynga",
+        "Dropbox",
         "Adobe",
-        "Dropbox"
+        "Zynga"
       ],
       "Categories": [
-        "gaming",
         "software",
-        "cloud_storage"
+        "cloud_storage",
+        "gaming"
       ],
       "HIBP": {
         "source": "hibp",
@@ -11558,12 +11558,12 @@
         "AntiPublic",
         "Evite",
         "LinkedIn",
-        "DarkForum-Health",
-        "Collection#1"
+        "Collection#1",
+        "DarkForum-Health"
       ],
       "Categories": [
-        "credential_dump",
         "social_media",
+        "credential_dump",
         "dark_web"
       ],
       "HIBP": {
@@ -11648,8 +11648,8 @@
       "DarkWebExposure": false,
       "TotalFindings": 3,
       "BreachSources": [
-        "Canva",
         "Evite",
+        "Canva",
         "LinkedIn"
       ],
       "Categories": [
@@ -11730,8 +11730,8 @@
         "AntiPublic"
       ],
       "Categories": [
-        "credential_dump",
         "software",
+        "credential_dump",
         "dark_web"
       ],
       "HIBP": {
@@ -12077,9 +12077,9 @@
         "Adobe"
       ],
       "Categories": [
+        "software",
         "social_media",
-        "media_streaming",
-        "software"
+        "media_streaming"
       ],
       "HIBP": {
         "source": "hibp",
@@ -12146,14 +12146,14 @@
       "DarkWebExposure": true,
       "TotalFindings": 3,
       "BreachSources": [
-        "Adobe",
+        "Collection#1",
         "Dropbox",
-        "Collection#1"
+        "Adobe"
       ],
       "Categories": [
-        "credential_dump",
         "software",
-        "cloud_storage"
+        "cloud_storage",
+        "credential_dump"
       ],
       "HIBP": {
         "source": "hibp",
@@ -12301,15 +12301,15 @@
       "DarkWebExposure": false,
       "TotalFindings": 4,
       "BreachSources": [
-        "MyFitnessPal",
         "Deezer",
+        "MyFitnessPal",
         "Adobe",
         "LinkedIn"
       ],
       "Categories": [
-        "social_media",
         "health_app",
         "media_streaming",
+        "social_media",
         "software"
       ],
       "HIBP": {
@@ -12490,10 +12490,10 @@
         "DarkForum-Health"
       ],
       "Categories": [
-        "credential_dump",
         "software",
-        "dark_web",
-        "social_media"
+        "social_media",
+        "credential_dump",
+        "dark_web"
       ],
       "HIBP": {
         "source": "hibp",
@@ -12616,15 +12616,15 @@
       "DarkWebExposure": true,
       "TotalFindings": 4,
       "BreachSources": [
-        "RaidForums-Archive",
-        "Zynga",
         "Evite",
-        "AntiPublic"
+        "Zynga",
+        "AntiPublic",
+        "RaidForums-Archive"
       ],
       "Categories": [
-        "gaming",
-        "credential_dump",
         "social_media",
+        "credential_dump",
+        "gaming",
         "dark_web"
       ],
       "HIBP": {
@@ -12991,8 +12991,8 @@
       "TotalFindings": 4,
       "BreachSources": [
         "LinkedIn2021",
-        "RaidForums-Archive",
         "Collection#1",
+        "RaidForums-Archive",
         "LinkedIn"
       ],
       "Categories": [
@@ -13111,14 +13111,14 @@
       "DarkWebExposure": false,
       "TotalFindings": 3,
       "BreachSources": [
-        "Zynga",
+        "Chegg",
         "Evite",
-        "Chegg"
+        "Zynga"
       ],
       "Categories": [
-        "gaming",
         "social_media",
-        "education"
+        "education",
+        "gaming"
       ],
       "HIBP": {
         "source": "hibp",
@@ -13190,15 +13190,15 @@
       "TotalFindings": 4,
       "BreachSources": [
         "Canva",
-        "Zynga",
         "Dropbox",
+        "Zynga",
         "AntiPublic"
       ],
       "Categories": [
-        "gaming",
-        "design_tool",
         "credential_dump",
-        "cloud_storage"
+        "cloud_storage",
+        "design_tool",
+        "gaming"
       ],
       "HIBP": {
         "source": "hibp",
@@ -13278,15 +13278,15 @@
       "DarkWebExposure": true,
       "TotalFindings": 4,
       "BreachSources": [
+        "Chegg",
         "LinkedIn2021",
-        "Collection#1",
         "Dropbox",
-        "Chegg"
+        "Collection#1"
       ],
       "Categories": [
         "social_media",
-        "credential_dump",
         "education",
+        "credential_dump",
         "cloud_storage"
       ],
       "HIBP": {
@@ -13364,14 +13364,14 @@
       "DarkWebExposure": false,
       "TotalFindings": 3,
       "BreachSources": [
+        "Chegg",
         "Canva",
-        "Deezer",
-        "Chegg"
+        "Deezer"
       ],
       "Categories": [
+        "education",
         "design_tool",
-        "media_streaming",
-        "education"
+        "media_streaming"
       ],
       "HIBP": {
         "source": "hibp",
@@ -13441,17 +13441,17 @@
       "DarkWebExposure": false,
       "TotalFindings": 5,
       "BreachSources": [
+        "Canva",
+        "Deezer",
         "MyFitnessPal",
         "LinkedIn2021",
-        "Deezer",
-        "LinkedIn",
-        "Canva"
+        "LinkedIn"
       ],
       "Categories": [
-        "social_media",
         "health_app",
+        "media_streaming",
         "design_tool",
-        "media_streaming"
+        "social_media"
       ],
       "HIBP": {
         "source": "hibp",
@@ -13538,8 +13538,8 @@
       "DarkWebExposure": false,
       "TotalFindings": 2,
       "BreachSources": [
-        "Adobe",
-        "Dropbox"
+        "Dropbox",
+        "Adobe"
       ],
       "Categories": [
         "software",
@@ -13761,17 +13761,17 @@
       "TotalFindings": 5,
       "BreachSources": [
         "MyFitnessPal",
-        "RaidForums-Archive",
         "Adobe",
         "LinkedIn2021",
-        "Collection#1"
+        "Collection#1",
+        "RaidForums-Archive"
       ],
       "Categories": [
-        "credential_dump",
-        "health_app",
-        "dark_web",
+        "software",
         "social_media",
-        "software"
+        "dark_web",
+        "credential_dump",
+        "health_app"
       ],
       "HIBP": {
         "source": "hibp",
@@ -13894,14 +13894,14 @@
       "DarkWebExposure": false,
       "TotalFindings": 3,
       "BreachSources": [
+        "Chegg",
         "Canva",
-        "Deezer",
-        "Chegg"
+        "Deezer"
       ],
       "Categories": [
+        "education",
         "design_tool",
-        "media_streaming",
-        "education"
+        "media_streaming"
       ],
       "HIBP": {
         "source": "hibp",
@@ -13971,18 +13971,18 @@
       "DarkWebExposure": true,
       "TotalFindings": 5,
       "BreachSources": [
+        "Canva",
         "MyFitnessPal",
         "LinkedIn",
-        "Canva",
         "Collection#1",
         "PasteBin-2023"
       ],
       "Categories": [
-        "credential_dump",
-        "health_app",
-        "paste_site",
+        "social_media",
         "design_tool",
-        "social_media"
+        "paste_site",
+        "credential_dump",
+        "health_app"
       ],
       "HIBP": {
         "source": "hibp",
@@ -14108,16 +14108,16 @@
       "DarkWebExposure": true,
       "TotalFindings": 4,
       "BreachSources": [
-        "Exploit.in",
-        "Dropbox",
         "Chegg",
+        "Dropbox",
+        "Exploit.in",
         "LinkedIn"
       ],
       "Categories": [
         "social_media",
-        "dark_web",
         "education",
-        "cloud_storage"
+        "cloud_storage",
+        "dark_web"
       ],
       "HIBP": {
         "source": "hibp",
@@ -14353,12 +14353,12 @@
       "DarkWebExposure": false,
       "TotalFindings": 2,
       "BreachSources": [
-        "Deezer",
-        "Dropbox"
+        "Dropbox",
+        "Deezer"
       ],
       "Categories": [
-        "media_streaming",
-        "cloud_storage"
+        "cloud_storage",
+        "media_streaming"
       ],
       "HIBP": {
         "source": "hibp",
@@ -14419,13 +14419,13 @@
       "TotalFindings": 4,
       "BreachSources": [
         "LinkedIn2021",
-        "Adobe",
         "Dropbox",
+        "Adobe",
         "LinkedIn"
       ],
       "Categories": [
-        "social_media",
         "software",
+        "social_media",
         "cloud_storage"
       ],
       "HIBP": {
@@ -14545,14 +14545,14 @@
       "DarkWebExposure": true,
       "TotalFindings": 3,
       "BreachSources": [
-        "RaidForums-Archive",
+        "Dropbox",
         "AntiPublic",
-        "Dropbox"
+        "RaidForums-Archive"
       ],
       "Categories": [
+        "cloud_storage",
         "credential_dump",
-        "dark_web",
-        "cloud_storage"
+        "dark_web"
       ],
       "HIBP": {
         "source": "hibp",
@@ -14790,17 +14790,17 @@
       "DarkWebExposure": true,
       "TotalFindings": 5,
       "BreachSources": [
-        "AntiPublic",
         "Canva",
-        "DarkForum-Health",
+        "AntiPublic",
         "Dropbox",
-        "Collection#1"
+        "Collection#1",
+        "DarkForum-Health"
       ],
       "Categories": [
         "credential_dump",
+        "cloud_storage",
         "design_tool",
-        "dark_web",
-        "cloud_storage"
+        "dark_web"
       ],
       "HIBP": {
         "source": "hibp",
@@ -14884,17 +14884,17 @@
       "DarkWebExposure": true,
       "TotalFindings": 5,
       "BreachSources": [
+        "Chegg",
         "Adobe",
-        "Exploit.in",
-        "DarkForum-Health",
         "Dropbox",
-        "Chegg"
+        "Exploit.in",
+        "DarkForum-Health"
       ],
       "Categories": [
         "software",
-        "dark_web",
         "education",
-        "cloud_storage"
+        "cloud_storage",
+        "dark_web"
       ],
       "HIBP": {
         "source": "hibp",
@@ -15020,14 +15020,14 @@
       "DarkWebExposure": true,
       "TotalFindings": 3,
       "BreachSources": [
+        "Chegg",
         "Canva",
-        "AntiPublic",
-        "Chegg"
+        "AntiPublic"
       ],
       "Categories": [
         "credential_dump",
-        "design_tool",
-        "education"
+        "education",
+        "design_tool"
       ],
       "HIBP": {
         "source": "hibp",
@@ -15101,8 +15101,8 @@
         "Zynga"
       ],
       "Categories": [
-        "gaming",
-        "design_tool"
+        "design_tool",
+        "gaming"
       ],
       "HIBP": {
         "source": "hibp",
@@ -15241,19 +15241,19 @@
       "DarkWebExposure": true,
       "TotalFindings": 6,
       "BreachSources": [
+        "Chegg",
+        "Canva",
+        "Deezer",
         "Adobe",
         "Exploit.in",
-        "Deezer",
-        "Canva",
-        "DarkForum-Health",
-        "Chegg"
+        "DarkForum-Health"
       ],
       "Categories": [
         "software",
+        "media_streaming",
         "design_tool",
         "dark_web",
-        "education",
-        "media_streaming"
+        "education"
       ],
       "HIBP": {
         "source": "hibp",
@@ -15347,16 +15347,16 @@
       "DarkWebExposure": true,
       "TotalFindings": 4,
       "BreachSources": [
+        "Dropbox",
         "Exploit.in",
         "Zynga",
-        "Dropbox",
         "AntiPublic"
       ],
       "Categories": [
-        "gaming",
+        "cloud_storage",
         "credential_dump",
-        "dark_web",
-        "cloud_storage"
+        "gaming",
+        "dark_web"
       ],
       "HIBP": {
         "source": "hibp",
@@ -15433,16 +15433,16 @@
       "DarkWebExposure": true,
       "TotalFindings": 4,
       "BreachSources": [
-        "RaidForums-Archive",
-        "Adobe",
+        "Evite",
         "Collection#1",
-        "Evite"
+        "Adobe",
+        "RaidForums-Archive"
       ],
       "Categories": [
-        "credential_dump",
         "software",
-        "dark_web",
-        "social_media"
+        "social_media",
+        "credential_dump",
+        "dark_web"
       ],
       "HIBP": {
         "source": "hibp",
@@ -15636,15 +15636,15 @@
       "DarkWebExposure": true,
       "TotalFindings": 4,
       "BreachSources": [
-        "Exploit.in",
         "DarkForum-Health",
         "Collection#1",
-        "Dropbox"
+        "Dropbox",
+        "Exploit.in"
       ],
       "Categories": [
+        "cloud_storage",
         "credential_dump",
-        "dark_web",
-        "cloud_storage"
+        "dark_web"
       ],
       "HIBP": {
         "source": "hibp",
@@ -15797,15 +15797,15 @@
       "TotalFindings": 4,
       "BreachSources": [
         "LinkedIn2021",
+        "Collection#1",
         "PasteBin-2023",
-        "Adobe",
-        "Collection#1"
+        "Adobe"
       ],
       "Categories": [
-        "social_media",
-        "paste_site",
         "software",
-        "credential_dump"
+        "social_media",
+        "credential_dump",
+        "paste_site"
       ],
       "HIBP": {
         "source": "hibp",
@@ -16035,14 +16035,14 @@
       "DarkWebExposure": true,
       "TotalFindings": 3,
       "BreachSources": [
-        "Exploit.in",
         "Deezer",
+        "Exploit.in",
         "Adobe"
       ],
       "Categories": [
+        "software",
         "media_streaming",
-        "dark_web",
-        "software"
+        "dark_web"
       ],
       "HIBP": {
         "source": "hibp",
@@ -16148,16 +16148,16 @@
       "DarkWebExposure": true,
       "TotalFindings": 4,
       "BreachSources": [
+        "Chegg",
         "Adobe",
         "Zynga",
-        "Collection#1",
-        "Chegg"
+        "Collection#1"
       ],
       "Categories": [
-        "gaming",
-        "credential_dump",
         "software",
-        "education"
+        "education",
+        "credential_dump",
+        "gaming"
       ],
       "HIBP": {
         "source": "hibp",
@@ -16237,18 +16237,18 @@
       "DarkWebExposure": true,
       "TotalFindings": 5,
       "BreachSources": [
-        "Deezer",
-        "LinkedIn",
         "Canva",
+        "Deezer",
         "Dropbox",
+        "LinkedIn",
         "PasteBin-2023"
       ],
       "Categories": [
-        "paste_site",
-        "design_tool",
-        "cloud_storage",
         "social_media",
-        "media_streaming"
+        "media_streaming",
+        "design_tool",
+        "paste_site",
+        "cloud_storage"
       ],
       "HIBP": {
         "source": "hibp",
@@ -16374,19 +16374,19 @@
       "DarkWebExposure": true,
       "TotalFindings": 6,
       "BreachSources": [
-        "Zynga",
+        "Canva",
         "AntiPublic",
         "LinkedIn2021",
-        "Canva",
-        "DarkForum-Health",
-        "Dropbox"
+        "Dropbox",
+        "Zynga",
+        "DarkForum-Health"
       ],
       "Categories": [
-        "credential_dump",
         "social_media",
         "design_tool",
         "dark_web",
         "cloud_storage",
+        "credential_dump",
         "gaming"
       ],
       "HIBP": {
@@ -16598,10 +16598,10 @@
       "DarkWebExposure": true,
       "TotalFindings": 4,
       "BreachSources": [
+        "Evite",
         "LinkedIn2021",
         "RaidForums-Archive",
-        "Collection#1",
-        "Evite"
+        "Collection#1"
       ],
       "Categories": [
         "social_media",
@@ -16841,8 +16841,8 @@
         "AntiPublic"
       ],
       "Categories": [
-        "credential_dump",
         "health_app",
+        "credential_dump",
         "software"
       ],
       "HIBP": {
@@ -16913,14 +16913,14 @@
       "DarkWebExposure": false,
       "TotalFindings": 3,
       "BreachSources": [
-        "Canva",
         "Adobe",
+        "Canva",
         "Zynga"
       ],
       "Categories": [
-        "gaming",
+        "software",
         "design_tool",
-        "software"
+        "gaming"
       ],
       "HIBP": {
         "source": "hibp",
@@ -16994,12 +16994,12 @@
         "AntiPublic",
         "Evite",
         "LinkedIn2021",
-        "LinkedIn",
-        "TelegramLeaks-2024"
+        "TelegramLeaks-2024",
+        "LinkedIn"
       ],
       "Categories": [
-        "credential_dump",
         "social_media",
+        "credential_dump",
         "messaging_platform"
       ],
       "HIBP": {
@@ -17163,15 +17163,15 @@
       "TotalFindings": 4,
       "BreachSources": [
         "TelegramLeaks-2024",
+        "Exploit.in",
         "MyFitnessPal",
-        "AntiPublic",
-        "Exploit.in"
+        "AntiPublic"
       ],
       "Categories": [
-        "credential_dump",
         "health_app",
-        "dark_web",
-        "messaging_platform"
+        "credential_dump",
+        "messaging_platform",
+        "dark_web"
       ],
       "HIBP": {
         "source": "hibp",
@@ -17357,16 +17357,16 @@
       "DarkWebExposure": true,
       "TotalFindings": 4,
       "BreachSources": [
-        "Adobe",
-        "Collection#1",
         "Chegg",
+        "Collection#1",
+        "Adobe",
         "LinkedIn"
       ],
       "Categories": [
-        "credential_dump",
-        "social_media",
         "software",
-        "education"
+        "education",
+        "credential_dump",
+        "social_media"
       ],
       "HIBP": {
         "source": "hibp",
@@ -17485,18 +17485,18 @@
       "DarkWebExposure": true,
       "TotalFindings": 5,
       "BreachSources": [
-        "Exploit.in",
-        "LinkedIn",
         "Canva",
+        "Dropbox",
+        "LinkedIn",
         "Collection#1",
-        "Dropbox"
+        "Exploit.in"
       ],
       "Categories": [
-        "credential_dump",
+        "social_media",
         "design_tool",
         "dark_web",
         "cloud_storage",
-        "social_media"
+        "credential_dump"
       ],
       "HIBP": {
         "source": "hibp",
@@ -17583,14 +17583,14 @@
       "DarkWebExposure": false,
       "TotalFindings": 3,
       "BreachSources": [
+        "Chegg",
         "MyFitnessPal",
-        "Adobe",
-        "Chegg"
+        "Adobe"
       ],
       "Categories": [
         "health_app",
-        "software",
-        "education"
+        "education",
+        "software"
       ],
       "HIBP": {
         "source": "hibp",
@@ -17739,14 +17739,14 @@
       "DarkWebExposure": false,
       "TotalFindings": 3,
       "BreachSources": [
-        "MyFitnessPal",
         "Dropbox",
+        "MyFitnessPal",
         "LinkedIn"
       ],
       "Categories": [
-        "social_media",
         "health_app",
-        "cloud_storage"
+        "cloud_storage",
+        "social_media"
       ],
       "HIBP": {
         "source": "hibp",
@@ -17974,12 +17974,12 @@
       "TotalFindings": 3,
       "BreachSources": [
         "MyFitnessPal",
-        "Zynga",
-        "Adobe"
+        "Adobe",
+        "Zynga"
       ],
       "Categories": [
-        "gaming",
         "health_app",
+        "gaming",
         "software"
       ],
       "HIBP": {
@@ -18051,16 +18051,16 @@
       "DarkWebExposure": true,
       "TotalFindings": 4,
       "BreachSources": [
-        "Zynga",
-        "Adobe",
+        "Chegg",
         "Collection#1",
-        "Chegg"
+        "Adobe",
+        "Zynga"
       ],
       "Categories": [
-        "gaming",
-        "credential_dump",
         "software",
-        "education"
+        "education",
+        "credential_dump",
+        "gaming"
       ],
       "HIBP": {
         "source": "hibp",
@@ -18184,9 +18184,9 @@
         "LinkedIn"
       ],
       "Categories": [
-        "gaming",
         "software",
-        "social_media"
+        "social_media",
+        "gaming"
       ],
       "HIBP": {
         "source": "hibp",
@@ -18257,16 +18257,16 @@
       "DarkWebExposure": false,
       "TotalFindings": 5,
       "BreachSources": [
+        "Canva",
+        "Deezer",
         "Evite",
         "LinkedIn2021",
-        "Deezer",
-        "TelegramLeaks-2024",
-        "Canva"
+        "TelegramLeaks-2024"
       ],
       "Categories": [
         "social_media",
-        "design_tool",
         "media_streaming",
+        "design_tool",
         "messaging_platform"
       ],
       "HIBP": {
@@ -18459,8 +18459,8 @@
         "LinkedIn"
       ],
       "Categories": [
-        "social_media",
-        "health_app"
+        "health_app",
+        "social_media"
       ],
       "HIBP": {
         "source": "hibp",
@@ -18569,18 +18569,18 @@
       "DarkWebExposure": true,
       "TotalFindings": 5,
       "BreachSources": [
+        "Chegg",
+        "Deezer",
         "MyFitnessPal",
         "Evite",
-        "Deezer",
-        "DarkForum-Health",
-        "Chegg"
+        "DarkForum-Health"
       ],
       "Categories": [
-        "health_app",
+        "media_streaming",
+        "social_media",
         "dark_web",
         "education",
-        "social_media",
-        "media_streaming"
+        "health_app"
       ],
       "HIBP": {
         "source": "hibp",
@@ -18668,15 +18668,15 @@
       "TotalFindings": 4,
       "BreachSources": [
         "TelegramLeaks-2024",
-        "Exploit.in",
         "Deezer",
+        "Exploit.in",
         "LinkedIn"
       ],
       "Categories": [
         "social_media",
         "media_streaming",
-        "dark_web",
-        "messaging_platform"
+        "messaging_platform",
+        "dark_web"
       ],
       "HIBP": {
         "source": "hibp",
@@ -18750,18 +18750,18 @@
       "DarkWebExposure": true,
       "TotalFindings": 5,
       "BreachSources": [
+        "Chegg",
         "Adobe",
         "AntiPublic",
         "Evite",
-        "DarkForum-Health",
-        "Chegg"
+        "DarkForum-Health"
       ],
       "Categories": [
-        "credential_dump",
+        "software",
+        "social_media",
         "dark_web",
         "education",
-        "social_media",
-        "software"
+        "credential_dump"
       ],
       "HIBP": {
         "source": "hibp",
@@ -18850,14 +18850,14 @@
       "BreachSources": [
         "Deezer",
         "Adobe",
-        "LinkedIn",
-        "AntiPublic"
+        "AntiPublic",
+        "LinkedIn"
       ],
       "Categories": [
-        "social_media",
-        "credential_dump",
+        "software",
         "media_streaming",
-        "software"
+        "credential_dump",
+        "social_media"
       ],
       "HIBP": {
         "source": "hibp",
@@ -19051,18 +19051,18 @@
       "DarkWebExposure": true,
       "TotalFindings": 5,
       "BreachSources": [
+        "Chegg",
         "AntiPublic",
-        "LinkedIn",
         "Dropbox",
-        "PasteBin-2023",
-        "Chegg"
+        "LinkedIn",
+        "PasteBin-2023"
       ],
       "Categories": [
-        "credential_dump",
+        "social_media",
         "paste_site",
         "education",
-        "cloud_storage",
-        "social_media"
+        "credential_dump",
+        "cloud_storage"
       ],
       "HIBP": {
         "source": "hibp",
@@ -19188,18 +19188,18 @@
       "DarkWebExposure": true,
       "TotalFindings": 5,
       "BreachSources": [
-        "Zynga",
-        "Deezer",
+        "Chegg",
         "Canva",
-        "DarkForum-Health",
-        "Chegg"
+        "Deezer",
+        "Zynga",
+        "DarkForum-Health"
       ],
       "Categories": [
+        "media_streaming",
         "design_tool",
         "dark_web",
         "education",
-        "gaming",
-        "media_streaming"
+        "gaming"
       ],
       "HIBP": {
         "source": "hibp",
@@ -19286,15 +19286,15 @@
       "DarkWebExposure": true,
       "TotalFindings": 4,
       "BreachSources": [
-        "Canva",
         "Adobe",
+        "Canva",
         "Zynga",
         "AntiPublic"
       ],
       "Categories": [
-        "gaming",
-        "design_tool",
         "software",
+        "design_tool",
+        "gaming",
         "credential_dump"
       ],
       "HIBP": {
@@ -19453,12 +19453,12 @@
       "DarkWebExposure": false,
       "TotalFindings": 2,
       "BreachSources": [
-        "Zynga",
-        "Chegg"
+        "Chegg",
+        "Zynga"
       ],
       "Categories": [
-        "gaming",
-        "education"
+        "education",
+        "gaming"
       ],
       "HIBP": {
         "source": "hibp",
@@ -19603,9 +19603,9 @@
         "PasteBin-2023"
       ],
       "Categories": [
+        "software",
         "social_media",
         "paste_site",
-        "software",
         "dark_web"
       ],
       "HIBP": {
@@ -19797,18 +19797,18 @@
       "DarkWebExposure": true,
       "TotalFindings": 5,
       "BreachSources": [
+        "Chegg",
         "MyFitnessPal",
         "Adobe",
-        "Exploit.in",
         "Collection#1",
-        "Chegg"
+        "Exploit.in"
       ],
       "Categories": [
-        "credential_dump",
-        "health_app",
+        "software",
         "dark_web",
         "education",
-        "software"
+        "credential_dump",
+        "health_app"
       ],
       "HIBP": {
         "source": "hibp",
@@ -19961,14 +19961,14 @@
       "DarkWebExposure": true,
       "TotalFindings": 3,
       "BreachSources": [
-        "Adobe",
         "Chegg",
+        "Adobe",
         "AntiPublic"
       ],
       "Categories": [
-        "credential_dump",
         "software",
-        "education"
+        "education",
+        "credential_dump"
       ],
       "HIBP": {
         "source": "hibp",
@@ -20369,8 +20369,8 @@
         "Adobe"
       ],
       "Categories": [
-        "design_tool",
-        "software"
+        "software",
+        "design_tool"
       ],
       "HIBP": {
         "source": "hibp",
@@ -20431,14 +20431,14 @@
       "DarkWebExposure": false,
       "TotalFindings": 3,
       "BreachSources": [
+        "Chegg",
         "Canva",
-        "Evite",
-        "Chegg"
+        "Evite"
       ],
       "Categories": [
         "social_media",
-        "design_tool",
-        "education"
+        "education",
+        "design_tool"
       ],
       "HIBP": {
         "source": "hibp",
@@ -20509,16 +20509,16 @@
       "DarkWebExposure": true,
       "TotalFindings": 4,
       "BreachSources": [
+        "Evite",
         "Exploit.in",
         "Deezer",
-        "Adobe",
-        "Evite"
+        "Adobe"
       ],
       "Categories": [
+        "software",
         "social_media",
         "media_streaming",
-        "dark_web",
-        "software"
+        "dark_web"
       ],
       "HIBP": {
         "source": "hibp",
@@ -20634,16 +20634,16 @@
       "DarkWebExposure": true,
       "TotalFindings": 5,
       "BreachSources": [
+        "Chegg",
         "AntiPublic",
         "Evite",
         "LinkedIn",
-        "Collection#1",
-        "Chegg"
+        "Collection#1"
       ],
       "Categories": [
-        "credential_dump",
         "social_media",
-        "education"
+        "education",
+        "credential_dump"
       ],
       "HIBP": {
         "source": "hibp",
@@ -20847,14 +20847,14 @@
       "DarkWebExposure": true,
       "TotalFindings": 4,
       "BreachSources": [
+        "Evite",
         "LinkedIn2021",
-        "RaidForums-Archive",
         "Adobe",
-        "Evite"
+        "RaidForums-Archive"
       ],
       "Categories": [
-        "social_media",
         "software",
+        "social_media",
         "dark_web"
       ],
       "HIBP": {
@@ -20932,17 +20932,17 @@
       "DarkWebExposure": true,
       "TotalFindings": 5,
       "BreachSources": [
-        "MyFitnessPal",
-        "Exploit.in",
         "Deezer",
+        "MyFitnessPal",
         "LinkedIn",
+        "Exploit.in",
         "DarkForum-Health"
       ],
       "Categories": [
-        "social_media",
         "health_app",
         "media_streaming",
-        "dark_web"
+        "dark_web",
+        "social_media"
       ],
       "HIBP": {
         "source": "hibp",
@@ -21104,17 +21104,17 @@
       "DarkWebExposure": false,
       "TotalFindings": 5,
       "BreachSources": [
-        "LinkedIn2021",
+        "Chegg",
         "Deezer",
-        "LinkedIn",
+        "LinkedIn2021",
         "Dropbox",
-        "Chegg"
+        "LinkedIn"
       ],
       "Categories": [
         "social_media",
-        "media_streaming",
         "education",
-        "cloud_storage"
+        "cloud_storage",
+        "media_streaming"
       ],
       "HIBP": {
         "source": "hibp",
@@ -21201,14 +21201,14 @@
       "DarkWebExposure": true,
       "TotalFindings": 3,
       "BreachSources": [
-        "Zynga",
         "Dropbox",
+        "Zynga",
         "AntiPublic"
       ],
       "Categories": [
-        "gaming",
+        "cloud_storage",
         "credential_dump",
-        "cloud_storage"
+        "gaming"
       ],
       "HIBP": {
         "source": "hibp",
@@ -21357,8 +21357,8 @@
       "TotalFindings": 3,
       "BreachSources": [
         "Canva",
-        "AntiPublic",
-        "Exploit.in"
+        "Exploit.in",
+        "AntiPublic"
       ],
       "Categories": [
         "credential_dump",
@@ -21547,15 +21547,15 @@
       "DarkWebExposure": true,
       "TotalFindings": 4,
       "BreachSources": [
-        "Exploit.in",
         "Collection#1",
+        "Exploit.in",
         "PasteBin-2023",
         "LinkedIn"
       ],
       "Categories": [
+        "social_media",
         "credential_dump",
         "paste_site",
-        "social_media",
         "dark_web"
       ],
       "HIBP": {
@@ -21630,9 +21630,9 @@
       "DarkWebExposure": false,
       "TotalFindings": 3,
       "BreachSources": [
+        "Evite",
         "Canva",
-        "Dropbox",
-        "Evite"
+        "Dropbox"
       ],
       "Categories": [
         "social_media",
@@ -21801,13 +21801,13 @@
       "DarkWebExposure": true,
       "TotalFindings": 3,
       "BreachSources": [
+        "Collection#1",
         "Exploit.in",
-        "Adobe",
-        "Collection#1"
+        "Adobe"
       ],
       "Categories": [
-        "credential_dump",
         "software",
+        "credential_dump",
         "dark_web"
       ],
       "HIBP": {
@@ -22008,13 +22008,13 @@
       "TotalFindings": 3,
       "BreachSources": [
         "Canva",
-        "Adobe",
-        "Dropbox"
+        "Dropbox",
+        "Adobe"
       ],
       "Categories": [
-        "design_tool",
         "software",
-        "cloud_storage"
+        "cloud_storage",
+        "design_tool"
       ],
       "HIBP": {
         "source": "hibp",
@@ -22124,12 +22124,12 @@
       "DarkWebExposure": true,
       "TotalFindings": 2,
       "BreachSources": [
-        "AntiPublic",
-        "Chegg"
+        "Chegg",
+        "AntiPublic"
       ],
       "Categories": [
-        "credential_dump",
-        "education"
+        "education",
+        "credential_dump"
       ],
       "HIBP": {
         "source": "hibp",
@@ -22306,15 +22306,15 @@
       "DarkWebExposure": true,
       "TotalFindings": 4,
       "BreachSources": [
-        "Exploit.in",
-        "RaidForums-Archive",
+        "Chegg",
         "Collection#1",
-        "Chegg"
+        "Exploit.in",
+        "RaidForums-Archive"
       ],
       "Categories": [
+        "education",
         "credential_dump",
-        "dark_web",
-        "education"
+        "dark_web"
       ],
       "HIBP": {
         "source": "hibp",
@@ -22622,14 +22622,14 @@
       "DarkWebExposure": false,
       "TotalFindings": 3,
       "BreachSources": [
+        "Chegg",
         "MyFitnessPal",
-        "Zynga",
-        "Chegg"
+        "Zynga"
       ],
       "Categories": [
-        "gaming",
         "health_app",
-        "education"
+        "education",
+        "gaming"
       ],
       "HIBP": {
         "source": "hibp",
@@ -22817,15 +22817,15 @@
       "DarkWebExposure": true,
       "TotalFindings": 4,
       "BreachSources": [
+        "Evite",
         "Exploit.in",
         "Chegg",
-        "Evite",
         "LinkedIn"
       ],
       "Categories": [
         "social_media",
-        "dark_web",
-        "education"
+        "education",
+        "dark_web"
       ],
       "HIBP": {
         "source": "hibp",
@@ -22987,8 +22987,8 @@
         "LinkedIn"
       ],
       "Categories": [
-        "gaming",
-        "social_media"
+        "social_media",
+        "gaming"
       ],
       "HIBP": {
         "source": "hibp",
@@ -23127,16 +23127,16 @@
       "DarkWebExposure": true,
       "TotalFindings": 5,
       "BreachSources": [
-        "Zynga",
         "AntiPublic",
         "LinkedIn2021",
+        "Zynga",
         "LinkedIn",
         "PasteBin-2023"
       ],
       "Categories": [
-        "gaming",
-        "credential_dump",
         "social_media",
+        "credential_dump",
+        "gaming",
         "paste_site"
       ],
       "HIBP": {
@@ -23304,9 +23304,9 @@
         "AntiPublic"
       ],
       "Categories": [
-        "gaming",
         "health_app",
-        "credential_dump"
+        "credential_dump",
+        "gaming"
       ],
       "HIBP": {
         "source": "hibp",
@@ -23454,18 +23454,18 @@
       "DarkWebExposure": true,
       "TotalFindings": 5,
       "BreachSources": [
-        "MyFitnessPal",
         "Deezer",
+        "MyFitnessPal",
         "LinkedIn",
         "Collection#1",
         "PasteBin-2023"
       ],
       "Categories": [
-        "credential_dump",
-        "health_app",
-        "paste_site",
+        "media_streaming",
         "social_media",
-        "media_streaming"
+        "paste_site",
+        "credential_dump",
+        "health_app"
       ],
       "HIBP": {
         "source": "hibp",
@@ -23798,8 +23798,8 @@
       "DarkWebExposure": false,
       "TotalFindings": 3,
       "BreachSources": [
-        "Evite",
         "Chegg",
+        "Evite",
         "LinkedIn"
       ],
       "Categories": [
@@ -24632,14 +24632,14 @@
       "TotalFindings": 4,
       "BreachSources": [
         "LinkedIn2021",
-        "Adobe",
         "Dropbox",
+        "Adobe",
         "Collection#1"
       ],
       "Categories": [
+        "software",
         "social_media",
         "credential_dump",
-        "software",
         "cloud_storage"
       ],
       "HIBP": {
@@ -24951,14 +24951,14 @@
       "DarkWebExposure": true,
       "TotalFindings": 4,
       "BreachSources": [
+        "Collection#1",
         "TelegramLeaks-2024",
         "AntiPublic",
-        "Collection#1",
         "LinkedIn"
       ],
       "Categories": [
-        "credential_dump",
         "social_media",
+        "credential_dump",
         "messaging_platform"
       ],
       "HIBP": {
@@ -25111,16 +25111,16 @@
       "DarkWebExposure": true,
       "TotalFindings": 4,
       "BreachSources": [
-        "MyFitnessPal",
-        "Zynga",
+        "Chegg",
         "Exploit.in",
-        "Chegg"
+        "MyFitnessPal",
+        "Zynga"
       ],
       "Categories": [
-        "gaming",
         "health_app",
-        "dark_web",
-        "education"
+        "education",
+        "gaming",
+        "dark_web"
       ],
       "HIBP": {
         "source": "hibp",
@@ -25200,10 +25200,10 @@
       "DarkWebExposure": false,
       "TotalFindings": 4,
       "BreachSources": [
-        "LinkedIn2021",
+        "Evite",
         "Canva",
         "Zynga",
-        "Evite"
+        "LinkedIn2021"
       ],
       "Categories": [
         "social_media",
@@ -25292,8 +25292,8 @@
         "LinkedIn"
       ],
       "Categories": [
-        "gaming",
-        "social_media"
+        "social_media",
+        "gaming"
       ],
       "HIBP": {
         "source": "hibp",
@@ -25434,12 +25434,12 @@
       "BreachSources": [
         "Exploit.in",
         "Zynga",
-        "RaidForums-Archive",
-        "AntiPublic"
+        "AntiPublic",
+        "RaidForums-Archive"
       ],
       "Categories": [
-        "gaming",
         "credential_dump",
+        "gaming",
         "dark_web"
       ],
       "HIBP": {
@@ -25579,12 +25579,12 @@
       "DarkWebExposure": false,
       "TotalFindings": 2,
       "BreachSources": [
-        "Deezer",
-        "Chegg"
+        "Chegg",
+        "Deezer"
       ],
       "Categories": [
-        "media_streaming",
-        "education"
+        "education",
+        "media_streaming"
       ],
       "HIBP": {
         "source": "hibp",
@@ -25761,8 +25761,8 @@
       "DarkWebExposure": false,
       "TotalFindings": 3,
       "BreachSources": [
-        "Dropbox",
         "Evite",
+        "Dropbox",
         "LinkedIn"
       ],
       "Categories": [
@@ -25838,16 +25838,16 @@
       "DarkWebExposure": true,
       "TotalFindings": 4,
       "BreachSources": [
-        "MyFitnessPal",
-        "Zynga",
+        "Evite",
         "Collection#1",
-        "Evite"
+        "MyFitnessPal",
+        "Zynga"
       ],
       "Categories": [
-        "gaming",
         "health_app",
         "social_media",
-        "credential_dump"
+        "credential_dump",
+        "gaming"
       ],
       "HIBP": {
         "source": "hibp",
@@ -25927,9 +25927,9 @@
       "DarkWebExposure": false,
       "TotalFindings": 3,
       "BreachSources": [
+        "Evite",
         "Deezer",
-        "Chegg",
-        "Evite"
+        "Chegg"
       ],
       "Categories": [
         "social_media",
@@ -26005,17 +26005,17 @@
       "TotalFindings": 5,
       "BreachSources": [
         "Adobe",
-        "Exploit.in",
         "Dropbox",
         "Collection#1",
+        "Exploit.in",
         "PasteBin-2023"
       ],
       "Categories": [
-        "credential_dump",
+        "software",
         "paste_site",
         "dark_web",
         "cloud_storage",
-        "software"
+        "credential_dump"
       ],
       "HIBP": {
         "source": "hibp",
@@ -26104,8 +26104,8 @@
         "AntiPublic"
       ],
       "Categories": [
-        "credential_dump",
         "software",
+        "credential_dump",
         "dark_web"
       ],
       "HIBP": {
@@ -26212,16 +26212,16 @@
       "DarkWebExposure": true,
       "TotalFindings": 4,
       "BreachSources": [
+        "Chegg",
         "DarkForum-Health",
         "AntiPublic",
-        "Chegg",
         "LinkedIn"
       ],
       "Categories": [
-        "credential_dump",
         "social_media",
-        "dark_web",
-        "education"
+        "education",
+        "credential_dump",
+        "dark_web"
       ],
       "HIBP": {
         "source": "hibp",
@@ -26533,13 +26533,13 @@
       "TotalFindings": 3,
       "BreachSources": [
         "Canva",
-        "Deezer",
-        "Dropbox"
+        "Dropbox",
+        "Deezer"
       ],
       "Categories": [
+        "cloud_storage",
         "design_tool",
-        "media_streaming",
-        "cloud_storage"
+        "media_streaming"
       ],
       "HIBP": {
         "source": "hibp",
@@ -26609,17 +26609,17 @@
       "DarkWebExposure": true,
       "TotalFindings": 5,
       "BreachSources": [
-        "Zynga",
         "Adobe",
         "LinkedIn2021",
+        "Zynga",
         "LinkedIn",
         "DarkForum-Health"
       ],
       "Categories": [
-        "gaming",
         "software",
-        "dark_web",
-        "social_media"
+        "social_media",
+        "gaming",
+        "dark_web"
       ],
       "HIBP": {
         "source": "hibp",
@@ -26745,12 +26745,12 @@
       "DarkWebExposure": false,
       "TotalFindings": 2,
       "BreachSources": [
-        "Zynga",
-        "Dropbox"
+        "Dropbox",
+        "Zynga"
       ],
       "Categories": [
-        "gaming",
-        "cloud_storage"
+        "cloud_storage",
+        "gaming"
       ],
       "HIBP": {
         "source": "hibp",
@@ -26818,10 +26818,10 @@
         "DarkForum-Health"
       ],
       "Categories": [
-        "credential_dump",
         "software",
-        "dark_web",
-        "social_media"
+        "social_media",
+        "credential_dump",
+        "dark_web"
       ],
       "HIBP": {
         "source": "hibp",
@@ -27061,13 +27061,13 @@
       "DarkWebExposure": true,
       "TotalFindings": 3,
       "BreachSources": [
-        "Exploit.in",
+        "Evite",
         "Collection#1",
-        "Evite"
+        "Exploit.in"
       ],
       "Categories": [
-        "credential_dump",
         "social_media",
+        "credential_dump",
         "dark_web"
       ],
       "HIBP": {
@@ -27267,12 +27267,12 @@
       "DarkWebExposure": false,
       "TotalFindings": 2,
       "BreachSources": [
-        "Deezer",
-        "Chegg"
+        "Chegg",
+        "Deezer"
       ],
       "Categories": [
-        "media_streaming",
-        "education"
+        "education",
+        "media_streaming"
       ],
       "HIBP": {
         "source": "hibp",
@@ -27332,13 +27332,13 @@
       "DarkWebExposure": false,
       "TotalFindings": 3,
       "BreachSources": [
-        "MyFitnessPal",
         "Evite",
+        "MyFitnessPal",
         "LinkedIn"
       ],
       "Categories": [
-        "social_media",
-        "health_app"
+        "health_app",
+        "social_media"
       ],
       "HIBP": {
         "source": "hibp",
@@ -27409,14 +27409,14 @@
       "DarkWebExposure": false,
       "TotalFindings": 4,
       "BreachSources": [
-        "LinkedIn2021",
-        "MyFitnessPal",
+        "Evite",
         "Canva",
-        "Evite"
+        "MyFitnessPal",
+        "LinkedIn2021"
       ],
       "Categories": [
-        "social_media",
         "health_app",
+        "social_media",
         "design_tool"
       ],
       "HIBP": {
@@ -27498,13 +27498,13 @@
       "TotalFindings": 3,
       "BreachSources": [
         "LinkedIn2021",
-        "PasteBin-2023",
-        "Dropbox"
+        "Dropbox",
+        "PasteBin-2023"
       ],
       "Categories": [
         "social_media",
-        "paste_site",
-        "cloud_storage"
+        "cloud_storage",
+        "paste_site"
       ],
       "HIBP": {
         "source": "hibp",
@@ -27649,8 +27649,8 @@
       "DarkWebExposure": true,
       "TotalFindings": 3,
       "BreachSources": [
-        "RaidForums-Archive",
         "Deezer",
+        "RaidForums-Archive",
         "LinkedIn"
       ],
       "Categories": [
@@ -27723,14 +27723,14 @@
       "DarkWebExposure": false,
       "TotalFindings": 3,
       "BreachSources": [
+        "Chegg",
         "MyFitnessPal",
-        "Evite",
-        "Chegg"
+        "Evite"
       ],
       "Categories": [
-        "social_media",
         "health_app",
-        "education"
+        "education",
+        "social_media"
       ],
       "HIBP": {
         "source": "hibp",
@@ -27950,12 +27950,12 @@
       "TotalFindings": 3,
       "BreachSources": [
         "LinkedIn2021",
-        "Adobe",
-        "TelegramLeaks-2024"
+        "TelegramLeaks-2024",
+        "Adobe"
       ],
       "Categories": [
-        "social_media",
         "software",
+        "social_media",
         "messaging_platform"
       ],
       "HIBP": {
